@@ -1,7 +1,10 @@
 import json
 import csv
+from typing import List
+from llama_index.core.schema import Document
 
-def save_documents_as_json(documents, output_path):
+
+def save_documents_as_json(documents: List[Document], output_path):
     """
     Saves a list of Document objects as a JSON file.
 
@@ -25,7 +28,7 @@ def save_documents_as_json(documents, output_path):
     with open(output_path, "w") as json_file:
         json.dump(docs_list, json_file, indent=4)
 
-def save_documents_as_csv(documents, output_path):
+def save_documents_as_csv(documents: List[Document], output_path):
     """
     Saves a list of Document objects as a CSV file.
 

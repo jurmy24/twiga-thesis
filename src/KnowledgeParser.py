@@ -76,7 +76,7 @@ class KnowledgeParser:
         
         return output_path
 
-    async def parse_pdf_async(self, pdf_path: str) -> List[Document]:
+    async def parse_pdf_async(self, pdf_path: str) -> List[Document]: # TODO: this assumes you can put in multiple files at once but we only do one at a time
         """
         Asynchronously parse the content of a PDF file.
 

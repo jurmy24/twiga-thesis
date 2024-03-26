@@ -1,9 +1,18 @@
 import nest_asyncio
-from llama_parse import LlamaParse
+from dotenv import load_dotenv
+import os
+import argparse
+from typing import List
+
 from pypdf import PdfReader, PdfWriter
+from llama_parse import LlamaParse
+from llama_index.core.schema import Document
 
 # Apply necessary patch for asyncio in interactive environments
 nest_asyncio.apply()
+
+load_dotenv()
+LLAMA_CLOUD_API_KEY = os.getenv("LLAMA_CLOUD_API_KEY")
 
 class KnowledgeParser:
     def __init__(self, api_key, result_type="markdown", language="en", verbose=True):
@@ -23,7 +32,7 @@ class KnowledgeParser:
             language=language
         )
     
-    def extract_pages(self, pdf_path, start_page, end_page):
+    def extract_pages(self, pdf_path: str, start_page: int, end_page: int = None) -> str:
         """
         Extracts a range of pages from a PDF file and saves them to a temporary file.
 
@@ -35,22 +44,39 @@ class KnowledgeParser:
         Returns:
         The path to the temporary PDF file with the extracted pages.
         """
+
+        # Base directory where the output PDFs will be saved
+        data_dir = os.getenv('DATA_DIR_PATH')
+
         reader = PdfReader(pdf_path)
         writer = PdfWriter()
+
+        # Determine the last page if end_page is None
+        if end_page is None:
+            end_page = len(reader.pages) - 1
 
         for page in range(start_page, end_page + 1):
             try:
                 writer.add_page(reader.pages[page])
             except IndexError:
+                print(f"Page {page} is out of range.")
                 break  # Exceeds the number of pages in the document
 
-        output_path = f"data/temp_{start_page}_{end_page}.pdf"
+        # Extract the base name of the original file without its extension
+        base_name = os.path.basename(pdf_path)
+        base_name_no_ext = os.path.splitext(base_name)[0]
+
+        # Construct the output filename using the original file name and the page range
+        output_filename = f"{base_name_no_ext}_pages_{start_page}_to_{end_page}.pdf"
+        # Construct the absolute path for the output file
+        output_path = os.path.join(data_dir, output_filename)
+
         with open(output_path, "wb") as output_pdf:
             writer.write(output_pdf)
         
         return output_path
 
-    async def parse_pdf_async(self, pdf_path):
+    async def parse_pdf_async(self, pdf_path: str) -> List[Document]:
         """
         Asynchronously parse the content of a PDF file.
 
@@ -62,7 +88,7 @@ class KnowledgeParser:
         """
         return await self.parser.aload_data(pdf_path)
 
-    def parse_pdf_sync(self, pdf_path):
+    def parse_pdf_sync(self, pdf_path: str) -> List[Document]:
         """
         Synchronously parse the content of a PDF file.
 
@@ -74,15 +100,21 @@ class KnowledgeParser:
         """
         return self.parser.load_data(pdf_path)
 
-# Example usage
 if __name__ == "__main__":
-    api_key = "your_llama_parse_api_key_here"
-    
-    pdf_parser = KnowledgeParser(api_key=api_key)
+    # Initialize the argument parser
+    parser = argparse.ArgumentParser(description="Process a PDF with LlamaParse")
 
-    pdf_path = ""
-    new_path = pdf_parser.extract_pages(pdf_path, start_page=5, end_page=10)
+    # Add arguments for the PDF file path and optionally start and end pages
+    parser.add_argument("pdf_path", help="The path to the PDF file to parse")
+    parser.add_argument("--start_page", type=int, default=0, help="The start page number to parse (0-indexed)")
+    parser.add_argument("--end_page", type=int, help="The end page number to parse (inclusive, 0-indexed)")
 
-    # Adjust start_page and end_page as needed
-    documents = pdf_parser.parse_pdf_sync(new_path)
-    print(documents)
+    # Parse command-line arguments
+    args = parser.parse_args()
+
+    # Initialize the KnowledgeParser
+    knowledge_parser = KnowledgeParser(api_key=LLAMA_CLOUD_API_KEY)
+
+    # Extract the relevant pages
+    new_pdf_path = knowledge_parser.extract_pages(args.pdf_path, args.start_page, args.end_page)
+    documents = knowledge_parser.parse_pdf_sync(new_pdf_path)

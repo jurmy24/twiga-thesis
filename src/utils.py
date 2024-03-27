@@ -53,3 +53,31 @@ def save_documents_as_csv(documents: List[Document], output_path):
                 # Include other fields here as needed
             }
             writer.writerow(row)
+
+
+def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
+    """
+    Saves base_nodes to a JSON file.
+
+    Parameters:
+    - base_nodes: A list of base node objects. Assumes each object can be directly serialized.
+    - filename (str): The filename for the output JSON.
+    """
+    with open(filename, 'w', encoding='utf-8') as file:
+        # Convert base_nodes to a serializable format if necessary
+        base_nodes_data = [node.__dict__ for node in base_nodes]
+        json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
+
+
+def save_objects_as_json(objects, filename="objects.json"):
+    """
+    Saves objects to a JSON file.
+
+    Parameters:
+    - objects: A list of object nodes or similar structures. Assumes each object can be directly serialized.
+    - filename (str): The filename for the output JSON.
+    """
+    with open(filename, 'w', encoding='utf-8') as file:
+        # Convert objects to a serializable format if necessary
+        objects_data = [obj.__dict__ for obj in objects]
+        json.dump(objects_data, file, ensure_ascii=False, indent=4)

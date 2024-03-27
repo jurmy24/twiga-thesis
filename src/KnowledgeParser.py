@@ -7,12 +7,16 @@ from typing import List
 from pypdf import PdfReader, PdfWriter
 from llama_parse import LlamaParse
 from llama_index.core.schema import Document
+from llama_index.core.node_parser import MarkdownElementNodeParser
+from llama_index.llms.openai import OpenAI
 
 # Apply necessary patch for asyncio in interactive environments
 nest_asyncio.apply()
 
 load_dotenv()
 LLAMA_CLOUD_API_KEY = os.getenv("LLAMA_CLOUD_API_KEY")
+DATA_DIR = os.getenv('DATA_DIR_PATH') # Base directory where the output PDFs will be saved
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 class KnowledgeParser:
     def __init__(self, api_key, result_type="markdown", language="en", verbose=True):
@@ -31,6 +35,8 @@ class KnowledgeParser:
             verbose=verbose,
             language=language
         )
+
+        self.node_parser = MarkdownElementNodeParser(llm=OpenAI(model="gpt-3.5-turbo-0125"), num_workers=8) # TODO: why 8 workers and why this model?
     
     def extract_pages(self, pdf_path: str, start_page: int, end_page: int = None) -> str:
         """
@@ -99,6 +105,7 @@ class KnowledgeParser:
         A list of parsed documents.
         """
         return self.parser.load_data(pdf_path)
+    
 
 if __name__ == "__main__":
     # Initialize the argument parser

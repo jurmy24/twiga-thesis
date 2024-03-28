@@ -3,23 +3,25 @@ from typing import List
 from llama_index.core.schema import Document
 import os
 
-
-def save_documents_as_json(document: Document, output_path):
+def save_documents_as_json(documents: List[Document], output_path: str):
     """
-    Saves a Document object as a JSON file.
+    Saves a list of Document objects as a JSON file.
 
     Parameters:
-    - document (Document): The document to save.
+    - documents (List[Document]): The documents to save.
     - output_path (str): The file path to save the JSON data to.
     """
-
-    # Assuming the Document object has .text and other attributes you're interested in
-    doc_dict = {
-        "id": document.id_,
-        "text": document.text,
-        "metadata": document.metadata
-        # Include other relevant fields here
-    }
+    # Convert documents into a list of dictionaries
+    docs_list = []
+    for doc in documents:
+        doc_dict = {
+            "id": doc.id_,
+            "text": doc.text,
+            "metadata": doc.metadata
+            # Include other relevant fields here
+        }
+        docs_list.append(doc_dict)
+        
 
     # Check if the file already exists
     if os.path.exists(output_path):
@@ -56,6 +58,20 @@ def save_markdown_content(document: Document, output_path):
     markdown_content = document.text
     with open(output_path, 'w', encoding='utf-8') as file:
         file.write(markdown_content)
+
+def save_nodes_as_json(nodes, filename="base_nodes.json"):
+    """
+    Saves base_nodes to a JSON file.
+
+    Parameters:
+    - base_nodes: A list of base node objects. Assumes each object can be directly serialized.
+    - filename (str): The filename for the output JSON.
+    """
+    with open(filename, 'w', encoding='utf-8') as file:
+        # Convert base_nodes to a serializable format if necessary
+        base_nodes_data = [node.__dict__ for node in nodes]
+        json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
+
     
 def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
     """

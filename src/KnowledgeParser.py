@@ -36,7 +36,7 @@ class KnowledgeParser:
             language=language
         )
 
-        self.node_parser = MarkdownElementNodeParser(llm=OpenAI(model="gpt-3.5-turbo-0125"), num_workers=8) # TODO: why 8 workers and why this model?
+        self.node_parser = MarkdownElementNodeParser(llm=OpenAI(model="gpt-3.5-turbo-0125"), num_workers=8) # TODO: why 8 workers and why this model
     
     def extract_pages(self, pdf_path: str, start_page: int, end_page: int = None) -> str:
         """
@@ -82,7 +82,7 @@ class KnowledgeParser:
         
         return output_path
 
-    async def parse_pdf_async(self, pdf_path: str) -> Document: # TODO: this assumes you can put in multiple files at once but we only do one at a time
+    async def parse_pdf_async(self, pdf_path: str) -> List[Document]:
         """
         Asynchronously parse the content of a PDF file.
 
@@ -90,11 +90,11 @@ class KnowledgeParser:
         - pdf_path (str): Path to the PDF file to parse.
 
         Returns:
-        A parsed document.
+        A list of parsed documents.
         """
-        return await self.parser.aload_data(pdf_path)[0] # retrieve the first element since we only parse one pdf at a time
+        return await self.parser.aload_data(pdf_path)
 
-    def parse_pdf_sync(self, pdf_path: str) -> Document:
+    def parse_pdf_sync(self, pdf_path: str) -> List[Document]:
         """
         Synchronously parse the content of a PDF file.
 
@@ -102,9 +102,9 @@ class KnowledgeParser:
         - pdf_path (str): Path to the PDF file to parse.
 
         Returns:
-        A parsed document.
+        A list of parsed documents.
         """
-        return self.parser.load_data(pdf_path)[0]
+        return self.parser.load_data(pdf_path)
     
 
 if __name__ == "__main__":

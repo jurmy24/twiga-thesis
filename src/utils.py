@@ -1,60 +1,62 @@
 import json
-import csv
 from typing import List
 from llama_index.core.schema import Document
+import os
 
 
-def save_documents_as_json(documents: List[Document], output_path):
+def save_documents_as_json(document: Document, output_path):
     """
-    Saves a list of Document objects as a JSON file.
+    Saves a Document object as a JSON file.
 
     Parameters:
-    - documents (List[Document]): The documents to save.
+    - document (Document): The document to save.
     - output_path (str): The file path to save the JSON data to.
     """
-    # Convert documents into a list of dictionaries
-    docs_list = []
-    for doc in documents:
-        # Assuming each Document object has .text and other attributes you're interested in
-        doc_dict = {
-            "id": doc.id_,
-            "text": doc.text,
-            "metadata": doc.metadata
-            # Include other relevant fields here
-        }
-        docs_list.append(doc_dict)
 
-    # Write the list of document dictionaries to a JSON file
-    with open(output_path, "w") as json_file:
-        json.dump(docs_list, json_file, indent=4)
+    # Assuming the Document object has .text and other attributes you're interested in
+    doc_dict = {
+        "id": document.id_,
+        "text": document.text,
+        "metadata": document.metadata
+        # Include other relevant fields here
+    }
 
-def save_documents_as_csv(documents: List[Document], output_path):
+    # Check if the file already exists
+    if os.path.exists(output_path):
+        # Read the existing content
+        with open(output_path, 'r', encoding='utf-8') as file:
+            try:
+                data = json.load(file)
+                # Ensure the data read is a list to append to
+                if not isinstance(data, list):
+                    data = [data]
+            except json.JSONDecodeError:
+                # If the file is empty or contains only whitespaces, start a new list
+                data = []
+    else:
+        # Start a new list if the file doesn't exist
+        data = []
+    
+    # Append the new data
+    data.append(doc_dict)
+    
+    # Write the updated data back to the file
+    with open(output_path, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4)
+
+def save_markdown_content(document: Document, output_path):
     """
-    Saves a list of Document objects as a CSV file.
+    Saves a Document object text as a markdown file
 
     Parameters:
-    - documents (List[Document]): The documents to save.
-    - output_path (str): The file path to save the CSV data to.
+    - document (Document): The document to save.
+    - output_path (str): The file path to save the JSON data to.
     """
-    # Define the CSV headers based on the Document object attributes you're interested in
-    headers = ["id", "text", "metadata"]  # Add other headers as needed
 
-    # Write the documents to a CSV file
-    with open(output_path, mode="w", newline="", encoding="utf-8") as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=headers)
-        writer.writeheader()
-
-        for doc in documents:
-            # Convert each Document into a dictionary matching the headers
-            row = {
-                "id": doc.id_,
-                "text": doc.text,
-                "metadata": str(doc.metadata)  # Assuming metadata is a dictionary
-                # Include other fields here as needed
-            }
-            writer.writerow(row)
-
-
+    markdown_content = document.text
+    with open(output_path, 'w', encoding='utf-8') as file:
+        file.write(markdown_content)
+    
 def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
     """
     Saves base_nodes to a JSON file.
@@ -67,7 +69,6 @@ def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
         # Convert base_nodes to a serializable format if necessary
         base_nodes_data = [node.__dict__ for node in base_nodes]
         json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
-
 
 def save_objects_as_json(objects, filename="objects.json"):
     """

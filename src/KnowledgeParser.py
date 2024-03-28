@@ -82,7 +82,7 @@ class KnowledgeParser:
         
         return output_path
 
-    async def parse_pdf_async(self, pdf_path: str) -> List[Document]: # TODO: this assumes you can put in multiple files at once but we only do one at a time
+    async def parse_pdf_async(self, pdf_path: str) -> Document: # TODO: this assumes you can put in multiple files at once but we only do one at a time
         """
         Asynchronously parse the content of a PDF file.
 
@@ -90,11 +90,11 @@ class KnowledgeParser:
         - pdf_path (str): Path to the PDF file to parse.
 
         Returns:
-        A list of parsed documents.
+        A parsed document.
         """
-        return await self.parser.aload_data(pdf_path)
+        return await self.parser.aload_data(pdf_path)[0] # retrieve the first element since we only parse one pdf at a time
 
-    def parse_pdf_sync(self, pdf_path: str) -> List[Document]:
+    def parse_pdf_sync(self, pdf_path: str) -> Document:
         """
         Synchronously parse the content of a PDF file.
 
@@ -102,9 +102,9 @@ class KnowledgeParser:
         - pdf_path (str): Path to the PDF file to parse.
 
         Returns:
-        A list of parsed documents.
+        A parsed document.
         """
-        return self.parser.load_data(pdf_path)
+        return self.parser.load_data(pdf_path)[0]
     
 
 if __name__ == "__main__":

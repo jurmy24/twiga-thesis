@@ -1,0 +1,72 @@
+## Check-in/out Details
+
+| 1   | Q: How do I check in to the property?                                                                                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------------- |
+|     | A: You can check in using the lockbox located at the main entrance, on the right wall. The pin code is 7469.                 |
+| 2   | Q: Where can I find the key to the property?                                                                                 |
+|     | A: The key is located inside the lockbox at the main entrance, on the right wall. Please use the pin code 7469 to access it. |
+| 3   | Q: What is the check-out procedure?                                                                                          |
+|     | A: Please leave the key inside the lockbox and ensure all windows and doors are locked.                                      |
+| 4   | Q: What is the PIN code for the lockbox?                                                                                     |
+|     | A: The PIN code is 7469. Please ensure you keep it confidential.                                                             |
+
+## Accommodation Details
+
+| 5   | Q: What's the Wi-Fi password for the property?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | A: The Wi-Fi password is LeLouvre7469_Paris.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 6   | Q: I'm having trouble connecting to the Wi-Fi, any suggestions?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|     | A: Ensure you've selected the correct network and entered the password LeLouvre7469_Paris accurately. If the problem persists, try restarting your device or resetting the router.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 7   | Q: How can I use the coffee machine in the kitchen?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|     | A: To use the coffee machine, please follow the following steps: 1. Open the top lid and fill the water reservoir up to the indicated line. 2. Choose your coffee pod flavor and place it in the pod compartment. 3. Close the lid securely. 4. Turn on the machine using the power button on the side. 5. Place your coffee mug on the tray below the dispenser. 6. Select your desired coffee strength using the buttons on the front panel: light, medium, or strong. 7. Press the "brew" button. 8. Wait for the coffee to dispense into your mug. The machine will beep when it's done. 9. Open the pod compartment and discard the used pod. 10. Enjoy your freshly brewed coffee! |
+| 8   | Q: I can't get the coffee machine to work. Is there a manual?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|     | A: Yes, you can find the manual in the drawer next to the coffee machine. If you're still having issues, please reach out to us.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+
+---
+
+## Tourism Details
+
+| Q: Can you recommend any sightseeing attractions nearby? | A: Absolutely! We recommend visiting the Eiffel Tower, Notre Dame Cathedral, and the Louvre Museum. They are must-visit attractions in Paris! |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Q: Are there any local restaurants you'd suggest?        | A: Yes! We highly recommend: - La Petite Parisienne, located at 15 Rue de Montmorency,                                                        |
+
+- Chez Julien, located at 1 Rue du Pont Louis-Philippe, and
+- Le Saint Régis, located at 6 Rue Jean du Bellay.
+  They offer delicious Parisian cuisine.|
+  |Q: Are there any breweries close by?|A: Certainly! They are: - Paname Brewing Company, located on the banks of Canal de l'Ourcq, and
+- BAPBAP Paris, located at 79 Rue Saint-Maur.
+  They are popular among locals and visitors alike.|
+
+## Transportation
+
+| Q: How can I get to the nearest public transportation? | A: The nearest metro station is Bastille Station, just a 5-minute walk from the property. Head south, turn right on Rue de la Roquette, and you'll see the metro entrance. |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Q: Can you recommend a reliable taxi service?          | A: Sure! We recommend using ParisCabElite. They're reliable and offer good rates.                                                                                          |
+| Q: Is there any parking facility nearby?               | A: Yes, there's a public parking garage located at 10 Rue de la Bastille (underground parking). It's a short walk from the property.                                       |
+
+## Miscellaneous
+
+| Q: Are pets allowed on the property?                                       | A: Unfortunately, pets are not allowed. We appreciate your understanding.                                  |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Q: Is smoking allowed?                                                     | A: Smoking is strictly prohibited inside the property. However, there's a designated smoking area outside. |
+| Q: How can I contact the property owner or manager in case of emergencies? | A: In case of emergencies, please contact us at +33 1 23 45 67 89.                                         |
+| Q: What should I do if I lose the key?                                     | A: Please contact us immediately at +33 1 23 45 67 89. There might be a charge for key replacement.        |
+| Q: Is there a grocery store nearby?                                        |                                                                                                            |
+
+---
+
+## Questions and Answers
+
+| Q: Is there a grocery store nearby?                | A: Yes, there's a grocery store just 10 minutes away on foot. It is Le Marché de Roquette, located at 56 Rue de la Roquette, open from 8 AM to 10 PM.                                            |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Q: How safe is the neighborhood?                   | A: The neighborhood is quite safe and is regularly patrolled by local police. However, we always recommend guests be cautious and ensure doors and windows are locked when leaving the property. |
+| Q: Is there a hospital or pharmacy nearby?         | A: Yes, Hôpital Paris Central is nearby at 52 Rue de la Clinique, 75012 Paris. A nearby pharmacy is Pharmacie de la Bastille, located at 68 Rue de la Liberté, 75011 Paris.                      |
+| Q: Can I get a discount for a prolonged stay?      | A: We offer discounts for stays longer than a week. Please contact us for more details.                                                                                                          |
+| Q: Do you provide any housekeeping services?       | A: Housekeeping services are provided once a week. If you need additional services, there might be an extra charge.                                                                              |
+| Q: Can I host a party or event at the property?    | A: We appreciate it if our guests respect the peace of the neighborhood. Parties or loud events are not allowed.                                                                                 |
+| Q: Are there any house rules I should be aware of? | A: Yes, please refer to the house manual provided in the living room for all house rules.                                                                                                        |
+| Q: Is there air conditioning on the property?      | A: Yes, the property is equipped with air conditioning. You can find the remote in the living room.                                                                                              |
+| Q: How do I dispose of trash?                      | A: There are trash bins located in the alley behind the building. Please segregate recyclables and non-recyclables. Green bins for recyclables and black bins for non-recyclables.               |
+| Q: Is there a laundry facility on the property?    | A: Yes, we have a washing machine and dryer. You can find detergent under the sink.                                                                                                              |
+| Q: What are the check-in and check-out times?      | A: Check-in time is after 3 PM, and check-out time is before 11 AM.                                                                                                                              |
+| Q: Can I request a late check-out?                 | A: Late check-out is subject to availability. Please inform us in advance, and we'll do our best to accommodate your request.                                                                    |

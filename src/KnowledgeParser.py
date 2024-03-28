@@ -10,6 +10,8 @@ from llama_index.core.schema import Document
 from llama_index.core.node_parser import MarkdownElementNodeParser
 from llama_index.llms.openai import OpenAI
 
+from src.utils import save_markdown_content
+
 # Apply necessary patch for asyncio in interactive environments
 nest_asyncio.apply()
 
@@ -125,3 +127,4 @@ if __name__ == "__main__":
     # Extract the relevant pages
     new_pdf_path = knowledge_parser.extract_pages(args.pdf_path, args.start_page, args.end_page)
     documents = knowledge_parser.parse_pdf_sync(new_pdf_path)
+    save_markdown_content(documents[0], os.path.join(DATA_DIR, "documents", "tie-geography-f2.md")) # TODO: make this also accept a longer list of items 

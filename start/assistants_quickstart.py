@@ -39,6 +39,7 @@ def create_assistant(file):
 
 
 assistant = create_assistant(file)
+print(assistant)
 
 
 # --------------------------------------------------------------

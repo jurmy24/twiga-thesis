@@ -11,7 +11,7 @@ OPENAI_ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-def upload_file(path):
+def upload_file(path): 
     # Upload a file with an "assistants" purpose
     file = client.files.create(
         file=open("../../data/airbnb-faq.pdf", "rb"), purpose="assistants"
@@ -51,7 +51,7 @@ def run_assistant(thread, name):
     run = client.beta.threads.runs.create(
         thread_id=thread.id,
         assistant_id=assistant.id,
-        # instructions=f"You are having a conversation with {name}",
+        instructions=f"You are having a conversation with {name}",
     )
 
     # Wait for completion

@@ -72,7 +72,7 @@ def verify():
             logging.info("VERIFICATION_FAILED")
             return jsonify({"status": "error", "message": "Verification failed"}), 403
     else:
-        # Responds with '400 Bad Request' if verify tokens do not match
+        # Responds with '400 Bad Request'
         logging.info("MISSING_PARAMETER")
         return jsonify({"status": "error", "message": "Missing parameters"}), 400
 

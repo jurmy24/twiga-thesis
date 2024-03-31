@@ -1,0 +1,61 @@
+{
+    "queries": [
+      {
+        "query": "Can you give me some multiple choice questions about weather and climate for Form 2 students?",
+        "metadata": {
+          "topic": "Weather and Climate",
+          "subject": "Geography",
+          "question_type": "multiple choice"
+        }
+      },
+      {
+        "query": "I want closed questions for teaching about types of rainfall to my class.",
+        "metadata": {
+          "topic": "Types of Rainfall",
+          "subject": "Geography",
+          "question_type": "closed question"
+        }
+      },
+      {
+        "query": "Help me with questions for explain map reading to secondary school kids, the easier the better.",
+        "metadata": {
+          "topic": "Map Reading",
+          "subject": "Geography",
+          "question_type": "open question"
+        }
+      },
+      {
+        "query": "Need question on definition of erosion, not too hard for form two.",
+        "metadata": {
+          "topic": "Erosion",
+          "subject": "Geography",
+          "question_type": "definition"
+        }
+      },
+      {
+        "query": "Give me some questions about mountains, for second year of secondary.",
+        "metadata": {
+          "topic": "Mountains",
+          "subject": "Geography",
+          "question_type": "open question"
+        }
+      },
+      {
+        "query": "How to ask form two about importance of conserving natural vegetation in multiple choice?",
+        "metadata": {
+          "topic": "Conservation of Natural Vegetation",
+          "subject": "Geography",
+          "question_type": "multiple choice"
+        }
+      },
+      {
+        "query": "Create simple questions on population distribution for me, should be closed questions.",
+        "metadata": {
+          "topic": "Population Distribution",
+          "subject": "Geography",
+          "question_type": "closed question"
+        }
+      }
+    ]
+  }
+  

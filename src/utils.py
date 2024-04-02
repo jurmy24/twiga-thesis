@@ -3,7 +3,7 @@ from typing import List
 from llama_index.core.schema import Document
 import os
 from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT, DEFAULT_KG_TRIPLET_EXTRACT_PROMPT, CHAT_TEXT_QA_PROMPT, CHAT_REFINE_PROMPT
-from llama_index.core.base.llms.types import ChatMessage, MessageRole
+from src.models import ChatMessage
 
 def save_documents_as_json(documents: List[Document], output_path: str):
     """
@@ -115,11 +115,11 @@ def generate_kg_triplet_prompt(text: str, max_triplets:int=3) -> str:
     prompt = DEFAULT_KG_TRIPLET_EXTRACT_PROMPT.template.format(text=text, max_knowledge_triplets=max_triplets)
     return prompt
 
-def generate_chat_text_qa_prompt(context: str, query: str) -> List[str]:
+def generate_chat_text_qa_prompt(context: str, query: str) -> List[ChatMessage]:
     # Prepare the context and query message
     context_query_msg = ChatMessage(
         content=f"Context information is below.\n---------------------\n{context}\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: {query}\nAnswer: ",
-        role=MessageRole.USER,
+        role="user",
     )
 
     # Combine system prompt with the user's context and query
@@ -127,11 +127,11 @@ def generate_chat_text_qa_prompt(context: str, query: str) -> List[str]:
     return prompt_messages
 
 
-def generate_chat_refine_prompt(context: str, query: str, existing_answer: str) -> List[str]:
+def generate_chat_refine_prompt(context: str, query: str, existing_answer: str) -> List[ChatMessage]:
     # Create a new context message with the task of refining an existing answer
     refine_msg = ChatMessage(
         content=f"New Context: {context}\nQuery: {query}\nOriginal Answer: {existing_answer}\nNew Answer: ",
-        role=MessageRole.USER,
+        role="user",
     )
 
     # The first message is a generic instruction for refinement tasks

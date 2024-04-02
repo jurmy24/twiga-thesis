@@ -194,3 +194,5 @@ CHAT_REFINE_PROMPT_TMPL_MSGS = [
         role=MessageRole.USER,
     )
 ]
+
+CHAT_REFINE_PROMPT = ChatPromptTemplate(message_templates=CHAT_REFINE_PROMPT_TMPL_MSGS)

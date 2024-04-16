@@ -21,7 +21,7 @@ DATA_DIR = os.getenv('DATA_DIR_PATH') # Base directory where the output PDFs wil
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 class KnowledgeParser:
-    def __init__(self, api_key, result_type="markdown", language="en", verbose=True):
+    def __init__(self, api_key: str, result_type:str="markdown", language:str="en", verbose:bool=True):
         """
         Initialize the KnowledgeParser with the required API key and optional parameters.
 
@@ -127,4 +127,4 @@ if __name__ == "__main__":
     # Extract the relevant pages
     new_pdf_path = knowledge_parser.extract_pages(args.pdf_path, args.start_page, args.end_page)
     documents = knowledge_parser.parse_pdf_sync(new_pdf_path)
-    save_markdown_content(documents[0], os.path.join(DATA_DIR, "documents", "tie-geography-f2.md")) # TODO: make this also accept a longer list of items 
+    save_markdown_content(documents[0], os.path.join(DATA_DIR, "documents", "markdown", "tie-geography-f2.md"))

@@ -51,7 +51,8 @@ class DataLoader:
     def search(self, **query_args):
         return self.es.search(index="twiga_documents", **query_args)
     
-    def retrieve_document(self, id):
+    def retrieve_document(self, id: str):
+        # This method gets the document associated with a specific ID in the elasticsearch database
         return self.es.get(index="twiga_documents", id=id)
 
 if __name__ == "__main__":
@@ -76,6 +77,6 @@ if __name__ == "__main__":
             }
         }
     )
-
+    
     matches = results['hits']['hits']
     total = results['hits']['total']['value']

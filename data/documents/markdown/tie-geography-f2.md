@@ -1,13 +1,3 @@
-# Geography for Secondary Schools
-
-Student's Book
-
-Two
-
-Form
-
-## Tanzania Institute of Education
-
 # Geography for Secondary Schools Student's Book Form Two
 
 THE UNITED REPUBLIC OF TANZANIA
@@ -2990,8 +2980,6 @@ B. Write True or False for each of the following statements:
 | Fossilisation   | The process by which a fossil is formed.                                                                                            |
 | Desert          | Dry, barren area of land, that is characteristically desolate, waterless, and without vegetation.                                   |
 
-## 163
-
 | Forest            | Large area dominated by trees.                                                                                         |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Forestry          | The science or practise of planting and managing forests.                                                              |
@@ -3004,8 +2992,6 @@ B. Write True or False for each of the following statements:
 | Industrialisation | The move from an economy dominated by agricultural production to one dominated by manufacturing.                       |
 | Infrastructure    | A set of interconnected structural elements that provide a framework for supporting development processes.             |
 | Intercropping     | The practise involving growing of two or more crops in the same field.                                                 |
-
-##
 
 | Term                | Definition                                                                                                                                                            |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

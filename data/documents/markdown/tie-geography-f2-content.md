@@ -1,13 +1,3 @@
-# Geography for Secondary Schools
-
-Student's Book
-
-Two
-
-Form
-
-## Tanzania Institute of Education
-
 # Geography for Secondary Schools Student's Book Form Two
 
 THE UNITED REPUBLIC OF TANZANIA
@@ -2512,8 +2502,6 @@ Tanzania needs to take several initiatives in a bid to address the transport cha
 | Fossilisation   | The process by which a fossil is formed.                                                                                            |
 | Desert          | Dry, barren area of land, that is characteristically desolate, waterless, and without vegetation.                                   |
 
-## 163
-
 | Forest            | Large area dominated by trees.                                                                                         |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Forestry          | The science or practise of planting and managing forests.                                                              |
@@ -2526,8 +2514,6 @@ Tanzania needs to take several initiatives in a bid to address the transport cha
 | Industrialisation | The move from an economy dominated by agricultural production to one dominated by manufacturing.                       |
 | Infrastructure    | A set of interconnected structural elements that provide a framework for supporting development processes.             |
 | Intercropping     | The practise involving growing of two or more crops in the same field.                                                 |
-
-##
 
 | Term                | Definition                                                                                                                                                            |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -4,6 +4,7 @@ from llama_index.core.schema import Document
 import os
 from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT, DEFAULT_KG_TRIPLET_EXTRACT_PROMPT, CHAT_TEXT_QA_SYSTEM_PROMPT, CHAT_TEXT_QA_USER_PROMPT
 from src.models import ChatMessage
+import tiktoken
 
 def save_documents_as_json(documents: List[Document], output_path: str):
     """
@@ -112,3 +113,9 @@ def generate_kg_triplet_prompt(text: str, max_triplets:int=3) -> str:
 def generate_chat_text_qa_user_prompt(context: str, query: str) -> ChatMessage:
     prompt = CHAT_TEXT_QA_USER_PROMPT.content.format(context_str=context, query_str=query)
     return ChatMessage(content=prompt, role="user")
+
+def get_token_count(string: str, encoding_name: str) -> int:
+    """Returns the number of tokens in a text string."""
+    encoding = tiktoken.get_encoding(encoding_name)
+    num_tokens = len(encoding.encode(string))
+    return num_tokens

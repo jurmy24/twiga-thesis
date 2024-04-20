@@ -17,9 +17,9 @@ except IOError:
     print("An error occurred while reading the file.")
 
 headers_to_split_on = [
-    ("#", "Header 1"),
-    ("##", "Header 2"),
-    ("###", "Header 3"),
+    ("#", "title"),
+    ("##", "chapter"),
+    ("###", "subsection"),
 ]
 
 markdown_splitter = MarkdownHeaderTextSplitter(

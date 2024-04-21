@@ -20,6 +20,7 @@ headers_to_split_on = [
     ("#", "title"),
     ("##", "chapter"),
     ("###", "subsection"),
+    ("####", "subsubsection")
 ]
 
 markdown_splitter = MarkdownHeaderTextSplitter(
@@ -34,7 +35,7 @@ md_header_splits = markdown_splitter.split_text(markdown_text)
 docs_to_save = [doc.dict() for doc in md_header_splits]
 
 # Serialize to JSON and write to file
-with open(os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-content.json"), 'w') as f:
+with open(os.path.join(DATA_DIR, "documents", "json", "v2-tie-geography-f2-content.json"), 'w') as f:
     json.dump(docs_to_save, f, indent=4)
 
 """

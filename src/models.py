@@ -10,6 +10,7 @@ class Metadata(BaseModel):
     title: Optional[str] = None
     chapter: Optional[str] = None
     subsection: Optional[str] = None
+    subsubsection: Optional[str] = None
 
 class ChunkSchema(BaseModel):
     page_content: str

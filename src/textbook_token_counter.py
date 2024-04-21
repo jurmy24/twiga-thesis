@@ -38,22 +38,28 @@ def get_subsection_token_count(data: List[ChunkSchema]) -> float:
 
 def calculate_average_tokens(contents: List) -> float:
     token_count = 0.0
+    max_tokens = 0
 
     failed = 0
     for c in contents:
         try:
-            token_count += num_tokens_from_string(c, encoding_name="cl100k_base")
+            tokens = num_tokens_from_string(c, encoding_name="cl100k_base")
+            token_count += tokens
+
+            if tokens > max_tokens:
+                max_tokens = tokens
         except:
             failed += 1
             pass
     
     print(f"This many chunks were not included: {failed} / {len(contents)}")
+    print(f"This is the length of the largest chunk: {max_tokens}")
     
     return token_count / (float(len(contents)-float(failed)))
 
 def main():
     # This is the path to the json file of the subsection-chunked textbook
-    file_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-content.json")
+    file_path = os.path.join(DATA_DIR, "documents", "json", "v2-tie-geography-f2-content.json")
 
     # Load the JSON data from the file
     chunks = load_json_file_to_chunkschema(file_path)

@@ -1,9 +1,7 @@
-import json
 from collections import defaultdict
 import os
 from typing import List
 from dotenv import load_dotenv
-import tiktoken
 from src.models import ChunkSchema
 from src.utils import num_tokens_from_string, load_json_file_to_chunkschema
 

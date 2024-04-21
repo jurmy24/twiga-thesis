@@ -58,7 +58,7 @@ def calculate_average_tokens(contents: List) -> float:
     return token_count / (float(len(contents)-float(failed)))
 
 def main():
-    # This is the path to the json file of the subsection-chunked textbook
+    # This is the path to the json file of the subsubsection-chunked textbook
     file_path = os.path.join(DATA_DIR, "documents", "json", "v2-tie-geography-f2-content.json")
 
     # Load the JSON data from the file

@@ -59,16 +59,16 @@ def calculate_average_tokens(contents: List) -> float:
 
 def main():
     # This is the path to the json file of the subsubsection-chunked textbook
-    file_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
+    file_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
 
     # Load the JSON data from the file
     chunks = load_json_file_to_chunkschema(file_path)
 
-    avg_chapter_tokens = get_chapter_token_count(chunks)
+    # avg_chapter_tokens = get_chapter_token_count(chunks)
     avg_subsection_tokens = get_subsection_token_count(chunks)
     
     # Display the average token counts per chapter
-    print(f"Average chapter tokens: {avg_chapter_tokens}")
+    # print(f"Average chapter tokens: {avg_chapter_tokens}")
     print(f"Average subsection tokens: {avg_subsection_tokens}")
     
 if __name__ == "__main__":

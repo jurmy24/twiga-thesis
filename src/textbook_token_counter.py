@@ -59,7 +59,7 @@ def calculate_average_tokens(contents: List) -> float:
 
 def main():
     # This is the path to the json file of the subsubsection-chunked textbook
-    file_path = os.path.join(DATA_DIR, "documents", "json", "v2-tie-geography-f2-content.json")
+    file_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
 
     # Load the JSON data from the file
     chunks = load_json_file_to_chunkschema(file_path)

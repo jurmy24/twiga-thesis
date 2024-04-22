@@ -30,26 +30,27 @@ markdown_splitter = MarkdownHeaderTextSplitter(
 
 md_header_splits = markdown_splitter.split_text(markdown_text)
 
-
 # Convert each document to dictionary
 docs_to_save = [doc.dict() for doc in md_header_splits]
 
-# Serialize to JSON and write to file
+# Uncomment the following if you want to serialize the intermediate data to JSON and write to a file
+"""
 with open(os.path.join(DATA_DIR, "documents", "json", "v2-tie-geography-f2-content.json"), 'w') as f:
     json.dump(docs_to_save, f, indent=4)
-
 """
-If we want to further split the text
-"""
-# # Char-level splits
-# from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# chunk_size = 250
-# chunk_overlap = 30
-# text_splitter = RecursiveCharacterTextSplitter(
-#     chunk_size=chunk_size, chunk_overlap=chunk_overlap
-# )
+# Char-level splits
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# # Split
-# splits = text_splitter.split_documents(md_header_splits)
-# splits
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000, chunk_overlap=100
+)
+
+# Split
+splits = text_splitter.split_documents(md_header_splits)
+
+# Convert each document to dictionary
+docs_to_save = [doc.dict() for doc in splits]
+
+with open(os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json"), 'w') as f:
+    json.dump(docs_to_save, f, indent=4)

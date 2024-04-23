@@ -15,6 +15,10 @@ ELASTIC_SEARCH_API_KEY = os.getenv("ELASTIC_SEARCH_API_KEY")
 ELASTIC_CLOUD_ID = os.getenv("ELASTIC_CLOUD_ID")
 DATA_DIR = os.getenv("DATA_DIR_PATH")
 
+"""
+I use this class if I want to modify the data I have stored in Elastic Search in some way.
+"""
+
 class DataLoader:
 
     def __init__(self):
@@ -82,24 +86,17 @@ if __name__ == "__main__":
     data_loader = DataLoader()
 
     # To add all my chunks to elastic search from scratch
-    # data_loader.reindex(content_path)
-
-    # print('Here are the twiga_documents mappings')
-    # pprint(data_loader.es.indices.get_mapping(index='twiga_documents'))
-
+    """
+    data_loader.reindex(content_path)
+    """
+    
+    # To add new data to the existing index
+    """
     documents: List[ChunkSchema] = load_json_file_to_chunkschema(exercise_path)
     data_loader.insert_documents(documents)
+    """
 
-    # document = ChunkSchema(
-    #     title='Work From Home Policy',
-    #     contents='The purpose of this full-time work-from-home policy is...',
-    #     created_on=datetime.now().isoformat()
-    # )
-
-    # # response = dataLoader.insert_document(document)
-    # # print(response['_id'])
-
-    # # This searches based on the Okapi BM25 algorithm (a higher score indicates a closer match to the query text)
+    # This searches based on the Okapi BM25 algorithm (a higher score indicates a closer match to the query text)
     # results = dataLoader.search(
     #     query={
     #         'match': {

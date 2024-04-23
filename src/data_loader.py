@@ -8,6 +8,7 @@ import time
 from src.models import ChunkSchema
 from datetime import datetime
 from typing import List
+from src.utils import load_json_file_to_chunkschema
 
 load_dotenv()
 ELASTIC_SEARCH_API_KEY = os.getenv("ELASTIC_SEARCH_API_KEY")
@@ -40,7 +41,7 @@ class DataLoader:
         })
         
     def insert_document(self, document: ChunkSchema):
-        embedding = self.get_embedding(document.page_content)
+        embedding = self.get_embedding(document.chunk)
         return self.es.index(
             index='twiga_documents',
             document={
@@ -55,7 +56,7 @@ class DataLoader:
     def insert_documents(self, documents: List[ChunkSchema]):
         operations = []
         for document in documents:
-            embedding = self.get_embedding(document.page_content)
+            embedding = self.get_embedding(document.chunk)
             operations.append({'index': {'_index': 'twiga_documents'}})
             operations.append({
                 **document.model_dump_json(),
@@ -64,13 +65,10 @@ class DataLoader:
 
         return self.es.bulk(operations=operations)
     
-    def reindex(self, data_file_path):
+    def reindex(self, data_file_path: str):
         # This method is used if I want to regenerate the index 
         self.create_index()
-        with open(os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json"), 'rt') as f:
-            data = json.loads(f.read())
-            # Convert JSON objects to DocumentSchema instances
-            documents: List[ChunkSchema] = [ChunkSchema(**doc) for doc in data]
+        documents: List[ChunkSchema] = load_json_file_to_chunkschema(data_file_path)
         return self.insert_documents(documents)
     
     def search(self, **query_args):
@@ -82,7 +80,15 @@ class DataLoader:
 
 if __name__ == "__main__":
 
-    data_loader = DataLoader()
+    # data_loader = DataLoader()
+    file_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
+    exercise_chunks = load_json_file_to_chunkschema(file_path)
+
+    file_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
+    content_chunks = load_json_file_to_chunkschema(file_path)
+
+    print(exercise_chunks[0].model_dump_json(indent=4))
+    print(content_chunks[0].model_dump_json(indent=4))
     # data_loader.create_index()
 
     # document = ChunkSchema(

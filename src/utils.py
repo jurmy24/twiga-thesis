@@ -121,11 +121,14 @@ def num_tokens_from_string(string: str, encoding_name: str) -> int:
     return num_tokens
 
 def load_json_file_to_chunkschema(file_path: str) -> List[ChunkSchema]:
-    try:
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-            # Explicitly handle the creation of Metadata objects if necessary
-            chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
-            return chunks
-    except ValidationError as e:
-        print("Validation error when parsing JSON data:", e)
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        chunks = []
+        for index, item in enumerate(data):
+            try:
+                # Explicitly handle the creation of Metadata objects if necessary
+                chunks.append(ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}))
+            except ValidationError as e:
+                print(f"ValidationError when parsing document {index + 1}: {e}")
+        # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
+        return chunks

@@ -5303,7 +5303,8 @@
         "chunk": "| Reforestation       | The replanting of trees in depleted forests and woodlands.                                                                                                            |\n| Renewable resources | Resources which can be recovered or replaced after being used; they include hydro-electric power, tidal power, wind energy, geothermal power, solar power and biogas. |\n| River basin         | Land that is drained by a river and its tributaries.                                                                                                                  |\n| Sedimentary rock    | Any rock formed through compaction and cementation of sediments.                                                                                                      |",
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
-            "chapter": "Glossary"
+            "chapter": "Glossary",
+            "type": "Content"
         }
     }
 ]

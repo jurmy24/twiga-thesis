@@ -46,11 +46,32 @@ if __name__ == "__main__":
 
     data_search = DataSearch()
 
+    data_search.es.search(
+        query={
+            # full-text search query here
+        },
+        knn={
+            # vector search query here
+        },
+        rank={
+            "rrf": {}
+        }
+    )
+
+
     filters = {
         "match": {
             "type": "Content"
         }
     }
+
+    "filter": [
+        {
+          "term": {
+            "metadata.type": "Content"
+          }
+        }
+      ]
 
     query_args_knn = {
         'field': 'embedding',

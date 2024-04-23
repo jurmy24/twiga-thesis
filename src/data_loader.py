@@ -1,4 +1,5 @@
 from elasticsearch import Elasticsearch
+from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 import os
 import json
@@ -16,37 +17,57 @@ DATA_DIR = os.getenv("DATA_DIR_PATH")
 class DataLoader:
 
     def __init__(self):
+        self.model = SentenceTransformer('all-MiniLM-L6-v2')
         self.es = Elasticsearch(cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_SEARCH_API_KEY)
         client_info = self.es.info()
-        # self.model = TBD
+
         print('Connected to Elasticsearch!')
         pprint(client_info.body)
+        print('Here are the twiga_documents mappings')
+        pprint(self.es.indices.get_mapping(index='twiga_documents'))
 
     def get_embedding(self, text):
         return self.model.encode(text)
 
     def create_index(self):
         self.es.indices.delete(index='twiga_documents', ignore_unavailable=True)
-        self.es.indices.create(index='twiga_documents')
-
+        self.es.indices.create(index='twiga_documents', mappings={
+            'properties': {
+                'embedding': {
+                    'type': 'dense_vector',
+                }
+            }
+        })
+        
     def insert_document(self, document: ChunkSchema):
+        embedding = self.get_embedding(document.page_content)
         return self.es.index(
-            index='twiga_documents', 
-            body=document.model_dump_json()
-        )
+            index='twiga_documents',
+            document={
+                **document.model_dump_json(),
+                'embedding': embedding,
+        })
+        # return self.es.index(
+        #     index='twiga_documents', 
+        #     body=document.model_dump_json()
+        # )
     
     def insert_documents(self, documents: List[ChunkSchema]):
         operations = []
         for document in documents:
+            embedding = self.get_embedding(document.page_content)
             operations.append({'index': {'_index': 'twiga_documents'}})
-            operations.append(document.model_dump_json())
+            operations.append({
+                **document.model_dump_json(),
+                'embedding': embedding,
+            })
 
-        return self.es.bulk(operations=operations, pipeline="ent-search-generic-ingestion")
+        return self.es.bulk(operations=operations)
     
-    def reindex(self):
+    def reindex(self, data_file_path):
         # This method is used if I want to regenerate the index 
         self.create_index()
-        with open(os.path.join(DATA_DIR, "documents", "json", "PLACEHOLDER.json"), 'rt') as f:
+        with open(os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json"), 'rt') as f:
             data = json.loads(f.read())
             # Convert JSON objects to DocumentSchema instances
             documents: List[ChunkSchema] = [ChunkSchema(**doc) for doc in data]
@@ -62,7 +83,7 @@ class DataLoader:
 if __name__ == "__main__":
 
     data_loader = DataLoader()
-    data_loader.create_index()
+    # data_loader.create_index()
 
     # document = ChunkSchema(
     #     title='Work From Home Policy',

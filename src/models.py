@@ -11,9 +11,9 @@ class Metadata(BaseModel):
     chapter: Optional[str] = None
     subsection: Optional[str] = None
     subsubsection: Optional[str] = None
+    type: Literal["Content", "Exercise"]
+    exercise_format: Optional[Literal['short-answer', 'long-answer', 'true-false', "multiple-choice", "match"]] = None
 
 class ChunkSchema(BaseModel):
-    page_content: str
+    chunk: str # this is the stuff that shall be embedded
     metadata: Metadata
-    type: str # this is just "Document" for all the entries...
-

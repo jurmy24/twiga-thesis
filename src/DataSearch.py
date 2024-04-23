@@ -65,13 +65,13 @@ if __name__ == "__main__":
         }
     }
 
-    "filter": [
-        {
-          "term": {
-            "metadata.type": "Content"
-          }
-        }
-      ]
+    # "filter": [
+    #     {
+    #       "term": {
+    #         "metadata.type": "Content"
+    #       }
+    #     }
+    #   ]
 
     query_args_knn = {
         'field': 'embedding',

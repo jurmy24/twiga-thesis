@@ -24,8 +24,6 @@ class DataLoader:
 
         print('Connected to Elasticsearch!')
         pprint(client_info.body)
-        print('Here are the twiga_documents mappings')
-        pprint(self.es.indices.get_mapping(index='twiga_documents'))
 
     def get_embedding(self, text):
         return self.model.encode(text)
@@ -42,24 +40,22 @@ class DataLoader:
         
     def insert_document(self, document: ChunkSchema):
         embedding = self.get_embedding(document.chunk)
+        document_data = json.loads(document.model_dump_json())
         return self.es.index(
             index='twiga_documents',
             document={
-                **document.model_dump_json(),
+                **document_data,
                 'embedding': embedding,
         })
-        # return self.es.index(
-        #     index='twiga_documents', 
-        #     body=document.model_dump_json()
-        # )
     
     def insert_documents(self, documents: List[ChunkSchema]):
         operations = []
         for document in documents:
             embedding = self.get_embedding(document.chunk)
+            document_data = json.loads(document.model_dump_json())
             operations.append({'index': {'_index': 'twiga_documents'}})
             operations.append({
-                **document.model_dump_json(),
+                **document_data,
                 'embedding': embedding,
             })
 
@@ -79,17 +75,20 @@ class DataLoader:
         return self.es.get(index="twiga_documents", id=id)
 
 if __name__ == "__main__":
+    # Paths to my data
+    exercise_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
+    content_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
 
-    # data_loader = DataLoader()
-    file_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
-    exercise_chunks = load_json_file_to_chunkschema(file_path)
+    data_loader = DataLoader()
 
-    file_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
-    content_chunks = load_json_file_to_chunkschema(file_path)
+    # To add all my chunks to elastic search from scratch
+    # data_loader.reindex(content_path)
 
-    print(exercise_chunks[0].model_dump_json(indent=4))
-    print(content_chunks[0].model_dump_json(indent=4))
-    # data_loader.create_index()
+    # print('Here are the twiga_documents mappings')
+    # pprint(data_loader.es.indices.get_mapping(index='twiga_documents'))
+
+    documents: List[ChunkSchema] = load_json_file_to_chunkschema(exercise_path)
+    data_loader.insert_documents(documents)
 
     # document = ChunkSchema(
     #     title='Work From Home Policy',

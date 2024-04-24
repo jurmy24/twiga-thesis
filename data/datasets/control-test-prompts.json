@@ -1,0 +1,152 @@
+[
+    {
+        "query": "Need statement to say if true or not about Film Noir Characteristics",
+        "requested_exercise_format": "true-false",
+        "topic": "Film Noir Characteristics"
+    },
+    {
+        "query": "Please prepare a detailed explanation question for the topic Understanding Wine Terroir.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Understanding Wine Terroir"
+    },
+    {
+        "query": "Can you make a define question on Animal Behavioral Studies?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Animal Behavioral Studies"
+    },
+    {
+        "query": "Can you prepare a question that requires students to explain Major Theories of Motivation?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Major Theories of Motivation"
+    },
+    {
+        "query": "I need a simple question about Animal Behavioral Studies where students can write short answers",
+        "requested_exercise_format": "short-answer",
+        "topic": "Animal Behavioral Studies"
+    },
+    {
+        "query": "I need a question where students can write details about 'Introduction to Philosophy'",
+        "requested_exercise_format": "long-answer",
+        "topic": "Introduction to Philosophy"
+    },
+    {
+        "query": "brief question about Ancient Egyptian Mythology",
+        "requested_exercise_format": "short-answer",
+        "topic": "Ancient Egyptian Mythology"
+    },
+    {
+        "query": "I need a short question for students to define something about The Science of Sleep.",
+        "requested_exercise_format": "short-answer",
+        "topic": "The Science of Sleep"
+    },
+    {
+        "query": "Provide a true or false statement for my students to answer about The Sociology of Fashion.",
+        "requested_exercise_format": "true-false",
+        "topic": "The Sociology of Fashion"
+    },
+    {
+        "query": "I need explaining question for my students about the Evolution of Video Games, make dem write plenty.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Evolution of Video Games"
+    },
+    {
+        "query": "give a true or false statement for our students to tackle on the Science of Sleep",
+        "requested_exercise_format": "true-false",
+        "topic": "The Science of Sleep"
+    },
+    {
+        "query": "Hello, can you provide a true or false statement regarding The Science of Sleep for my classwork?",
+        "requested_exercise_format": "true-false",
+        "topic": "The Science of Sleep"
+    },
+    {
+        "query": "Please, can you provide a true or false statement about the evolution of video games for our form 2 students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Evolution of Video Games"
+    },
+    {
+        "query": "I need a defining question about Introduction to Philosophy for the students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Introduction to Philosophy"
+    },
+    {
+        "query": "I need a detailed question for students to explain the stages of Child Language Acquisition.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Child Language Acquisition"
+    },
+    {
+        "query": "Can you create a detailed explaining question for students to discuss the latest advancements in robotics?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Advancements in Robotics"
+    },
+    {
+        "query": "Please i need a long question explaining the Mechanisms of Breathing",
+        "requested_exercise_format": "long-answer",
+        "topic": "Mechanisms of Breathing"
+    },
+    {
+        "query": "Create true/false statement about advancements in robotics for my classwork",
+        "requested_exercise_format": "true-false",
+        "topic": "Advancements in Robotics"
+    },
+    {
+        "query": "Can you create a true or false statement about the advancements in robotics for my students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Advancements in Robotics"
+    },
+    {
+        "query": "I need an explanation question about Child Language Acquisition for the students to detail in their homework.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Child Language Acquisition"
+    },
+    {
+        "query": "hi can you prepare a short answer question about the History of the Olympic Games for my students",
+        "requested_exercise_format": "short-answer",
+        "topic": "History of the Olympic Games"
+    },
+    {
+        "query": "hi, I need a long answer question on The Sociology of Fashion for my form 2 students",
+        "requested_exercise_format": "long-answer",
+        "topic": "The Sociology of Fashion"
+    },
+    {
+        "query": "Can you create a true-false statement for my students about the fundamentals of jazz music?",
+        "requested_exercise_format": "true-false",
+        "topic": "Fundamentals of Jazz Music"
+    },
+    {
+        "query": "Can you send me a true or false assertion suitable for Molecular Gastronomy to check understanding of my students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Molecular Gastronomy"
+    },
+    {
+        "query": "Can you prepare a short question on The Science of Sleep?",
+        "requested_exercise_format": "short-answer",
+        "topic": "The Science of Sleep"
+    },
+    {
+        "query": "Hello there, please could you create a define question about The Psychology of Color for my form 2 students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "The Psychology of Color"
+    },
+    {
+        "query": "hello, can you prepare a question for explaining the history of Comic Books in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "History of Comic Books"
+    },
+    {
+        "query": "I want a short question for the students about Biographies of Inventors",
+        "requested_exercise_format": "short-answer",
+        "topic": "Biographies of Inventors"
+    },
+    {
+        "query": "Hi, can u generate a short-answer question for Techniques in Modern Painting for my form2 students? Thanks",
+        "requested_exercise_format": "short-answer",
+        "topic": "Techniques in Modern Painting"
+    },
+    {
+        "query": "give me a true-false statement regarding the history of comic books for my students to work on",
+        "requested_exercise_format": "true-false",
+        "topic": "History of Comic Books"
+    }
+]

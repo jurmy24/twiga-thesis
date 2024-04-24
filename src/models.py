@@ -16,8 +16,15 @@ class EvalQuery(BaseModel):
     requested_exercise_format: Literal['short-answer', 'long-answer', 'true-false'] = Field(..., description="The type of question or exercise that is being requested.")
     topic: str
 
-class EvalQueryList(BaseModel):
-    queries: List[EvalQuery] = Field(..., description="A list of queries from Tanzanian teachers")
+    def to_dict(self):
+        return {
+            "query": self.query,
+            "requested_exercise_format": self.requested_exercise_format,
+            "topic": self.topic
+        }
+
+# class EvalQueryList(BaseModel):
+#     queries: List[EvalQuery] = Field(..., description="A list of queries from Tanzanian teachers")
 
 class Metadata(BaseModel):
     title: Optional[str] = None

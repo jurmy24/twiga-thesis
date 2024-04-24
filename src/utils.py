@@ -89,18 +89,46 @@ def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
         base_nodes_data = [node.__dict__ for node in base_nodes]
         json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
 
-def save_objects_as_json(objects, filename="objects.json"):
+# def save_objects_as_json(objects, filename="objects.json"):
+#     """
+#     Saves objects to a JSON file.
+
+#     Parameters:
+#     - objects: A list of object nodes or similar structures. Assumes each object can be directly serialized.
+#     - filename (str): The filename for the output JSON.
+#     """
+#     with open(filename, 'w', encoding='utf-8') as file:
+#         # Convert objects to a serializable format if necessary
+#         objects_data = [obj.to_dict() if hasattr(obj, 'to_dict') else obj for obj in objects]
+#         json.dump(objects_data, file, ensure_ascii=False, indent=4)
+
+def save_objects_as_json(objects, filename, rewrite=True):
     """
-    Saves objects to a JSON file.
+    Appends objects to a JSON file without overwriting existing data.
 
     Parameters:
-    - objects: A list of object nodes or similar structures. Assumes each object can be directly serialized.
+    - objects: A list of object nodes or similar structures. Assumes each object can be directly serialized or has a to_dict() method.
     - filename (str): The filename for the output JSON.
     """
+    data_to_save = [obj.to_dict() if hasattr(obj, 'to_dict') else obj for obj in objects]
+    
+    if not rewrite and os.path.exists(filename):
+        # File exists, read the existing data
+        with open(filename, 'r', encoding='utf-8') as file:
+            try:
+                existing_data = json.load(file)
+                if isinstance(existing_data, list):  # Assumes the root of the JSON is a list
+                    existing_data.extend(data_to_save)  # Add new data to the existing list
+                    data_to_save = existing_data
+                else:
+                    raise ValueError("JSON root is not a list; cannot append data.")
+            except json.JSONDecodeError:
+                print("Empty or invalid JSON file, starting fresh...")
+                data_to_save = [data_to_save]  # Start a new list if file is empty or not valid JSON
+
+    # Write the updated data back to the file
     with open(filename, 'w', encoding='utf-8') as file:
-        # Convert objects to a serializable format if necessary
-        objects_data = [obj.__dict__ for obj in objects]
-        json.dump(objects_data, file, ensure_ascii=False, indent=4)
+        json.dump(data_to_save, file, ensure_ascii=False, indent=4)
 
 def generate_text_qa_prompt(context: str, query: str) -> str:
     prompt = DEFAULT_TEXT_QA_PROMPT.format(context_str=context, query_str=query)

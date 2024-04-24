@@ -1,61 +1,1502 @@
-{
-    "queries": [
-      {
-        "query": "Can you give me some multiple choice questions about weather and climate for Form 2 students?",
-        "metadata": {
-          "topic": "Weather and Climate",
-          "subject": "Geography",
-          "question_type": "multiple choice"
-        }
-      },
-      {
-        "query": "I want closed questions for teaching about types of rainfall to my class.",
-        "metadata": {
-          "topic": "Types of Rainfall",
-          "subject": "Geography",
-          "question_type": "closed question"
-        }
-      },
-      {
-        "query": "Help me with questions for explain map reading to secondary school kids, the easier the better.",
-        "metadata": {
-          "topic": "Map Reading",
-          "subject": "Geography",
-          "question_type": "open question"
-        }
-      },
-      {
-        "query": "Need question on definition of erosion, not too hard for form two.",
-        "metadata": {
-          "topic": "Erosion",
-          "subject": "Geography",
-          "question_type": "definition"
-        }
-      },
-      {
-        "query": "Give me some questions about mountains, for second year of secondary.",
-        "metadata": {
-          "topic": "Mountains",
-          "subject": "Geography",
-          "question_type": "open question"
-        }
-      },
-      {
-        "query": "How to ask form two about importance of conserving natural vegetation in multiple choice?",
-        "metadata": {
-          "topic": "Conservation of Natural Vegetation",
-          "subject": "Geography",
-          "question_type": "multiple choice"
-        }
-      },
-      {
-        "query": "Create simple questions on population distribution for me, should be closed questions.",
-        "metadata": {
-          "topic": "Population Distribution",
-          "subject": "Geography",
-          "question_type": "closed question"
-        }
-      }
-    ]
-  }
-  
+[
+    {
+        "query": "Please provide a statement on global timber industry that is either true or false for my secondary students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Global timber industry"
+    },
+    {
+        "query": "Please I need a short question to ask my students about obstacles in river basin projects",
+        "requested_exercise_format": "short-answer",
+        "topic": "Obstacles in river basin projects"
+    },
+    {
+        "query": "Please prepare a true or false statement about rice cultivation for the upcoming geography test.",
+        "requested_exercise_format": "true-false",
+        "topic": "Rice cultivation"
+    },
+    {
+        "query": "Hello, I need a true or false statement question for my students about challenges in Tanzania's textile industry.",
+        "requested_exercise_format": "true-false",
+        "topic": "Textile industry challenges in Tanzania"
+    },
+    {
+        "query": "Kindly make a define question about secondary economic activities for my students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Secondary economic activities"
+    },
+    {
+        "query": "hello, can you create a question where learners explain factors that lead to growth of tourism in Tanzania.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tourism growth factors in Tanzania"
+    },
+    {
+        "query": "Can you provide a true or false statement for my students regarding the solutions to energy acquisition challenges in Tanzania?",
+        "requested_exercise_format": "true-false",
+        "topic": "Solutions to energy acquisition challenges in Tanzania"
+    },
+    {
+        "query": "I need a define question for the obstacles in energy production for the students form 2",
+        "requested_exercise_format": "short-answer",
+        "topic": "Obstacles in energy production"
+    },
+    {
+        "query": "Provide a true or false statement about the Natural gas sector in Tanzania for my classwork.",
+        "requested_exercise_format": "true-false",
+        "topic": "Natural gas sector in Tanzania"
+    },
+    {
+        "query": "people make description question on growth factors of South Korean electronic industries ",
+        "requested_exercise_format": "long-answer",
+        "topic": "Growth factors for South Korean electronic industries"
+    },
+    {
+        "query": "Give a right or wrong statement about Namibia's Tourism Authority for form 2 students to answer.",
+        "requested_exercise_format": "true-false",
+        "topic": "Namibia's Tourism Authority"
+    },
+    {
+        "query": "Can you please generate a define question about the significance of energy resources for my form two students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Significance of energy resources"
+    },
+    {
+        "query": "Hello my friend, please help with a describing question for enhacement methods of subsistence farming",
+        "requested_exercise_format": "long-answer",
+        "topic": "Enhancement methods for subsistence farming"
+    },
+    {
+        "query": "I need true or false question concerning applications of tea for the form 2.",
+        "requested_exercise_format": "true-false",
+        "topic": "Applications of tea"
+    },
+    {
+        "query": "I need a true or false question for my students about soil absorption.",
+        "requested_exercise_format": "true-false",
+        "topic": "Soil absorption"
+    },
+    {
+        "query": "hello can you provide a question for my students to write in detail about tea",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tea"
+    },
+    {
+        "query": "hello, kindly create a long description question on livestock farming practices in Australia for my form two students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Livestock farming practices in Australia"
+    },
+    {
+        "query": "hello there can u please make a long answer question about wildlife reserve management in Tanzania for form 2 students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Wildlife reserve management in Tanzania"
+    },
+    {
+        "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
+        "requested_exercise_format": "true-false",
+        "topic": "Pros of nomadic pastoralism"
+    },
+    {
+        "query": "I need a descriptive exercise for my students about enhancements to tourist sites",
+        "requested_exercise_format": "long-answer",
+        "topic": "Enhancements to tourist sites"
+    },
+    {
+        "query": "generaate an explanation question about challenges of subsistence farming in rural areas",
+        "requested_exercise_format": "long-answer",
+        "topic": "Drawbacks of subsistence farming"
+    },
+    {
+        "query": "Please, I need a short question about cultivated forests for form two students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Cultivated forests"
+    },
+    {
+        "query": "hi, need students to explain details about how natural springs are formed for classwork",
+        "requested_exercise_format": "long-answer",
+        "topic": "Natural springs"
+    },
+    {
+        "query": "Can you provide a long-answer question about the characteristics of subsistence farming for my form 2 students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Traits of subsistence farming"
+    },
+    {
+        "query": "can you drop a define question for renewable energy challenges in the USA for my students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Renewable energy challenges in the USA"
+    },
+    {
+        "query": "Can you generate a question requiring students to describe the growth factors for South Korean electronic industries?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Growth factors for South Korean electronic industries"
+    },
+    {
+        "query": "Hello, can you help with a define question on Opencast mining for my form 2 students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Opencast mining"
+    },
+    {
+        "query": "hi, I need a listing question about on renewable energy in USA",
+        "requested_exercise_format": "short-answer",
+        "topic": "Utilization of solar and wind power in the USA"
+    },
+    {
+        "query": "hello, can u create a question about nomadic farming where students need to explain in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Nomadic farming"
+    },
+    {
+        "query": "Can you send me a quick question about the benefits of subsistence farming?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Benefits of subsistence farming"
+    },
+    {
+        "query": "can I get a long question on environmental pollution from industries for the students to write a detailed answer?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Environmental pollution from industries"
+    },
+    {
+        "query": "Give a right or wrong statement about growing crops for my students form 2 exam",
+        "requested_exercise_format": "true-false",
+        "topic": "Growing crops"
+    },
+    {
+        "query": "Make a true or false question regarding challenges faced by renewable energy in the USA for form 2.",
+        "requested_exercise_format": "true-false",
+        "topic": "Renewable energy challenges in the USA"
+    },
+    {
+        "query": "please, I need a defining question about the mitigation strategies for energy production challenges",
+        "requested_exercise_format": "short-answer",
+        "topic": "Mitigation strategies for energy production challenges"
+    },
+    {
+        "query": "Hello, can I have an explaining question on how Tanzania is handling natural gas challenges",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tanzania's strategies for natural gas challenges"
+    },
+    {
+        "query": "Can you make a true or false question on tourist site enhancements for my form 2 students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Enhancements to tourist sites"
+    },
+    {
+        "query": "List basic principles in agriculture for a short exercise in class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Basics of agriculture"
+    },
+    {
+        "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+        "requested_exercise_format": "long-answer",
+        "topic": "Enhancing tourist access to attractions"
+    },
+    {
+        "query": "Please give a true or false statement for the students to answer about essential conditions for coffee cultivation.",
+        "requested_exercise_format": "true-false",
+        "topic": "Essential conditions for coffee cultivation"
+    },
+    {
+        "query": "Please create a true or false statement about Hydroelectric and biogas energy in Tanzania for my form 2 students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Hydroelectric and biogas energy in Tanzania"
+    },
+    {
+        "query": "Prepare a true or false question regarding natural springs for our geography class.",
+        "requested_exercise_format": "true-false",
+        "topic": "Natural springs"
+    },
+    {
+        "query": "need a true/false statement about properties of tropical rainforests for the class work.",
+        "requested_exercise_format": "true-false",
+        "topic": "Properties of tropical rainforests"
+    },
+    {
+        "query": "I need a describing question on hydroelectric and biogas energy in Tanzania for form 2 students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Hydroelectric and biogas energy in Tanzania"
+    },
+    {
+        "query": "i need a question which helps students to develop a deep understanding about forests",
+        "requested_exercise_format": "long-answer",
+        "topic": "Understanding forests"
+    },
+    {
+        "query": "Hello! Can you help me to prepare a long-answer question regarding the factors behind the industrial success of Japan?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Factors in Japanese industrial success"
+    },
+    {
+        "query": "Can you provide me a true or false statement for the students about the economic impacts of agriculture in Tanzania?",
+        "requested_exercise_format": "true-false",
+        "topic": "Economic impacts of agriculture in Tanzania"
+    },
+    {
+        "query": "I need a defining question about Tropical monsoon forests for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tropical monsoon forests"
+    },
+    {
+        "query": "Hello, can you create a true or false statement for my students to work on methods to mitigate industrial pollution?",
+        "requested_exercise_format": "true-false",
+        "topic": "Methods to mitigate industrial pollution"
+    },
+    {
+        "query": "Hi, I need a question on how solar and wind power are used in the USA, no long text please, just short answer type.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Utilization of solar and wind power in the USA"
+    },
+    {
+        "query": "i need a true and false question for my students about challenges in tourism industry in Namibia",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism industry challenges in Namibia"
+    },
+    {
+        "query": "Could you help me to make a long question for students to explain the process of petroleum extraction in the Middle East?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Petroleum extraction in the Middle East"
+    },
+    {
+        "query": "morning plz, need a long answer question on how subsistence farming benefits my students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Benefits of subsistence farming"
+    },
+    {
+        "query": "I want a quick answer question about tourism in Namibia",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tourism in Namibia"
+    },
+    {
+        "query": "Give a true or false statement about the role of tourism in Switzerland’s economy",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism's role in Switzerland's economy"
+    },
+    {
+        "query": "Can you help me with a short answer question on palm oil effects?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Palm oil"
+    },
+    {
+        "query": "Generate a true-false statement on Tanzania’s strategies for addressing natural gas challenges.",
+        "requested_exercise_format": "true-false",
+        "topic": "Tanzania's strategies for natural gas challenges"
+    },
+    {
+        "query": "Hi, I want to have a describe-type question for students to write about the sector of extraction industries",
+        "requested_exercise_format": "long-answer",
+        "topic": "Sector of extraction industries"
+    },
+    {
+        "query": "i need a define question about significance of renewable energies in USA for my students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Significance of renewable energies in the USA"
+    },
+    {
+        "query": "Generate a right or wrong statement about Problems in Tanzanian natural gas sector for my students to discuss",
+        "requested_exercise_format": "true-false",
+        "topic": "Problems in Tanzanian natural gas sector"
+    },
+    {
+        "query": "Please, i need an explaining task where students will describe growing conditions for sisal",
+        "requested_exercise_format": "long-answer",
+        "topic": "Growing conditions for sisal"
+    },
+    {
+        "query": "Need a define question on Post-harvest processing and transport of cloves",
+        "requested_exercise_format": "short-answer",
+        "topic": "Post-harvest processing and transport of cloves"
+    },
+    {
+        "query": "Kindly create a question requiring detailed explanation on the significance of human activities for form 2 students.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Significance of human activities"
+    },
+    {
+        "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Ocean water"
+    },
+    {
+        "query": "hi, i need a long answer question on management of wildlife reserves in Tanzania for my students to discuss",
+        "requested_exercise_format": "long-answer",
+        "topic": "Wildlife reserve management in Tanzania"
+    },
+    {
+        "query": "good morning, can you make a long question on Cons of nomadic pastoralism where students explain in detail",
+        "requested_exercise_format": "long-answer",
+        "topic": "Cons of nomadic pastoralism"
+    },
+    {
+        "query": "Hi, can you provide me with a long question for form 2 that asks them to explain the economic value of water, thanks.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Economic value of water"
+    },
+    {
+        "query": "Can you create a long-answer question where students have to explain the Advantages of raising livestock?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Advantages of raising livestock"
+    },
+    {
+        "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Varieties of human activities"
+    },
+    {
+        "query": "hey buddy, can you help me to create a description question on the benefits of commercial livestock farming that I can use for the class?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Benefits of commercial livestock farming"
+    },
+    {
+        "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
+        "requested_exercise_format": "true-false",
+        "topic": "Post-harvest processing of tea"
+    },
+    {
+        "query": "can u send me true false question for topic Drivers of global tourism growth for form 2",
+        "requested_exercise_format": "true-false",
+        "topic": "Drivers of global tourism growth"
+    },
+    {
+        "query": "Please, can you create a true/false question about the categories of manufacturing for our next class session?",
+        "requested_exercise_format": "true-false",
+        "topic": "Categories of manufacturing"
+    },
+    {
+        "query": "Provide a true or false statement on Traditional fallowing techniques to test form 2 students",
+        "requested_exercise_format": "true-false",
+        "topic": "Traditional fallowing techniques"
+    },
+    {
+        "query": "Could you create a define question on Post-harvest processing of tea for my form 2 students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Post-harvest processing of tea"
+    },
+    {
+        "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
+        "requested_exercise_format": "short-answer",
+        "topic": "Groundwater sources"
+    },
+    {
+        "query": "Hi there, can you help me with creating a question for form 2 that requires them to explain about Tertiary economic activities?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tertiary economic activities"
+    },
+    {
+        "query": "Describe the various strategies used in the post-harvest processing and transportation of cloves in detail.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Post-harvest processing and transport of cloves"
+    },
+    {
+        "query": "hi, can i have a short-answer question on the applications of sisal for my students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Applications of sisal"
+    },
+    {
+        "query": "please, i need a question on Growing conditions for sisal where students have to explain in detail.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Growing conditions for sisal"
+    },
+    {
+        "query": "I need a describe question about evaporation for form two students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Evaporation"
+    },
+    {
+        "query": "Make a true or false statement about challenges faced in Switzerland's tourism sector for my form 2 class",
+        "requested_exercise_format": "true-false",
+        "topic": "Problems in Switzerland's tourism sector"
+    },
+    {
+        "query": "Can you help create a define question for obstacles in energy production for form 2 geography class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Obstacles in energy production"
+    },
+    {
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Drawbacks of commercial livestock farming"
+    },
+    {
+        "query": "Hello, I need a true or false question about palm oil for the form 2 students.",
+        "requested_exercise_format": "true-false",
+        "topic": "palm oil"
+    },
+    {
+        "query": "I need long answer question about how tea is used in various ways.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Applications of tea"
+    },
+    {
+        "query": "Give me a yes or no question about Tanzania's strategies in handling challenges in the natural gas sector for my form 2 students",
+        "requested_exercise_format": "true-false",
+        "topic": "Tanzania's strategies for natural gas challenges"
+    },
+    {
+        "query": "Please i need a question that requires students to describe the importance of particle sizing in industries",
+        "requested_exercise_format": "long-answer",
+        "topic": "Particle sizing"
+    },
+    {
+        "query": "Please make a define question about Manufacturing sectors for my form 2 students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Manufacturing sectors"
+    },
+    {
+        "query": "please help me generate a long answer question for students to explain about Primary economic activities",
+        "requested_exercise_format": "long-answer",
+        "topic": "Primary economic activities"
+    },
+    {
+        "query": "Hello, can you help me with a long question about mining sectors and how it adds to our economy in Tanzania for my students to answer in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Mining sector's economic contributions in Tanzania"
+    },
+    {
+        "query": "Hello, can you help me with a true or false statement about The Rufiji Basin for my form 2 students? Thanks!",
+        "requested_exercise_format": "true-false",
+        "topic": "The Rufiji Basin in Tanzania"
+    },
+    {
+        "query": "hello, can you provide a short question about logistics of timber transportation",
+        "requested_exercise_format": "short-answer",
+        "topic": "Logistics of timber transportation"
+    },
+    {
+        "query": "Please can you create a true or false statement about the features of commercial livestock farming for my classwork task?",
+        "requested_exercise_format": "true-false",
+        "topic": "Features of commercial livestock farming"
+    },
+    {
+        "query": "Need a describing question for form two about raising livestock in Tanzania",
+        "requested_exercise_format": "long-answer",
+        "topic": "Raising livestock"
+    },
+    {
+        "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Comparing livestock farming in Tanzania and Australia"
+    },
+    {
+        "query": "please i need a define question for value of forest resources for form 2",
+        "requested_exercise_format": "short-answer",
+        "topic": "Value of forest resources"
+    },
+    {
+        "query": "Please, can you generate a question that requires students to explain the significance of renewable energies in the USA in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Significance of renewable energies in the USA"
+    },
+    {
+        "query": "Hi, could you create a short-answer question related to the impact of population dynamics on small-scale farming for my classwork?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Impact of population dynamics on small-scale farming"
+    },
+    {
+        "query": "send me a define question for my students about Post-harvest processing and transport of cloves.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Post-harvest processing and transport of cloves"
+    },
+    {
+        "query": "Please, I need a brief question on problems facing large-scale farming in America.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Issues in American large-scale farming"
+    },
+    {
+        "query": "Define mineral separation",
+        "requested_exercise_format": "short-answer",
+        "topic": "Mineral separation"
+    },
+    {
+        "query": "Give me a true or false statement about South Korea's electronics industry for the students to answer",
+        "requested_exercise_format": "true-false",
+        "topic": "South Korea's electronics industry"
+    },
+    {
+        "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Significance of hydroelectric power and biogas in Tanzania"
+    },
+    {
+        "query": "Can you give me a short question concerning the problems in Switzerland tourism?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Problems in Switzerland's tourism sector"
+    },
+    {
+        "query": "I need a quick short-answer question about the benefits from water resources for my form 2 students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Benefits from water resources"
+    },
+    {
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "requested_exercise_format": "long-answer",
+        "topic": "Economic impact of petroleum in Middle Eastern countries"
+    },
+    {
+        "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+        "requested_exercise_format": "long-answer",
+        "topic": "Cultivation techniques for sisal"
+    },
+    {
+        "query": "Good morning, may I get a true/false statement about traits of deciduous forests for our class discussion?",
+        "requested_exercise_format": "true-false",
+        "topic": "traits of deciduous forests"
+    },
+    {
+        "query": "Generate a correct or false statement about water sources for my students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Water sources"
+    },
+    {
+        "query": "Please prepare a statement for me to ask my form two students, it should be a true or false about sustainable management of water resources.",
+        "requested_exercise_format": "true-false",
+        "topic": "Sustainable management of water resources"
+    },
+    {
+        "query": "Please, I need a define question about understanding forests for my form 2 class.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Understanding forests"
+    },
+    {
+        "query": "Give a right or wrong statement about obstacles in energy production for form 2 students",
+        "requested_exercise_format": "true-false",
+        "topic": "Obstacles in energy production"
+    },
+    {
+        "query": "can u prepare true or false statement about economic value of water for form 2",
+        "requested_exercise_format": "true-false",
+        "topic": "Economic value of water"
+    },
+    {
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Automobile industry in Japan"
+    },
+    {
+        "query": "Can you create a short-answer question on challenges faced by the natural gas sector in Tanzania?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Problems in Tanzanian natural gas sector"
+    },
+    {
+        "query": "Give a true or false question about drivers of global tourism growth for my form two students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Drivers of global tourism growth"
+    },
+    {
+        "query": "I need a question that requires the students to explain the obstacles faced in river basin projects",
+        "requested_exercise_format": "long-answer",
+        "topic": "Obstacles in river basin projects"
+    },
+    {
+        "query": "Hello! Please can you create a describe exercise that talks about the advantages of river basin developments for my students to answer extensively?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Advantages of river basin developments"
+    },
+    {
+        "query": "hi, need a true-or-false statement for global timber industry for the kids to answer",
+        "requested_exercise_format": "true-false",
+        "topic": "Global timber industry"
+    },
+    {
+        "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Types of surface water"
+    },
+    {
+        "query": "Can you help me create a long-answer question where students need to explore the challenges in the Tanzanian natural gas sector?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Problems in Tanzanian natural gas sector"
+    },
+    {
+        "query": "please I need a short answer question on post-harvest processing of tea for my students to answer in geography form 2",
+        "requested_exercise_format": "short-answer",
+        "topic": "Post-harvest processing of tea"
+    },
+    {
+        "query": "Can u make a define question about disadvantages of nomadic pastoralism?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Cons of nomadic pastoralism"
+    },
+    {
+        "query": "can you generate a short answer question about factors in Japanese industrial success for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Factors in Japanese industrial success"
+    },
+    {
+        "query": "good morning, I need an explaining question for the students to describe primary economic activities in class",
+        "requested_exercise_format": "long-answer",
+        "topic": "Primary economic activities"
+    },
+    {
+        "query": "I need a descriptive question on undisturbed forests for my form two geog class",
+        "requested_exercise_format": "long-answer",
+        "topic": "undisturbed forests"
+    },
+    {
+        "query": "Generate a defining question that covers the environmental requirements necessary for tea cultivation.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Environmental requirements for tea cultivation"
+    },
+    {
+        "query": "Make a true or false statement about solutions to energy acquisition challenges in Tanzania for form two students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Solutions to energy acquisition challenges in Tanzania"
+    },
+    {
+        "query": "morning, I need a question for the students to explain process of evaporation",
+        "requested_exercise_format": "long-answer",
+        "topic": "Evaporation"
+    },
+    {
+        "query": "I need a short answer question that students must define about soil absorption, for next Monday's class test.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Soil absorption"
+    },
+    {
+        "query": "need a true or false about basics of agriculture can you make for my kids to answer?",
+        "requested_exercise_format": "true-false",
+        "topic": "Basics of agriculture"
+    },
+    {
+        "query": "I need a quick question about the uses of palm oil for the Geography class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Applications of palm oil"
+    },
+    {
+        "query": "can you make a short question about categories of manufacturing",
+        "requested_exercise_format": "short-answer",
+        "topic": "categories of manufacturing"
+    },
+    {
+        "query": "Please i need an explaining question for the effects of population growth on subsistence farming.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Population growth effects on subsistence farming"
+    },
+    {
+        "query": "please can you make a true or false question about undisturbed forests",
+        "requested_exercise_format": "true-false",
+        "topic": "Undisturbed forests"
+    },
+    {
+        "query": "Give a true or false statement for form 2 about the practice of crop rotation.",
+        "requested_exercise_format": "true-false",
+        "topic": "Practice of crop rotation"
+    },
+    {
+        "query": "Can u create a statement true or false kind of question for the topic of soil absorption?",
+        "requested_exercise_format": "true-false",
+        "topic": "Soil absorption"
+    },
+    {
+        "query": "define the significance of renewable energies in the USA for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Significance of renewable energies in the USA"
+    },
+    {
+        "query": "Please I need a short question about additional water resources for form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Additional water resources"
+    },
+    {
+        "query": "Hello, I need a defining question about growing conditions for cloves",
+        "requested_exercise_format": "short-answer",
+        "topic": "Growing conditions for cloves"
+    },
+    {
+        "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+        "requested_exercise_format": "short-answer",
+        "topic": "livestock farming issues"
+    },
+    {
+        "query": "niwekee swali la short-answer kuhusu matatizo katika viwanda vya mafuta Middle East",
+        "requested_exercise_format": "short-answer",
+        "topic": "Problems in Middle Eastern oil industries"
+    },
+    {
+        "query": "i need a true or false question for form two about Primary economic activities",
+        "requested_exercise_format": "true-false",
+        "topic": "Primary economic activities"
+    },
+    {
+        "query": "Good morning, please prepare a short question about the practice of crop rotation for my form 2 students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Practice of crop rotation"
+    },
+    {
+        "query": "Can I have a question where students could explain the measures to be taken to reduce negative impacts of tourism",
+        "requested_exercise_format": "long-answer",
+        "topic": "Mitigating negative tourism impacts"
+    },
+    {
+        "query": "good afternoon, I need a long answer question for problems in the forestry sector where students can write detailed explanation",
+        "requested_exercise_format": "long-answer",
+        "topic": "Problems in the forestry sector"
+    },
+    {
+        "query": "Give a True or False question regarding various human activities",
+        "requested_exercise_format": "true-false",
+        "topic": "Varieties of human activities"
+    },
+    {
+        "query": "Give me a question to help students define ways to enhance tourist access to attractions",
+        "requested_exercise_format": "short-answer",
+        "topic": "Enhancing tourist access to attractions"
+    },
+    {
+        "query": "Can you make a long-answer question about the importance of cloves in the spice trade?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Cloves"
+    },
+    {
+        "query": "give me a true or false questions about industrial noise issues for the students please",
+        "requested_exercise_format": "true-false",
+        "topic": "Industrial noise issues"
+    },
+    {
+        "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
+        "requested_exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania"
+    },
+    {
+        "query": "I need a describing exercise about examples of river basin projects in my geography session for form two.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Examples of river basin projects"
+    },
+    {
+        "query": "I need a short definition question for students about Groundwater sources.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Groundwater sources"
+    },
+    {
+        "query": "Can you create a question where you get the students to explain how tourism impacts Switzerland's economy?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tourism's role in Switzerland's economy"
+    },
+    {
+        "query": "Please can you create a short question that requires small answer on global mineral distribution",
+        "requested_exercise_format": "short-answer",
+        "topic": "Global mineral distribution"
+    },
+    {
+        "query": "I need an explaining question for students to discuss the significance of energy resources",
+        "requested_exercise_format": "long-answer",
+        "topic": "Significance of energy resources"
+    },
+    {
+        "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
+        "requested_exercise_format": "true-false",
+        "topic": "Features of commercial farming"
+    },
+    {
+        "query": "Hi, could you provide a true or false statement about enhancing large-scale farming in Tanzania for my class?",
+        "requested_exercise_format": "true-false",
+        "topic": "Enhancing large-scale farming in Tanzania"
+    },
+    {
+        "query": "Give a true or false statement for my students to assess on the growth factors for South Korean electronic industries.",
+        "requested_exercise_format": "true-false",
+        "topic": "Growth factors for South Korean electronic industries"
+    },
+    {
+        "query": "Please give me a task about differences in livestock farming between Tanzania and Australia for the students to write a detailed response.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Contrasts in livestock farming between Tanzania and Australia"
+    },
+    {
+        "query": "Could you generate a short-answer question about traditional fallowing techniques for a form 2 geography class?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Traditional fallowing techniques"
+    },
+    {
+        "query": "help me creating a right or wrong statement for my students about Strategies to improve transport in Tanzania",
+        "requested_exercise_format": "true-false",
+        "topic": "Strategies to improve transport in Tanzania"
+    },
+    {
+        "query": "List question for features of commercial livestock farming for form two students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Features of commercial livestock farming"
+    },
+    {
+        "query": "hi, can you help with a explaining question where students describe about Tropical monsoon forests for their homework",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tropical monsoon forests"
+    },
+    {
+        "query": "could you create a true or false query on tourism in Namibia for my students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism in Namibia"
+    },
+    {
+        "query": "Hello, can you make a question where students describe the differences in livestock farming in Tanzania and Australia?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Comparing livestock farming in Tanzania and Australia"
+    },
+    {
+        "query": "Hello there, can you help by creating an explaining exercise about Livestock farming in our country Tanzania? I want students to go deep into the topic.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Livestock farming in Tanzania"
+    },
+    {
+        "query": "I need explain question about all the things students should know about using solar and wind power in USA for their homework.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Utilization of solar and wind power in the USA"
+    },
+    {
+        "query": "Please send a short answer question on Fundamentals of Power and Energy.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Fundamentals of Power and Energy"
+    },
+    {
+        "query": "Please create a true or false question on uses of cloves for my geography class.",
+        "requested_exercise_format": "true-false",
+        "topic": "Applications of cloves"
+    },
+    {
+        "query": "I need a define question for soil absorption",
+        "requested_exercise_format": "short-answer",
+        "topic": "Soil absorption"
+    },
+    {
+        "query": "Can u help with a question to define extraction industries for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Extraction industries"
+    },
+    {
+        "query": "Can you create a true or false question regarding the use of solar and wind energy in USA For my form 2 geography class?",
+        "requested_exercise_format": "true-false",
+        "topic": "Utilization of solar and wind power in the USA"
+    },
+    {
+        "query": "I need a true or false statement on natural springs that i can use for form 2 geography test",
+        "requested_exercise_format": "true-false",
+        "topic": "Natural springs"
+    },
+    {
+        "query": "I need a true or false statement about growing conditions for sisal for my form 2 geography students",
+        "requested_exercise_format": "true-false",
+        "topic": "Growing conditions for sisal"
+    },
+    {
+        "query": "I need a question about defining wind patterns for the form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Wind patterns"
+    },
+    {
+        "query": "Can you help with right or wrong statement for my students on how the distance to water sources influences Tanzanian girls?",
+        "requested_exercise_format": "true-false",
+        "topic": "Influence of water source distance on Tanzanian girls"
+    },
+    {
+        "query": "Hello, can you help me with a define question on hydroelectric and biogas energy in Tanzania?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Hydroelectric and Biogas Energy in Tanzania"
+    },
+    {
+        "query": "Can you create an explaining question on how water sources get contaminated that my form 2 students can answer in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Contamination of water sources"
+    },
+    {
+        "query": "Create a T-F statement for students to assess their understanding of Extensive crop cultivation.",
+        "requested_exercise_format": "true-false",
+        "topic": "Extensive crop cultivation"
+    },
+    {
+        "query": "can you help with question for students to explain the factors that contribute to tourism development in Namibia?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tourism development factors in Namibia"
+    },
+    {
+        "query": "Can you create a define question for procedures in oil palm farming?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Procedures for oil palm farming"
+    },
+    {
+        "query": "hello there, can you prepare a true or false assertion concerning mineral occurrences for the kids?",
+        "requested_exercise_format": "true-false",
+        "topic": "mineral occurrences"
+    },
+    {
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "requested_exercise_format": "true-false",
+        "topic": "Problems in Tanzanian natural gas sector"
+    },
+    {
+        "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
+        "requested_exercise_format": "true-false",
+        "topic": "Fundamentals of Power and Energy"
+    },
+    {
+        "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Basics of the manufacturing sector"
+    },
+    {
+        "query": "Hi, I need a short question for our form 2 on human activities concept.",
+        "requested_exercise_format": "short-answer",
+        "topic": "human activities"
+    },
+    {
+        "query": "Please, I need a detailed question for my form two students to explain the importance of Tourism in Tanzania.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tourism's significance in Tanzania"
+    },
+    {
+        "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+        "requested_exercise_format": "true-false",
+        "topic": "Contrasts in livestock farming between Tanzania and Australia"
+    },
+    {
+        "query": "Can you create a short definition question about the economic impacts of agriculture in Tanzania for my form two students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Economic impacts of agriculture in Tanzania"
+    },
+    {
+        "query": "Hello, I need a detailed question on assembly industries that requires students to explain thoroughly.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Assembly industries"
+    },
+    {
+        "query": "Please, I need a defining question about Traditional pastoralism for my students to answer briefly.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Traditional pastoralism"
+    },
+    {
+        "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+        "requested_exercise_format": "true-false",
+        "topic": "Metal extraction sector"
+    },
+    {
+        "query": "Need a describe question about variety of plant life for form two students classwork.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Varieties of plant life"
+    },
+    {
+        "query": "Please create a question asking students to describe the challenges faced by the East African transport sector.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Problems encountered by the East African transport sector"
+    },
+    {
+        "query": "I need a long-answer question about Tanzania's strategies for dealing with natural gas challenges",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tanzania's natural gas strategies"
+    },
+    {
+        "query": "requesting short definition type question for form 2 concerning Automobile industry in Japan",
+        "requested_exercise_format": "short-answer",
+        "topic": "Automobile industry in Japan"
+    },
+    {
+        "query": "I need a short-answer question for my students in form 2 about Freshwater sources and the water cycle.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Freshwater sources and the water cycle"
+    },
+    {
+        "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tourism industry problems in Tanzania"
+    },
+    {
+        "query": "Need a short answer question about Namibia's Tourism Authority",
+        "requested_exercise_format": "short-answer",
+        "topic": "Namibia's Tourism Authority"
+    },
+    {
+        "query": "hi, I need a short question about emissions from manufacturing activities",
+        "requested_exercise_format": "short-answer",
+        "topic": "Emissions from manufacturing activities"
+    },
+    {
+        "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Water sources"
+    },
+    {
+        "query": "need right or wrong statement on transhumance practices for my form 2 class",
+        "requested_exercise_format": "true-false",
+        "topic": "Transhumance practices"
+    },
+    {
+        "query": "Hello, can you create a true or false statement for my form 2 students about mining techniques?",
+        "requested_exercise_format": "true-false",
+        "topic": "Mining techniques"
+    },
+    {
+        "query": "Give a right or wrong statement about growth factors for South Korean electronic industries",
+        "requested_exercise_format": "true-false",
+        "topic": "Growth factors for South Korean electronic industries"
+    },
+    {
+        "query": "Can you create a true or false statement about traditional fallowing techniques for my students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Traditional fallowing techniques"
+    },
+    {
+        "query": "Need an explaining question on economic impacts of agriculture in USA",
+        "requested_exercise_format": "long-answer",
+        "topic": "Economic impacts of agriculture in the USA"
+    },
+    {
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "requested_exercise_format": "true-false",
+        "topic": "Reducing environmental impacts of mining"
+    },
+    {
+        "query": "Give a true or false statement about enhancements to tourist sites for form two geography students",
+        "requested_exercise_format": "true-false",
+        "topic": "Enhancements to tourist sites"
+    },
+    {
+        "query": "Give me a long answer question about wind patterns, where students must describe in detail.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Wind patterns"
+    },
+    {
+        "query": "can you provide a describe question on types of commercial farming",
+        "requested_exercise_format": "long-answer",
+        "topic": "Varieties of commercial farming"
+    },
+    {
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Traits of nomadic pastoralism"
+    },
+    {
+        "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Issues in American large-scale farming"
+    },
+    {
+        "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+        "requested_exercise_format": "true-false",
+        "topic": "Benefits of natural gas in Tanzania"
+    },
+    {
+        "query": "I want a short answer question about non-renewable resources for my students to handle.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Non-renewable resources"
+    },
+    {
+        "query": "Please can you give me a short question on sustainable management of water resources",
+        "requested_exercise_format": "short-answer",
+        "topic": "Sustainable management of water resources"
+    },
+    {
+        "query": "I need a long detailed question on non-renewable resources fit for classwork.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Non-renewable resources"
+    },
+    {
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Livestock farming practices in Australia"
+    },
+    {
+        "query": "provide a true or false statement about advantages of raising livestock for students",
+        "requested_exercise_format": "true-false",
+        "topic": "Advantages of raising livestock"
+    },
+    {
+        "query": "I need a detail explanation question about the basics of manufacturing sector for my students to answer",
+        "requested_exercise_format": "long-answer",
+        "topic": "Basics of the manufacturing sector"
+    },
+    {
+        "query": "I need a question where students can list river basin projects",
+        "requested_exercise_format": "short-answer",
+        "topic": "Examples of river basin projects"
+    },
+    {
+        "query": "hi, I need a short-answer question about hydroelectric and biogas energy in Tanzania",
+        "requested_exercise_format": "short-answer",
+        "topic": "Hydroelectric and biogas energy in Tanzania"
+    },
+    {
+        "query": "need question for a long answer about Ocean water, students should describe this extensively",
+        "requested_exercise_format": "long-answer",
+        "topic": "Ocean water"
+    },
+    {
+        "query": "Is it true that water wells can also be used for geothermal energy?",
+        "requested_exercise_format": "true-false",
+        "topic": "Water wells"
+    },
+    {
+        "query": "Hello, I need a simple question that asks students to define measures for enhancing tourist access to attractions",
+        "requested_exercise_format": "short-answer",
+        "topic": "Enhancing tourist access to attractions"
+    },
+    {
+        "query": "Create a true or false question to test form 2 students about growing conditions for cloves.",
+        "requested_exercise_format": "true-false",
+        "topic": "Growing conditions for cloves"
+    },
+    {
+        "query": "Can you prepare a true or false question on nomadic farming for my geography class?",
+        "requested_exercise_format": "true-false",
+        "topic": "Nomadic farming"
+    },
+    {
+        "query": "Hi, please create a short question about Tropical rainforest for me to use in class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tropical rainforest"
+    },
+    {
+        "query": "Can you make me a true or false statement regarding mineral refinement methods for the students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Mineral refinement methods"
+    },
+    {
+        "query": "Can you please create a true or false question concerning the Automobile industry in Japan for my students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Automobile industry in Japan"
+    },
+    {
+        "query": "Can you creat true or false question dealing with extraction of non-metal minerals?",
+        "requested_exercise_format": "true-false",
+        "topic": "non-metal mineral extraction"
+    },
+    {
+        "query": "Think about whether Manufacturing sectors in East Africa mostly involve agriculture-based industries. True or false?",
+        "requested_exercise_format": "true-false",
+        "topic": "Manufacturing sectors in East Africa"
+    },
+    {
+        "query": "can you help to make a define question on problems of getting energy in Tanzania for my students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania"
+    },
+    {
+        "query": "Request a long-answer exercise on Post-harvest processing of tea.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Post-harvest processing of tea"
+    },
+    {
+        "query": "Good morning, I need a detailed explanation question about emission gases for my form 2 students.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Emission gases"
+    },
+    {
+        "query": "Can you give a true or false statement about how tourism contributes to Switzerland's economy for classwork?",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism's role in Switzerland's economy"
+    },
+    {
+        "query": "Hello, can you help me to create a detailed question about the growing conditions for sisal that form 2 students can write about in their geography lesson?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Growing conditions for sisal"
+    },
+    {
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Secondary economic activities"
+    },
+    {
+        "query": "Can you please provide a short answer question on wind patterns for my form two students to work on?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Wind patterns"
+    },
+    {
+        "query": "Give me a statement for true or false about placer mining",
+        "requested_exercise_format": "true-false",
+        "topic": "Placer mining"
+    },
+    {
+        "query": "my dear, I need a define question on petroleum and natural gas industry for form two",
+        "requested_exercise_format": "short-answer",
+        "topic": "Petroleum and natural gas industry"
+    },
+    {
+        "query": "good afternoon, can you help me with a explaining question about the disadvantages of nomadic pastoralism for my form 2 class?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Cons of nomadic pastoralism"
+    },
+    {
+        "query": "Hi, i need a true or false question for form 2 about additional water resources.",
+        "requested_exercise_format": "true-false",
+        "topic": "Additional water resources"
+    },
+    {
+        "query": "Can you help to create a short-answer question about procedures for coffee farming?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Procedures for coffee farming"
+    },
+    {
+        "query": "hi, can u make an exercise where student write explaining Economic role of livestock farming",
+        "requested_exercise_format": "long-answer",
+        "topic": "Economic role of livestock farming"
+    },
+    {
+        "query": "I need a define question about solid industrial waste for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "Solid Industrial Waste"
+    },
+    {
+        "query": "Please, can I have a true or false statement for my students to solve on the topic of human activities and their significance?",
+        "requested_exercise_format": "true-false",
+        "topic": "Significance of human activities"
+    },
+    {
+        "query": "Hello, I need a question on shaft mining where students can elaborately describe the process and its impacts.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Shaft mining"
+    },
+    {
+        "query": "hi, I need a short answer question for my students about coffee",
+        "requested_exercise_format": "short-answer",
+        "topic": "Coffee"
+    },
+    {
+        "query": "please I need true or false question about Tropical monsoon forests for my students",
+        "requested_exercise_format": "true-false",
+        "topic": "Tropical monsoon forests"
+    },
+    {
+        "query": "Could you pls create a short answer question about evaporation for my class?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Evaporation"
+    },
+    {
+        "query": "Hello, can you help me with a short-answer question about raising livestock for my class?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Raising livestock"
+    },
+    {
+        "query": "Hi, can u help by giving a short answer question on tertiary economic activities for my class.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tertiary economic activities"
+    },
+    {
+        "query": "Hello, I need a short answer question for form 2 about the logistics of timber transportation.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Logistics of timber transportation"
+    },
+    {
+        "query": "Please have a simple definition question ready about mitigating negative tourism impacts for my form 2 class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Mitigating negative tourism impacts"
+    },
+    {
+        "query": "Write one true or false statement for checking the understanding of Tourism's contribution to Namibia for my form 2 students.",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism in Namibia"
+    },
+    {
+        "query": "i need definition question about tourism in Switzerland",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tourism in Switzerland"
+    },
+    {
+        "query": "Please provide a true or false statement question regarding the importance of tourism in Tanzania.",
+        "requested_exercise_format": "true-false",
+        "topic": "Tourism's significance in Tanzania"
+    },
+    {
+        "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tourism's significance in Tanzania"
+    },
+    {
+        "query": "Write a describing question for my students about textile sector in Tanzania.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Textile sector in Tanzania"
+    },
+    {
+        "query": "I need a defining question about soil absorption for my form 2 geography class",
+        "requested_exercise_format": "short-answer",
+        "topic": "Soil absorption"
+    },
+    {
+        "query": "Hello, can you create a detail explain question on land restoration for my students in Tanzania?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Land restoration in Tanzania"
+    },
+    {
+        "query": "Please i need a question for student to explain problems facing Middle Eastern oil industries",
+        "requested_exercise_format": "long-answer",
+        "topic": "Problems in Middle Eastern oil industries"
+    },
+    {
+        "query": "I need question about undisturbed forests where students describe their importance and how they maintain ecological balance",
+        "requested_exercise_format": "long-answer",
+        "topic": "Undisturbed forests"
+    },
+    {
+        "query": "Hi, can u make a short question about petroleum extraction in the Middle East for the kids? Thanks",
+        "requested_exercise_format": "short-answer",
+        "topic": "Petroleum extraction in the Middle East"
+    },
+    {
+        "query": "I need a describe question for my students on the topic of benefits of subsistence farming in Tanzania",
+        "requested_exercise_format": "long-answer",
+        "topic": "Benefits of subsistence farming"
+    },
+    {
+        "query": "good afternoon, i need explaining question for my students about procedures for cotton farming ",
+        "requested_exercise_format": "long-answer",
+        "topic": "Procedures for cotton farming"
+    },
+    {
+        "query": "Please I need a question where students can explain about infrastructure improvements.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Infrastructure improvements"
+    },
+    {
+        "query": "hello, can you make a true or false statement about regional tourism collaboration?",
+        "requested_exercise_format": "true-false",
+        "topic": "Regional tourism collaboration"
+    },
+    {
+        "query": "Can u prepare a detailed question on what are the benefits of developing river basins? Students need to provide comprehensive answers please.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Advantages of river basin developments"
+    },
+    {
+        "query": "Give me a short question on land restoration in Tanzania for my classwork.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Land restoration in Tanzania"
+    },
+    {
+        "query": "Is it true that assembly industries are the main contributor to air pollution in urban areas?",
+        "requested_exercise_format": "true-false",
+        "topic": "Assembly industries"
+    },
+    {
+        "query": "I need a short define question about the main tourist attractions in Switzerland for my form 2 Geography students.",
+        "requested_exercise_format": "short-answer",
+        "topic": "Tourism in Switzerland"
+    },
+    {
+        "query": "Hello, I need a true or false statement for a lesson on Case studies in the tourism sector.",
+        "requested_exercise_format": "true-false",
+        "topic": "Case studies in the tourism sector"
+    },
+    {
+        "query": "Hello, how are you? Can you please provide one short-answer question on the significance of renewable energies in the USA for my form 2 students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Significance of renewable energies in the USA"
+    },
+    {
+        "query": "give an explanation question about Solutions to renewable energy challenges in the USA for the students",
+        "requested_exercise_format": "long-answer",
+        "topic": "Solutions to renewable energy challenges in the USA"
+    },
+    {
+        "query": "hi, i need a short question about Post-harvest processing of cotton",
+        "requested_exercise_format": "short-answer",
+        "topic": "Post-harvest processing of cotton"
+    },
+    {
+        "query": "Hello, can you make a define question for the basics of agriculture?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Basics of agriculture"
+    },
+    {
+        "query": "Can u make a true or false statement question for secondary school concerning economic impacts of agriculture in USA?",
+        "requested_exercise_format": "true-false",
+        "topic": "Economic impacts of agriculture in the USA"
+    },
+    {
+        "query": "Please, I need a detailed question where students explain different categories of manufacturing",
+        "requested_exercise_format": "long-answer",
+        "topic": "Categories of manufacturing"
+    },
+    {
+        "query": "can you prepare a defining question for natural gas sector in Tanzania?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Natural gas sector in Tanzania"
+    },
+    {
+        "query": "Hallo, can you generate a true or false question regarding the economic impacts of agriculture in the USA?",
+        "requested_exercise_format": "true-false",
+        "topic": "Economic impacts of agriculture in the USA"
+    },
+    {
+        "query": "Can you provide a defining question about plant transpiration for my form 2 students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Plant Transpiration"
+    },
+    {
+        "query": "Pls, can you make a defining question about The Rufiji Basin in Tanzania for my form 2 students",
+        "requested_exercise_format": "short-answer",
+        "topic": "The Rufiji Basin in Tanzania"
+    },
+    {
+        "query": "Describe the challenges facing renewable energy implementation in the USA for a detailed answer.",
+        "requested_exercise_format": "long-answer",
+        "topic": "Renewable energy challenges in the USA"
+    },
+    {
+        "query": "Pls i need simple question for kids to define how we can mitigate negative impacts of tourism",
+        "requested_exercise_format": "short-answer",
+        "topic": "Mitigating negative tourism impacts"
+    },
+    {
+        "query": "Hello, can you provide me with a define question about Cultivated forests for my form 2 students?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Cultivated forests"
+    },
+    {
+        "query": "generate an explaining question about the traits of nomadic pastoralism",
+        "requested_exercise_format": "long-answer",
+        "topic": "Traits of Nomadic Pastoralism"
+    },
+    {
+        "query": "Hello, i need one statement that is true or false on the benefits of commercial livestock farming",
+        "requested_exercise_format": "true-false",
+        "topic": "Benefits of commercial livestock farming"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "requested_exercise_format": "true-false",
+        "topic": "Overview of transportation"
+    },
+    {
+        "query": "Can you create a true or false question about infrastructure improvements for my class work",
+        "requested_exercise_format": "true-false",
+        "topic": "Infrastructure improvements"
+    },
+    {
+        "query": "Can you make assertion about the impact of In-situ leach mining?",
+        "requested_exercise_format": "true-false",
+        "topic": "In-situ leach mining"
+    },
+    {
+        "query": "Can you craft some true-false questions on the benefits of subsistence farming for my form 2 geography students?",
+        "requested_exercise_format": "true-false",
+        "topic": "Benefits of subsistence farming"
+    },
+    {
+        "query": "Good morning, can you provide an explaining question for my students to discuss the significance of energy resources?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Significance of energy resources"
+    },
+    {
+        "query": "Can you prepare a describing question for students about the factors that boost tourism growth in Switzerland?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Tourism growth factors in Switzerland"
+    },
+    {
+        "query": "Please i need a short exercise where students define various methods of mineral refinement",
+        "requested_exercise_format": "short-answer",
+        "topic": "Mineral refinement methods"
+    },
+    {
+        "query": "Hello, pls give me true or false question for cultivation techniques of sisal for my students homework",
+        "requested_exercise_format": "true-false",
+        "topic": "Cultivation techniques for sisal"
+    },
+    {
+        "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
+        "requested_exercise_format": "long-answer",
+        "topic": "Conservation of biodiversity"
+    },
+    {
+        "query": "Hi, can you provide a short-answer question about strategies to enhance transportation in Tanzania for my classwork?",
+        "requested_exercise_format": "short-answer",
+        "topic": "Strategies to improve transport in Tanzania"
+    },
+    {
+        "query": "Hi, can you help me with a question where students need to explain challenges faced in river basin projects?",
+        "requested_exercise_format": "long-answer",
+        "topic": "Obstacles in river basin projects"
+    }
+]

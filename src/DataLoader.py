@@ -8,7 +8,7 @@ import time
 from src.models import ChunkSchema
 from datetime import datetime
 from typing import List
-from src.utils import load_json_file_to_chunkschema
+from src.utils import load_json_file_to_chunkschema, save_objects_as_json
 
 load_dotenv()
 ELASTIC_SEARCH_API_KEY = os.getenv("ELASTIC_SEARCH_API_KEY")
@@ -81,7 +81,9 @@ class DataLoader:
 if __name__ == "__main__":
     # Paths to my data
     exercise_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
+    exercise_drop_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises-and-embeddings.json")
     content_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
+    content_drop_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-content-and-embeddings.json")
 
     data_loader = DataLoader()
 
@@ -95,6 +97,21 @@ if __name__ == "__main__":
     documents: List[ChunkSchema] = load_json_file_to_chunkschema(exercise_path)
     data_loader.insert_documents(documents)
     """
+
+    
+    documents: List[ChunkSchema] = load_json_file_to_chunkschema(content_path)
+    new_docs = []
+    for document in documents:
+        embedding = data_loader.get_embedding(document.chunk)
+        document_data = json.loads(document.model_dump_json())
+        new_docs.append({
+            **document_data,
+            'embedding': embedding.tolist(),
+        })
+    
+    save_objects_as_json(new_docs, content_drop_path)
+
+    
 
     # This searches based on the Okapi BM25 algorithm (a higher score indicates a closer match to the query text)
     # results = dataLoader.search(

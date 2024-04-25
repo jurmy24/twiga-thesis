@@ -43,35 +43,9 @@ if __name__ == "__main__":
     # Paths to my data
     exercise_path = os.path.join(DATA_DIR, "documents", "json", "tie-geography-f2-exercises.json")
     content_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
+    
 
     data_search = DataSearch()
-
-    data_search.es.search(
-        query={
-            # full-text search query here
-        },
-        knn={
-            # vector search query here
-        },
-        rank={
-            "rrf": {}
-        }
-    )
-
-
-    filters = {
-        "match": {
-            "type": "Content"
-        }
-    }
-
-    # "filter": [
-    #     {
-    #       "term": {
-    #         "metadata.type": "Content"
-    #       }
-    #     }
-    #   ]
 
     query_args_knn = {
         'field': 'embedding',
@@ -80,7 +54,6 @@ if __name__ == "__main__":
         'k': 10, # this is the number of results to return
         **filters
     }
-    results = data_search.search(query_args_knn)
     
     matches = results['hits']['hits'] # gives the resulting data (the 10 results)
     total = results['hits']['total']['value'] # gives the number of results

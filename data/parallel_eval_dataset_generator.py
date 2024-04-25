@@ -13,6 +13,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 """
 This file can generate test prompts from Tanzanian teachers to my pipeline. There are geography topics that exist within the textbook but also a list of non-geography topics that are from all over
 the place for when I want to generate a control eval set. 
+
+TODO: For the future I could experiment with using openai's batching feature instead of parallelizing many API calls to reduce the risk for openai.RateLimitError
 """
 
 

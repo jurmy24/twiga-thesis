@@ -110,19 +110,3 @@ if __name__ == "__main__":
         })
     
     save_objects_as_json(new_docs, content_drop_path)
-
-    
-
-    # This searches based on the Okapi BM25 algorithm (a higher score indicates a closer match to the query text)
-    # results = dataLoader.search(
-    #     query={
-    #         'match': {
-    #             'name': {
-    #                 'query': "some text that I search on to match the name of a document"
-    #             }
-    #         }
-    #     }
-    # )
-    
-    # matches = results['hits']['hits']
-    # total = results['hits']['total']['value']

@@ -1,5 +1,5 @@
 import json
-from typing import List
+from typing import List, Literal
 from llama_index.core.schema import Document
 import os
 
@@ -161,18 +161,36 @@ def load_json_file_to_chunkschema(file_path: str) -> List[ChunkSchema]:
         # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
         return chunks
     
-def load_json_to_retrieveddocschema(data: List[dict]) -> List[RetrievedDocSchema]:
+def load_json_to_retrieveddocschema(data: List[dict], retrieval_method: Literal["sparse", "dense", "hybrid"]) -> List[RetrievedDocSchema]:
     docs = []
     for index, item in enumerate(data):
         try:
             # Explicitly handle the creation of Metadata objects if necessary
             chunk = ChunkSchema(**{**item['_source'], "metadata": Metadata(**item['_source']['metadata'])})
-            doc = RetrievedDocSchema(retrieval_type='IDK', score=item['_score'], id=item['_id'], source=chunk)
+
+            if item.get('_score', None) is not None:
+                doc = RetrievedDocSchema(retrieval_type=retrieval_method, rank=None, score=item['_score'], id=item['_id'], source=chunk)
+            else:
+                doc = RetrievedDocSchema(retrieval_type=retrieval_method, score=None, rank=item['_rank'], id=item['_id'], source=chunk)
             docs.append(doc)
         except ValidationError as e:
             print(f"ValidationError when parsing retrieved document {index + 1}: {e}")
     # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
     return docs
+
+def pretty_elasticsearch_response_rrf(response):
+    if len(response["hits"]["hits"]) == 0:
+        print("Your search returned no results.")
+    else:
+        for hit in response["hits"]["hits"]:
+            id = hit["_id"]
+            rank = hit["_rank"]
+            title = hit["_source"]["metadata"]["title"]
+            chapter = hit["_source"]["metadata"]["chapter"]
+            subsection = hit["_source"]["metadata"]["subsection"]
+            chunk = hit["_source"]["chunk"]
+            pretty_output = f"\nID: {id}\nTitle: {title}\nChapter: {chapter}\nSubsection: {subsection}\nchunk: {chunk}\nRank: {rank}"
+            print(pretty_output)
 
 def pretty_elasticsearch_response(response):
     if len(response["hits"]["hits"]) == 0:
@@ -180,22 +198,10 @@ def pretty_elasticsearch_response(response):
     else:
         for hit in response["hits"]["hits"]:
             id = hit["_id"]
-            rank = hit["_rank"]
-            chunk = hit["_source"]["chunk"]
-            pretty_output = f"\nID: {id}\Chunk: {chunk}\nRank: {rank}"
-            print(pretty_output)
-
-def pretty_response(response):
-    if len(response["hits"]["hits"]) == 0:
-        print("Your search returned no results.")
-    else:
-        for hit in response["hits"]["hits"]:
-            id = hit["_id"]
             score = hit["_score"]
-            title = hit["_source"]["title"]
-            summary = hit["_source"]["summary"]
-            publisher = hit["_source"]["publisher"]
-            num_reviews = hit["_source"]["num_reviews"]
-            authors = hit["_source"]["authors"]
-            pretty_output = f"\nID: {id}\nPublication date: {publication_date}\nTitle: {title}\nSummary: {summary}\nPublisher: {publisher}\nReviews: {num_reviews}\nAuthors: {authors}\nScore: {score}"
+            title = hit["_source"]["metadata"]["title"]
+            chapter = hit["_source"]["metadata"]["chapter"]
+            subsection = hit["_source"]["metadata"]["subsection"]
+            chunk = hit["_source"]["chunk"]
+            pretty_output = f"\nID: {id}\nTitle: {title}\nChapter: {chapter}\nSubsection: {subsection}\nchunk: {chunk}\nScore: {score}"
             print(pretty_output)

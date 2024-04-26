@@ -7,7 +7,7 @@ import logging
 from src.models import RetrievedDocSchema
 from src.openai_requests import openai_request
 from src.DataSearch import DataSearch
-from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response
+from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response_rrf, pretty_elasticsearch_response
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -67,7 +67,7 @@ def local_query_rewriter(query:str) -> str:
     text = text.replace("Write a passage that answers the given query: \nQuery: {query} \nAnswer: ", "")
     return text.replace("\n", "") # because this model has a tendency to add unnecessary stuff if it tries to write another paragraph
 
-def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None) -> Tuple:
+def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None, verbose: bool=False) -> Tuple:
 
     if metadata_filters is not None:
         filters = {"filter": {"term": {"metadata.doc_type.keyword": doc_type}},
@@ -128,10 +128,13 @@ def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Co
         }
     
     res = data_search.search(size=size, knn_args=knn_args, query_args=query_args, rank_args=rank_args)
-    print(res)
 
     # This prints out the response in a pretty format
-    # pretty_elasticsearch_response(res)
+    if verbose:
+        if retrieve_dense and retrieve_sparse:
+            pretty_elasticsearch_response_rrf(res)
+        else:
+            pretty_elasticsearch_response(res)
 
     if res is None:
         return None, None, None, None
@@ -141,10 +144,20 @@ def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Co
     if num_hits == 0:
         return 0, None, None, None
 
-    max_score: float = float(res["hits"]["max_score"])
+    max_score = None
+    if not (retrieve_dense and retrieve_sparse):
+        max_score: float = float(res["hits"]["max_score"])
     retrieval_type: str = str(res["hits"]["total"]["relation"])
     hits: List[dict] = res["hits"]["hits"]
-    docs: List[RetrievedDocSchema] = load_json_to_retrieveddocschema(hits)
+
+    if retrieve_sparse and retrieve_dense:
+        retrieval_method = "hybrid"
+    elif retrieve_sparse:
+        retrieval_method = "sparse"
+    elif retrieve_dense:
+        retrieval_method = "dense"
+
+    docs: List[RetrievedDocSchema] = load_json_to_retrieveddocschema(hits, retrieval_method)
 
     return num_hits, max_score, retrieval_type, docs
 

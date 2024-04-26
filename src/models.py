@@ -33,7 +33,8 @@ class ChunkSchema(BaseModel):
 
 class RetrievedDocSchema(BaseModel):
     retrieval_type: str
-    score: float
+    score: Optional[float]
+    rank: Optional[int]
     id: str
     source: ChunkSchema
 

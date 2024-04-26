@@ -17,6 +17,8 @@ This is the modules file, which will contain the modular components that can be 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+data_search = DataSearch()
+
 # TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
 def query_rewriter(query:str) -> str:
     """
@@ -65,47 +67,64 @@ def local_query_rewriter(query:str) -> str:
     text = text.replace("Write a passage that answers the given query: \nQuery: {query} \nAnswer: ", "")
     return text.replace("\n", "") # because this model has a tendency to add unnecessary stuff if it tries to write another paragraph
 
-def elasticsearch_retriever(retrieval_msg: str, retrieve_type: Literal["content", "exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None) -> Tuple:
-    data_search = DataSearch()
+def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None) -> Tuple:
 
     if metadata_filters is not None:
-        filters = {"type": retrieve_type, **metadata_filters}
+        filters = {"type": retrieval_type, **metadata_filters}
+        filters = {"filter": {"term": {"metadata.type.keyword": doc_type}},
+                   **metadata_filters}
     else:
-        filters = {"type": retrieve_type}
+        filters = {"filter": {"term": {"metadata.title.keyword": "Geography for Secondary Schools Student's Book Form Two"}}}
 
-
-    # if retrieve_dense and retrieve_sparse:
-    #     query_args_knn = {
-    #         'field': 'embedding',
-    #         'query_vector': data_search.get_embedding(retrieval_msg),
-    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
-    #         'k': 10, # this is the number of results to return
-    #         **filters
-    #     }
-    # elif retrieve_dense:
-    #     query_args_knn = {
-    #         'field': 'embedding',
-    #         'query_vector': data_search.get_embedding(retrieval_msg),
-    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
-    #         'k': 10, # this is the number of results to return
-    #         **filters
-    #     }
-    # elif retrieve_sparse:
-    #     query_args_knn = {
-    #         'field': 'embedding',
-    #         'query_vector': data_search.get_embedding("Generate a question that talks about rainfall in Tanzania."),
-    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
-    #         'k': 10, # this is the number of results to return
-    #         **filters
-    #     }
+    rank_args = None
+    knn_args = None
+    query_args = None
+    if retrieve_dense and retrieve_sparse:
+        knn_args = {
+            'field': 'embedding',
+            'query_vector': data_search.get_embedding(retrieval_msg).tolist(),
+            'num_candidates': 50, # this is the number of candidate documents to consider from each shard (I chose it at random)
+            'k': size, # this is the number of results to return
+            **filters
+        }
+        # This uses the BM25 algorithm find chunks that match the retrieval_msg
+        query_args = {
+            "match": {"chunk": retrieval_msg},
+            **filters
+        }
+        rank_args = {
+            "rrf": {}
+        }
+    elif retrieve_dense:
+        knn_args = {
+            'field': 'embedding',
+            'query_vector': data_search.get_embedding(retrieval_msg).tolist(),
+            'num_candidates': 50, # this is the number of candidate documents to consider from each shard (I chose it at random)
+            'k': size, # this is the number of results to return
+            **filters
+        }
+    elif retrieve_sparse:
+        # I should use the BM25 algorithm here instead
+        query_args = {
+            "bool": {
+                "must": {
+                    "match": {"chunk": retrieval_msg}
+                },
+                **filters
+            }
+            
+        }
     
-    # matches = results['hits']['hits'] # gives the resulting data (the 10 results)
-    # total = results['hits']['total']['value'] # gives the number of results
+    res = data_search.search(size=size, knn_args=knn_args, query_args=query_args, rank_args=rank_args)
 
-    res = data_search.es.search(index="twiga_documents", q=retrieval_msg)
-    res = res.body
+    if res is None:
+        return None, None, None, None
 
     num_hits: int = int(res["hits"]["total"]["value"])
+
+    if num_hits == 0:
+        return 0, None, None, None
+
     max_score: float = float(res["hits"]["max_score"])
     retrieval_type: str = str(res["hits"]["total"]["relation"])
     hits: List[dict] = res["hits"]["hits"]

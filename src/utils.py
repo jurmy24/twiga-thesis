@@ -173,3 +173,16 @@ def load_json_to_retrieveddocschema(data: List[dict]) -> List[RetrievedDocSchema
             print(f"ValidationError when parsing retrieved document {index + 1}: {e}")
     # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
     return docs
+
+def pretty_elasticsearch_response(response):
+    if len(response["hits"]["hits"]) == 0:
+        print("Your search returned no results.")
+    else:
+        for hit in response["hits"]["hits"]:
+            id = hit["_id"]
+            publication_date = hit["_source"]["publish_date"]
+            rank = hit["_rank"]
+            title = hit["_source"]["title"]
+            summary = hit["_source"]["summary"]
+            pretty_output = f"\nID: {id}\nPublication date: {publication_date}\nTitle: {title}\nSummary: {summary}\nRank: {rank}"
+            print(pretty_output)

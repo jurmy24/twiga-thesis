@@ -7,7 +7,7 @@ import logging
 from src.models import RetrievedDocSchema
 from src.openai_requests import openai_request
 from src.DataSearch import DataSearch
-from src.utils import load_json_to_retrieveddocschema
+from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -70,11 +70,11 @@ def local_query_rewriter(query:str) -> str:
 def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None) -> Tuple:
 
     if metadata_filters is not None:
-        filters = {"type": retrieval_type, **metadata_filters}
-        filters = {"filter": {"term": {"metadata.type.keyword": doc_type}},
-                   **metadata_filters}
+        filters = {"filter": {"term": {"metadata.doc_type.keyword": doc_type}},
+                   **metadata_filters
+                   }
     else:
-        filters = {"filter": {"term": {"metadata.title.keyword": "Geography for Secondary Schools Student's Book Form Two"}}}
+        filters = {"filter": {"term": {"metadata.doc_type.keyword": doc_type}}}
 
     rank_args = None
     knn_args = None
@@ -83,14 +83,23 @@ def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Co
         knn_args = {
             'field': 'embedding',
             'query_vector': data_search.get_embedding(retrieval_msg).tolist(),
-            'num_candidates': 50, # this is the number of candidate documents to consider from each shard (I chose it at random)
+            'num_candidates': 500, # this is the number of candidate documents to consider from each shard (I chose it at random)
             'k': size, # this is the number of results to return
             **filters
         }
-        # This uses the BM25 algorithm find chunks that match the retrieval_msg
+        # This uses the BM25 algorithm to find chunks that match the retrieval_msg
         query_args = {
-            "match": {"chunk": retrieval_msg},
-            **filters
+            "bool": {
+                "must" : [
+                    {"match": {
+                        "chunk" : {  
+                            "query": retrieval_msg,
+                            "analyzer": "standard"
+                        }
+                    }}
+                ],
+                **filters
+            }
         }
         rank_args = {
             "rrf": {}
@@ -99,23 +108,30 @@ def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Co
         knn_args = {
             'field': 'embedding',
             'query_vector': data_search.get_embedding(retrieval_msg).tolist(),
-            'num_candidates': 50, # this is the number of candidate documents to consider from each shard (I chose it at random)
+            'num_candidates': 500, # this is the number of candidate documents to consider from each shard (I chose it at random)
             'k': size, # this is the number of results to return
             **filters
         }
-    elif retrieve_sparse:
-        # I should use the BM25 algorithm here instead
+    elif retrieve_sparse:        
         query_args = {
             "bool": {
-                "must": {
-                    "match": {"chunk": retrieval_msg}
-                },
+                "must" : [
+                    {"match": {
+                        "chunk" : {  
+                            "query": retrieval_msg,
+                            "analyzer": "standard"
+                        }
+                    }}
+                ],
                 **filters
             }
-            
         }
     
     res = data_search.search(size=size, knn_args=knn_args, query_args=query_args, rank_args=rank_args)
+    print(res)
+
+    # This prints out the response in a pretty format
+    # pretty_elasticsearch_response(res)
 
     if res is None:
         return None, None, None, None

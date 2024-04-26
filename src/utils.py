@@ -180,9 +180,22 @@ def pretty_elasticsearch_response(response):
     else:
         for hit in response["hits"]["hits"]:
             id = hit["_id"]
-            publication_date = hit["_source"]["publish_date"]
             rank = hit["_rank"]
+            chunk = hit["_source"]["chunk"]
+            pretty_output = f"\nID: {id}\Chunk: {chunk}\nRank: {rank}"
+            print(pretty_output)
+
+def pretty_response(response):
+    if len(response["hits"]["hits"]) == 0:
+        print("Your search returned no results.")
+    else:
+        for hit in response["hits"]["hits"]:
+            id = hit["_id"]
+            score = hit["_score"]
             title = hit["_source"]["title"]
             summary = hit["_source"]["summary"]
-            pretty_output = f"\nID: {id}\nPublication date: {publication_date}\nTitle: {title}\nSummary: {summary}\nRank: {rank}"
+            publisher = hit["_source"]["publisher"]
+            num_reviews = hit["_source"]["num_reviews"]
+            authors = hit["_source"]["authors"]
+            pretty_output = f"\nID: {id}\nPublication date: {publication_date}\nTitle: {title}\nSummary: {summary}\nPublisher: {publisher}\nReviews: {num_reviews}\nAuthors: {authors}\nScore: {score}"
             print(pretty_output)

@@ -3,7 +3,7 @@
         "chunk": "# Geography for Secondary Schools Student's Book Form Two  \nTHE UNITED REPUBLIC OF TANZANIA  \n| Textbook | August 2019              |\n| -------- | ------------------------ |\n| Author:  | Dr. Lyabwene M. Mtahabwa |\n| ISBN     | 978-9987-09-034-         |  \nTanzania Institute of Education  \nGeography for Secondary Schools  \n\u00a9 Tanzania Institute of Education, 2019  \nPublished 2019  \nISBN 978\u20139987\u201309\u2013034\u20131  \nTanzania Institute of Education  \nP. O. Box 35094  \nDar es Salaam  \nTelephone: +255-22-2773005/+255-22-2771358  \nFax: +255-22-2774420  \nEmail: director.general@tie.go.tz  \nWebsite: www.tie.go.tz  \nAll rights reserved. This book may not be reproduced, stored in any retrieval system or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without prior written permission of the Tanzania Institute of Education.",
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -11,7 +11,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Preface",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -19,7 +19,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Acknowledgements",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -27,7 +27,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Table of Contents",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -35,7 +35,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "List of Figures",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -43,7 +43,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "List of tables",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -52,7 +52,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -61,7 +61,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter One (Human Activities)",
             "subsection": "The concept of human activities",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -70,7 +70,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Types of human activities",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -80,7 +80,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Types of human activities",
             "subsubsection": "Primary activities:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -90,7 +90,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Types of human activities",
             "subsubsection": "Natural forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -100,7 +100,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Types of human activities",
             "subsubsection": "Secondary activities",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -110,7 +110,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Types of human activities",
             "subsubsection": "Tertiary activities:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -119,7 +119,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter One (Human Activities)",
             "subsection": "Importance of human activities",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -128,7 +128,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -137,7 +137,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "The concept of agriculture",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -146,7 +146,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -156,7 +156,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -166,7 +166,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Shifting cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -176,7 +176,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Crop rotation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -186,7 +186,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Bush fallowing:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -196,7 +196,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Characteristics of small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -206,7 +206,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Relationship between population growth and small-scale crop production:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -216,7 +216,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Effects of rapid population growth on small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -226,7 +226,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Advantages of small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -236,7 +236,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Disadvantages of small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -246,7 +246,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Crop cultivation",
             "subsubsection": "Ways of improving small-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -255,7 +255,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Large-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -265,7 +265,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Large-scale crop cultivation:",
             "subsubsection": "Characteristics of large-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -275,7 +275,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Large-scale crop cultivation:",
             "subsubsection": "Types of large-scale crop cultivation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -284,7 +284,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Coffee:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -294,7 +294,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Coffee:",
             "subsubsection": "Conditions necessary for growing coffee:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -304,7 +304,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Coffee:",
             "subsubsection": "Farm preparation, planting, and care of coffee:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -314,7 +314,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Coffee:",
             "subsubsection": "Harvesting, processing, storage and transportation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -324,7 +324,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Coffee:",
             "subsubsection": "Uses of coffee:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -333,7 +333,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cotton",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -343,7 +343,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cotton",
             "subsubsection": "Conditions necessary for growing cotton:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -353,7 +353,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cotton",
             "subsubsection": "Farm preparation, planting and care of cotton:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -363,7 +363,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cotton",
             "subsubsection": "Harvesting, processing, storage and transportation of cotton:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -373,7 +373,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cotton",
             "subsubsection": "Uses of cotton:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -382,7 +382,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Oil palm:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -392,7 +392,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Oil palm:",
             "subsubsection": "Conditions necessary for growing oil palm:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -402,7 +402,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Oil palm:",
             "subsubsection": "Farm preparation, planting and care of oil palm:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -412,7 +412,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Oil palm:",
             "subsubsection": "Harvesting, processing, storage, and transportation of oil palm:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -422,7 +422,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Oil palm:",
             "subsubsection": "Uses of palm oil:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -431,7 +431,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Tea:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -440,7 +440,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Conditions for growing tea:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -450,7 +450,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Conditions for growing tea:",
             "subsubsection": "Farm preparation, planting and caring of tea:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -460,7 +460,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Conditions for growing tea:",
             "subsubsection": "Harvesting, processing, storage and transportation of tea:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -470,7 +470,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Conditions for growing tea:",
             "subsubsection": "Uses of tea:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -479,7 +479,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Sisal",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -489,7 +489,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Sisal",
             "subsubsection": "Conditions for growing sisal:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -499,7 +499,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Sisal",
             "subsubsection": "Farm preparation, planting and caring of sisal:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -509,7 +509,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Sisal",
             "subsubsection": "Harvesting, processing and transportation of sisal:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -519,7 +519,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Sisal",
             "subsubsection": "Uses of sisal:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -528,7 +528,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Clove:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -538,7 +538,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Clove:",
             "subsubsection": "Conditions for growing cloves:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -548,7 +548,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Clove:",
             "subsubsection": "Farm preparation, planting and care of cloves:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -558,7 +558,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Clove:",
             "subsubsection": "Harvesting, processing and transportation of cloves:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -568,7 +568,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Clove:",
             "subsubsection": "Uses of cloves:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -577,7 +577,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cereal crops",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -587,7 +587,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cereal crops",
             "subsubsection": "Maize",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -597,7 +597,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cereal crops",
             "subsubsection": "Wheat:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -607,7 +607,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Cereal crops",
             "subsubsection": "Rice",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -616,7 +616,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Contribution of crop production to the economy of Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -625,7 +625,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Challenges facing large-scale crop cultivation in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -634,7 +634,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Ways to improve large-scale crop cultivation in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -643,7 +643,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Contribution of crop production to the economy of the United States of America",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -652,7 +652,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Challenges facing large-scale agriculture in USA:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -661,7 +661,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Livestock-keeping",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -670,7 +670,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -680,7 +680,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
             "subsubsection": "Characteristics of nomadic pastoralism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -690,7 +690,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
             "subsubsection": "Advantages of nomadic pastoralism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -700,7 +700,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
             "subsubsection": "Disadvantages of nomadic pastoralism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -710,7 +710,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
             "subsubsection": "Semi-nomadism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -720,7 +720,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Nomadic pastoralism/True pastoralism",
             "subsubsection": "Transhumance:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -729,7 +729,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -739,7 +739,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Characteristics of commercial livestock-keeping",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -749,7 +749,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Advantages of commercial livestock-keeping:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -759,7 +759,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Disadvantages of commercial livestock-keeping:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -769,7 +769,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Benefits of livestock-keeping:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -779,7 +779,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Challenges facing livestock-keeping:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -789,7 +789,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Commercial livestock-keeping",
             "subsubsection": "Ways of solving problems facing pastoralists:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -799,7 +799,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Livestock-keeping in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -809,7 +809,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Challenges facing livestock-keeping in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -819,7 +819,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Livestock-keeping in Australia",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -829,7 +829,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Similarities between livestock -keeping in Tanzania and Australia:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -839,7 +839,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Differences between livestock-keeping in Tanzania and Australia:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -849,7 +849,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": "Focal studies",
             "subsubsection": "Economic importance of livestock-keeping:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -858,7 +858,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -867,7 +867,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "The concept of water management",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -876,7 +876,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sources of water",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -885,7 +885,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Fresh water and hydrological cycle",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -894,7 +894,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evaporation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -903,7 +903,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -913,7 +913,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
             "subsubsection": "Temperature:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -923,7 +923,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
             "subsubsection": "Humidity:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -933,7 +933,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
             "subsubsection": "Wind:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -943,7 +943,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
             "subsubsection": "Soil:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -953,7 +953,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Evapotranspiration",
             "subsubsection": "Types of plants:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -962,7 +962,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Condensation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -971,7 +971,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Precipitation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -981,7 +981,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Precipitation",
             "subsubsection": "Infiltration:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -990,7 +990,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Economic importance of water",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -999,7 +999,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Family size, water supply and quality of life",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1008,7 +1008,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Effects of distance to water sources on the girl-child in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1017,7 +1017,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Relationship between vegetation and water supply",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1026,7 +1026,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1036,7 +1036,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
             "subsubsection": "Requirements for establishing a river basin project",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1046,7 +1046,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
             "subsubsection": "Benefits of river basin development projects",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1056,7 +1056,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
             "subsubsection": "Challenges facing river basin projects",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1066,7 +1066,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
             "subsubsection": "Rufiji Basin in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1076,7 +1076,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "River basin development",
             "subsubsection": "Other river basin development projects",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1085,7 +1085,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Land reclamation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1095,7 +1095,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Land reclamation",
             "subsubsection": "Methods used in land reclamation",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1105,7 +1105,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Land reclamation",
             "subsubsection": "Land reclamation in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1114,7 +1114,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1124,7 +1124,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Salt water:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1134,7 +1134,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Underground water:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1144,7 +1144,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Surface water:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1154,7 +1154,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Boreholes",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1164,7 +1164,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Underground water",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1174,7 +1174,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Springs",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1184,7 +1184,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Wells",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1194,7 +1194,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Resources obtained from water",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1204,7 +1204,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Other water resources",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1214,7 +1214,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Sustainable use of water resources",
             "subsubsection": "Problems resulting from the extraction of water resources",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1223,7 +1223,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Water pollution",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1232,7 +1232,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": "Ways of conserving water",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1241,7 +1241,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1250,7 +1250,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1260,7 +1260,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Natural forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1270,7 +1270,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Equatorial rainforest:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1280,7 +1280,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of an equatorial rainforest",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1290,7 +1290,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Mangrove forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1300,7 +1300,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of a mangrove forest:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1310,7 +1310,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Tropical monsoon forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1320,7 +1320,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of a tropical monsoon forest",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1330,7 +1330,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Deciduous forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1340,7 +1340,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of a deciduous forest",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1350,7 +1350,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Coniferous forests",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1360,7 +1360,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of coniferous forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1370,7 +1370,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Planted forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1380,7 +1380,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Characteristics of planted forests:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1390,7 +1390,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Factors influencing distribution of forests",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1400,7 +1400,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Importance of forest resources",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1410,7 +1410,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "The concept of forest",
             "subsubsection": "Importance of forests in ecological and environmental balance",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1419,7 +1419,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Timber production in the world",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1428,7 +1428,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Transportation of timber",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1437,7 +1437,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Challenges facing timber transportation in the world",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1446,7 +1446,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Challenges facing the forestry industry",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1455,7 +1455,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": "Addressing challenges facing forest resources",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1464,7 +1464,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1474,7 +1474,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Mining",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1484,7 +1484,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Mining industry",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1494,7 +1494,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Coal mining industry:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1504,7 +1504,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Metal mining industry:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1514,7 +1514,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Non-metallic mineral mining industry:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1524,7 +1524,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Oil and gas extraction industry:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1534,7 +1534,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "The occurrence of minerals:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1544,7 +1544,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Distribution of minerals in the world",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1554,7 +1554,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "The concept of mining industry",
             "subsubsection": "Uses of some minerals",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1563,7 +1563,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mining",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1573,7 +1573,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mining",
             "subsubsection": "Surface mining:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1583,7 +1583,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mining",
             "subsubsection": "Underground or shaft mining:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1593,7 +1593,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mining",
             "subsubsection": "Alluvial/Placer mining:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1603,7 +1603,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mining",
             "subsubsection": "In-situ mining:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1612,7 +1612,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mineral processing",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1622,7 +1622,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mineral processing",
             "subsubsection": "Crushing and grinding:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1632,7 +1632,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mineral processing",
             "subsubsection": "Separation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1642,7 +1642,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mineral processing",
             "subsubsection": "Sizing:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1652,7 +1652,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Methods of mineral processing",
             "subsubsection": "Floatation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1661,7 +1661,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Contribution of the mining industry to the economy of Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1670,7 +1670,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Ways of minimising the effects of mining on the environment:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1680,7 +1680,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Oil production in the Middle East",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1690,7 +1690,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Importance of oil production to Middle East countries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1700,7 +1700,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Challenges associated with oil production in the Middle East:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1710,7 +1710,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Natural gas production in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1720,7 +1720,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Advantages of natural gas in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1730,7 +1730,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Challenges of natural gas production in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1740,7 +1740,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": "Focal studies",
             "subsubsection": "Tanzania\u2019s efforts in addressing the challenges of natural gas production",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1749,7 +1749,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1758,7 +1758,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "The concept of tourism",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1767,7 +1767,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Factors for the development and growth of tourism in the world",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1776,7 +1776,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Impact of tourism in the world",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1786,7 +1786,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Impact of tourism in the world",
             "subsubsection": "Positive impact of tourism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1796,7 +1796,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Impact of tourism in the world",
             "subsubsection": "Negative impact of tourism:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1806,7 +1806,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Impact of tourism in the world",
             "subsubsection": "Ways of addressing the negative impact of tourism",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1815,7 +1815,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Focal studies on the tourism industry",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1824,7 +1824,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Switzerland",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1834,7 +1834,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Switzerland",
             "subsubsection": "Factors for development of tourism in Switzerland:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1844,7 +1844,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Switzerland",
             "subsubsection": "Importance of tourism in Switzerland:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1854,7 +1854,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Switzerland",
             "subsubsection": "Challenges facing the tourism industry in Switzerland:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1863,7 +1863,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1873,7 +1873,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Promoting access to tourist attraction centers:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1883,7 +1883,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Protecting the biodiversity:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1893,7 +1893,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Improving the tourist environment:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1903,7 +1903,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Factors for the development of tourism in Namibia:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1913,7 +1913,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Improved infrastructure:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1923,7 +1923,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Strong tourism policy:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1933,7 +1933,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Namibia Tourism Board:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1943,7 +1943,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Regional cooperation:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1953,7 +1953,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Importance of tourism to Namibia",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1963,7 +1963,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Namibia",
             "subsubsection": "Challenges facing tourism in Namibia:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1972,7 +1972,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1982,7 +1982,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Tanzania",
             "subsubsection": "Management of national parks and game reserves in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -1992,7 +1992,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Tanzania",
             "subsubsection": "Factors for the development of tourism in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2002,7 +2002,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Tanzania",
             "subsubsection": "Importance of tourism in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2012,7 +2012,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": "Tourism in Tanzania",
             "subsubsection": "Challenges facing tourism in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2021,7 +2021,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2030,7 +2030,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "The concept of manufacturing industry",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2039,7 +2039,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "The importance of manufacturing industries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2048,7 +2048,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Types of manufacturing industries",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2058,7 +2058,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Types of manufacturing industries",
             "subsubsection": "Processing industries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2068,7 +2068,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Types of manufacturing industries",
             "subsubsection": "Fabrication industries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2078,7 +2078,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Types of manufacturing industries",
             "subsubsection": "Types of manufacturing industries in East Africa:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2088,7 +2088,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Types of manufacturing industries",
             "subsubsection": "Factors for the location of manufacturing industries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2097,7 +2097,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2107,7 +2107,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Industrial pollution:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2117,7 +2117,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Air pollution:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2127,7 +2127,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Gases:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2137,7 +2137,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Industrial solid waste:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2147,7 +2147,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Liquid pollutants:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2157,7 +2157,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Pollutants from manufacturing industries:",
             "subsubsection": "Noise pollution:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2166,7 +2166,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Major ways of reducing industrial pollution",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2175,7 +2175,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Focal studies",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2184,7 +2184,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Car manufacturing industries in Japan",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2193,7 +2193,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Factors contributing to the development of industries in Japan",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2202,7 +2202,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Electronic equipment industry in South Korea",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2212,7 +2212,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Electronic equipment industry in South Korea",
             "subsubsection": "Factors contributing to the development of electronic manufacturing industries in South Korea",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2221,7 +2221,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Textile industries in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2231,7 +2231,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Textile industries in Tanzania",
             "subsubsection": "Importance of textile industries in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2241,7 +2241,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Textile industries in Tanzania",
             "subsubsection": "Challenges facing textile industries in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2250,7 +2250,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": "Lessons from Japanese and South Korean industries for Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2259,7 +2259,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2268,7 +2268,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "The concept of Power and Energy",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2277,7 +2277,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Major sources of power and energy:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2287,7 +2287,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Major sources of power and energy:",
             "subsubsection": "Non-renewable energy sources:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2296,7 +2296,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Importance of power and energy",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2305,7 +2305,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Challenges facing power and energy production",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2314,7 +2314,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Addressing the challenges of energy and power production:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2323,7 +2323,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Focal study",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2332,7 +2332,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Hydro-electric power and biogas in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2341,7 +2341,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Importance of HEP and biogas energy resources in Tanzania",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2350,7 +2350,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Challenges to harnessing power and energy in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2359,7 +2359,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Addressing challenges to power and energy harnessing in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2368,7 +2368,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Solar and wind energy harnessing in USA",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2378,7 +2378,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Solar and wind energy harnessing in USA",
             "subsubsection": "Importance of solar and wind energy in USA:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2388,7 +2388,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Solar and wind energy harnessing in USA",
             "subsubsection": "Challenges facing solar and wind energy in USA:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2398,7 +2398,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": "Solar and wind energy harnessing in USA",
             "subsubsection": "Addressing challenges facing solar and wind energy in USA:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2407,7 +2407,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Introduction",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2416,7 +2416,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "The concept of transport",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2425,7 +2425,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Main types of transport",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2434,7 +2434,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Importance of the transport industry in East Africa:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2443,7 +2443,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Advantage and disadvantages of the transport sector:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2452,7 +2452,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Challenges facing the transport industry in East Africa:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2461,7 +2461,7 @@
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Chapter Nine (Transport)",
             "subsection": "Measures to address transport challenges in Tanzania:",
-            "type": "Content"
+            "doc_type": "Content"
         }
     },
     {
@@ -2469,7 +2469,7 @@
         "metadata": {
             "title": "Geography for Secondary Schools Student's Book Form Two",
             "chapter": "Glossary",
-            "type": "Content"
+            "doc_type": "Content"
         }
     }
 ]

@@ -42,27 +42,41 @@ class DataLoader:
             }
         })
         
-    def insert_document(self, document: ChunkSchema):
-        embedding = self.get_embedding(document.chunk)
+    def insert_document(self, document: ChunkSchema, re_embed: bool=False):
+
+        
         document_data = json.loads(document.model_dump_json())
-        return self.es.index(
-            index='twiga_documents',
-            document={
-                **document_data,
-                'embedding': embedding,
-        })
+        if re_embed:
+            embedding = self.get_embedding(document.chunk)
+            return self.es.index(
+                index='twiga_documents',
+                document={
+                    **document_data,
+                    'embedding': embedding,
+            })
+        else:
+            return self.es.index(
+                index='twiga_documents',
+                document={
+                    **document_data
+            })
     
-    def insert_documents(self, documents: List[ChunkSchema]):
+    def insert_documents(self, documents: List[ChunkSchema], re_embed: bool=False):
         operations = []
         for document in documents:
-            embedding = self.get_embedding(document.chunk)
             document_data = json.loads(document.model_dump_json())
             operations.append({'index': {'_index': 'twiga_documents'}})
-            operations.append({
-                **document_data,
-                'embedding': embedding,
-            })
 
+            if re_embed:
+                embedding = self.get_embedding(document.chunk)
+                operations.append({
+                    **document_data,
+                    'embedding': embedding,
+                })
+            else:
+                operations.append({
+                    **document_data
+                })
         return self.es.bulk(operations=operations)
     
     def reindex(self, data_file_path: str):
@@ -88,25 +102,23 @@ if __name__ == "__main__":
     data_loader = DataLoader()
 
     # To add all my chunks to elastic search from scratch
-    """
-    data_loader.reindex(content_path)
-    """
+
+    # data_loader.reindex(content_drop_path)
+    
     
     # To add new data to the existing index
-    """
-    documents: List[ChunkSchema] = load_json_file_to_chunkschema(exercise_path)
+    
+    documents: List[ChunkSchema] = load_json_file_to_chunkschema(exercise_drop_path)
     data_loader.insert_documents(documents)
-    """
-
     
-    documents: List[ChunkSchema] = load_json_file_to_chunkschema(content_path)
-    new_docs = []
-    for document in documents:
-        embedding = data_loader.get_embedding(document.chunk)
-        document_data = json.loads(document.model_dump_json())
-        new_docs.append({
-            **document_data,
-            'embedding': embedding.tolist(),
-        })
+    # documents: List[ChunkSchema] = load_json_file_to_chunkschema(content_path)
+    # new_docs = []
+    # for document in documents:
+    #     embedding = data_loader.get_embedding(document.chunk)
+    #     document_data = json.loads(document.model_dump_json())
+    #     new_docs.append({
+    #         **document_data,
+    #         'embedding': embedding.tolist(),
+    #     })
     
-    save_objects_as_json(new_docs, content_drop_path)
+    # save_objects_as_json(new_docs, content_drop_path)

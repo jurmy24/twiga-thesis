@@ -6,7 +6,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -403,7 +403,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -800,7 +800,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -1197,7 +1197,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -1594,7 +1594,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -1991,7 +1991,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -2388,7 +2388,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -2785,7 +2785,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -3182,7 +3182,7 @@
             "chapter": "Chapter One (Human Activities)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -3579,7 +3579,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -3976,7 +3976,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -4373,7 +4373,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -4770,7 +4770,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -5167,7 +5167,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -5564,7 +5564,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -5961,7 +5961,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -6358,7 +6358,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -6755,7 +6755,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -7152,7 +7152,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -7549,7 +7549,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -7946,7 +7946,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -8343,7 +8343,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -8740,7 +8740,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -9137,7 +9137,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -9534,7 +9534,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -9931,7 +9931,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -10328,7 +10328,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -10725,7 +10725,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -11122,7 +11122,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -11519,7 +11519,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -11916,7 +11916,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -12313,7 +12313,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -12710,7 +12710,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -13107,7 +13107,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -13504,7 +13504,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -13901,7 +13901,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -14298,7 +14298,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -14695,7 +14695,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -15092,7 +15092,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -15489,7 +15489,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -15886,7 +15886,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -16283,7 +16283,7 @@
             "chapter": "Chapter Two (Agriculture)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "match"
         },
         "embedding": [
@@ -16680,7 +16680,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -17077,7 +17077,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -17474,7 +17474,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -17871,7 +17871,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -18268,7 +18268,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "multiple-choice"
         },
         "embedding": [
@@ -18665,7 +18665,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -19062,7 +19062,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -19459,7 +19459,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -19856,7 +19856,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -20253,7 +20253,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -20650,7 +20650,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -21047,7 +21047,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -21444,7 +21444,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "match"
         },
         "embedding": [
@@ -21841,7 +21841,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -22238,7 +22238,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -22635,7 +22635,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -23032,7 +23032,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -23429,7 +23429,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -23826,7 +23826,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -24223,7 +24223,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -24620,7 +24620,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -25017,7 +25017,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -25414,7 +25414,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -25811,7 +25811,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -26208,7 +26208,7 @@
             "chapter": "Chapter Three (Water management for economic development)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -26605,7 +26605,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -27002,7 +27002,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -27399,7 +27399,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -27796,7 +27796,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -28193,7 +28193,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "draw"
         },
         "embedding": [
@@ -28590,7 +28590,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -28987,7 +28987,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -29384,7 +29384,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -29781,7 +29781,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -30178,7 +30178,7 @@
             "chapter": "Chapter Four (Sustainable use of forest resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -30575,7 +30575,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -30972,7 +30972,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -31369,7 +31369,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -31766,7 +31766,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -32163,7 +32163,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -32560,7 +32560,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -32957,7 +32957,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -33354,7 +33354,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -33751,7 +33751,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -34148,7 +34148,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -34545,7 +34545,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -34942,7 +34942,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -35339,7 +35339,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -35736,7 +35736,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -36133,7 +36133,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -36530,7 +36530,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -36927,7 +36927,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -37324,7 +37324,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -37721,7 +37721,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -38118,7 +38118,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -38515,7 +38515,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -38912,7 +38912,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -39309,7 +39309,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -39706,7 +39706,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -40103,7 +40103,7 @@
             "chapter": "Chapter Five (Mining Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -40500,7 +40500,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -40897,7 +40897,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -41294,7 +41294,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -41691,7 +41691,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -42088,7 +42088,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -42485,7 +42485,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -42882,7 +42882,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -43279,7 +43279,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "draw"
         },
         "embedding": [
@@ -43676,7 +43676,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -44073,7 +44073,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -44470,7 +44470,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -44867,7 +44867,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -45264,7 +45264,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -45661,7 +45661,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -46058,7 +46058,7 @@
             "chapter": "Chapter six (Tourism)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -46455,7 +46455,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -46852,7 +46852,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -47249,7 +47249,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -47646,7 +47646,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -48043,7 +48043,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -48440,7 +48440,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -48837,7 +48837,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -49234,7 +49234,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -49631,7 +49631,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -50028,7 +50028,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -50425,7 +50425,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -50822,7 +50822,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -51219,7 +51219,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -51616,7 +51616,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -52013,7 +52013,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -52410,7 +52410,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -52807,7 +52807,7 @@
             "chapter": "Chapter Seven (Manufacturing Industry)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -53204,7 +53204,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -53601,7 +53601,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -53998,7 +53998,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -54395,7 +54395,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -54792,7 +54792,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -55189,7 +55189,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -55586,7 +55586,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -55983,7 +55983,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -56380,7 +56380,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -56777,7 +56777,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -57174,7 +57174,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -57571,7 +57571,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -57968,7 +57968,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -58365,7 +58365,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -58762,7 +58762,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -59159,7 +59159,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -59556,7 +59556,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -59953,7 +59953,7 @@
             "chapter": "Chapter Eight (Sustainable use of power and energy resources)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -60350,7 +60350,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -60747,7 +60747,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -61144,7 +61144,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -61541,7 +61541,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -61938,7 +61938,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -62335,7 +62335,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -62732,7 +62732,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -63129,7 +63129,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "short-answer"
         },
         "embedding": [
@@ -63526,7 +63526,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "long-answer"
         },
         "embedding": [
@@ -63923,7 +63923,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -64320,7 +64320,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -64717,7 +64717,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -65114,7 +65114,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -65511,7 +65511,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -65908,7 +65908,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [
@@ -66305,7 +66305,7 @@
             "chapter": "Chapter Nine (Transport)",
             "subsection": null,
             "subsubsection": null,
-            "type": "Exercise",
+            "doc_type": "Exercise",
             "exercise_format": "true-false"
         },
         "embedding": [

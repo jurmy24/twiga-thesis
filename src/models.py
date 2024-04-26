@@ -6,11 +6,6 @@ class ChatMessage(BaseModel):
     content: str
     role: Literal["system", "user", "assistant"]
 
-# class EvalQuery(BaseModel):
-#     query: str
-#     requested_exercise_format: Literal['short-answer', 'long-answer', 'true-false']
-#     topic: str
-
 class EvalQuery(BaseModel):
     query: str = Field(..., description="The query provided by the Tanzanian teacher asking the model to generate an exercise/question.")
     requested_exercise_format: Literal['short-answer', 'long-answer', 'true-false'] = Field(..., description="The type of question or exercise that is being requested.")
@@ -23,9 +18,6 @@ class EvalQuery(BaseModel):
             "topic": self.topic
         }
 
-# class EvalQueryList(BaseModel):
-#     queries: List[EvalQuery] = Field(..., description="A list of queries from Tanzanian teachers")
-
 class Metadata(BaseModel):
     title: Optional[str] = None
     chapter: Optional[str] = None
@@ -37,3 +29,11 @@ class Metadata(BaseModel):
 class ChunkSchema(BaseModel):
     chunk: str # this is the stuff that shall be embedded
     metadata: Metadata
+    embedding: List[float]
+
+class RetrievedDocSchema(BaseModel):
+    retrieval_type: str
+    score: float
+    id: str
+    source: ChunkSchema
+

@@ -45,19 +45,19 @@ if __name__ == "__main__":
     content_path = os.path.join(DATA_DIR, "documents", "json", "v3-tie-geography-f2-content.json")
     
 
-    data_search = DataSearch()
+    # data_search = DataSearch()
 
-    query_args_knn = {
-        'field': 'embedding',
-        'query_vector': data_search.get_embedding("Generate a question that talks about rainfall in Tanzania."),
-        'num_candidates': 50, # this is the number of candidate documents to consider from each shard
-        'k': 10, # this is the number of results to return
-        **filters
-    }
+    # query_args_knn = {
+    #     'field': 'embedding',
+    #     'query_vector': data_search.get_embedding("Generate a question that talks about rainfall in Tanzania."),
+    #     'num_candidates': 50, # this is the number of candidate documents to consider from each shard
+    #     'k': 10, # this is the number of results to return
+    #     **filters
+    # }
     
-    matches = results['hits']['hits'] # gives the resulting data (the 10 results)
-    total = results['hits']['total']['value'] # gives the number of results
+    # matches = results['hits']['hits'] # gives the resulting data (the 10 results)
+    # total = results['hits']['total']['value'] # gives the number of results
 
-    print(matches)
-    print("::::::::::::::::::::::::::::::::::::::")
-    print(total)
+    # print(matches)
+    # print("::::::::::::::::::::::::::::::::::::::")
+    # print(total)

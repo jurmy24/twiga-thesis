@@ -1,8 +1,13 @@
-from src.openai_requests import openai_request
-from openai.types.chat import ChatCompletion
+from typing import List, Literal, Tuple
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from openai.types.chat import ChatCompletion
 import logging
+
+from src.models import RetrievedDocSchema
+from src.openai_requests import openai_request
+from src.DataSearch import DataSearch
+from src.utils import load_json_to_retrieveddocschema
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -59,6 +64,55 @@ def local_query_rewriter(query:str) -> str:
     text = tokenizer.batch_decode(outputs)[0]
     text = text.replace("Write a passage that answers the given query: \nQuery: {query} \nAnswer: ", "")
     return text.replace("\n", "") # because this model has a tendency to add unnecessary stuff if it tries to write another paragraph
+
+def elasticsearch_retriever(retrieval_msg: str, retrieve_type: Literal["content", "exercise"], retrieve_dense: bool=True, retrieve_sparse: bool=False, metadata_filters: dict=None) -> Tuple:
+    data_search = DataSearch()
+
+    if metadata_filters is not None:
+        filters = {"type": retrieve_type, **metadata_filters}
+    else:
+        filters = {"type": retrieve_type}
+
+
+    # if retrieve_dense and retrieve_sparse:
+    #     query_args_knn = {
+    #         'field': 'embedding',
+    #         'query_vector': data_search.get_embedding(retrieval_msg),
+    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
+    #         'k': 10, # this is the number of results to return
+    #         **filters
+    #     }
+    # elif retrieve_dense:
+    #     query_args_knn = {
+    #         'field': 'embedding',
+    #         'query_vector': data_search.get_embedding(retrieval_msg),
+    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
+    #         'k': 10, # this is the number of results to return
+    #         **filters
+    #     }
+    # elif retrieve_sparse:
+    #     query_args_knn = {
+    #         'field': 'embedding',
+    #         'query_vector': data_search.get_embedding("Generate a question that talks about rainfall in Tanzania."),
+    #         'num_candidates': 50, # this is the number of candidate documents to consider from each shard
+    #         'k': 10, # this is the number of results to return
+    #         **filters
+    #     }
+    
+    # matches = results['hits']['hits'] # gives the resulting data (the 10 results)
+    # total = results['hits']['total']['value'] # gives the number of results
+
+    res = data_search.es.search(index="twiga_documents", q=retrieval_msg)
+    res = res.body
+
+    num_hits: int = int(res["hits"]["total"]["value"])
+    max_score: float = float(res["hits"]["max_score"])
+    retrieval_type: str = str(res["hits"]["total"]["relation"])
+    hits: List[dict] = res["hits"]["hits"]
+    docs: List[RetrievedDocSchema] = load_json_to_retrieveddocschema(hits)
+
+    return num_hits, max_score, retrieval_type, docs
+
 
 def reranker(query, documents):
     pass

@@ -5,7 +5,7 @@ import os
 
 from pydantic import ValidationError
 from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT, DEFAULT_KG_TRIPLET_EXTRACT_PROMPT, CHAT_TEXT_QA_SYSTEM_PROMPT, CHAT_TEXT_QA_USER_PROMPT
-from src.models import ChatMessage, ChunkSchema, Metadata
+from src.models import ChatMessage, ChunkSchema, Metadata, RetrievedDocSchema
 import tiktoken
 
 def save_documents_as_json(documents: List[Document], output_path: str):
@@ -160,3 +160,16 @@ def load_json_file_to_chunkschema(file_path: str) -> List[ChunkSchema]:
                 print(f"ValidationError when parsing document {index + 1}: {e}")
         # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
         return chunks
+    
+def load_json_to_retrieveddocschema(data: List[dict]) -> List[RetrievedDocSchema]:
+    docs = []
+    for index, item in enumerate(data):
+        try:
+            # Explicitly handle the creation of Metadata objects if necessary
+            chunk = ChunkSchema(**{**item['_source'], "metadata": Metadata(**item['_source']['metadata'])})
+            doc = RetrievedDocSchema(retrieval_type='IDK', score=item['_score'], id=item['_id'], source=chunk)
+            docs.append(doc)
+        except ValidationError as e:
+            print(f"ValidationError when parsing retrieved document {index + 1}: {e}")
+    # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
+    return docs

@@ -161,7 +161,6 @@ def reranker(query, documents: List[RetrievedDocSchema]) -> List[RetrievedDocSch
     from sentence_transformers import CrossEncoder
     cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
-
     # Extract text content from Document objects and convert to strings
     document_texts = [doc.source.chunk for doc in documents]
     query_text = "What were the most important factors that contributed to increases in revenue?"

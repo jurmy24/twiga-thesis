@@ -2,15 +2,13 @@ from typing import Literal
 import backoff
 import json
 import os
-
-import groq
-from groq import Groq
-from groq import AsyncGroq
-from src.utils import num_tokens_from_string
-
 from dotenv import load_dotenv
 import logging
 
+
+import groq
+from groq import Groq, AsyncGroq
+from src.utils import num_tokens_from_messages
 
 # Set up basic logging configuration
 logging.basicConfig(level=logging.INFO)
@@ -24,20 +22,23 @@ async_client = AsyncGroq(api_key=GROQ_API_KEY)
 
 # TODO: include the number of tokens in the verbose
 
-# Decorator to automatically back off and retry on rate limit errors (set 60 second interval since Groq refreshes its rates every minute)
-@backoff.on_exception(backoff.expo, groq.RateLimitError, interval=60, max_tries=10, max_time=300)
+# Decorator to automatically back off and retry on rate limit errors
+@backoff.on_exception(backoff.expo, groq.RateLimitError, max_tries=10, max_time=300)
 def groq_request(llm: Literal["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b-32768", "gemma-7b-it"], verbose: bool=False, **params):
     try:
        # Print messages if the flag is True
         if verbose:
-            logger.info(
-                "Messages sent to API: ",
-                json.dumps(params["messages"], indent=2),
-            )
+            messages = params.get('messages', None)
+            logger.info(f"Messages sent to Groq API:\n{json.dumps(messages, indent=2)}")
+            logger.info(f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}")
+        
+        full_params = {
+            "model": llm,
+            **params
+        }
 
         completion = sync_client.chat.completions.create(
-            model=llm
-            **params
+            **full_params
         )
 
         return completion
@@ -50,15 +51,14 @@ def groq_request(llm: Literal["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b
         logger.error(f"Unexpected error: {e}")
         raise
 
-@backoff.on_exception(backoff.expo, groq.RateLimitError, interval=60, max_tries=10, max_time=300)
+@backoff.on_exception(backoff.expo, groq.RateLimitError, max_tries=10, max_time=300)
 async def async_groq_request(llm: Literal["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b-32768", "gemma-7b-it"], verbose: bool=False, **params):
     try:
         # Print messages if the flag is True
         if verbose:
-            logger.info(
-                "Messages sent to API: ",
-                json.dumps(params["messages"], indent=2),
-            )
+            messages = params.get('messages', None)
+            logger.info(f"Messages sent to Groq API:\n{json.dumps(messages, indent=2)}")
+            logger.info(f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}")
 
         completion = await async_client.chat.completions.create(
             model=llm

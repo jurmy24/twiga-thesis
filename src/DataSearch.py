@@ -64,10 +64,10 @@ class DataSearch:
             return res.body
         except es_exceptions.RequestError as e:
             logger.error(f"Search request failed: {e}")
-            return None
+            raise
         except Exception as e:
             logger.error(f"Search operation failed: {e}")
-            return None
+            raise
 
 if __name__ == "__main__":
     # Paths to my data

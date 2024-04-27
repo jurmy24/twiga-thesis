@@ -5,7 +5,7 @@ from openai.types.chat import ChatCompletion
 import logging
 
 from src.models import RetrievedDocSchema
-from src.openai_requests import openai_request
+from src.llms.openai_requests import openai_request
 from src.DataSearch import DataSearch
 from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response_rrf, pretty_elasticsearch_response
 

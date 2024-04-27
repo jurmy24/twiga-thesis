@@ -4,9 +4,10 @@ from llama_index.core.schema import Document
 import os
 
 from pydantic import ValidationError
-from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT, DEFAULT_KG_TRIPLET_EXTRACT_PROMPT, CHAT_TEXT_QA_SYSTEM_PROMPT, CHAT_TEXT_QA_USER_PROMPT
-from src.models import ChatMessage, ChunkSchema, Metadata, RetrievedDocSchema
+from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT
+from src.models import ChatMessage, ChunkSchema, EvalQuery, Metadata, RetrievedDocSchema
 import tiktoken
+from sentence_transformers import SentenceTransformer
 
 def save_documents_as_json(documents: List[Document], output_path: str):
     """
@@ -63,32 +64,6 @@ def save_markdown_content(document: Document, output_path):
     with open(output_path, 'w', encoding='utf-8') as file:
         file.write(markdown_content)
 
-def save_nodes_as_json(nodes, filename="base_nodes.json"):
-    """
-    Saves base_nodes to a JSON file.
-
-    Parameters:
-    - base_nodes: A list of base node objects. Assumes each object can be directly serialized.
-    - filename (str): The filename for the output JSON.
-    """
-    with open(filename, 'w', encoding='utf-8') as file:
-        # Convert base_nodes to a serializable format if necessary
-        base_nodes_data = [node.__dict__ for node in nodes]
-        json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
-
-def save_base_nodes_as_json(base_nodes, filename="base_nodes.json"):
-    """
-    Saves base_nodes to a JSON file.
-
-    Parameters:
-    - base_nodes: A list of base node objects. Assumes each object can be directly serialized.
-    - filename (str): The filename for the output JSON.
-    """
-    with open(filename, 'w', encoding='utf-8') as file:
-        # Convert base_nodes to a serializable format if necessary
-        base_nodes_data = [node.__dict__ for node in base_nodes]
-        json.dump(base_nodes_data, file, ensure_ascii=False, indent=4)
-
 def save_objects_as_json(objects, filename, rewrite=True):
     """
     Appends objects to a JSON file without overwriting existing data.
@@ -121,13 +96,9 @@ def generate_text_qa_prompt(context: str, query: str) -> str:
     prompt = DEFAULT_TEXT_QA_PROMPT.format(context_str=context, query_str=query)
     return prompt
 
-def generate_kg_triplet_prompt(text: str, max_triplets:int=3) -> str:
-    prompt = DEFAULT_KG_TRIPLET_EXTRACT_PROMPT.format(text=text, max_knowledge_triplets=max_triplets)
-    return prompt
-
-def generate_chat_text_qa_user_prompt(context: str, query: str) -> ChatMessage:
-    prompt = CHAT_TEXT_QA_USER_PROMPT.content.format(context_str=context, query_str=query)
-    return ChatMessage(content=prompt, role="user")
+def get_embedding(text: str) -> List[float]:
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+    return model.encode(text)
 
 def num_tokens_from_string(string: str, encoding_name: str="cl100k_base") -> int:
     """Returns the number of tokens in a text string."""
@@ -150,6 +121,15 @@ def num_tokens_from_messages(messages: List[dict], encoding_name: str="cl100k_ba
                 num_tokens += tokens_per_name
     num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
     return num_tokens
+
+def load_json_to_evalquery(data: List[dict]) -> List[EvalQuery]:
+    eval_queries = []
+    for index, item in enumerate(data):
+        try:
+            eval_queries.append(EvalQuery(**item))
+        except ValidationError as e:
+            print(f"ValidationError when parsing evaluation query {index + 1}: {e}")
+    return eval_queries
 
 def load_json_file_to_chunkschema(file_path: str) -> List[ChunkSchema]:
     with open(file_path, 'r') as file:

@@ -8,7 +8,7 @@ class ChatMessage(BaseModel):
 
 class RewrittenQuery(BaseModel):
     rewritten_query_str: str
-    embedding: str
+    embedding: List[float]
 
 class EvalQuery(BaseModel):
     query: str = Field(..., description="The query provided by the Tanzanian teacher asking the model to generate an exercise/question.")
@@ -18,11 +18,23 @@ class EvalQuery(BaseModel):
     rewritten_query: Optional[RewrittenQuery]
 
     def to_dict(self):
-        return {
-            "query": self.query,
-            "requested_exercise_format": self.requested_exercise_format,
-            "topic": self.topic
-        }
+        if self.embedding is not None and self.rewritten_query is not None:
+            return {
+                "query": self.query,
+                "requested_exercise_format": self.requested_exercise_format,
+                "topic": self.topic,
+                "embedding": self.embedding,
+                "rewritten_query": {
+                    "rewritten_query_str": self.rewritten_query.rewritten_query_str,
+                    "embedding": self.rewritten_query.embedding
+                }
+            }
+        else:
+            return {
+                "query": self.query,
+                "requested_exercise_format": self.requested_exercise_format,
+                "topic": self.topic
+            }
 
 class Metadata(BaseModel):
     title: Optional[str] = None

@@ -110,7 +110,7 @@ CHAT_TREE_SUMMARIZE_USER_PROMPT = ChatMessage(
     )
 
 # Refine Prompt (a variant of this one can be used for the query rewriter)
-CHAT_REFINE_USER_PROMPT = ChatMessage(
+REFINE_USER_PROMPT = ChatMessage(
     content=(
         "You are an expert Q&A system that strictly operates in two modes "
         "when refining existing answers:\n"
@@ -126,3 +126,9 @@ CHAT_REFINE_USER_PROMPT = ChatMessage(
     role="user",
     )
 
+REWRITE_QUERY_PROMPT = ChatMessage(
+    content=(
+        "You are an expert assistant that simply rewrites a query into a short passage about the topic it is requesting a question about. You do not write a question, but only find the topic they are requesting a question about and describe that topic."
+    ),
+    role="system"
+)

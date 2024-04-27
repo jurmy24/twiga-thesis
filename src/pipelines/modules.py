@@ -4,10 +4,12 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from openai.types.chat import ChatCompletion
 import logging
 
+from src.llms.groq_requests import groq_request
 from src.models import RetrievedDocSchema
 from src.llms.openai_requests import openai_request
 from src.DataSearch import DataSearch
 from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response_rrf, pretty_elasticsearch_response
+from src.prompt_templates import REWRITE_QUERY_PROMPT
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -17,10 +19,8 @@ This is the modules file, which will contain the modular components that can be 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-data_search = DataSearch()
-
 # TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
-def query_rewriter(query:str) -> str:
+def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-8x7b-32768", "gemma-7b-it"]) -> str:
     """
     Enhances a user query by rewriting it in better English and adding more detail.
 
@@ -28,21 +28,27 @@ def query_rewriter(query:str) -> str:
     - query (str): The user's original query string.
     """
     try:        
-
         messages = [
-            {"role": "system", "content": "You are a helpful assistant that rewrites queries from the user into a short passage about the topic they are requesting a question about. You do not write a question, but find the topic they are requesting a question about and describe that topic."},
-            {"role": "user", "content": f"{query}"}
+            {"role": REWRITE_QUERY_PROMPT.role, "content": REWRITE_QUERY_PROMPT.content},
+            {"role": "user", "content": f"Query: ({query})"}
         ]
 
-        # Send the prompt to the OpenAI API using a suitable engine
-
-        res: ChatCompletion = openai_request(
-            model="gpt-3.5-turbo-0125",
-            messages=messages,
-            max_tokens=100,  # Adjust based on the expected length of the enhanced query
-            n=1,  # Number of completions to generate (default is 1)
-            stop=None  # Optional stopping character or sequence
-        )
+        # Send the prompt to API using a suitable engine
+        if llm == "openai":
+            res: ChatCompletion = openai_request(
+                model="gpt-3.5-turbo-0125",
+                messages=messages,
+                max_tokens=100,  # Adjust based on the expected length of the enhanced query
+                n=1,  # Number of completions to generate (default is 1)
+                stop=None  # Optional stopping character or sequence
+            )
+        else:
+            res = groq_request(
+                llm=llm,
+                verbose=True,
+                messages=messages, 
+                max_tokens=100,
+            )
             
         # Extract the enhanced query text from the response
         enhanced_query = res.choices[0].message.content
@@ -72,6 +78,9 @@ def elasticsearch_retriever(
         book_title: str="Geography for Secondary Schools Student's Book Form Two", 
         retrieve_dense: bool=True, retrieve_sparse: bool=False,
         verbose: bool=False) -> List[RetrievedDocSchema]:
+    
+    # TODO: move this elsewhere so that I don't need to reinitialize the datasearch class every time I call for a retrieval
+    data_search = DataSearch()
 
     # Bool value stating whether or not we will use reciprocal rank fusion
     retrieve_rrf = retrieve_dense and retrieve_sparse

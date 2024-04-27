@@ -3,6 +3,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from openai.types.chat import ChatCompletion
 import logging
+from dotenv import load_dotenv
+import os
 
 from src.llms.groq_requests import groq_request
 from src.models import RetrievedDocSchema
@@ -10,6 +12,7 @@ from src.llms.openai_requests import openai_request
 from src.DataSearch import DataSearch
 from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response_rrf, pretty_elasticsearch_response
 from src.prompt_templates import REWRITE_QUERY_PROMPT
+import cohere
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -18,6 +21,10 @@ This is the modules file, which will contain the modular components that can be 
 # Set up basic logging configuration
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+load_dotenv()
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+
 
 # TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
 def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-8x7b-32768", "gemma-7b-it"]) -> str:
@@ -148,5 +155,45 @@ def elasticsearch_retriever(
 def reranker(query, documents: List[RetrievedDocSchema]) -> List[RetrievedDocSchema]:
     # this function takes in a list of documents, puts them into a reranker against the original query and reorders them
     # it returns a list of documents that is shorter
-    pass
+    # TODO: Figure out if this (cross-encoder) is better to use than Cohere's API
+    import numpy as np
+    #cross encoder reranker
+    from sentence_transformers import CrossEncoder
+    cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+
+    # Extract text content from Document objects and convert to strings
+    document_texts = [doc.source.chunk for doc in documents]
+    query_text = "What were the most important factors that contributed to increases in revenue?"
+    # Create pairs as strings
+    pairs = [[query_text, doc_text] for doc_text in document_texts]
+    # Predict scores for pairs
+    scores = cross_encoder.predict(pairs)
+    # Print scores
+    print("Scores:")
+    for score in scores:
+        print(score)
+
+
+    print("New Ordering:")
+    for o in np.argsort(scores)[::-1]:
+        print(o+1)
+
+def cohere_rerank(query: str, documents: List[RetrievedDocSchema]) -> List[RetrievedDocSchema]:
+    co = cohere.Client(COHERE_API_KEY)
+
+    docs = [
+        "Carson City is the capital city of the American state of Nevada.",
+        "The Commonwealth of the Northern Mariana Islands is a group of islands in the Pacific Ocean. Its capital is Saipan.",
+        "Washington, D.C. (also known as simply Washington or D.C., and officially as the District of Columbia) is the capital of the United States. It is a federal district.",
+        "Capital punishment (the death penalty) has existed in the United States since beforethe United States was a country. As of 2017, capital punishment is legal in 30 of the 50 states.",
+    ]
+
+    response = co.rerank(
+        model="rerank-english-v2.0",
+        query="What is the capital of the United States?",
+        documents=docs,
+        top_n=3,
+    )
+    print(response)
     

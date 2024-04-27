@@ -162,6 +162,8 @@ def elasticsearch_retriever(retrieval_msg: str, size: int, doc_type: Literal["Co
     return num_hits, max_score, retrieval_type, docs
 
 
-def reranker(query, documents):
+def reranker(query, documents: List[RetrievedDocSchema]) -> List[RetrievedDocSchema]:
+    # this function takes in a list of documents, puts them into a reranker against the original query and reorders them
+    # it returns a list of documents that is shorter
     pass
     

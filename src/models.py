@@ -6,10 +6,16 @@ class ChatMessage(BaseModel):
     content: str
     role: Literal["system", "user", "assistant"]
 
+class RewrittenQuery(BaseModel):
+    rewritten_query_str: str
+    embedding: str
+
 class EvalQuery(BaseModel):
     query: str = Field(..., description="The query provided by the Tanzanian teacher asking the model to generate an exercise/question.")
     requested_exercise_format: Literal['short-answer', 'long-answer', 'true-false'] = Field(..., description="The type of question or exercise that is being requested.")
     topic: str
+    embedding: Optional[List[float]]
+    rewritten_query: Optional[RewrittenQuery]
 
     def to_dict(self):
         return {
@@ -37,4 +43,14 @@ class RetrievedDocSchema(BaseModel):
     rank: Optional[int]
     id: str
     source: ChunkSchema
+
+class ResponseSchema(BaseModel):
+    text: str
+    embedding: List[float]
+
+class PipelineData(BaseModel):
+    query: EvalQuery # this contains the query string, the requested exercise format, the topic, the embedding, and the string and embedding of the rewritten query for retrieval
+    retrieved_docs: List[RetrievedDocSchema]
+    response: ResponseSchema
+    
 

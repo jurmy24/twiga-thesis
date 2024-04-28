@@ -40,13 +40,14 @@ def baseline_generator(query: EvalQuery, model: Literal["gpt-3.5-turbo-0125", "g
                 llm=model,
                 verbose=False,
                 messages=messages, 
-                max_tokens=150,
+                max_tokens=100,
             )
         else:
             res: ChatCompletion = openai_request(
                 model=model,
+                verbose=False,
                 messages=messages,
-                max_tokens=150,  # Adjust based on the expected length of the enhanced query
+                max_tokens=100,  # Adjust based on the expected length of the enhanced query
             )
 
         # Extract the enhanced query text from the response
@@ -78,15 +79,16 @@ def run_baseline_fast(queries: List[EvalQuery], model: Literal["gpt-3.5-turbo-01
 
 if __name__ == "__main__":
     test_path = os.path.join(DATA_DIR, "datasets", "test-prompts.json")
+    test_path_control = os.path.join(DATA_DIR, "datasets", "control-test-prompts.json")
     save_path = os.path.join(DATA_DIR, "results", "1-baseline-gpt-3-5.json")
     save_path_control = os.path.join(DATA_DIR, "results", "1-baseline-gpt-3-5-control.json")
 
-    with open(test_path, 'r') as file:
+    with open(test_path_control, 'r') as file:
         data = json.load(file)
 
-    eval_queries = load_json_to_evalquery(data)[0:5] # test with only the first 5
+    eval_queries = load_json_to_evalquery(data)
 
     generated_queries = run_baseline_fast(eval_queries, model="gpt-3.5-turbo-0125")
 
     # Save to JSON
-    save_objects_as_json(generated_queries, save_path, rewrite=True)
+    save_objects_as_json(generated_queries, save_path_control, rewrite=True)

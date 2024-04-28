@@ -24,13 +24,13 @@ class EvalQuery(BaseModel):
     rewritten_query: Optional[RewrittenQuery] = None
 
     def to_dict(self):
-        if self.embedding is not None and self.rewritten_query is not None:
+        if self.embedding is not None:
             return {
                 "query": self.query,
                 "requested_exercise_format": self.requested_exercise_format,
                 "topic": self.topic,
                 "embedding": self.embedding,
-                "rewritten_query": self.rewritten_query.to_dict()
+                "rewritten_query": self.rewritten_query.to_dict() if self.rewritten_query is not None else None
             }
         else:
             return {

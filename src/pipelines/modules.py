@@ -33,6 +33,7 @@ def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-
 
     Parameters:
     - query (str): The user's original query string.
+    - llm (str): The llm to be used
     """
     try:        
         messages = [
@@ -54,7 +55,7 @@ def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-
                 llm=llm,
                 verbose=False,
                 messages=messages, 
-                max_tokens=100,
+                max_tokens=80,
             )
             
         # Extract the enhanced query text from the response

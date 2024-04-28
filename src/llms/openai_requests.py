@@ -3,7 +3,7 @@ import backoff
 import json
 import os
 import openai
-from src.utils import num_tokens_from_messages, num_tokens_from_string
+from src.utils import num_tokens_from_messages
 from openai.types.chat import ChatCompletion
 from dotenv import load_dotenv
 import logging
@@ -26,7 +26,7 @@ def openai_request(verbose: bool=False, **params) -> ChatCompletion:
         # Print messages if the flag is True
         if verbose:
             messages = params.get('messages', None)
-            logger.info(f"Messages sent to Groq API:\n{json.dumps(messages, indent=2)}")
+            logger.info(f"Messages sent to OpenAI API:\n{json.dumps(messages, indent=2)}")
             logger.info(f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}")
 
         completion = sync_client.chat.completions.create(
@@ -49,7 +49,7 @@ async def async_openai_request(verbose: bool=False, **params) -> ChatCompletion:
         # Print messages if the flag is True
         if verbose:
             messages = params.get('messages', None)
-            logger.info(f"Messages sent to Groq API:\n{json.dumps(messages, indent=2)}")
+            logger.info(f"Messages sent to OpenAI API:\n{json.dumps(messages, indent=2)}")
             logger.info(f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}")
 
         completion = await async_client.chat.completions.create(

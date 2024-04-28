@@ -11,33 +11,7 @@ DEFAULT_TEXT_QA_PROMPT = (
     "Given the context information and not prior knowledge, "
     "answer the query.\n"
     "Query: {query_str}\n"
-    "Answer: "
-)
-
-DEFAULT_TREE_SUMMARIZE = (
-    "Context information from multiple sources is below.\n"
-    "---------------------\n"
-    "{context_str}\n"
-    "---------------------\n"
-    "Given the information from multiple sources and not prior knowledge, "
-    "answer the query.\n"
-    "Query: {query_str}\n"
-    "Answer: "
-)
-
-# NOTE: by partially filling schema, we can reduce to a QuestionAnswer prompt
-# that we can feed to ur table
-DEFAULT_TABLE_CONTEXT_PROMPT = (
-    "We have provided a table schema below. "
-    "---------------------\n"
-    "{schema}\n"
-    "---------------------\n"
-    "We have also provided context information below. "
-    "{context_str}\n"
-    "---------------------\n"
-    "Given the context information and the table schema, "
-    "give a response to the following task: {query_str}"
-)
+    "Answer: ")
 
 # Here is an example using two-shot prompting (i.e. providing examples)
 DEFAULT_KG_TRIPLET_EXTRACT_PROMPT = (
@@ -129,6 +103,13 @@ REFINE_USER_PROMPT = ChatMessage(
 REWRITE_QUERY_PROMPT = ChatMessage(
     content=(
         "You are an expert assistant that simply rewrites a query into a short passage about the topic it is requesting a question about. You do not write a question, but only find the topic they are requesting a question about and describe that topic."
+    ),
+    role="system"
+)
+
+BASELINE_GENERATOR_PROMPT = ChatMessage(
+    content=(
+        "You are a skilled Tanzanian secondary school teacher that generates questions for Tanzanian Form 2 students based on the request made by the user."
     ),
     role="system"
 )

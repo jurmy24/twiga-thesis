@@ -97,7 +97,7 @@ def generate_text_qa_prompt(context: str, query: str) -> str:
     return prompt
 
 def get_embedding(text: str, model: SentenceTransformer) -> List[float]:
-    return model.encode(text)
+    return model.encode(text).tolist()
 
 def num_tokens_from_string(string: str, encoding_name: str="cl100k_base") -> int:
     """Returns the number of tokens in a text string."""

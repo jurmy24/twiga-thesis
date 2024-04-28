@@ -89,6 +89,12 @@ class ResponseSchema(BaseModel):
     text: str
     embedding: List[float]
 
+    def to_dict(self):
+        return {
+            "text": self.text,
+            "embedding": self.embedding
+        }
+
 class PipelineData(BaseModel):
     query: EvalQuery # this contains the query string, the requested exercise format, the topic, the embedding, and the string and embedding of the rewritten query for retrieval
     retrieved_docs: Optional[List[RetrievedDocSchema]] = None

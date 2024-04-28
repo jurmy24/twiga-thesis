@@ -13,6 +13,7 @@ from src.utils import num_tokens_from_messages
 # Set up basic logging configuration
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+logging.getLogger("httpx").setLevel(logging.WARNING) # to get rid of the httpx logs
 
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

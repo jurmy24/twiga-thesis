@@ -52,7 +52,7 @@ def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-
         else:
             res = groq_request(
                 llm=llm,
-                verbose=True,
+                verbose=False,
                 messages=messages, 
                 max_tokens=100,
             )

@@ -1,10 +1,12 @@
 import json
 from typing import List, Literal
-from src.models import EvalQuery, RewrittenQuery
+from src.models import EvalQuery, RewrittenQuery, PipelineData
 from src.utils import load_json_to_evalquery, get_embedding, save_objects_as_json
 from src.pipelines.modules import query_rewriter
 import os
 from dotenv import load_dotenv
+from sentence_transformers import SentenceTransformer
+from tqdm import tqdm
 
 load_dotenv()
 DATA_DIR = os.getenv("DATA_DIR_PATH")
@@ -13,18 +15,19 @@ def process_queries(file_path: str):
     with open(file_path, 'r') as file:
         data = json.load(file)
     
+    model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
     queries: List[EvalQuery] = load_json_to_evalquery(data)
 
     results: List[EvalQuery] = []
-    for eval_query in queries:
+    for eval_query in tqdm(queries[0:3], desc="Rewriting queries..."):
 
         # Put the query into the query rewriter
         original_query = eval_query.query
         rewritten_query = query_rewriter(original_query, llm="llama3-8b-8192") # would be better if this could be done as a batch but I guess not...
 
         # Get the embeddings of both the original query and the rewritten one
-        original_embedding = get_embedding(original_query)
-        rewritten_embedding = get_embedding(rewritten_query)
+        original_embedding = get_embedding(original_query, model)
+        rewritten_embedding = get_embedding(rewritten_query, model)
 
         rwq: RewrittenQuery = RewrittenQuery(rewritten_query_str=rewritten_query, embedding=rewritten_embedding)
 
@@ -36,7 +39,9 @@ def process_queries(file_path: str):
             rewritten_query=rwq
             )
         
-        results.append(evq)
+        pip_data: PipelineData = PipelineData(query=evq)
+        
+        results.append(pip_data)
 
     return results
 

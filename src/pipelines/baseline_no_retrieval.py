@@ -54,6 +54,7 @@ def baseline_generator(query: EvalQuery, model: Literal["gpt-3.5-turbo-0125", "g
         gen_query = res.choices[0].message.content
 
         return query, gen_query
+    
     except Exception as e:
         logger.error(f"An error occurred when generating a baseline response query: {e}")
         return None

@@ -61,8 +61,8 @@ def process_rewritten_queries(file_path: str) -> List[PipelineData]:
         rewritten_query = item.query.rewritten_query.rewritten_query_str
 
         
-        retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=10, doc_type="Content", retrieve_dense=True, retrieve_sparse=True)
-        retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=5, doc_type="Exercise", retrieve_dense=True, retrieve_sparse=True)
+        retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=10, doc_type="Content", retrieve_dense=True, retrieve_sparse=False)
+        retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=5, doc_type="Exercise", retrieve_dense=True, retrieve_sparse=False)
 
         retrieved_content = rerank(item.query, retrieved_content, num_results=5)
         retrieved_exercises = rerank(item.query, retrieved_exercises, num_results=2)
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     # save_objects_as_json(results, control_test_prompts_rewritten_file, rewrite=True)
 
     test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten.json")
-    test_prompts_retrieved_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten-retrieved.json")
+    test_prompts_retrieved_file = os.path.join(DATA_DIR, "datasets", "ablation", "retrieved-(no-sparse-retrieval).json")
 
     res = process_rewritten_queries(test_prompts_rewritten_file)
 

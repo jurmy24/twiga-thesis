@@ -14,8 +14,6 @@ from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_resp
 from src.prompt_templates import REWRITE_QUERY_PROMPT
 
 # for rerankers
-import cohere
-import numpy as np
 from sentence_transformers import CrossEncoder
 
 """
@@ -50,7 +48,7 @@ def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-
             res: ChatCompletion = openai_request(
                 model="gpt-3.5-turbo-0125",
                 messages=messages,
-                max_tokens=100,  # Adjust based on the expected length of the enhanced query
+                max_tokens=80,  # Adjust based on the expected length of the enhanced query
                 n=1,  # Number of completions to generate (default is 1)
                 stop=None  # Optional stopping character or sequence
             )

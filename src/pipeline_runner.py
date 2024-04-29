@@ -19,7 +19,7 @@ def process_queries(file_path: str):
     queries: List[EvalQuery] = load_json_to_evalquery(data)
 
     results: List[EvalQuery] = []
-    for eval_query in tqdm(queries[0:3], desc="Rewriting queries..."):
+    for eval_query in tqdm(queries, desc="Rewriting queries..."):
 
         # Put the query into the query rewriter
         original_query = eval_query.query
@@ -49,8 +49,10 @@ if __name__ == "__main__":
     
     test_prompts_file = os.path.join(DATA_DIR, "datasets", "test-prompts.json")
     test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten.json")
-    results = process_queries(test_prompts_file)
-    save_objects_as_json(results, test_prompts_rewritten_file)
+    control_test_prompts_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts.json")
+    control_test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts-rewritten.json")
+    results = process_queries(control_test_prompts_file)
+    save_objects_as_json(results, control_test_prompts_rewritten_file, rewrite=True)
 
 
 

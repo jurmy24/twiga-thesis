@@ -27,6 +27,7 @@ docstring-parser==0.15
 elastic-transport==8.13.0
 elasticsearch==8.13.0
 executing==2.0.1
+fastavro==1.9.4
 filelock==3.13.3
 FlagEmbedding @ git+https://github.com/FlagOpen/FlagEmbedding.git@0fe98ddefbd9d2caced52e94b9f8421d5ba7317f
 Flask==3.0.2
@@ -37,6 +38,7 @@ groq==0.5.0
 h11==0.14.0
 httpcore==1.0.4
 httpx==0.27.0
+httpx-sse==0.4.0
 huggingface-hub==0.22.1
 idna==3.6
 instructor==1.0.0
@@ -135,6 +137,7 @@ tqdm==4.66.2
 traitlets==5.14.2
 transformers==4.39.1
 typer==0.9.4
+types-requests==2.31.0.20240406
 typing-inspect==0.9.0
 typing_extensions==4.10.0
 tzdata==2024.1

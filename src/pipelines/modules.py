@@ -84,13 +84,13 @@ def local_query_rewriter(query:str) -> str:
     return text.replace("\n", "") # because this model has a tendency to add unnecessary stuff if it tries to write another paragraph
 
 def elasticsearch_retriever(
-        retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], 
+        model_class: DataSearch, retrieval_msg: str, size: int, doc_type: Literal["Content", "Exercise"], 
         book_title: str="Geography for Secondary Schools Student's Book Form Two", 
         retrieve_dense: bool=True, retrieve_sparse: bool=False,
         verbose: bool=False) -> List[RetrievedDocSchema]:
     
     # TODO: move this elsewhere so that I don't need to reinitialize the datasearch class every time I call for a retrieval
-    data_search = DataSearch()
+    data_search = model_class
 
     # Bool value stating whether or not we will use reciprocal rank fusion
     retrieve_rrf = retrieve_dense and retrieve_sparse

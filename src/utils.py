@@ -5,7 +5,7 @@ import os
 
 from pydantic import ValidationError
 from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT
-from src.models import ChatMessage, ChunkSchema, EvalQuery, Metadata, RetrievedDocSchema
+from src.models import ChatMessage, ChunkSchema, EvalQuery, Metadata, PipelineData, ResponseSchema, RetrievedDocSchema, RewrittenQuery
 import tiktoken
 from sentence_transformers import SentenceTransformer
 
@@ -142,13 +142,14 @@ def load_json_file_to_chunkschema(file_path: str) -> List[ChunkSchema]:
                 print(f"ValidationError when parsing document {index + 1}: {e}")
         return chunks
     
-def load_json_to_retrieveddocschema(data: List[dict], retrieval_method: Literal["sparse", "dense", "hybrid"]) -> List[RetrievedDocSchema]:
+def load_json_to_retrieveddocschema(data: List[dict], retrieval_method: Literal["sparse", "dense", "hybrid"]=None) -> List[RetrievedDocSchema]:
     docs = []
     for index, item in enumerate(data):
         try:
             # Explicitly handle the creation of Metadata objects if necessary
             chunk = ChunkSchema(**{**item['_source'], "metadata": Metadata(**item['_source']['metadata'])})
 
+            retrieval_method = item.get('retrieval_type') if item.get('retrieval_type', None) is not None else retrieval_method
             if item.get('_score', None) is not None:
                 doc = RetrievedDocSchema(retrieval_type=retrieval_method, rank=None, score=item['_score'], id=item['_id'], source=chunk)
             else:
@@ -158,6 +159,26 @@ def load_json_to_retrieveddocschema(data: List[dict], retrieval_method: Literal[
             print(f"ValidationError when parsing retrieved document {index + 1}: {e}")
     # chunks = [ChunkSchema(**{**item, "metadata": Metadata(**item['metadata'])}) for item in data]
     return docs
+
+def load_json_to_pipelinedata(data: List[dict], retrieval_method: Literal["sparse", "dense", "hybrid"]=None) -> List[PipelineData]:
+    pipe_data = []
+    for index, item in enumerate(data):
+        try:
+            # Explicitly handle the creation of Metadata objects if necessary
+            query: EvalQuery = EvalQuery(**{**item['query'], "rewritten_query": RewrittenQuery(**item['query']['rewritten_query'])})
+            retrieved_docs = None
+            response = None
+            
+            if item.get('retrieved') not in ['', None]:
+                retrieved_docs = load_json_to_retrieveddocschema(item['retrieved'], retrieval_method)
+
+            if item.get('response') not in ['', None]:
+                response: ResponseSchema = ResponseSchema(**item['response'])
+
+            pipe_data.append(PipelineData(query=query, retrieved_docs=retrieved_docs, response=response))
+        except ValidationError as e:
+            print(f"ValidationError when parsing evaluation query {index + 1}: {e}")
+    return pipe_data
 
 def pretty_elasticsearch_response_rrf(response):
     if len(response["hits"]["hits"]) == 0:

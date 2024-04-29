@@ -57,15 +57,15 @@ def process_rewritten_queries(file_path: str) -> List[PipelineData]:
     for item in tqdm(pipe_data, desc="Retrieving documents"):
 
         # Fetch the rewritten query to search on
-        original_query = item.query.query
-        # rewritten_query = item.query.rewritten_query.rewritten_query_str
-        item.query.rewritten_query = None
+        # original_query = item.query.query
+        rewritten_query = item.query.rewritten_query.rewritten_query_str
+        # item.query.rewritten_query = None
 
-        retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=original_query, size=10, doc_type="Content", retrieve_dense=True, retrieve_sparse=True)
-        retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=original_query, size=5, doc_type="Exercise", retrieve_dense=True, retrieve_sparse=True)
+        retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=5, doc_type="Content", retrieve_dense=True, retrieve_sparse=True)
+        retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(model_class=model_class, retrieval_msg=rewritten_query, size=2, doc_type="Exercise", retrieve_dense=True, retrieve_sparse=True)
 
-        retrieved_content = rerank(item.query, retrieved_content, num_results=5)
-        retrieved_exercises = rerank(item.query, retrieved_exercises, num_results=2)
+        # retrieved_content = rerank(item.query, retrieved_content, num_results=5)
+        # retrieved_exercises = rerank(item.query, retrieved_exercises, num_results=2)
 
         retrieved_docs = retrieved_content + retrieved_exercises
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     # save_objects_as_json(results, control_test_prompts_rewritten_file, rewrite=True)
 
     test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten.json")
-    test_prompts_retrieved_file = os.path.join(DATA_DIR, "datasets", "ablation", "retrieved-(no-query-rewrite).json")
+    test_prompts_retrieved_file = os.path.join(DATA_DIR, "datasets", "ablation", "retrieved-(no-reranker).json")
 
     res = process_rewritten_queries(test_prompts_rewritten_file)
 

@@ -86,7 +86,7 @@ nest-asyncio==1.6.0
 networkx==3.2.1
 nltk==3.8.1
 numpy==1.26.4
-openai==1.14.2
+openai==1.24.0
 orjson==3.10.1
 packaging==23.2
 pandas==2.2.1

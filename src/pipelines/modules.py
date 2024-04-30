@@ -1,10 +1,12 @@
-from typing import List, Literal, Tuple
+from typing import List, Literal
+import logging
+from dotenv import load_dotenv
+
+# for rerankers
+from sentence_transformers import CrossEncoder
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from openai.types.chat import ChatCompletion
-import logging
-from dotenv import load_dotenv
-import os
 
 from src.llms.groq_requests import groq_request
 from src.models import EvalQuery, RetrievedDocSchema
@@ -12,9 +14,6 @@ from src.llms.openai_requests import openai_request
 from src.DataSearch import DataSearch
 from src.utils import load_json_to_retrieveddocschema, pretty_elasticsearch_response_rrf, pretty_elasticsearch_response
 from src.prompt_templates import REWRITE_QUERY_PROMPT
-
-# for rerankers
-from sentence_transformers import CrossEncoder
 
 """
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
@@ -25,18 +24,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 load_dotenv()
-COHERE_API_KEY = os.getenv("COHERE_API_KEY")
-
 
 # TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
 def query_rewriter(query:str, llm: Literal["openai", "llama3-8b-8192", "mixtral-8x7b-32768", "gemma-7b-it"]) -> str:
-    """
-    Enhances a user query by rewriting it in better English and adding more detail.
-
-    Parameters:
-    - query (str): The user's original query string.
-    - llm (str): The llm to be used
-    """
+    """Enhances a user query by rewriting it in better English and adding more detail."""
     try:        
         messages = [
             {"role": REWRITE_QUERY_PROMPT.role, "content": REWRITE_QUERY_PROMPT.content},

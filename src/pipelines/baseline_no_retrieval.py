@@ -1,20 +1,18 @@
 import json
-import random
-from typing import List, Literal, Tuple
-import openai
-from openai.types.chat import ChatCompletion
 from dotenv import load_dotenv
 import os
-
+from typing import List, Literal, Tuple
 from tqdm import tqdm
+import logging
+
+from openai.types.chat import ChatCompletion
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from sentence_transformers import SentenceTransformer
+
 from src.llms.groq_requests import groq_request
 from src.llms.openai_requests import openai_request
 from src.models import EvalQuery, PipelineData, ResponseSchema
 from src.prompt_templates import BASELINE_GENERATOR_PROMPT
-from sentence_transformers import SentenceTransformer
-import logging
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
 from src.utils import get_embedding, load_json_to_evalquery, save_objects_as_json
 
 # Set up basic logging configuration
@@ -27,7 +25,6 @@ DATA_DIR = os.getenv("DATA_DIR_PATH")
 """
 This is the most basic implementation of the tool
 """
-
 def baseline_generator(query: EvalQuery, model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"]) -> Tuple[EvalQuery, str]:
     try:        
         messages = [
@@ -78,18 +75,36 @@ def run_baseline_fast(queries: List[EvalQuery], model: Literal["gpt-3.5-turbo-01
 
     return pipe_data
 
+def run_baseline_slow(queries: List[EvalQuery], model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"]) -> List[PipelineData]:
+    embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
+
+    pipe_data: List[PipelineData] = []
+    for q in tqdm(queries, desc="Generating queries"):
+        query, res = baseline_generator(q, model)
+
+        if query and res:
+            # Compute the embeddings
+            query.embedding = get_embedding(query.query, embedding_model)
+            res_embedding = get_embedding(res, embedding_model)
+
+            res_data: ResponseSchema = ResponseSchema(text=res, embedding=res_embedding)
+            pipe_result: PipelineData = PipelineData(query=query, response=res_data)
+            pipe_data.append(pipe_result)
+
+    return pipe_data
+
 if __name__ == "__main__":
     test_path = os.path.join(DATA_DIR, "datasets", "test-prompts.json")
     test_path_control = os.path.join(DATA_DIR, "datasets", "control-test-prompts.json")
-    save_path = os.path.join(DATA_DIR, "results", "2-baseline-gpt-4.json")
-    save_path_control = os.path.join(DATA_DIR, "results", "2-baseline-gpt-4-control.json")
+    save_path = os.path.join(DATA_DIR, "results", "3-baseline-llama3.json")
+    save_path_control = os.path.join(DATA_DIR, "results", "3-baseline-llama3-control.json")
 
-    with open(test_path_control, 'r') as file:
+    with open(test_path, 'r') as file:
         data = json.load(file)
 
     eval_queries = load_json_to_evalquery(data)
 
-    generated_queries = run_baseline_fast(eval_queries, model="gpt-4-turbo-2024-04-09")
+    generated_queries = run_baseline_slow(eval_queries, model="llama3-70b-8192")
 
     # Save to JSON
-    save_objects_as_json(generated_queries, save_path_control, rewrite=True)
+    save_objects_as_json(generated_queries, save_path, rewrite=True)

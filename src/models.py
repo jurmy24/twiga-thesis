@@ -58,7 +58,7 @@ class Metadata(BaseModel):
         }
 
 class ChunkSchema(BaseModel):
-    chunk: str # this is the stuff that shall be embedded
+    chunk: str
     metadata: Metadata
     embedding: List[float]
 

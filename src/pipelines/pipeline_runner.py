@@ -1,13 +1,21 @@
 import json
 from typing import List, Literal
 from src.DataSearch import DataSearch
-from src.models import EvalQuery, RetrievedDocSchema, RewrittenQuery, PipelineData
+from src.llms.groq_requests import groq_request
+from src.llms.openai_requests import openai_request
+from src.models import EvalQuery, ResponseSchema, RetrievedDocSchema, RewrittenQuery, PipelineData
+from src.prompt_templates import PIPELINE_QUESTION_GENERATOR_PROMPT
 from src.utils import load_json_to_evalquery, get_embedding, load_json_to_pipelinedata, save_objects_as_json
 from src.pipelines.modules import elasticsearch_retriever, query_rewriter, rerank
 import os
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
+import logging
+
+# Set up basic logging configuration
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 DATA_DIR = os.getenv("DATA_DIR_PATH")
@@ -75,21 +83,112 @@ def process_rewritten_queries(file_path: str) -> List[PipelineData]:
 
     return results
 
+def pipeline_generator(prompt: str, query: str, model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"]) -> str:
+    try:    
+        # TODO: Check if this is the right format for the prompting!    
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": query}
+        ]
+
+        if model == "llama3-70b-8192":
+            res = groq_request(
+                llm=model,
+                verbose=False,
+                messages=messages, 
+                max_tokens=100,
+            )
+        else:
+            res = openai_request(
+                model=model,
+                verbose=False,
+                messages=messages,
+                max_tokens=100,  # Adjust based on the expected length of the enhanced query
+            )
+
+        # Extract the enhanced query text from the response
+        gen_query = res.choices[0].message.content
+
+        return gen_query
+    
+    except Exception as e:
+        logger.error(f"An error occurred when generating a response query: {e}")
+        return None
+
+def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"], verbose: bool=False) -> List[PipelineData]:
+    results: List[PipelineData] = []
+    embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
+
+    for item in tqdm(pipe_data, desc="Retrieving documents"):
+
+        retrieved_docs = item.retrieved_docs
+
+        retrieved_content = [doc for doc in retrieved_docs if doc.source.metadata.doc_type == "Content"]
+        retrieved_exercise = [doc for doc in retrieved_docs if doc.source.metadata.doc_type == "Exercise"]
+        
+        # TODO: Put in a check to make sure these exist
+
+        # Format the context
+        context_parts = []
+
+        context_parts.append(f"### Context from the textbook ({retrieved_content[0].source.metadata.title})\n")
+        for index, doc in enumerate(retrieved_content):
+
+            metadata = doc.source.metadata
+            if metadata.chapter and metadata.subsection and metadata.subsubsection:
+                heading = f"-Chunk number {index} from chapter {metadata.chapter}, subsection {metadata.subsection}, subsubsection {metadata.subsubsection}"
+            elif metadata.chapter and metadata.subsection:
+                heading = f"-Chunk number {index} from chapter {metadata.chapter}, subsection {metadata.subsection}"
+            elif metadata.chapter:
+                heading = f"-Chunk number {index} from chapter {metadata.chapter}"
+            else:
+                heading = f"-Chunk number {index}"
+            
+            context_parts.append(heading)
+            context_parts.append(f"{doc.source.chunk}")
+
+        context_parts.append(f"\n### Sample exercises from the textbook ({retrieved_content[0].source.metadata.title})\n")
+        for doc in retrieved_exercise:
+            metadata = doc.source.metadata
+            if metadata.chapter and metadata.subsection and metadata.subsubsection:
+                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}, subsubsection {metadata.subsubsection}"
+            elif metadata.chapter and metadata.subsection:
+                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}"
+            elif metadata.chapter:
+                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}"
+            else:
+                heading = f"-Exercise of type {metadata.exercise_format}"
+    
+            context_parts.append(heading)
+            context_parts.append(f"{doc.source.chunk}")
+
+        context = "\n".join(context_parts)
+    
+        prompt = PIPELINE_QUESTION_GENERATOR_PROMPT.format(context_str=context)
+
+        res = pipeline_generator(prompt, item.query.query, model)
+
+        res_proper: ResponseSchema = ResponseSchema(text=res, embedding=get_embedding(res, embedding_model))
+
+        pip_data: PipelineData = PipelineData(query=item.query, retrieved_docs=retrieved_docs, response=res_proper)
+        
+        results.append(pip_data)
+
+    return results
+
 if __name__ == "__main__":
     
-    # test_prompts_file = os.path.join(DATA_DIR, "datasets", "test-prompts.json")
-    # test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten.json")
-    # control_test_prompts_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts.json")
-    # control_test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts-rewritten.json")
-    # results = process_queries(control_test_prompts_file)
-    # save_objects_as_json(results, control_test_prompts_rewritten_file, rewrite=True)
+    input_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts-rewritten-retrieved.json")
+    output_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5-control.json")
 
-    test_prompts_rewritten_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten.json")
-    test_prompts_retrieved_file = os.path.join(DATA_DIR, "datasets", "ablation", "retrieved-(no-reranker).json")
+    with open(input_file, 'r') as file:
+        data = json.load(file)
 
-    res = process_rewritten_queries(test_prompts_rewritten_file)
+    incomplete_pipeline_data = load_json_to_pipelinedata(data)
 
-    save_objects_as_json(res, test_prompts_retrieved_file, rewrite=True)
+    # res = process_rewritten_queries(input_file)
+
+    # save_objects_as_json(res, output_file, rewrite=True)
 
 
 

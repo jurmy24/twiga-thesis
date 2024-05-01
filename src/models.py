@@ -91,7 +91,7 @@ class ResponseSchema(BaseModel):
     invoked_file_search: Optional[bool] = None # this one is only for the OpenAI assistants run
 
     def to_dict(self):
-        if self.invoked_file_search is not None:
+        if self.invoked_file_search is None:
             return {
                 "text": self.text,
                 "embedding": self.embedding

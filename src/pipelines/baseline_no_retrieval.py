@@ -60,7 +60,7 @@ def run_baseline_fast(queries: List[EvalQuery], model: Literal["gpt-3.5-turbo-01
     embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
 
     pipe_data: List[PipelineData] = []
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         futures = [executor.submit(baseline_generator, query, model) for query in queries]
         for future in tqdm(as_completed(futures), total=len(queries), desc="Generating queries"):
             q, res = future.result()

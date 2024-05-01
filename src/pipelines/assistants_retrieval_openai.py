@@ -3,14 +3,15 @@ import os
 from typing import List, Tuple
 from dotenv import load_dotenv
 import logging
+import openai
 
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+from src.llms.openai_requests import openai_assistant_request
 from src.models import EvalQuery, PipelineData, ResponseSchema
 from src.prompt_templates import ASSISTANT_OPENAI_PROMPT
 from sentence_transformers import SentenceTransformer
-
-import openai
-
 from src.utils import get_embedding, load_json_to_evalquery, save_objects_as_json
 
 # Set up basic logging configuration
@@ -58,25 +59,18 @@ def create_assistant_and_knowledge_base(client: openai.OpenAI, ass_name: str, op
       tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
     )
 
-def assistant_generator(query: EvalQuery, client, assistant) -> Tuple[str, bool]:
+def assistant_generator(query: EvalQuery, client, assistant) -> Tuple[EvalQuery, str, bool]:
     try: 
-        # Create a thread and attach the file to the message
-        thread = client.beta.threads.create(
-            messages=[
+        params = {
+            "messages": [
                 {
                 "role": "user",
                 "content": query.query,
                 }
             ]
-        )
-
-        run = client.beta.threads.runs.create_and_poll(
-            thread_id=thread.id, assistant_id=assistant.id
-        )
-
-        messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
-
-        message_content = messages[0].content[0].text
+        }
+        
+        message_content = openai_assistant_request(client, assistant, verbose=False, **params)
 
         # The below stuff is solely for the use of citations
         annotations = message_content.annotations
@@ -86,25 +80,43 @@ def assistant_generator(query: EvalQuery, client, assistant) -> Tuple[str, bool]
             if getattr(annotation, "file_citation", None):
                 invoked_file_search = True
         
-        return (message_content.value, invoked_file_search)
+        return (query, message_content.value, invoked_file_search)
     except Exception as e:
         logger.error(f"An error occurred when generating an assistant response query: {e}")
-        raise Exception    
+        return None, None, None
+
+def run_assistant_fast(queries: List[EvalQuery], client, assistant) -> List[PipelineData]:
+    embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
+
+    pipe_data: List[PipelineData] = []
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(assistant_generator, query, client, assistant) for query in queries]
+        for future in tqdm(as_completed(futures), total=len(queries), desc="Generating queries"):
+            q, res, invoked_file_search = future.result()
+            if q and res:
+                # Compute the embeddings
+                q.embedding = get_embedding(q.query, embedding_model)
+                res_embedding = get_embedding(res, embedding_model)
+
+                res_data: ResponseSchema = ResponseSchema(text=res, embedding=res_embedding, invoked_file_search=invoked_file_search)
+                pipe_result: PipelineData = PipelineData(query=q, response=res_data)
+                pipe_data.append(pipe_result)
+
+    return pipe_data 
     
 def run_assistant_slow(queries: List[EvalQuery], client, assistant) -> List[PipelineData]:
     embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
 
     pipe_data: List[PipelineData] = []
     for q in tqdm(queries, desc="Generating queries"):
-        res, invoked_file_search = assistant_generator(q, client, assistant)
-
-        if q and res:
+        query, res, invoked_file_search = assistant_generator(q, client, assistant)
+        if query and res:
             # Compute the embeddings
-            q.embedding = get_embedding(q.query, embedding_model)
+            query.embedding = get_embedding(query.query, embedding_model)
             res_embedding = get_embedding(res, embedding_model)
 
             res_data: ResponseSchema = ResponseSchema(text=res, embedding=res_embedding, invoked_file_search=invoked_file_search)
-            pipe_result: PipelineData = PipelineData(query=q, response=res_data)
+            pipe_result: PipelineData = PipelineData(query=query, response=res_data)
             pipe_data.append(pipe_result)
 
     return pipe_data
@@ -127,7 +139,9 @@ if __name__ == "__main__":
     save_path = os.path.join(DATA_DIR, "results", "4-assistant-gpt-3-5.json")
     save_path_control = os.path.join(DATA_DIR, "results", "4-assistant-gpt-3-5-control.json")
 
-    with open(test_path_control, 'r') as file:
+    test_path = os.path.join(DATA_DIR, "datasets", "crap.json")
+
+    with open(test_path, 'r') as file:
         data = json.load(file)
 
     eval_queries = load_json_to_evalquery(data)
@@ -135,4 +149,4 @@ if __name__ == "__main__":
     generated_queries = run_assistant_slow(eval_queries, client, assistant)
 
     # Save to JSON
-    save_objects_as_json(generated_queries, save_path_control, rewrite=True)
+    save_objects_as_json(generated_queries, save_path, rewrite=False)

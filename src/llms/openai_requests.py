@@ -61,3 +61,36 @@ async def async_openai_request(verbose: bool=False, **params) -> ChatCompletion:
         raise
     except Exception as e:
         raise Exception(f"Failed to retrieve completion: {str(e)}")
+    
+@backoff.on_exception(backoff.expo, openai.RateLimitError, max_tries=10, max_time=300)
+def openai_assistant_request(client, assistant, verbose: bool=False, **params):
+    try:
+        # Print messages if the flag is True
+        if verbose:
+            messages = params.get('messages', None)
+            logger.info(f"Messages sent to OpenAI API:\n{json.dumps(messages, indent=2)}")
+            logger.info(f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}")
+
+        # Create a thread and attach the file to the message
+        thread = client.beta.threads.create(
+            **params
+        )
+
+        run = client.beta.threads.runs.create_and_poll(
+            thread_id=thread.id, assistant_id=assistant.id
+        )
+
+        messages = list(client.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
+
+        message_content = messages[0].content[0].text
+        
+        return message_content
+
+    except openai.RateLimitError as e:
+        # Log and re-raise rate limit errors
+        logger.error(f"Rate limit error: {e}")
+        raise
+    except Exception as e:
+        # Log and re-raise unexpected errors
+        logger.error(f"Unexpected error: {e}")
+        raise

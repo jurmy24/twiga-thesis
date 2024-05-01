@@ -88,12 +88,20 @@ class RetrievedDocSchema(BaseModel):
 class ResponseSchema(BaseModel):
     text: str
     embedding: List[float]
+    invoked_file_search: Optional[bool] = None # this one is only for the OpenAI assistants run
 
     def to_dict(self):
-        return {
-            "text": self.text,
-            "embedding": self.embedding
-        }
+        if self.invoked_file_search is not None:
+            return {
+                "text": self.text,
+                "embedding": self.embedding
+            }
+        else:
+            return {
+                "text": self.text,
+                "embedding": self.embedding,
+                "invoked_file_search": self.invoked_file_search
+            }
 
 class PipelineData(BaseModel):
     query: EvalQuery # this contains the query string, the requested exercise format, the topic, the embedding, and the string and embedding of the rewritten query for retrieval

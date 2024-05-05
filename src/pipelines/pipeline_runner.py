@@ -4,7 +4,7 @@ from src.DataSearch import DataSearch
 from src.llms.groq_requests import groq_request
 from src.llms.openai_requests import openai_request
 from src.models import EvalQuery, ResponseSchema, RetrievedDocSchema, RewrittenQuery, PipelineData
-from src.prompt_templates import PIPELINE_QUESTION_GENERATOR_PROMPT
+from src.prompt_templates import PIPELINE_QUESTION_GENERATOR_PROMPT, PIPELINE_QUESTION_GENERATOR_USER_PROMPT
 from src.utils import load_json_to_evalquery, get_embedding, load_json_to_pipelinedata, save_objects_as_json
 from src.pipelines.modules import elasticsearch_retriever, query_rewriter, rerank
 import os
@@ -83,13 +83,20 @@ def process_rewritten_queries(file_path: str) -> List[PipelineData]:
 
     return results
 
-def pipeline_generator(prompt: str, query: str, model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"]) -> str:
+def pipeline_generator(prompt: str, query: str, model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"], verbose:bool = False) -> str:
     try:    
         # TODO: Check if this is the right format for the prompting!    
         messages = [
             {"role": "system", "content": prompt},
             {"role": "user", "content": query}
         ]
+
+        if verbose:
+            logger.info(f"--------------------------")
+            logger.info(f"System prompt: \n{prompt}")
+            logger.info(f"--------------------------")
+            logger.info(f"User prompt: \n{query}")
+
 
         if model == "llama3-70b-8192":
             res = groq_request(
@@ -164,9 +171,10 @@ def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gp
 
         context = "\n".join(context_parts)
     
-        prompt = PIPELINE_QUESTION_GENERATOR_PROMPT.format(context_str=context)
+        system_prompt = PIPELINE_QUESTION_GENERATOR_PROMPT.format()
+        user_prompt = PIPELINE_QUESTION_GENERATOR_USER_PROMPT.format(query=item.query.query, context_str=context)
 
-        res = pipeline_generator(prompt, item.query.query, model)
+        res = pipeline_generator(system_prompt, user_prompt, model, verbose=verbose)
 
         res_proper: ResponseSchema = ResponseSchema(text=res, embedding=get_embedding(res, embedding_model))
 
@@ -178,13 +186,18 @@ def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gp
 
 if __name__ == "__main__":
     
-    input_file = os.path.join(DATA_DIR, "datasets", "control-test-prompts-rewritten-retrieved.json")
-    output_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5-control.json")
+    input_file = os.path.join(DATA_DIR, "datasets", "test-prompts-rewritten-retrieved.json")
+    # output_file = os.path.join(DATA_DIR, "results", "6-pipeline-gpt-4.json")
+    output_file = os.path.join(DATA_DIR, "results", "7-pipeline-llama3.json")
 
     with open(input_file, 'r') as file:
         data = json.load(file)
 
     incomplete_pipeline_data = load_json_to_pipelinedata(data)
+
+    res = run_data_through_generator(incomplete_pipeline_data, "llama3-70b-8192", verbose=False)
+
+    save_objects_as_json(res, output_file, rewrite=True)
 
     # res = process_rewritten_queries(input_file)
 

@@ -24,7 +24,7 @@ async_client = AsyncGroq(api_key=GROQ_API_KEY)
 # TODO: include the number of tokens in the verbose
 
 # Decorator to automatically back off and retry on rate limit errors
-@backoff.on_exception(backoff.constant, groq.RateLimitError, interval=10, max_tries=10)
+@backoff.on_exception(backoff.expo, groq.RateLimitError, max_tries=10, max_time=300)
 def groq_request(llm: Literal["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b-32768", "gemma-7b-it"], verbose: bool=False, **params):
     try:
        # Print messages if the flag is True

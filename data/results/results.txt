@@ -4,3 +4,9 @@ Pipeline (5-7) Hit Rate: 0.9166666666666666
 Pipeline (5-7) MRR: 0.8522777777777779
 Pipeline (5-7) Hit Rate: 0.89
 Pipeline (5-7) MRR: 0.8380555555555557
+Pipeline (5) BERTScore Content Precision Control: 0.3831, Recall: 0.4875, F1: 0.4277
+Pipeline (5) BERTSCORE Exercise Precision Control: 0.4815, Recall: 0.4587, F1: 0.4673
+Pipeline (5) BERTScore Content Precision: 0.4290815591812134, Recall: 0.5470510721206665, F1: 0.4787735641002655
+Pipeline (5) BERTSCORE Exercise Precision: 0.5489493608474731, Recall: 0.5200318694114685, F1: 0.5292916297912598
+Pipeline (5) BERT Cosine Content Similarity: 0.7107012351353963
+Pipeline (5) BERT Cosine Exercise Similarity: 0.2729452751080196

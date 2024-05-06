@@ -153,20 +153,21 @@ if __name__ == "__main__":
     load_dotenv()
     DATA_DIR = os.getenv("DATA_DIR_PATH")
 
-    data_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5.json")
+    data_file = os.path.join(DATA_DIR, "results", "7-pipeline-llama3.json")
     results_file = os.path.join(DATA_DIR, "results", "results.txt")
-    csv_file = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-analysis.csv")
-    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-cosine-analysis.csv")
+    csv_file = os.path.join(DATA_DIR, "results", "pipeline-7-BERT-analysis.csv")
+    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-7-BERT-cosine-analysis.csv")
 
     pipeline_data = extract_eval_data(data_file)
 
-    # csv_data, P_content, R_content, F1_content, P_exercise, R_exercise, F1_exercise = bertscore_computation_pipeline(pipeline_data, scorer)
+    csv_data, P_content, R_content, F1_content, P_exercise, R_exercise, F1_exercise = bertscore_computation_pipeline(pipeline_data, scorer)
     
-    # save_tuples_to_csv(csv_file, csv_data)
-    # append_to_file(results_file, f"Pipeline (5) BERTScore Content Precision: {P_content}, Recall: {R_content}, F1: {F1_content}")
-    # append_to_file(results_file, f"Pipeline (5) BERTSCORE Exercise Precision: {P_exercise}, Recall: {R_exercise}, F1: {F1_exercise}")
+    save_tuples_to_csv(csv_file, csv_data)
+    append_to_file(results_file, f"Pipeline (7) BERTScore Content Precision: {P_content}, Recall: {R_content}, F1: {F1_content}")
+    append_to_file(results_file, f"Pipeline (7) BERTScore Exercise Precision: {P_exercise}, Recall: {R_exercise}, F1: {F1_exercise}")
 
     csv_cosine_data, similarity_content, similarity_exercise = bert_cosine_similarity_pipeline(pipeline_data, tokenizer, model)
+
     save_tuples_to_csv(csv_file_cosine, csv_cosine_data)
-    append_to_file(results_file, f"Pipeline (5) BERT Cosine Content Similarity: {similarity_content}")
-    append_to_file(results_file, f"Pipeline (5) BERT Cosine Exercise Similarity: {similarity_exercise}")
+    append_to_file(results_file, f"Pipeline (7) BERT Cosine Content Similarity: {similarity_content}")
+    append_to_file(results_file, f"Pipeline (7) BERT Cosine Exercise Similarity: {similarity_exercise}")

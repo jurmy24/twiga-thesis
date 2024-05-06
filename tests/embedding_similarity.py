@@ -59,14 +59,13 @@ if __name__ == "__main__":
     load_dotenv()
     DATA_DIR = os.getenv("DATA_DIR_PATH")
 
-    data_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5.json")
+    data_file = os.path.join(DATA_DIR, "results", "7-pipeline-llama3.json")
     results_file = os.path.join(DATA_DIR, "results", "results.txt")
-    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-5-all-MiniLM-l6-v2-cosine-analysis.csv")
+    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-7-all-MiniLM-l6-v2-cosine-analysis.csv")
 
     pipeline_data = extract_eval_data(data_file)
 
-
     csv_cosine_data, similarity_content, similarity_exercise = cosine_similarity_pipeline_from_stored_embeddings(pipeline_data)
     save_tuples_to_csv(csv_file_cosine, csv_cosine_data)
-    append_to_file(results_file, f"Pipeline (5) all-MiniLM-l6-v2 Cosine Content Similarity: {similarity_content}")
-    append_to_file(results_file, f"Pipeline (5) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: {similarity_exercise}")
+    append_to_file(results_file, f"Pipeline (7) all-MiniLM-l6-v2 Cosine Content Similarity: {similarity_content}")
+    append_to_file(results_file, f"Pipeline (7) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: {similarity_exercise}")

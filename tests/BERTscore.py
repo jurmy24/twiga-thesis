@@ -153,10 +153,10 @@ if __name__ == "__main__":
     load_dotenv()
     DATA_DIR = os.getenv("DATA_DIR_PATH")
 
-    data_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5-control.json")
+    data_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5.json")
     results_file = os.path.join(DATA_DIR, "results", "results.txt")
-    csv_file = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-analysis-control.csv")
-    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-cosine-analysis-control.csv")
+    csv_file = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-analysis.csv")
+    csv_file_cosine = os.path.join(DATA_DIR, "results", "pipeline-5-BERT-cosine-analysis.csv")
 
     pipeline_data = extract_eval_data(data_file)
 

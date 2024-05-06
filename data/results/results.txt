@@ -8,5 +8,11 @@ Pipeline (5) BERTScore Content Precision Control: 0.3831, Recall: 0.4875, F1: 0.
 Pipeline (5) BERTSCORE Exercise Precision Control: 0.4815, Recall: 0.4587, F1: 0.4673
 Pipeline (5) BERTScore Content Precision: 0.4290815591812134, Recall: 0.5470510721206665, F1: 0.4787735641002655
 Pipeline (5) BERTSCORE Exercise Precision: 0.5489493608474731, Recall: 0.5200318694114685, F1: 0.5292916297912598
-Pipeline (5) BERT Cosine Content Similarity: 0.7107012351353963
-Pipeline (5) BERT Cosine Exercise Similarity: 0.2729452751080196
+Pipeline (5) BERT Cosine Content Similarity Control: 0.7107012351353963
+Pipeline (5) BERT Cosine Exercise Similarity Control: 0.2729452751080196
+Pipeline (5) BERT Cosine Content Similarity: 0.7653807860811555
+Pipeline (5) BERT Cosine Exercise Similarity: 0.2991249745488167
+Pipeline (5) all-MiniLM-l6-v2 Cosine Content Similarity Control: 0.2823481093649696
+Pipeline (5) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity Control: 0.2712788319826733
+Pipeline (5) all-MiniLM-l6-v2 Cosine Content Similarity: 0.5928461149706354
+Pipeline (5) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: 0.5505301289162581

@@ -76,5 +76,9 @@ Pipeline (7) K-F1++ (Precision) Content: 0.5898025617414719
 Pipeline (7) K-F1++ (Precision) Exercise: 0.1925835641457657
 Pipeline (7) K-F1++ (Recall) Content: 0.14867141100021924
 Pipeline (7) K-F1++ (Recall) Exercise: 0.21868906841399863
-Pipeline (5) RAGAS Control Groundedness: 0.8133333333333332, Answer Relevancy: 0.7368021607501396, Context Relevancy: 0.009542362399505257, Reverse Context Relevancy: 0.053810500397497324
+Pipeline (5) RAGAS Groundedness Control: 0.6777777777777777, Answer Relevancy: 0.7368021607501396, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.0538105003974973
 Pipeline (5) RAGAS Groundedness: 0.8668373015873018, Answer Relevancy: 0.8670417348611308, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.12151903179802331
+Pipeline (6) RAGAS Groundedness Control: 0.11666666666666667, Answer Relevancy: 0.4041024028129922, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.0021954236239950502
+Pipeline (6) RAGAS Groundedness: 0.8595602453102452, Answer Relevancy: 0.8595602223346028, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.1210848449906295
+Pipeline (7) RAGAS Groundedness Control: 0.34444444444444444, Answer Relevancy: 0.4778406734601294, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.011251005778655539
+Pipeline (7) RAGAS Groundedness: 0.8558809523809524, Answer Relevancy: 0.8682187838022891, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.13105706052951543

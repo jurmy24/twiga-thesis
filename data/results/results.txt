@@ -40,3 +40,39 @@ Pipeline (7) all-MiniLM-l6-v2 Cosine Content Similarity Control: 0.2284361221143
 Pipeline (7) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity Control: 0.25904046762785893
 Pipeline (7) all-MiniLM-l6-v2 Cosine Content Similarity: 0.5838064177741684
 Pipeline (7) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: 0.5495745566842671
+Pipeline (5) K-F1++ Content Control: 0.2129354727979553
+Pipeline (5) K-F1++ Exercise Control: 0.1577274285847228
+Pipeline (5) K-F1++ (Precision) Content Control: 0.5726797711233126
+Pipeline (5) K-F1++ (Precision) Exercise Control: 0.1691467060328025
+Pipeline (5) K-F1++ (Recall) Content Control: 0.1364373131129075
+Pipeline (5) K-F1++ (Recall) Exercise Control: 0.18971187878388687
+Pipeline (5) K-F1++ Content: 0.22151732302106392
+Pipeline (5) K-F1++ Exercise: 0.1760651747796599
+Pipeline (5) K-F1++ (Precision) Content: 0.6057275652177393
+Pipeline (5) K-F1++ (Precision) Exercise: 0.18617808875014702
+Pipeline (5) K-F1++ (Recall) Content: 0.1644456990897473
+Pipeline (5) K-F1++ (Recall) Exercise: 0.2231794097954491
+Pipeline (6) K-F1++ Content Control: 0.10827675949236237
+Pipeline (6) K-F1++ Exercise Control: 0.06814271149295056
+Pipeline (6) K-F1++ (Precision) Content Control: 0.20908593909576512
+Pipeline (6) K-F1++ (Precision) Exercise Control: 0.05479956448694637
+Pipeline (6) K-F1++ (Recall) Content Control: 0.08120918012930954
+Pipeline (6) K-F1++ (Recall) Exercise Control: 0.10880382880382881
+Pipeline (6) K-F1++ Content: 0.2049927153882173
+Pipeline (6) K-F1++ Exercise: 0.1769890279958242
+Pipeline (6) K-F1++ (Precision) Content: 0.5736577037019881
+Pipeline (6) K-F1++ (Precision) Exercise: 0.18944540359723
+Pipeline (6) K-F1++ (Recall) Content: 0.1468478617084258
+Pipeline (6) K-F1++ (Recall) Exercise: 0.226018625918406
+Pipeline (7) K-F1++ Content Control: 0.190923061828631
+Pipeline (7) K-F1++ Exercise Control: 0.11291092025960225
+Pipeline (7) K-F1++ (Precision) Content Control: 0.3577629478728657
+Pipeline (7) K-F1++ (Precision) Exercise Control: 0.09491008735576774
+Pipeline (7) K-F1++ (Recall) Content Control: 0.14264794633991862
+Pipeline (7) K-F1++ (Recall) Exercise Control: 0.1860123381061248
+Pipeline (7) K-F1++ Content: 0.20350070904692583
+Pipeline (7) K-F1++ Exercise: 0.1777220032055986
+Pipeline (7) K-F1++ (Precision) Content: 0.5898025617414719
+Pipeline (7) K-F1++ (Precision) Exercise: 0.1925835641457657
+Pipeline (7) K-F1++ (Recall) Content: 0.14867141100021924
+Pipeline (7) K-F1++ (Recall) Exercise: 0.21868906841399863

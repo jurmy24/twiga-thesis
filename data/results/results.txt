@@ -82,3 +82,4 @@ Pipeline (6) RAGAS Groundedness Control: 0.11666666666666667, Answer Relevancy: 
 Pipeline (6) RAGAS Groundedness: 0.8595602453102452, Answer Relevancy: 0.8595602223346028, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.1210848449906295
 Pipeline (7) RAGAS Groundedness Control: 0.34444444444444444, Answer Relevancy: 0.4778406734601294, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.011251005778655539
 Pipeline (7) RAGAS Groundedness: 0.8558809523809524, Answer Relevancy: 0.8682187838022891, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.13105706052951543
+Pipeline (1) RAGAS Answer Relevancy Control: 0.8644071481029456

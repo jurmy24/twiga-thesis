@@ -191,10 +191,10 @@ def convert_to_pipelinedata(item: dict, retrieval_method: Literal["sparse", "den
     """
     try:
         query = convert_to_evalquery(item.get('query')) # query is mandatory for PipelineData
-        docs = item.get('retrieved', None)
+        retrieved_docs = item.get('retrieved', None)
         response = item.get('response', None)
         
-        if docs:
+        if retrieved_docs:
             retrieved_docs = load_json_to_retrieveddocschema(docs, retrieval_method)
         if response:
             response = ResponseSchema(**response)

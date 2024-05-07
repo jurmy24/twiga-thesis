@@ -76,3 +76,5 @@ Pipeline (7) K-F1++ (Precision) Content: 0.5898025617414719
 Pipeline (7) K-F1++ (Precision) Exercise: 0.1925835641457657
 Pipeline (7) K-F1++ (Recall) Content: 0.14867141100021924
 Pipeline (7) K-F1++ (Recall) Exercise: 0.21868906841399863
+Pipeline (5) RAGAS Control Groundedness: 0.8133333333333332, Answer Relevancy: 0.7368021607501396, Context Relevancy: 0.009542362399505257, Reverse Context Relevancy: 0.053810500397497324
+Pipeline (5) RAGAS Groundedness: 0.8668373015873018, Answer Relevancy: 0.8670417348611308, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.12151903179802331

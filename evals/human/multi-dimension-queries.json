@@ -1,0 +1,83 @@
+{
+    "short-answer": [
+        {
+            "query": "hi, I need a short question about emissions from manufacturing activities",
+            "requested_exercise_format": "short-answer",
+            "topic": "Emissions from manufacturing activities"
+        },
+        {
+            "query": "I need a quick question about the uses of palm oil for the Geography class",
+            "requested_exercise_format": "short-answer",
+            "topic": "Applications of palm oil"
+        },
+        {
+            "query": "Could you generate a short-answer question about traditional fallowing techniques for a form 2 geography class?",
+            "requested_exercise_format": "short-answer",
+            "topic": "Traditional fallowing techniques"
+        },
+        {
+            "query": "hello, can you provide a short question about logistics of timber transportation",
+            "requested_exercise_format": "short-answer",
+            "topic": "Logistics of timber transportation"
+        },
+        {
+            "query": "i need a short definition question on Japan's automobile industry for my students",
+            "requested_exercise_format": "short-answer",
+            "topic": "Automobile industry in Japan"
+        }
+    ],
+    "true-false": [
+        {
+            "query": "Please, can I have a true or false statement for my students to solve on the topic of human activities and their significance?",
+            "requested_exercise_format": "true-false",
+            "topic": "Significance of human activities"
+        },
+        {
+            "query": "Can you create a true or false statement about traditional fallowing techniques for my students?",
+            "requested_exercise_format": "true-false",
+            "topic": "Traditional fallowing techniques"
+        },
+        {
+            "query": "please I need true or false question about Tropical monsoon forests for my students",
+            "requested_exercise_format": "true-false",
+            "topic": "Tropical monsoon forests"
+        },
+        {
+            "query": "hi, need a true-or-false statement for global timber industry for the kids to answer",
+            "requested_exercise_format": "true-false",
+            "topic": "Global timber industry"
+        },
+        {
+            "query": "Is it true that assembly industries are the main contributor to air pollution in urban areas?",
+            "requested_exercise_format": "true-false",
+            "topic": "Assembly industries"
+        }
+    ],
+    "long-answer": [
+        {
+            "query": "can you provide a describe question on types of commercial farming",
+            "requested_exercise_format": "long-answer",
+            "topic": "Varieties of commercial farming"
+        },
+        {
+            "query": "Need a describe question about variety of plant life for form two students classwork.",
+            "requested_exercise_format": "long-answer",
+            "topic": "Varieties of plant life"
+        },
+        {
+            "query": "Please i need a question that requires students to describe the importance of particle sizing in industries",
+            "requested_exercise_format": "long-answer",
+            "topic": "Particle sizing"
+        },
+        {
+            "query": "Describe the various strategies used in the post-harvest processing and transportation of cloves in detail.",
+            "requested_exercise_format": "long-answer",
+            "topic": "Post-harvest processing and transport of cloves"
+        },
+        {
+            "query": "Please i need an explaining question for the effects of population growth on subsistence farming.",
+            "requested_exercise_format": "long-answer",
+            "topic": "Population growth effects on subsistence farming"
+        }
+    ]
+}

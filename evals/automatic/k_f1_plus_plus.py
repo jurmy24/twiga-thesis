@@ -112,7 +112,7 @@ def compute_avg_kf1_score(pipeline_data_list: List[PipelineData]) -> float:
 
 if __name__ == "__main__":
 
-    from tests.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
+    from evals.automatic.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
     import os
     from dotenv import load_dotenv
 

@@ -6,8 +6,8 @@ from tqdm import tqdm
 
 from src.llms.openai_requests import instructor_openai_request
 from src.models import PipelineData
-from tests.models import HitResponse
-from tests.test_utils import append_to_file, save_tuples_to_csv
+from evals.automatic.models import HitResponse
+from evals.automatic.test_utils import append_to_file, save_tuples_to_csv
 
 load_dotenv
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -73,7 +73,7 @@ def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[L
 # Example usage:
 if __name__ == "__main__":
 
-    from tests.test_utils import extract_eval_data
+    from evals.automatic.test_utils import extract_eval_data
 
     load_dotenv()
     DATA_DIR = os.getenv("DATA_DIR_PATH")

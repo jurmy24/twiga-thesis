@@ -1,9 +1,8 @@
 from typing import Tuple, List
 from tqdm import tqdm
-from transformers import BertTokenizer, BertForMaskedLM, BertModel
+from transformers import BertTokenizer, BertModel
 from bert_score import BERTScorer
 import numpy as np
-import csv
 
 from src.models import PipelineData
 
@@ -139,7 +138,7 @@ def bert_cosine_similarity_pipeline(pipeline_data_list: List[PipelineData], toke
     return csv_data, avg_content_similarity, avg_exercise_similarity
 
 if __name__ == "__main__":
-    from tests.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
+    from evals.automatic.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
     import os
     from dotenv import load_dotenv
 

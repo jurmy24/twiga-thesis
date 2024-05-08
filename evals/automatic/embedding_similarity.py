@@ -52,7 +52,7 @@ def cosine_similarity_pipeline_from_stored_embeddings(pipeline_data_list: List[P
     return csv_data, avg_content_similarity, avg_exercise_similarity
 
 if __name__ == "__main__":
-    from tests.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
+    from evals.automatic.test_utils import extract_eval_data, append_to_file, save_tuples_to_csv
     import os
     from dotenv import load_dotenv
 

@@ -11,7 +11,7 @@ from datasets import Dataset
 import pandas as pd
 
 from src.models import PipelineData
-from tests.test_utils import append_to_file, extract_eval_data
+from evals.automatic.test_utils import append_to_file, extract_eval_data
 import logging
 
 # Set the logging level for `httpx` to WARNING or higher

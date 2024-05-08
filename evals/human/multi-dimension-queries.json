@@ -1,83 +1,83 @@
 {
     "short-answer": [
         {
-            "query": "hi, I need a short question about emissions from manufacturing activities",
+            "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
             "requested_exercise_format": "short-answer",
-            "topic": "Emissions from manufacturing activities"
+            "topic": "Types of surface water"
         },
         {
-            "query": "I need a quick question about the uses of palm oil for the Geography class",
+            "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
             "requested_exercise_format": "short-answer",
-            "topic": "Applications of palm oil"
+            "topic": "Groundwater sources"
         },
         {
-            "query": "Could you generate a short-answer question about traditional fallowing techniques for a form 2 geography class?",
+            "query": "I need a define question about solid industrial waste for my form 2 students",
             "requested_exercise_format": "short-answer",
-            "topic": "Traditional fallowing techniques"
+            "topic": "Solid Industrial Waste"
         },
         {
-            "query": "hello, can you provide a short question about logistics of timber transportation",
+            "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
             "requested_exercise_format": "short-answer",
-            "topic": "Logistics of timber transportation"
+            "topic": "Significance of hydroelectric power and biogas in Tanzania"
         },
         {
-            "query": "i need a short definition question on Japan's automobile industry for my students",
+            "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
             "requested_exercise_format": "short-answer",
-            "topic": "Automobile industry in Japan"
+            "topic": "Difficulties in energy acquisition in Tanzania"
         }
     ],
     "true-false": [
         {
-            "query": "Please, can I have a true or false statement for my students to solve on the topic of human activities and their significance?",
+            "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
             "requested_exercise_format": "true-false",
-            "topic": "Significance of human activities"
+            "topic": "Features of commercial farming"
         },
         {
-            "query": "Can you create a true or false statement about traditional fallowing techniques for my students?",
+            "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
             "requested_exercise_format": "true-false",
-            "topic": "Traditional fallowing techniques"
+            "topic": "Post-harvest processing of tea"
         },
         {
-            "query": "please I need true or false question about Tropical monsoon forests for my students",
+            "query": "Generate a true-false statement on Tanzania\u2019s strategies for addressing natural gas challenges.",
             "requested_exercise_format": "true-false",
-            "topic": "Tropical monsoon forests"
+            "topic": "Tanzania's strategies for natural gas challenges"
         },
         {
-            "query": "hi, need a true-or-false statement for global timber industry for the kids to answer",
+            "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
             "requested_exercise_format": "true-false",
-            "topic": "Global timber industry"
+            "topic": "Pros of nomadic pastoralism"
         },
         {
-            "query": "Is it true that assembly industries are the main contributor to air pollution in urban areas?",
+            "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
             "requested_exercise_format": "true-false",
-            "topic": "Assembly industries"
+            "topic": "Fundamentals of Power and Energy"
         }
     ],
     "long-answer": [
         {
-            "query": "can you provide a describe question on types of commercial farming",
+            "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
             "requested_exercise_format": "long-answer",
-            "topic": "Varieties of commercial farming"
+            "topic": "Comparing livestock farming in Tanzania and Australia"
         },
         {
-            "query": "Need a describe question about variety of plant life for form two students classwork.",
+            "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
             "requested_exercise_format": "long-answer",
-            "topic": "Varieties of plant life"
+            "topic": "Issues in American large-scale farming"
         },
         {
-            "query": "Please i need a question that requires students to describe the importance of particle sizing in industries",
+            "query": "please help me generate a long answer question for students to explain about Primary economic activities",
             "requested_exercise_format": "long-answer",
-            "topic": "Particle sizing"
+            "topic": "Primary economic activities"
         },
         {
-            "query": "Describe the various strategies used in the post-harvest processing and transportation of cloves in detail.",
+            "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
             "requested_exercise_format": "long-answer",
-            "topic": "Post-harvest processing and transport of cloves"
+            "topic": "Conservation of biodiversity"
         },
         {
-            "query": "Please i need an explaining question for the effects of population growth on subsistence farming.",
+            "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
             "requested_exercise_format": "long-answer",
-            "topic": "Population growth effects on subsistence farming"
+            "topic": "Basics of the manufacturing sector"
         }
     ]
 }

@@ -1,92 +1,92 @@
 [
     {
-        "query": "Describe the various strategies used in the post-harvest processing and transportation of cloves in detail.",
-        "response": "Describe the various strategies used in the post-harvest processing and transportation of cloves in detail.",
-        "exercise_format": "long-answer",
-        "topic": "Post-harvest processing and transport of cloves"
-    },
-    {
-        "query": "Please i need a question that requires students to describe the importance of particle sizing in industries",
-        "response": "Why is particle sizing important in industries that involve processing raw materials into finished products?",
-        "exercise_format": "long-answer",
-        "topic": "Particle sizing"
-    },
-    {
-        "query": "hello, can you provide a short question about logistics of timber transportation",
-        "response": "How do logs transported in Tanzania compare to transportation methods in other parts of the world, according to the information provided?",
-        "exercise_format": "short-answer",
-        "topic": "Logistics of timber transportation"
-    },
-    {
-        "query": "i need a short definition question on Japan's automobile industry for my students",
-        "response": "Define the term \"Technology\" in the context of the automobile industry in Japan.",
-        "exercise_format": "short-answer",
-        "topic": "Automobile industry in Japan"
-    },
-    {
-        "query": "hi, need a true-or-false statement for global timber industry for the kids to answer",
-        "response": "True or False: Tanzania is one of the leading timber-producing countries in the world.",
+        "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
+        "response": "True or False: Managing livestock using traditional methods under nomadic pastoralism ensures the animals have a constant supply of water.",
         "exercise_format": "true-false",
-        "topic": "Global timber industry"
+        "topic": "Pros of nomadic pastoralism"
     },
     {
-        "query": "I need a quick question about the uses of palm oil for the Geography class",
-        "response": "How is palm oil used according to the textbook?",
+        "query": "Generate a true-false statement on Tanzania\u2019s strategies for addressing natural gas challenges.",
+        "response": "True or False: Tanzania has been emphasizing the use of natural gas revenue to benefit the people in areas producing the gas and the nation as a whole.",
+        "exercise_format": "true-false",
+        "topic": "Tanzania's strategies for natural gas challenges"
+    },
+    {
+        "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
+        "response": "True or False: The processing of tea leaves involves fermenting them under regulated moisture conditions to ensure a quality tea product.",
+        "exercise_format": "true-false",
+        "topic": "Post-harvest processing of tea"
+    },
+    {
+        "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
+        "response": "Explain the process of infiltration and its importance in groundwater formation.",
         "exercise_format": "short-answer",
-        "topic": "Applications of palm oil"
+        "topic": "Groundwater sources"
     },
     {
-        "query": "Please i need an explaining question for the effects of population growth on subsistence farming.",
-        "response": "How does rapid population growth impact small-scale crop cultivation in terms of land use patterns and living standards for farmers?",
+        "query": "please help me generate a long answer question for students to explain about Primary economic activities",
+        "response": "Explain why agriculture is considered one of the oldest human activities and its importance in society.",
         "exercise_format": "long-answer",
-        "topic": "Population growth effects on subsistence farming"
+        "topic": "Primary economic activities"
     },
     {
-        "query": "Could you generate a short-answer question about traditional fallowing techniques for a form 2 geography class?",
-        "response": "What is bush fallowing and how is it different from shifting cultivation?",
+        "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
+        "response": "Describe the key differences in livestock farming between Tanzania and Australia.",
+        "exercise_format": "long-answer",
+        "topic": "Comparing livestock farming in Tanzania and Australia"
+    },
+    {
+        "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
+        "response": "Explain two ways in which hydroelectric power and biogas contribute to the economy and local communities in Tanzania.",
         "exercise_format": "short-answer",
-        "topic": "Traditional fallowing techniques"
+        "topic": "Significance of hydroelectric power and biogas in Tanzania"
     },
     {
-        "query": "Need a describe question about variety of plant life for form two students classwork.",
-        "response": "**Describe the importance of forests in maintaining ecological and environmental balance, and provide examples to support your answer.**",
-        "exercise_format": "long-answer",
-        "topic": "Varieties of plant life"
-    },
-    {
-        "query": "hi, I need a short question about emissions from manufacturing activities",
-        "response": "How do industrial activities contribute to air pollution according to the textbook content provided?",
+        "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
+        "response": "What are some uses of surface water as mentioned in your geography textbook for Form 2 students?",
         "exercise_format": "short-answer",
-        "topic": "Emissions from manufacturing activities"
+        "topic": "Types of surface water"
     },
     {
-        "query": "Can you create a true or false statement about traditional fallowing techniques for my students?",
-        "response": "True or False: In bush fallowing, people have permanent settlements and the farm is left to regain its fertility for nearly ten years before cultivating a fresh area.",
+        "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
+        "response": "What are some of the challenges facing power and energy harnessing in Tanzania, particularly during the dry season?",
+        "exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania"
+    },
+    {
+        "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
+        "response": "True or False: Large-scale crop cultivation typically involves the use of simple tools such as hand-hoes and machetes for cultivation.",
         "exercise_format": "true-false",
-        "topic": "Traditional fallowing techniques"
+        "topic": "Features of commercial farming"
     },
     {
-        "query": "can you provide a describe question on types of commercial farming",
-        "response": "Describe the characteristics of large-scale crop cultivation as a form of commercial agriculture.",
+        "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
+        "response": "True or False: Non-renewable energy sources include wind power, solar power, geothermal energy, tidal power, and hydroelectric power.",
+        "exercise_format": "true-false",
+        "topic": "Fundamentals of Power and Energy"
+    },
+    {
+        "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
+        "response": "Explain the role of manufacturing industries in stimulating agricultural production according to the textbook context provided.",
         "exercise_format": "long-answer",
-        "topic": "Varieties of commercial farming"
+        "topic": "Basics of the manufacturing sector"
     },
     {
-        "query": "Please, can I have a true or false statement for my students to solve on the topic of human activities and their significance?",
-        "response": "True or False: Mining companies like Williamson Diamonds and Barrick Gold (now known as Acacia) do not employ many people and do not pay taxes to the government.",
-        "exercise_format": "true-false",
-        "topic": "Significance of human activities"
+        "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
+        "response": "Explain one challenge facing large-scale agriculture in the USA related to the high cost of production.",
+        "exercise_format": "long-answer",
+        "topic": "Issues in American large-scale farming"
     },
     {
-        "query": "please I need true or false question about Tropical monsoon forests for my students",
-        "response": "True or False: Tropical monsoon forests consist of deciduous trees that keep their leaves throughout the year.",
-        "exercise_format": "true-false",
-        "topic": "Tropical monsoon forests"
+        "query": "I need a define question about solid industrial waste for my form 2 students",
+        "response": "Define industrial solid waste.",
+        "exercise_format": "short-answer",
+        "topic": "Solid Industrial Waste"
     },
     {
-        "query": "Is it true that assembly industries are the main contributor to air pollution in urban areas?",
-        "response": "Is it true that assembly industries are the main contributor to air pollution in urban areas?",
-        "exercise_format": "true-false",
-        "topic": "Assembly industries"
+        "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
+        "response": "Explain the impact of large-scale mining on biodiversity, using specific examples to support your answer.",
+        "exercise_format": "long-answer",
+        "topic": "Conservation of biodiversity"
     }
 ]

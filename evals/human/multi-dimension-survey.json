@@ -1,0 +1,254 @@
+[
+    {
+        "query": "please help me generate a long answer question for students to explain about Primary economic activities",
+        "response": "**Question:**\n\nExplain the concept of primary economic activities and provide examples of activities falling under this category. Include a detailed explanation of how these activities directly interact with the natural environment to fulfill essential needs. Additionally, discuss the significance of these activities in terms of providing raw materials for other industries and their overall contribution to the economy. Finally, analyze how primary economic activities vary based on factors such as climate, water availability, soil characteristics, and terrain, using specific examples from Tanzania.",
+        "exercise_format": "long-answer",
+        "topic": "Primary economic activities",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "response": "True or False statement: Proper storage and use of chemicals in the mining industry can help to reduce environmental pollution[0].",
+        "exercise_format": "true-false",
+        "topic": "Reducing environmental impacts of mining",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "response": "Explain in detail the economic impacts of petroleum production on Middle Eastern countries based on the provided context.",
+        "exercise_format": "long-answer",
+        "topic": "Economic impact of petroleum in Middle Eastern countries",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "response": "**Question:**  \nExplain the concept of secondary activities in the economy, and provide an example of a secondary activity related to the manufacturing of finished goods using raw materials from primary activities.\n\n**Answer Source:**  \nThis question is based on the information provided in the document \"GEOGRAPHY-F2-TIE.pdf\"[0].",
+        "exercise_format": "long-answer",
+        "topic": "Secondary economic activities",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
+        "response": "True or False question: During the post-harvest processing of tea, the leaves undergo fermentation under regulated moisture to ensure a quality tea product, followed by rolling to enhance the breakup of the leaf cells and fibres, and then drying in temperatures of about 105\u00b0C[0].\n\nAnswer: True",
+        "exercise_format": "true-false",
+        "topic": "Post-harvest processing of tea",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "response": "**Short Answer Question:**\n\nDescribe the differences in the application of science and technology in livestock-keeping between Australia and Tanzania[0].",
+        "exercise_format": "short-answer",
+        "topic": "Livestock farming practices in Australia",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "response": "Based on the information provided in the document, here is a detailed explanation question for students to understand the economic impact of petroleum in Middle Eastern countries:\n\nExplain how oil production has contributed to the economic and social development of Middle East countries. Discuss the significance of the exportation of petroleum and petroleum products, the role of state-owned and private companies in oil production, and the utilization of oil revenue in various sectors like social services, infrastructure development, and job creation within the Middle East region[0].",
+        "exercise_format": "long-answer",
+        "topic": "Economic impact of petroleum in Middle Eastern countries",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "response": "True or False: One of the challenges facing natural gas production in Tanzania is the availability of skilled labor in the field of exploration and extraction activities.",
+        "exercise_format": "true-false",
+        "topic": "Problems in Tanzanian natural gas sector",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "response": "Explain the difference between primary and secondary economic activities, providing examples of each in Tanzania.",
+        "exercise_format": "long-answer",
+        "topic": "Secondary economic activities",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "response": "Based on the provided information on the drawbacks of commercial livestock farming, here is a defined question for your class:\n\nDefine the disadvantages of commercial livestock-keeping as outlined in the Geography textbook for Secondary Schools[0].",
+        "exercise_format": "short-answer",
+        "topic": "Drawbacks of commercial livestock farming",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "response": "Explain how overgrazing can negatively impact the environment and the livelihood of nomadic pastoralists.",
+        "exercise_format": "long-answer",
+        "topic": "Traits of nomadic pastoralism",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "response": "Explain the economic impact of the petroleum industry in Middle Eastern countries. Include the influence on government revenues, job creation, infrastructure development, and international relations.",
+        "exercise_format": "long-answer",
+        "topic": "Economic impact of petroleum in Middle Eastern countries",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "please help me generate a long answer question for students to explain about Primary economic activities",
+        "response": "Explain in detail the concept of primary economic activities and provide examples of these activities in Tanzania. How do primary economic activities contribute to the overall economy of the country?",
+        "exercise_format": "long-answer",
+        "topic": "Primary economic activities",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "response": "What is the primary rearing system of livestock-keeping in Tanzania according to the information provided in the textbook for Form 2 Geography students?",
+        "exercise_format": "short-answer",
+        "topic": "Livestock farming practices in Australia",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "response": "True or False: One of the ways to minimize the effects of mining on the environment is through proper storage and use of chemicals.",
+        "exercise_format": "true-false",
+        "topic": "Reducing environmental impacts of mining",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
+        "response": "True or False: Post-harvest processing of tea involves stages such as withering, rolling, oxidizing, and drying.",
+        "exercise_format": "true-false",
+        "topic": "Post-harvest processing of tea",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "response": "What are the drawbacks of commercial livestock-keeping according to the information provided in the textbook?",
+        "exercise_format": "short-answer",
+        "topic": "Drawbacks of commercial livestock farming",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "response": "**Discussion Question for Students:**\n\nExplain the characteristics of nomadic pastoralism based on the information provided in your Geography textbook. Discuss the continual movement, group structure, and challenges associated with nomadic pastoralism. Additionally, compare and contrast nomadic pastoralism with sedentary livestock-keeping practices. How does nomadic pastoralism affect the environment and the livelihood of pastoralists?[0].",
+        "exercise_format": "long-answer",
+        "topic": "Traits of nomadic pastoralism",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "response": "Define Japan's automobile industry.",
+        "exercise_format": "short-answer",
+        "topic": "Automobile industry in Japan",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
+        "response": "What are some of the challenges facing power and energy harnessing in Tanzania, particularly during the dry season?",
+        "exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "response": "Explain the concept of secondary activities in the context of human activities and provide an example to illustrate this concept.",
+        "exercise_format": "long-answer",
+        "topic": "Secondary economic activities",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "response": "True or False: Mining can reduce its environmental impacts through reclamation of land and implementation of sustainable mining practices.",
+        "exercise_format": "true-false",
+        "topic": "Reducing environmental impacts of mining",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "response": "True or False Statement: Air transport is not affected by physical barriers[0].",
+        "exercise_format": "true-false",
+        "topic": "Overview of transportation",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "response": "True or False: One of the challenges facing the natural gas sector in Tanzania is the limited infrastructure for transporting natural gas to different parts of the country.",
+        "exercise_format": "true-false",
+        "topic": "Problems in Tanzanian natural gas sector",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
+        "response": "What are some challenges faced in accessing reliable energy sources in Tanzania?",
+        "exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
+        "response": "**Short Answer Question:**\nWhat are three challenges facing power and energy harnessing in Tanzania according to the provided text?[0].",
+        "exercise_format": "short-answer",
+        "topic": "Difficulties in energy acquisition in Tanzania",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "response": "Sure, here is a short answer question on livestock farming practice in Australia:\n\nExplain two challenges faced by livestock farmers in Australia and suggest possible solutions for each.",
+        "exercise_format": "short-answer",
+        "topic": "Livestock farming practices in Australia",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
+        "response": "True or False: The processing of tea leaves involves fermenting them under regulated moisture conditions to ensure a quality tea product.",
+        "exercise_format": "true-false",
+        "topic": "Post-harvest processing of tea",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "response": "True or False: Transport is an important sector that has no significant impact on the socio-economic development of the world.",
+        "exercise_format": "true-false",
+        "topic": "Overview of transportation",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "response": "Explain three drawbacks of commercial livestock farming.",
+        "exercise_format": "short-answer",
+        "topic": "Drawbacks of commercial livestock farming",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "response": "True or False Question:\nNatural gas production in Tanzania faces a shortage of skilled labor, especially in exploration and extraction activities, leading to the employment of foreign experts who are paid high salaries. (True)[0]. \n\nStatement: True",
+        "exercise_format": "true-false",
+        "topic": "Problems in Tanzanian natural gas sector",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "response": "Certainly! Here is a discussion question for your students:\n\nDiscuss the advantages and challenges of nomadic pastoralism as a way of life for communities in Tanzania.",
+        "exercise_format": "long-answer",
+        "topic": "Traits of nomadic pastoralism",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "response": "Define the term \"Technology\" in the context of the automobile industry in Japan.",
+        "exercise_format": "short-answer",
+        "topic": "Automobile industry in Japan",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "response": "True or False: Tanzania has a well-developed railway network covering most parts of the country.",
+        "exercise_format": "true-false",
+        "topic": "Overview of transportation",
+        "source_file": "multi-dimension-queries-baseline-gpt-3-5.json"
+    },
+    {
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "response": "**Question:**\nDefine the term \"manufacturing industries\" based on the information provided in the Geography textbook for Form Two students. \n\n**Answer:**\nManufacturing industries involve the processing and transformation of raw materials into different semi-finished or finished products using tools and machines. These industries play a crucial role in the development of a country by meeting the increasing demands for goods and services of a growing population .",
+        "exercise_format": "short-answer",
+        "topic": "Automobile industry in Japan",
+        "source_file": "multi-dimension-queries-assistant-gpt-3-5.json"
+    },
+    {
+        "query": "please help me generate a long answer question for students to explain about Primary economic activities",
+        "response": "Explain why agriculture is considered one of the oldest human activities and its importance in society.",
+        "exercise_format": "long-answer",
+        "topic": "Primary economic activities",
+        "source_file": "multi-dimension-queries-pipeline-gpt-3-5.json"
+    }
+]

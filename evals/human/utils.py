@@ -1,4 +1,6 @@
 import json
+import random
+import os
 
 def read_json(file_path):
     """Utility to read a JSON file."""
@@ -40,3 +42,21 @@ def find_responses(first_file, second_file, output_file):
     # Save results to a new JSON file
     write_json(results, output_file)
     print(f"Results written to {output_file}")
+
+
+def merge_and_shuffle_json_files(file_paths, output_file_path):
+    combined_data = []
+    
+    # Read each file and extend the combined_data list
+    for file_path in file_paths:
+        data = read_json(file_path)
+        for item in data:
+            item['source_file'] = os.path.basename(file_path)  # Add source file name
+        combined_data.extend(data)
+    
+    # Shuffle the combined data
+    random.shuffle(combined_data)
+    
+    # Write the shuffled data to a new JSON file
+    write_json(combined_data, output_file_path)
+    print(f"Merged and shuffled data written to {output_file_path}")

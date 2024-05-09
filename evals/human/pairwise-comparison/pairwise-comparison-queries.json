@@ -1,0 +1,68 @@
+{
+    "short-answer": [
+        {
+            "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+            "requested_exercise_format": "short-answer",
+            "topic": "Tourism's significance in Tanzania"
+        },
+        {
+            "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+            "requested_exercise_format": "short-answer",
+            "topic": "Varieties of human activities"
+        },
+        {
+            "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+            "requested_exercise_format": "short-answer",
+            "topic": "livestock farming issues"
+        },
+        {
+            "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+            "requested_exercise_format": "short-answer",
+            "topic": "Tourism industry problems in Tanzania"
+        }
+    ],
+    "true-false": [
+        {
+            "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+            "requested_exercise_format": "true-false",
+            "topic": "Benefits of natural gas in Tanzania"
+        },
+        {
+            "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+            "requested_exercise_format": "true-false",
+            "topic": "Contrasts in livestock farming between Tanzania and Australia"
+        },
+        {
+            "query": "need right or wrong statement on transhumance practices for my form 2 class",
+            "requested_exercise_format": "true-false",
+            "topic": "Transhumance practices"
+        },
+        {
+            "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+            "requested_exercise_format": "true-false",
+            "topic": "Metal extraction sector"
+        }
+    ],
+    "long-answer": [
+        {
+            "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+            "requested_exercise_format": "long-answer",
+            "topic": "Water sources"
+        },
+        {
+            "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+            "requested_exercise_format": "long-answer",
+            "topic": "Enhancing tourist access to attractions"
+        },
+        {
+            "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+            "requested_exercise_format": "long-answer",
+            "topic": "Cultivation techniques for sisal"
+        },
+        {
+            "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+            "requested_exercise_format": "long-answer",
+            "topic": "Ocean water"
+        }
+    ]
+}

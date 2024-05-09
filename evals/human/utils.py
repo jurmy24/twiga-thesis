@@ -60,3 +60,15 @@ def merge_and_shuffle_json_files(file_paths, output_file_path):
     # Write the shuffled data to a new JSON file
     write_json(combined_data, output_file_path)
     print(f"Merged and shuffled data written to {output_file_path}")
+
+# Function to filter out excluded queries
+def filter_excluded(data, excluded):
+    excluded_queries = set(
+        item['query'] for key in excluded for item in excluded[key]
+    )
+    filtered_data = {
+        'short-answer': [item for item in data if item['requested_exercise_format'] == 'short-answer' and item['query'] not in excluded_queries],
+        'true-false': [item for item in data if item['requested_exercise_format'] == 'true-false' and item['query'] not in excluded_queries],
+        'long-answer': [item for item in data if item['requested_exercise_format'] == 'long-answer' and item['query'] not in excluded_queries]
+    }
+    return filtered_data

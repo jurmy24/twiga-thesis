@@ -1,0 +1,74 @@
+[
+    {
+        "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+        "response": "Explain how improving infrastructure can enhance tourist access to attractions in Tanzania and discuss the role of the government and private sector in this process.",
+        "exercise_format": "long-answer",
+        "topic": "Enhancing tourist access to attractions"
+    },
+    {
+        "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+        "response": "Explain how evaporation from ocean water contributes to the water cycle and its significance for ecosystems, using Figure 3.2 as a reference.",
+        "exercise_format": "long-answer",
+        "topic": "Ocean water"
+    },
+    {
+        "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+        "response": "List the three major categories of human activities as described in the textbook.",
+        "exercise_format": "short-answer",
+        "topic": "Varieties of human activities"
+    },
+    {
+        "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+        "response": "Explain the process and techniques involved in the cultivation of sisal from planting to harvesting, highlighting how these methods contribute to the quality and productivity of sisal fibres.",
+        "exercise_format": "long-answer",
+        "topic": "Cultivation techniques for sisal"
+    },
+    {
+        "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+        "response": "Define the following terms related to the challenges of livestock-keeping in Tanzania:\n1. Nagana disease\n2. East Coast Fever \n3. Rift Valley Fever",
+        "exercise_format": "short-answer",
+        "topic": "livestock farming issues"
+    },
+    {
+        "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+        "response": "True or False: Both Tanzania and Australia primarily utilize the ranching system for livestock-keeping.",
+        "exercise_format": "true-false",
+        "topic": "Contrasts in livestock farming between Tanzania and Australia"
+    },
+    {
+        "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+        "response": "True or False: Iron is used primarily in the production of jewelry and high-end electronics.",
+        "exercise_format": "true-false",
+        "topic": "Metal extraction sector"
+    },
+    {
+        "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+        "response": "What are some of the transport and communication challenges that limit tourist movement in Tanzania during the rainy season?",
+        "exercise_format": "short-answer",
+        "topic": "Tourism industry problems in Tanzania"
+    },
+    {
+        "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+        "response": "Describe how different sources of water, such as rainfall, wells, springs, and rivers, are crucial for supporting human activities and the ecosystem.",
+        "exercise_format": "long-answer",
+        "topic": "Water sources"
+    },
+    {
+        "query": "need right or wrong statement on transhumance practices for my form 2 class",
+        "response": "Transhumance is primarily practiced in tropical regions. (Wrong)",
+        "exercise_format": "true-false",
+        "topic": "Transhumance practices"
+    },
+    {
+        "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+        "response": "True or False: The discovery and extraction of natural gas in Tanzania has led to significant improvements in the infrastructure of regions like Mtwara, specifically in enhancing the airport and harbour facilities.",
+        "exercise_format": "true-false",
+        "topic": "Benefits of natural gas in Tanzania"
+    },
+    {
+        "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+        "response": "Define the significance of tourism in Tanzania's economy.",
+        "exercise_format": "short-answer",
+        "topic": "Tourism's significance in Tanzania"
+    }
+]

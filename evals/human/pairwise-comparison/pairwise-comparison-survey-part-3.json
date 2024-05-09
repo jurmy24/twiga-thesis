@@ -1,0 +1,86 @@
+[
+    {
+        "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+        "response": "True or False: The metal mining industry primarily deals with the extraction of metallic minerals such as gold, silver, iron, lead, and zinc for various industrial purposes.",
+        "exercise_format": "true-false",
+        "topic": "Metal extraction sector",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+        "response": "Explain how improving infrastructure can enhance tourist access to attractions in Tanzania and discuss the role of the government and private sector in this process.",
+        "exercise_format": "long-answer",
+        "topic": "Enhancing tourist access to attractions",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+        "response": "What is the significance of tourism in Tanzania based on its contribution to the Gross Domestic Product (GDP)?",
+        "exercise_format": "short-answer",
+        "topic": "Tourism's significance in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+        "response": "True or False: The discovery and extraction of natural gas in Tanzania has led to significant improvements in the infrastructure of regions like Mtwara, specifically in enhancing the airport and harbour facilities.",
+        "exercise_format": "true-false",
+        "topic": "Benefits of natural gas in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "need right or wrong statement on transhumance practices for my form 2 class",
+        "response": "Which of the following statements regarding transhumance practices is correct?\n\nA) Transhumance involves the continual movement of pastoralists with large numbers of animals from place to place in search of pasture and water.  \nB) Transhumance is a type of livestock-keeping where animals are permanently held in sheds.  \nC) Transhumance is a seasonal movement of livestock from one grazing ground to another, specifically to lowlands in winter and highlands in summer.  \nD) Transhumance acceler",
+        "exercise_format": "true-false",
+        "topic": "Transhumance practices",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+        "response": "Give a short-answer question related to the different types of human activities according to the context provided.",
+        "exercise_format": "short-answer",
+        "topic": "Varieties of human activities",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+        "response": "Describe the importance of water as a source of life and its economic significance according to the context provided in the textbook.",
+        "exercise_format": "long-answer",
+        "topic": "Water sources",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+        "response": "What are some of the transport and communication challenges that limit tourist movement in Tanzania during the rainy season?",
+        "exercise_format": "short-answer",
+        "topic": "Tourism industry problems in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+        "response": "Explain how the increase in temperature affects the rate of evaporation from ocean water.",
+        "exercise_format": "long-answer",
+        "topic": "Ocean water",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+        "response": "What are the key cultivation techniques used in sisal farming, and how do they contribute to the successful growth and production of sisal in Tanzania?",
+        "exercise_format": "long-answer",
+        "topic": "Cultivation techniques for sisal",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+        "response": "Define the following terms related to issues in livestock farming:\n\n1. Nagana disease\n2. East Coast Fever\n3. Foot and Mouth Disease (FMD)\n4. Over-grazing\n5. Land degradation",
+        "exercise_format": "short-answer",
+        "topic": "livestock farming issues",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+        "response": "True or False: The majority of livestock in Australia is kept for commercial purposes, with over 60 percent of livestock products being exported to Europe and other continents.",
+        "exercise_format": "true-false",
+        "topic": "Contrasts in livestock farming between Tanzania and Australia",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    }
+]

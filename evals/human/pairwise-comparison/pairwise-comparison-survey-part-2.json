@@ -1,0 +1,86 @@
+[
+    {
+        "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+        "response": "Here are five true or false statements about metal extraction sector for your students to work on:\n\n1. True or False: Metal mining industry only covers the extraction of gold and silver.\n2. True or False: Iron is primarily used in the production of jewelry.\n3. True or False: Zinc is used to produce steel.\n4. True or False: Lead is primarily used in the production of electrical wiring.\n5. True or False: The metal mining industry only extracts precious metals.",
+        "exercise_format": "true-false",
+        "topic": "Metal extraction sector",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+        "response": "Here is a detailed question for Form 2 students to explain how to improve tourist access to attractions:\n\nExplain three ways in which the government and private sector can improve tourist access to attractions in Tanzania, ensuring sustainable tourism development.",
+        "exercise_format": "long-answer",
+        "topic": "Enhancing tourist access to attractions",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+        "response": "Define the significance of tourism in Tanzania's economy.",
+        "exercise_format": "short-answer",
+        "topic": "Tourism's significance in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+        "response": "True or False: Natural gas production in Tanzania has improved the infrastructure of the areas where it is extracted.",
+        "exercise_format": "true-false",
+        "topic": "Benefits of natural gas in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "need right or wrong statement on transhumance practices for my form 2 class",
+        "response": "Here is a True or False statement on transhumance practices for your Form 2 class:\n\nTrue or False: Transhumance involves the seasonal movement of livestock from highlands in winter to lowlands in summer.",
+        "exercise_format": "true-false",
+        "topic": "Transhumance practices",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+        "response": "List the three major categories of human activities as described in the textbook.",
+        "exercise_format": "short-answer",
+        "topic": "Varieties of human activities",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+        "response": "Describe the various sources of water, highlighting their significance in the economic development of Tanzania.",
+        "exercise_format": "long-answer",
+        "topic": "Water sources",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+        "response": "What are two problems of transport and communication that limit tourist movement in Tanzania?",
+        "exercise_format": "short-answer",
+        "topic": "Tourism industry problems in Tanzania",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+        "response": "Explain the importance of ocean water in the context of water management, highlighting its role in evapotranspiration, its economic significance, and the environmental impacts of human activities on ocean water.",
+        "exercise_format": "long-answer",
+        "topic": "Ocean water",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    },
+    {
+        "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+        "response": "Explain the process and techniques involved in the cultivation of sisal from planting to harvesting, highlighting how these methods contribute to the quality and productivity of sisal fibres.",
+        "exercise_format": "long-answer",
+        "topic": "Cultivation techniques for sisal",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-4.json"
+    },
+    {
+        "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+        "response": "Define one challenge facing livestock-keeping as described in the textbook.",
+        "exercise_format": "short-answer",
+        "topic": "livestock farming issues",
+        "source_file": "pairwise-comparison-queries-pipeline-gpt-3-5.json"
+    },
+    {
+        "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+        "response": "True or False: In both Tanzania and Australia, livestock keeping is mainly for commercial purposes.",
+        "exercise_format": "true-false",
+        "topic": "Contrasts in livestock farming between Tanzania and Australia",
+        "source_file": "pairwise-comparison-queries-pipeline-llama3.json"
+    }
+]

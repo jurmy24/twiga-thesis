@@ -1,3 +1,4 @@
+from collections import defaultdict
 import json
 import random
 import os
@@ -72,3 +73,33 @@ def filter_excluded(data, excluded):
         'long-answer': [item for item in data if item['requested_exercise_format'] == 'long-answer' and item['query'] not in excluded_queries]
     }
     return filtered_data
+
+def distribute_unique_queries(data, num_files):
+    """Distributes unique queries into specified number of files."""
+    grouped_queries = defaultdict(list)
+
+    # Group queries by their 'query' text
+    for item in data:
+        grouped_queries[item['query']].append(item)
+
+    # Prepare the output lists
+    output_lists = [[] for _ in range(num_files)]
+
+    # Distribute the groups across the files
+    for queries in grouped_queries.values():
+        random.shuffle(queries)  # Shuffle to ensure random distribution
+        for i, query in enumerate(queries):
+            output_lists[i % num_files].append(query)
+
+    return output_lists
+
+
+def split_and_save_json(data, base_output_path, num_splits=3):
+    # Distribute unique queries across the splits
+    distributed_data = distribute_unique_queries(data, num_splits)
+    
+    # Write each split to a separate file
+    for i, split_data in enumerate(distributed_data):
+        output_file_path = f"{base_output_path}-part-{i + 1}.json"
+        write_json(split_data, output_file_path)
+        print(f"Data written to {output_file_path}")

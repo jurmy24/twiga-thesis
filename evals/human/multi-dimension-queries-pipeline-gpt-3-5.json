@@ -1,27 +1,15 @@
 [
     {
-        "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
-        "response": "True or False: Managing livestock using traditional methods under nomadic pastoralism ensures the animals have a constant supply of water.",
-        "exercise_format": "true-false",
-        "topic": "Pros of nomadic pastoralism"
-    },
-    {
-        "query": "Generate a true-false statement on Tanzania\u2019s strategies for addressing natural gas challenges.",
-        "response": "True or False: Tanzania has been emphasizing the use of natural gas revenue to benefit the people in areas producing the gas and the nation as a whole.",
-        "exercise_format": "true-false",
-        "topic": "Tanzania's strategies for natural gas challenges"
-    },
-    {
         "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
         "response": "True or False: The processing of tea leaves involves fermenting them under regulated moisture conditions to ensure a quality tea product.",
         "exercise_format": "true-false",
         "topic": "Post-harvest processing of tea"
     },
     {
-        "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
-        "response": "Explain the process of infiltration and its importance in groundwater formation.",
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "response": "What are the drawbacks of commercial livestock-keeping according to the information provided in the textbook?",
         "exercise_format": "short-answer",
-        "topic": "Groundwater sources"
+        "topic": "Drawbacks of commercial livestock farming"
     },
     {
         "query": "please help me generate a long answer question for students to explain about Primary economic activities",
@@ -30,22 +18,16 @@
         "topic": "Primary economic activities"
     },
     {
-        "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
-        "response": "Describe the key differences in livestock farming between Tanzania and Australia.",
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "response": "Explain in detail the economic impacts of petroleum production on Middle Eastern countries based on the provided context.",
         "exercise_format": "long-answer",
-        "topic": "Comparing livestock farming in Tanzania and Australia"
+        "topic": "Economic impact of petroleum in Middle Eastern countries"
     },
     {
-        "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
-        "response": "Explain two ways in which hydroelectric power and biogas contribute to the economy and local communities in Tanzania.",
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "response": "Define the term \"Technology\" in the context of the automobile industry in Japan.",
         "exercise_format": "short-answer",
-        "topic": "Significance of hydroelectric power and biogas in Tanzania"
-    },
-    {
-        "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
-        "response": "What are some uses of surface water as mentioned in your geography textbook for Form 2 students?",
-        "exercise_format": "short-answer",
-        "topic": "Types of surface water"
+        "topic": "Automobile industry in Japan"
     },
     {
         "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
@@ -54,39 +36,39 @@
         "topic": "Difficulties in energy acquisition in Tanzania"
     },
     {
-        "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
-        "response": "True or False: Large-scale crop cultivation typically involves the use of simple tools such as hand-hoes and machetes for cultivation.",
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "response": "True or False: One of the challenges facing natural gas production in Tanzania is the availability of skilled labor in the field of exploration and extraction activities.",
         "exercise_format": "true-false",
-        "topic": "Features of commercial farming"
+        "topic": "Problems in Tanzanian natural gas sector"
     },
     {
-        "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
-        "response": "True or False: Non-renewable energy sources include wind power, solar power, geothermal energy, tidal power, and hydroelectric power.",
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "response": "True or False: One of the ways to minimize the effects of mining on the environment is through proper storage and use of chemicals.",
         "exercise_format": "true-false",
-        "topic": "Fundamentals of Power and Energy"
+        "topic": "Reducing environmental impacts of mining"
     },
     {
-        "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
-        "response": "Explain the role of manufacturing industries in stimulating agricultural production according to the textbook context provided.",
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "response": "Explain how overgrazing can negatively impact the environment and the livelihood of nomadic pastoralists.",
         "exercise_format": "long-answer",
-        "topic": "Basics of the manufacturing sector"
+        "topic": "Traits of nomadic pastoralism"
     },
     {
-        "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
-        "response": "Explain one challenge facing large-scale agriculture in the USA related to the high cost of production.",
-        "exercise_format": "long-answer",
-        "topic": "Issues in American large-scale farming"
-    },
-    {
-        "query": "I need a define question about solid industrial waste for my form 2 students",
-        "response": "Define industrial solid waste.",
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "response": "What is the primary rearing system of livestock-keeping in Tanzania according to the information provided in the textbook for Form 2 Geography students?",
         "exercise_format": "short-answer",
-        "topic": "Solid Industrial Waste"
+        "topic": "Livestock farming practices in Australia"
     },
     {
-        "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
-        "response": "Explain the impact of large-scale mining on biodiversity, using specific examples to support your answer.",
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "response": "Explain the concept of secondary activities in the context of human activities and provide an example to illustrate this concept.",
         "exercise_format": "long-answer",
-        "topic": "Conservation of biodiversity"
+        "topic": "Secondary economic activities"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "response": "True or False: Transport is an important sector that has no significant impact on the socio-economic development of the world.",
+        "exercise_format": "true-false",
+        "topic": "Overview of transportation"
     }
 ]

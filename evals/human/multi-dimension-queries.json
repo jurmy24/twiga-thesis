@@ -1,24 +1,19 @@
 {
     "short-answer": [
         {
-            "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
+            "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
             "requested_exercise_format": "short-answer",
-            "topic": "Types of surface water"
+            "topic": "Livestock farming practices in Australia"
         },
         {
-            "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
+            "query": "i need a short definition question on Japan's automobile industry for my students",
             "requested_exercise_format": "short-answer",
-            "topic": "Groundwater sources"
+            "topic": "Automobile industry in Japan"
         },
         {
-            "query": "I need a define question about solid industrial waste for my form 2 students",
+            "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
             "requested_exercise_format": "short-answer",
-            "topic": "Solid Industrial Waste"
-        },
-        {
-            "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
-            "requested_exercise_format": "short-answer",
-            "topic": "Significance of hydroelectric power and biogas in Tanzania"
+            "topic": "Drawbacks of commercial livestock farming"
         },
         {
             "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
@@ -28,9 +23,9 @@
     ],
     "true-false": [
         {
-            "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
+            "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
             "requested_exercise_format": "true-false",
-            "topic": "Features of commercial farming"
+            "topic": "Problems in Tanzanian natural gas sector"
         },
         {
             "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
@@ -38,46 +33,36 @@
             "topic": "Post-harvest processing of tea"
         },
         {
-            "query": "Generate a true-false statement on Tanzania\u2019s strategies for addressing natural gas challenges.",
+            "query": "Generate a true or false statement about the overview of transportation.",
             "requested_exercise_format": "true-false",
-            "topic": "Tanzania's strategies for natural gas challenges"
+            "topic": "Overview of transportation"
         },
         {
-            "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
+            "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
             "requested_exercise_format": "true-false",
-            "topic": "Pros of nomadic pastoralism"
-        },
-        {
-            "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
-            "requested_exercise_format": "true-false",
-            "topic": "Fundamentals of Power and Energy"
+            "topic": "Reducing environmental impacts of mining"
         }
     ],
     "long-answer": [
         {
-            "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
+            "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
             "requested_exercise_format": "long-answer",
-            "topic": "Comparing livestock farming in Tanzania and Australia"
+            "topic": "Traits of nomadic pastoralism"
         },
         {
-            "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
+            "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
             "requested_exercise_format": "long-answer",
-            "topic": "Issues in American large-scale farming"
+            "topic": "Economic impact of petroleum in Middle Eastern countries"
+        },
+        {
+            "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+            "requested_exercise_format": "long-answer",
+            "topic": "Secondary economic activities"
         },
         {
             "query": "please help me generate a long answer question for students to explain about Primary economic activities",
             "requested_exercise_format": "long-answer",
             "topic": "Primary economic activities"
-        },
-        {
-            "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
-            "requested_exercise_format": "long-answer",
-            "topic": "Conservation of biodiversity"
-        },
-        {
-            "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
-            "requested_exercise_format": "long-answer",
-            "topic": "Basics of the manufacturing sector"
         }
     ]
 }

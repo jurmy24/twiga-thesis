@@ -1,27 +1,15 @@
 [
     {
-        "query": "Can you generate a true or false statement about the advantages of nomadic pastoralism? I want to use it for form two classwork.",
-        "response": "True or False: One of the advantages of nomadic pastoralism is that it allows for the sustainable use of grasslands.",
-        "exercise_format": "true-false",
-        "topic": "Pros of nomadic pastoralism"
-    },
-    {
-        "query": "Generate a true-false statement on Tanzania\u2019s strategies for addressing natural gas challenges.",
-        "response": "True or False: Tanzania has implemented various strategies to address the challenges associated with natural gas, such as developing infrastructure for distribution and promoting investment in the sector.",
-        "exercise_format": "true-false",
-        "topic": "Tanzania's strategies for natural gas challenges"
-    },
-    {
         "query": "good morning, can you make a true or false question about post-harvest processing of tea?",
         "response": "True or False: Post-harvest processing of tea involves stages such as withering, rolling, oxidizing, and drying.",
         "exercise_format": "true-false",
         "topic": "Post-harvest processing of tea"
     },
     {
-        "query": "Hello, Can you help me to create a short question about groundwater sources for form 2 students? ",
-        "response": "Sure! Here is a short answer question on groundwater sources for Form 2 geography students:\n\nWhat are the two main sources of groundwater? Briefly explain how each source contributes to the replenishment of groundwater reserves.",
+        "query": "hi, can you bring me a define question on drawbacks of commercial livestock farming for my class?",
+        "response": "Explain three drawbacks of commercial livestock farming.",
         "exercise_format": "short-answer",
-        "topic": "Groundwater sources"
+        "topic": "Drawbacks of commercial livestock farming"
     },
     {
         "query": "please help me generate a long answer question for students to explain about Primary economic activities",
@@ -30,22 +18,16 @@
         "topic": "Primary economic activities"
     },
     {
-        "query": "I need a short-answer question explaining the importance of hydroelectric power and biogas in Tanzania.",
-        "response": "Explain the importance of hydroelectric power and biogas in Tanzania.",
-        "exercise_format": "short-answer",
-        "topic": "Significance of hydroelectric power and biogas in Tanzania"
-    },
-    {
-        "query": "Describe the key differences in livestock farming between Tanzania and Australia.",
-        "response": "Key differences in livestock farming between Tanzania and Australia can include:\n\n1. Climate: Tanzania has a tropical climate with distinct wet and dry seasons, while Australia has a diverse range of climates from tropical in the north to temperate in the south.\n   \n2. Types of livestock: Tanzania mainly focuses on traditional livestock such as cattle, goats, and sheep, while Australia also has a significant commercial livestock industry including cattle, sheep, and also a large number of farmed kangaroos.\n   \n3. Farm",
+        "query": "I require detailed explanation question for students to understand deep the economic impact of petroleum in Middle Eastern countries",
+        "response": "Explain the economic impact of the petroleum industry in Middle Eastern countries. Include the influence on government revenues, job creation, infrastructure development, and international relations.",
         "exercise_format": "long-answer",
-        "topic": "Comparing livestock farming in Tanzania and Australia"
+        "topic": "Economic impact of petroleum in Middle Eastern countries"
     },
     {
-        "query": "Hi, do you have a defining question about different types of surface water for my form 2 class?",
-        "response": "Sure! Here is a short answer question for your Form 2 geography class on different types of surface water:\n\nWhat are the main differences between rivers and lakes in terms of their formation and characteristics?",
+        "query": "i need a short definition question on Japan's automobile industry for my students",
+        "response": "Define Japan's automobile industry.",
         "exercise_format": "short-answer",
-        "topic": "Types of surface water"
+        "topic": "Automobile industry in Japan"
     },
     {
         "query": "pls i need a short question about problems in getting energy in Tanzania for my students to answer",
@@ -54,39 +36,39 @@
         "topic": "Difficulties in energy acquisition in Tanzania"
     },
     {
-        "query": "Please provide a true-false statement concerning the characteristics of commercial farming that my students can answer.",
-        "response": "True or False: Commercial farming is usually large-scale and focused on selling products for profit rather than for subsistence.",
+        "query": "Can u help me make a true or false question about challenges in natural gas sector of Tanzania?",
+        "response": "True or False: One of the challenges facing the natural gas sector in Tanzania is the limited infrastructure for transporting natural gas to different parts of the country.",
         "exercise_format": "true-false",
-        "topic": "Features of commercial farming"
+        "topic": "Problems in Tanzanian natural gas sector"
     },
     {
-        "query": "Can you make a true or false statement for me to use in teaching my students about Fundamentals of Power and Energy?",
-        "response": "True or False: Renewable energy sources like wind and solar power contribute significantly to Tanzania's overall electricity generation.",
+        "query": "Can you help to make a true or false statement about how mining can reduce its environmental impacts for form 2 geography?",
+        "response": "True or False: Mining can reduce its environmental impacts through reclamation of land and implementation of sustainable mining practices.",
         "exercise_format": "true-false",
-        "topic": "Fundamentals of Power and Energy"
+        "topic": "Reducing environmental impacts of mining"
     },
     {
-        "query": "Can you help me create a question for form two students to explore deeply about basics of the manufacturing sector?",
-        "response": "Sure! Here is a question on the basics of the manufacturing sector for Form 2 students:\n\nExplain the importance of the manufacturing sector in Tanzania's economy and provide two examples of manufactured goods produced in the country.",
+        "query": "hello, can you help me create a discussion question for students to explain the characteristics of nomadic pastoralism.",
+        "response": "Certainly! Here is a discussion question for your students:\n\nDiscuss the advantages and challenges of nomadic pastoralism as a way of life for communities in Tanzania.",
         "exercise_format": "long-answer",
-        "topic": "Basics of the manufacturing sector"
+        "topic": "Traits of nomadic pastoralism"
     },
     {
-        "query": "Mambo, can I get a detailed explanation question on issues in American large-scale farming for the form two students?",
-        "response": "Explain the impact of monoculture farming on the environment and biodiversity in American large-scale farming.",
-        "exercise_format": "long-answer",
-        "topic": "Issues in American large-scale farming"
-    },
-    {
-        "query": "I need a define question about solid industrial waste for my form 2 students",
-        "response": "Define solid industrial waste and provide two examples of sources of solid industrial waste.",
+        "query": "Can you make a short question on livestock farming practice in Australia for form 2?",
+        "response": "Sure, here is a short answer question on livestock farming practice in Australia:\n\nExplain two challenges faced by livestock farmers in Australia and suggest possible solutions for each.",
         "exercise_format": "short-answer",
-        "topic": "Solid Industrial Waste"
+        "topic": "Livestock farming practices in Australia"
     },
     {
-        "query": "hi, can you prepare a long-answer question about Conservation of biodiversity that requires students to explain deeply",
-        "response": "Certainly! Here's a long-answer question on Conservation of Biodiversity:\n\nExplain the concept of conservation of biodiversity and discuss why it is important for the environment and human society. Provide at least three examples of human activities that pose a threat to biodiversity and explain how each of these activities impacts the natural world. Finally, suggest three strategies that can be implemented to promote the conservation of biodiversity in Tanzania.",
+        "query": "Can you generate an explaining question for secondary economic activities for me to use in form two geography?",
+        "response": "Explain the difference between primary and secondary economic activities, providing examples of each in Tanzania.",
         "exercise_format": "long-answer",
-        "topic": "Conservation of biodiversity"
+        "topic": "Secondary economic activities"
+    },
+    {
+        "query": "Generate a true or false statement about the overview of transportation.",
+        "response": "True or False: Tanzania has a well-developed railway network covering most parts of the country.",
+        "exercise_format": "true-false",
+        "topic": "Overview of transportation"
     }
 ]

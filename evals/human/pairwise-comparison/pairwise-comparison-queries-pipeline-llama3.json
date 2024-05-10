@@ -1,72 +1,84 @@
 [
     {
         "query": "I need a detailed question for form two students to explain how to improve tourist access to attractions",
+        "human_response": "Why are good infrastructure and accomodation important to increase tourism?",
         "response": "Here is a detailed question for Form 2 students to explain how to improve tourist access to attractions:\n\nExplain three ways in which the government and private sector can improve tourist access to attractions in Tanzania, ensuring sustainable tourism development.",
         "exercise_format": "long-answer",
         "topic": "Enhancing tourist access to attractions"
     },
     {
         "query": "Need a long explanation question about ocean water for Form 2 Geography.",
+        "human_response": "Explain how large water bodies contribute to the majority of the moisture in the atmosphere.",
         "response": "Explain the importance of ocean water in the context of water management, highlighting its role in evapotranspiration, its economic significance, and the environmental impacts of human activities on ocean water.",
         "exercise_format": "long-answer",
         "topic": "Ocean water"
     },
     {
         "query": "Hello, can u generate a short-answer question regarding the different types of human activities for my form two students?",
+        "human_response": "List the three major categories of human activities.",
         "response": "What are the three major categories of human activities?",
         "exercise_format": "short-answer",
         "topic": "Varieties of human activities"
     },
     {
         "query": "hello, I need to give my students a deep explanation question on cultivation techniques for sisal",
+        "human_response": "Name the temperature and rainfall conditions necessary for growing sisal and explain why they are important.",
         "response": "What are the key cultivation techniques used in sisal farming, and how do they contribute to the successful growth and production of sisal in Tanzania?",
         "exercise_format": "long-answer",
         "topic": "Cultivation techniques for sisal"
     },
     {
         "query": "Hello, please provide a short definition exercise about issues in livestock farming for my class.",
+        "human_response": "Define the term over-grazing and give an example of what it might lead to.",
         "response": "Define the following terms related to issues in livestock farming:\n\n1. Nagana disease\n2. East Coast Fever\n3. Foot and Mouth Disease (FMD)\n4. Over-grazing\n5. Land degradation",
         "exercise_format": "short-answer",
         "topic": "livestock farming issues"
     },
     {
         "query": "get a true or false statement about comparisons in livestock farming between Tanzania and Australia for form two classwork",
+        "human_response": "True or false: Dairy farming is a common practice in both Tanzania and Australia.",
         "response": "True or False: In both Tanzania and Australia, livestock keeping is mainly for commercial purposes.",
         "exercise_format": "true-false",
         "topic": "Contrasts in livestock farming between Tanzania and Australia"
     },
     {
         "query": "Please I need true or false statement about metal extraction sector for our students to work on.",
+        "human_response": "Crushed stone is one of the metallic minerals extracted in the mining sector.",
         "response": "Here are five true or false statements about metal extraction sector for your students to work on:\n\n1. True or False: Metal mining industry only covers the extraction of gold and silver.\n2. True or False: Iron is primarily used in the production of jewelry.\n3. True or False: Zinc is used to produce steel.\n4. True or False: Lead is primarily used in the production of electrical wiring.\n5. True or False: The metal mining industry only extracts precious metals.",
         "exercise_format": "true-false",
         "topic": "Metal extraction sector"
     },
     {
         "query": "Give me question about on problems in tourism industry in Tanzania that need short answer",
+        "human_response": "Give an example of a negative impact of tourism in Tanzania.",
         "response": "What are two problems of transport and communication that limit tourist movement in Tanzania?",
         "exercise_format": "short-answer",
         "topic": "Tourism industry problems in Tanzania"
     },
     {
         "query": "Can you make up a describing question about water sources for my students to answer in detail?",
+        "human_response": "Outline and explain the five steps of the hydrological cycle.",
         "response": "Describe the various sources of water, highlighting their significance in the economic development of Tanzania.",
         "exercise_format": "long-answer",
         "topic": "Water sources"
     },
     {
         "query": "need right or wrong statement on transhumance practices for my form 2 class",
+        "human_response": "True/False: Transhumance refers to the seasonal movement of livestock between different grazing grounds.",
         "response": "Here is a True or False statement on transhumance practices for your Form 2 class:\n\nTrue or False: Transhumance involves the seasonal movement of livestock from highlands in winter to lowlands in summer.",
         "exercise_format": "true-false",
         "topic": "Transhumance practices"
     },
     {
         "query": "Can you create a true or false statement question about the benefits of natural gas in Tanzania?",
+        "human_response": "Natural gas is used to cool down homes in Tanzania.",
         "response": "True or False: Natural gas production in Tanzania has improved the infrastructure of the areas where it is extracted.",
         "exercise_format": "true-false",
         "topic": "Benefits of natural gas in Tanzania"
     },
     {
         "query": "Can you make a short defining question about the significance of tourism in Tanzania?",
+        "human_response": "Define employment and provide an example of how tourism increases the employment rate in Tanzania.",
         "response": "What is the significance of tourism in Tanzania in terms of its contribution to the Gross Domestic Product (GDP)?",
         "exercise_format": "short-answer",
         "topic": "Tourism's significance in Tanzania"

@@ -28,6 +28,8 @@ def find_responses(first_file, second_file, output_file):
     # Mapping from query string to desired data structure
     query_to_response = {item['query']: item for item in flattened_queries}
 
+    print(query_to_response)
+
     # Prepare the results
     results = []
     for entry in detailed_responses:
@@ -35,6 +37,7 @@ def find_responses(first_file, second_file, output_file):
         if query_text in query_to_response:
             results.append({
                 'query': query_text,
+                'human_response': query_to_response[query_text]['human_response'],
                 'response': entry['response']['text'],
                 'exercise_format': entry['query']['requested_exercise_format'],
                 'topic': entry['query']['topic']

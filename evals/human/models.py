@@ -9,6 +9,6 @@ class QuestionResSchema(BaseModel):
 class MDGScore(BaseModel):
     query: str
     response: str
-    question_type: Literal["long-answer", "short-answer", "true-false"]
+    exercise_format: Literal["long-answer", "short-answer", "true-false"]
     respondent_id: str
     result: QuestionResSchema

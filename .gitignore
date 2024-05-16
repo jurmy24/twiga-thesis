@@ -161,3 +161,6 @@ cython_debug/
 
 # File for miniatuure testing
 crap.py
+
+# Ignore human csv files
+evals/human/**/*.csv

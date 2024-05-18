@@ -1,7 +1,7 @@
-Pipeline (5-7) Hit Rate Control: 0.0
-Pipeline (5-7) MRR Control: 0.0
-Pipeline (5-7) Hit Rate Temp0: 0.89
-Pipeline (5-7) MRR Temp0: 0.8380555555555557
+Pipeline (5-7) Hit Rate Control (content retrieved only): 0.0
+Pipeline (5-7) MRR Control (content retrieved only): 0.0
+Pipeline (5-7) Hit Rate Temp0 (content retrieved only): 0.89
+Pipeline (5-7) MRR Temp0 (content retrieved only): 0.8380555555555557
 Pipeline (5) BERTScore Content Precision Control: 0.3831, Recall: 0.4875, F1: 0.4277
 Pipeline (5) BERTSCORE Exercise Precision Control: 0.4815, Recall: 0.4587, F1: 0.4673
 Pipeline (5) BERTScore Content Precision: 0.4290815591812134, Recall: 0.5470510721206665, F1: 0.4787735641002655

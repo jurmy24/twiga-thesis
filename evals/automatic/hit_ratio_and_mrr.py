@@ -33,11 +33,12 @@ def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[L
     reciprocal_rank_sum = 0
     for data in tqdm(pipeline_data_list, desc="Going through pipeline data"):
         query = data.query.query
-        retrieved_content_docs = [doc.source.chunk for doc in data.retrieved_docs if doc.source.metadata.doc_type == "Content"]
+        # retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs if doc.source.metadata.doc_type == "Content"]
+        retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs]
 
         hit = False
         reciprocal_rank = 0
-        for i, doc in enumerate(retrieved_content_docs):
+        for i, doc in enumerate(retrieved_docs):
             i += 1 # so that i starts at 1
             prompt = HR_USER_PROMPT.format(query=query, doc=doc)
 
@@ -78,14 +79,12 @@ if __name__ == "__main__":
     load_dotenv()
     DATA_DIR = os.getenv("DATA_DIR_PATH")
 
-    data_file = os.path.join(DATA_DIR, "results", "5-pipeline-gpt-3-5.json")
-    results_file = os.path.join(DATA_DIR, "results", "results.txt")
-    csv_file = os.path.join(DATA_DIR, "results", "pipeline-5-7-hit-analysis2.csv")
+    data_file = os.path.join(DATA_DIR, "complete_runs", "5-pipeline-gpt-3-5.json")
+    results_file = os.path.join("evals", "results", "results.txt")
+    csv_file = os.path.join("evals", "results", "pipeline-5-7-hit-analysis-content-and-exercises.csv")
 
     pipeline_data = extract_eval_data(data_file)
 
-
-    # Compute hit ratio with a threshold of 0.5
     first_results, hit_rate, mrr = compute_hit_ratio_and_mrr(pipeline_data)
 
     save_tuples_to_csv(csv_file, first_results)

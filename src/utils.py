@@ -195,7 +195,7 @@ def convert_to_pipelinedata(item: dict, retrieval_method: Literal["sparse", "den
         response = item.get('response', None)
         
         if retrieved_docs:
-            retrieved_docs = load_json_to_retrieveddocschema(docs, retrieval_method)
+            retrieved_docs = load_json_to_retrieveddocschema(retrieved_docs, retrieval_method)
         if response:
             response = ResponseSchema(**response)
 

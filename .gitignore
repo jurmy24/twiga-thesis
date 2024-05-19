@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# File for miniatuure testing
+# File for miniature testing
 crap.py
 
 # Ignore human csv files

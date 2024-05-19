@@ -1,39 +1,6 @@
 from src.models import ChatMessage
 
 """
-From LlamaIndex (llama_index/llama-index-core/llama_index/core/prompts/default_prompts.py)
-"""
-DEFAULT_TEXT_QA_PROMPT = (
-    "Context information is below.\n"
-    "---------------------\n"
-    "{context_str}\n"
-    "---------------------\n"
-    "Given the context information and not prior knowledge, "
-    "answer the query.\n"
-    "Query: {query_str}\n"
-    "Answer: ")
-
-# Here is an example using two-shot prompting (i.e. providing examples)
-DEFAULT_KG_TRIPLET_EXTRACT_PROMPT = (
-    "Some text is provided below. Given the text, extract up to "
-    "{max_knowledge_triplets} "
-    "knowledge triplets in the form of (subject, predicate, object). Avoid stopwords.\n"
-    "---------------------\n"
-    "Example:"
-    "Text: Alice is Bob's mother."
-    "Triplets:\n(Alice, is mother of, Bob)\n"
-    "Text: Philz is a coffee shop founded in Berkeley in 1982.\n"
-    "Triplets:\n"
-    "(Philz, is, coffee shop)\n"
-    "(Philz, founded in, Berkeley)\n"
-    "(Philz, founded in, 1982)\n"
-    "---------------------\n"
-    "Text: {text}\n"
-    "Triplets:\n"
-)
-
-
-"""
 Directly from LlamaIndex (llama_index/llama-index-core/llama_index/core/prompts/chat_prompts.py)
 """
 
@@ -54,34 +21,7 @@ CHAT_TEXT_QA_SYSTEM_PROMPT = ChatMessage(
     role="system",
 )
 
-CHAT_TEXT_QA_USER_PROMPT = ChatMessage(
-    content=(
-        "Context information is below.\n"
-        "---------------------\n"
-        "{context_str}\n"
-        "---------------------\n"
-        "Given the context information and not prior knowledge, "
-        "answer the query.\n"
-        "Query: {query_str}\n"
-        "Answer: "
-    ),
-    role="user"
-)
 
-# Tree Summarize
-CHAT_TREE_SUMMARIZE_USER_PROMPT = ChatMessage(
-    content=(
-        "Context information from multiple sources is below.\n"
-        "---------------------\n"
-        "{context_str}\n"
-        "---------------------\n"
-        "Given the information from multiple sources and not prior knowledge, "
-        "answer the query.\n"
-        "Query: {query_str}\n"
-        "Answer: "
-    ),
-    role="user",
-    )
 
 # Refine Prompt (a variant of this one can be used for the query rewriter)
 REFINE_USER_PROMPT = ChatMessage(

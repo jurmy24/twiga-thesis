@@ -1,79 +1,43 @@
 Pipeline (5-7) Hit Rate Control (content retrieved only): 0.0
 Pipeline (5-7) MRR Control (content retrieved only): 0.0
-Pipeline (5-7) Hit Rate Temp0 (content retrieved only): 0.89
-Pipeline (5-7) MRR Temp0 (content retrieved only): 0.8380555555555557
+Pipeline (5-7) Hit Rate (content retrieved only): 0.89
+Pipeline (5-7) MRR (content retrieved only): 0.8380555555555557
 Pipeline (5) BERTScore Content Precision Control: 0.3831, Recall: 0.4875, F1: 0.4277
 Pipeline (5) BERTSCORE Exercise Precision Control: 0.4815, Recall: 0.4587, F1: 0.4673
 Pipeline (5) BERTScore Content Precision: 0.4290815591812134, Recall: 0.5470510721206665, F1: 0.4787735641002655
 Pipeline (5) BERTSCORE Exercise Precision: 0.5489493608474731, Recall: 0.5200318694114685, F1: 0.5292916297912598
-Pipeline (5) BERT Cosine Content Similarity Control: 0.7107012351353963
-Pipeline (5) BERT Cosine Exercise Similarity Control: 0.2729452751080196
-Pipeline (5) BERT Cosine Content Similarity: 0.7653807860811555
-Pipeline (5) BERT Cosine Exercise Similarity: 0.2991249745488167
 Pipeline (5) all-MiniLM-l6-v2 Cosine Content Similarity Control: 0.2823481093649696
-Pipeline (5) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity Control: 0.2712788319826733
+Pipeline (5) all-MiniLM-l6-v2 Cosine Exercise Similarity Control: 0.2712788319826733
 Pipeline (5) all-MiniLM-l6-v2 Cosine Content Similarity: 0.5928461149706354
-Pipeline (5) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: 0.5505301289162581
+Pipeline (5) all-MiniLM-l6-v2 Cosine Exercise Similarity: 0.5505301289162581
 Pipeline (6) BERTScore Content Precision Control: 0.3840213119983673, Recall: 0.42937320470809937, F1: 0.40472063422203064
 Pipeline (6) BERTScore Exercise Precision Control: 0.4363659918308258, Recall: 0.37965428829193115, F1: 0.40475788712501526
-Pipeline (6) BERT Cosine Content Similarity Control: 0.6853068625926972
-Pipeline (6) BERT Cosine Exercise Similarity Control: 0.26101084788640344
 Pipeline (6) BERTScore Content Precision: 0.43601903319358826, Recall: 0.5477917790412903, F1: 0.4834611415863037
 Pipeline (6) BERTScore Exercise Precision: 0.5530174970626831, Recall: 0.5157396197319031, F1: 0.5286861062049866
-Pipeline (6) BERT Cosine Content Similarity: 0.7772685613334184
-Pipeline (6) BERT Cosine Exercise Similarity: 0.29900438021620124
 Pipeline (6) all-MiniLM-l6-v2 Cosine Content Similarity Control: 0.22312124328524616
-Pipeline (6) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity Control: 0.23429510105301257
+Pipeline (6) all-MiniLM-l6-v2 Cosine Exercise Similarity Control: 0.23429510105301257
 Pipeline (6) all-MiniLM-l6-v2 Cosine Content Similarity: 0.5794902218767004
-Pipeline (6) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: 0.5338914135796103
+Pipeline (6) all-MiniLM-l6-v2 Cosine Exercise Similarity: 0.5338914135796103
 Pipeline (7) BERTScore Content Precision Control: 0.40979039669036865, Recall: 0.4546652138233185, F1: 0.4294772148132324
 Pipeline (7) BERTScore Exercise Precision Control: 0.4640415906906128, Recall: 0.40116390585899353, F1: 0.4280093014240265
-Pipeline (7) BERT Cosine Content Similarity Control: 0.7168246962626775
-Pipeline (7) BERT Cosine Exercise Similarity Control: 0.2718721083799997
 Pipeline (7) BERTScore Content Precision: 0.42975667119026184, Recall: 0.5402707457542419, F1: 0.47631826996803284
 Pipeline (7) BERTScore Exercise Precision: 0.5486220121383667, Recall: 0.5162431001663208, F1: 0.526414692401886
-Pipeline (7) BERT Cosine Content Similarity: 0.7657639510929576
-Pipeline (7) BERT Cosine Exercise Similarity: 0.29849346995353715
 Pipeline (7) all-MiniLM-l6-v2 Cosine Content Similarity Control: 0.2284361221143323
-Pipeline (7) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity Control: 0.25904046762785893
+Pipeline (7) all-MiniLM-l6-v2 Exercise Similarity Control: 0.25904046762785893
 Pipeline (7) all-MiniLM-l6-v2 Cosine Content Similarity: 0.5838064177741684
-Pipeline (7) all-MiniLM-l6-v2 BERT Cosine Exercise Similarity: 0.5495745566842671
-Pipeline (5) K-F1++ Content Control: 0.2129354727979553
-Pipeline (5) K-F1++ Exercise Control: 0.1577274285847228
-Pipeline (5) K-F1++ (Precision) Content Control: 0.5726797711233126
-Pipeline (5) K-F1++ (Precision) Exercise Control: 0.1691467060328025
-Pipeline (5) K-F1++ (Recall) Content Control: 0.1364373131129075
-Pipeline (5) K-F1++ (Recall) Exercise Control: 0.18971187878388687
-Pipeline (5) K-F1++ Content: 0.22151732302106392
-Pipeline (5) K-F1++ Exercise: 0.1760651747796599
-Pipeline (5) K-F1++ (Precision) Content: 0.6057275652177393
-Pipeline (5) K-F1++ (Precision) Exercise: 0.18617808875014702
-Pipeline (5) K-F1++ (Recall) Content: 0.1644456990897473
-Pipeline (5) K-F1++ (Recall) Exercise: 0.2231794097954491
-Pipeline (6) K-F1++ Content Control: 0.10827675949236237
-Pipeline (6) K-F1++ Exercise Control: 0.06814271149295056
-Pipeline (6) K-F1++ (Precision) Content Control: 0.20908593909576512
-Pipeline (6) K-F1++ (Precision) Exercise Control: 0.05479956448694637
-Pipeline (6) K-F1++ (Recall) Content Control: 0.08120918012930954
-Pipeline (6) K-F1++ (Recall) Exercise Control: 0.10880382880382881
-Pipeline (6) K-F1++ Content: 0.2049927153882173
-Pipeline (6) K-F1++ Exercise: 0.1769890279958242
-Pipeline (6) K-F1++ (Precision) Content: 0.5736577037019881
-Pipeline (6) K-F1++ (Precision) Exercise: 0.18944540359723
-Pipeline (6) K-F1++ (Recall) Content: 0.1468478617084258
-Pipeline (6) K-F1++ (Recall) Exercise: 0.226018625918406
-Pipeline (7) K-F1++ Content Control: 0.190923061828631
-Pipeline (7) K-F1++ Exercise Control: 0.11291092025960225
-Pipeline (7) K-F1++ (Precision) Content Control: 0.3577629478728657
-Pipeline (7) K-F1++ (Precision) Exercise Control: 0.09491008735576774
-Pipeline (7) K-F1++ (Recall) Content Control: 0.14264794633991862
-Pipeline (7) K-F1++ (Recall) Exercise Control: 0.1860123381061248
-Pipeline (7) K-F1++ Content: 0.20350070904692583
-Pipeline (7) K-F1++ Exercise: 0.1777220032055986
-Pipeline (7) K-F1++ (Precision) Content: 0.5898025617414719
-Pipeline (7) K-F1++ (Precision) Exercise: 0.1925835641457657
-Pipeline (7) K-F1++ (Recall) Content: 0.14867141100021924
-Pipeline (7) K-F1++ (Recall) Exercise: 0.21868906841399863
+Pipeline (7) all-MiniLM-l6-v2 Exercise Similarity: 0.5495745566842671
+Pipeline (5) K-F1++ Content Control: 0.2129354727979553, Precision: 0.5726797711233126, Recall: 0.1364373131129075
+Pipeline (5) K-F1++ Exercise Control: 0.1577274285847228, Precision: 0.1691467060328025, Recall: 0.18971187878388687
+Pipeline (5) K-F1++ Content: 0.22151732302106392, Precision: 0.6057275652177393, Recall: 0.1644456990897473
+Pipeline (5) K-F1++ Exercise: 0.1760651747796599, Precision: 0.18617808875014702, Recall: 0.2231794097954491
+Pipeline (6) K-F1++ Content Control: 0.10827675949236237, Precision: 0.20908593909576512, Recall: 0.08120918012930954
+Pipeline (6) K-F1++ Exercise Control: 0.06814271149295056, Precision: 0.05479956448694637, 0.10880382880382881
+Pipeline (6) K-F1++ Content: 0.2049927153882173, Precision: 0.5736577037019881, Recall: 0.1468478617084258
+Pipeline (6) K-F1++ Exercise: 0.1769890279958242, Precision: 0.18944540359723, Recall: 0.226018625918406
+Pipeline (7) K-F1++ Content Control: 0.190923061828631, Precision: 0.3577629478728657, Recall: 0.14264794633991862
+Pipeline (7) K-F1++ Exercise Control: 0.11291092025960225, Precision: 0.09491008735576774, Recall: 0.1860123381061248
+Pipeline (7) K-F1++ Content: 0.20350070904692583, Precision: 0.5898025617414719, Recall: 0.14867141100021924
+Pipeline (7) K-F1++ Exercise: 0.1777220032055986, Precision: 0.1925835641457657, Recall: 0.21868906841399863
 Pipeline (5) RAGAS Groundedness Control: 0.6777777777777777, Answer Relevancy: 0.7368021607501396, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.0538105003974973
 Pipeline (5) RAGAS Groundedness: 0.8668373015873018, Answer Relevancy: 0.8670417348611308, Context Relevancy: 0.14210356635626467, Reverse Context Relevancy: 0.12151903179802331
 Pipeline (6) RAGAS Groundedness Control: 0.11666666666666667, Answer Relevancy: 0.4041024028129922, Context Relevancy: 0.009542362399505254, Reverse Context Relevancy: 0.0021954236239950502

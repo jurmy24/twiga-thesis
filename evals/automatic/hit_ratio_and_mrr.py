@@ -25,16 +25,19 @@ HR_USER_PROMPT = ("User Query: {query}\nRetrieved Document: {doc}")
 
 # Function to calculate hit ratio for a list of PipelineData objects
 def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[List[Tuple], float, float]:
-    # TO REMOVE:
-    # pipeline_data_list = pipeline_data_list[0:5]
+    """
+    This function computes the hit rate and mrr for a query against a set of retrieved documents. Twiga retrieves both sample exercises and informational content,
+    but to remain consistent we will only compute the hit rate against the retrieved informational content, and not the exercises, as they are only meant to be used
+    as guidance on how questions within a specific topic might look like. 
+    """
+
     first_results = [("Query", "First Retrieved Document", "GPT-4-1106-preview Score on Relevancy")]
 
     hits = 0
     reciprocal_rank_sum = 0
     for data in tqdm(pipeline_data_list, desc="Going through pipeline data"):
         query = data.query.query
-        # retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs if doc.source.metadata.doc_type == "Content"]
-        retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs]
+        retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs if doc.source.metadata.doc_type == "Content"] # Note: content only, not exercises
 
         hit = False
         reciprocal_rank = 0

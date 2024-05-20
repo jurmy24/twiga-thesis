@@ -1,10 +1,10 @@
 import json
-from typing import List, Literal
+from typing import Any, Dict, List, Literal
 from src.DataSearch import DataSearch
 from src.llms.groq_requests import groq_request
 from src.llms.openai_requests import openai_request
 from src.models import EvalQuery, ResponseSchema, RetrievedDocSchema, RewrittenQuery, PipelineData
-from src.prompt_templates import PIPELINE_QUESTION_GENERATOR_PROMPT, PIPELINE_QUESTION_GENERATOR_USER_PROMPT
+from src.prompt_templates import PIPELINE_QUESTION_GENERATOR_PROMPT, PIPELINE_QUESTION_GENERATOR_USER_PROMPT, PIPELINE_QUESTION_GENERATOR_PROMPT_ZERO_SHOT
 from src.utils import load_json_to_evalquery, get_embedding, load_json_to_pipelinedata, save_objects_as_json
 from src.pipelines.modules import elasticsearch_retriever, query_rewriter, rerank
 import os
@@ -122,18 +122,22 @@ def pipeline_generator(prompt: str, query: str, model: Literal["gpt-3.5-turbo-01
         logger.error(f"An error occurred when generating a response query: {e}")
         return None
 
-def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"], verbose: bool=False) -> List[PipelineData]:
+def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09","llama3-70b-8192"], ablation_params: Dict[Any] | None = None, verbose: bool=False) -> List[PipelineData]:
     results: List[PipelineData] = []
     embedding_model: SentenceTransformer = SentenceTransformer('all-MiniLM-L6-v2')
+
+    if ablation_params is not None:
+        no_rewriter, no_sparse_retriever, no_reranker, no_sample_questions, no_one_shot = ablation_params.values() # the first three don't have an impact on the generation phase
+    else:
+        no_rewriter, no_sparse_retriever, no_reranker, no_sample_questions, no_one_shot = False, False, False, False, False
 
     for item in tqdm(pipe_data, desc="Retrieving documents"):
 
         retrieved_docs = item.retrieved_docs
 
         retrieved_content = [doc for doc in retrieved_docs if doc.source.metadata.doc_type == "Content"]
-        retrieved_exercise = [doc for doc in retrieved_docs if doc.source.metadata.doc_type == "Exercise"]
-        
-        # TODO: Put in a check to make sure these exist
+        if not no_sample_questions:
+            retrieved_exercise = [doc for doc in retrieved_docs if doc.source.metadata.doc_type == "Exercise"]
 
         # Format the context
         context_parts = []
@@ -154,24 +158,25 @@ def run_data_through_generator(pipe_data: List[PipelineData], model: Literal["gp
             context_parts.append(heading)
             context_parts.append(f"{doc.source.chunk}")
 
-        context_parts.append(f"\n### Sample exercises from the textbook ({retrieved_content[0].source.metadata.title})\n")
-        for doc in retrieved_exercise:
-            metadata = doc.source.metadata
-            if metadata.chapter and metadata.subsection and metadata.subsubsection:
-                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}, subsubsection {metadata.subsubsection}"
-            elif metadata.chapter and metadata.subsection:
-                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}"
-            elif metadata.chapter:
-                heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}"
-            else:
-                heading = f"-Exercise of type {metadata.exercise_format}"
-    
-            context_parts.append(heading)
-            context_parts.append(f"{doc.source.chunk}")
+        if not no_sample_questions:
+            context_parts.append(f"\n### Sample exercises from the textbook ({retrieved_content[0].source.metadata.title})\n")
+            for doc in retrieved_exercise:
+                metadata = doc.source.metadata
+                if metadata.chapter and metadata.subsection and metadata.subsubsection:
+                    heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}, subsubsection {metadata.subsubsection}"
+                elif metadata.chapter and metadata.subsection:
+                    heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}, subsection {metadata.subsection}"
+                elif metadata.chapter:
+                    heading = f"-Exercise of type {metadata.exercise_format} from chapter {metadata.chapter}"
+                else:
+                    heading = f"-Exercise of type {metadata.exercise_format}"
+        
+                context_parts.append(heading)
+                context_parts.append(f"{doc.source.chunk}")
 
         context = "\n".join(context_parts)
-    
-        system_prompt = PIPELINE_QUESTION_GENERATOR_PROMPT.format()
+
+        system_prompt = PIPELINE_QUESTION_GENERATOR_PROMPT.format() if not no_one_shot else PIPELINE_QUESTION_GENERATOR_PROMPT_ZERO_SHOT.format()
         user_prompt = PIPELINE_QUESTION_GENERATOR_USER_PROMPT.format(query=item.query.query, context_str=context)
 
         res = pipeline_generator(system_prompt, user_prompt, model, verbose=verbose)

@@ -8,7 +8,6 @@ from sentence_transformers import SentenceTransformer
 from llama_index.core.schema import Document
 import tiktoken
 
-from src.prompt_templates import DEFAULT_TEXT_QA_PROMPT
 from src.models import ChunkSchema, EvalQuery, Metadata, PipelineData, ResponseSchema, RetrievedDocSchema, RewrittenQuery
 
 # Set up basic logging configuration

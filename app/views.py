@@ -82,4 +82,5 @@ def webhook_get():
 @webhook_blueprint.route("/webhooks", methods=["POST"])
 @signature_required
 def webhook_post():
+    logging.info("NEW WHATSAPP MESSAGE RECEIVED")
     return handle_message()

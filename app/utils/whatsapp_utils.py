@@ -1,7 +1,9 @@
+import asyncio
 import json
 import logging
 import re
 
+import aiohttp
 import requests
 from flask import current_app, jsonify
 
@@ -83,10 +85,7 @@ def process_whatsapp_message(body):
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
     message_body = message["text"]["body"]
 
-    # TODO: implement custom function here
-    # response = generate_response(message_body)
-
-    # OpenAI Integration
+    # Twiga Integration
     response = generate_response(message_body, wa_id, name)
     response = process_text_for_whatsapp(response)
 

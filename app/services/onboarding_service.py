@@ -42,7 +42,6 @@ def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
     elif user_state == "ask_teacher":
         if message_body.lower() == "yes":
             update_user_state(wa_id, {"state": "ask_subject"})
-            logging.info(f"USER STATE!!: {get_user_state(wa_id)}")
             return "What subject do you teach?", ["Math", "Physics", "Geography"]
         else:
             update_user_state(wa_id, {"state": "not_teacher"})
@@ -50,14 +49,16 @@ def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
 
     elif user_state == "ask_subject":
         subjects = ["Math", "Physics", "Geography"]
+        logging.info(f"This is the message_body: {message_body}")
         if message_body in subjects:
+            logging.info(f"This is the message_body: {message_body}")
             update_user_state(wa_id, {"state": "ask_form", "subject": message_body})
-            return "Which form do you teach?", ["Form 1", "Form 2", "Form 3", "Form 4"]
+            return "Which form do you teach?", ["Form 1", "Form 2", "Form 3"]
         else:
             return "Please select a valid subject from the list.", subjects
 
     elif user_state == "ask_form":
-        forms = ["Form 1", "Form 2", "Form 3", "Form 4"]
+        forms = ["Form 1", "Form 2", "Form 3"]
         if message_body in forms:
             subject = state["subject"]
             form = message_body
@@ -73,6 +74,7 @@ def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
         # Onboarding complete, proceed with normal conversation
         return None
 
+    # If we get here it crashes, allow it to solve itself
     return "I'm not sure how to proceed. Let's start over. Are you a teacher?", [
         "Yes",
         "No",

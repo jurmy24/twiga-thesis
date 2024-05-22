@@ -66,17 +66,16 @@ def verify():
             return challenge, 200
         else:
             # Responds with '403 Forbidden' if verify tokens do not match
-            logging.info("VERIFICATION_FAILED")
+            logging.error("VERIFICATION_FAILED")
             return jsonify({"status": "error", "message": "Verification failed"}), 403
     else:
         # Responds with '400 Bad Request'
-        logging.info("MISSING_PARAMETER")
+        logging.error("MISSING_PARAMETER")
         return jsonify({"status": "error", "message": "Missing parameters"}), 400
 
 
 @webhook_blueprint.route("/webhooks", methods=["GET"])
 def webhook_get():
-    logging.info("Verified a ")
     return verify()
 
 

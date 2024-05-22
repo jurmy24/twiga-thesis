@@ -76,6 +76,7 @@ def verify():
 
 @webhook_blueprint.route("/webhooks", methods=["GET"])
 def webhook_get():
+    logging.info("Verified a ")
     return verify()
 
 

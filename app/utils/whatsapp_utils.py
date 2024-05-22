@@ -7,7 +7,9 @@ import aiohttp
 import requests
 from flask import current_app, jsonify
 
+from app.services.onboarding_service import get_user_state, handle_onboarding
 from app.services.openai_service import generate_response
+from app.utils.openai_utils import check_if_thread_exists
 
 
 def log_http_response(response):
@@ -28,9 +30,29 @@ def get_text_message_input(recipient, text):
     )
 
 
-# def generate_response(response):
-#     # Return text in uppercase
-#     return response.upper()
+def get_interactive_message_input(recipient, text, options):
+    buttons = [
+        {
+            "type": "reply",
+            "reply": {"id": f"option-{i}", "title": opt},
+        }
+        for i, opt in enumerate(options)
+    ]
+
+    return json.dumps(
+        {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": recipient,
+            "type": "interactive",
+            "interactive": {
+                "type": "button",
+                "body": {"text": text},
+                "footer": {"text": "Twiga - your teaching assistant."},
+                "action": {"buttons": buttons},
+            },
+        }
+    )
 
 
 def send_message(data):
@@ -83,13 +105,38 @@ def process_whatsapp_message(body):
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
 
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
-    message_body = message["text"]["body"]
+    message_type = message.get("type")
 
+    if message_type == "text":
+        message_body = message["text"]["body"]
+    elif (
+        message_type == "interactive"
+        and message["interactive"]["type"] == "button_reply"
+    ):
+        message_body = message["interactive"]["button_reply"]["title"]
+    else:
+        logging.error(f"Unsupported message type: {message_type}")
+        return
+
+    # If the onboarding process is not completed, handle onboarding
+    state = get_user_state(wa_id)
+    if state["state"] != "completed":
+        response, options = handle_onboarding(wa_id, message_body)
+        response = process_text_for_whatsapp(response)
+        if options:
+            data = get_interactive_message_input(
+                current_app.config["RECIPIENT_WAID"], response, options
+            )
+        else:
+            data = get_text_message_input(
+                current_app.config["RECIPIENT_WAID"], response
+            )
     # Twiga Integration
-    response = generate_response(message_body, wa_id, name)
-    response = process_text_for_whatsapp(response)
+    else:
+        response = generate_response(message_body, wa_id, name)
+        response = process_text_for_whatsapp(response)
+        data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 
-    data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
     send_message(data)
 
 

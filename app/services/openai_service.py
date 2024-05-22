@@ -6,24 +6,17 @@ import time
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from app.utils.openai_utils import print_conversation
+from app.utils.openai_utils import (
+    check_if_thread_exists,
+    print_conversation,
+    store_thread,
+)
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_ASSISTANT_ID = os.getenv("TWIGA_OPENAI_ASSISTANT_ID")
 OPENAI_ORG = os.getenv("OPENAI_ORG")
 client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
-
-
-# Use context manager to ensure the shelf file is closed properly
-def check_if_thread_exists(wa_id):
-    with shelve.open("threads_db") as threads_shelf:
-        return threads_shelf.get(wa_id, None)
-
-
-def store_thread(wa_id, thread_id):
-    with shelve.open("threads_db", writeback=True) as threads_shelf:
-        threads_shelf[wa_id] = thread_id
 
 
 def run_assistant(thread, name):

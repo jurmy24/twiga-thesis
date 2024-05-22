@@ -12,6 +12,17 @@ OPENAI_ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
+# Use context manager to ensure the shelf file is closed properly
+def check_if_thread_exists(wa_id):
+    with shelve.open("threads_db") as threads_shelf:
+        return threads_shelf.get(wa_id, None)
+
+
+def store_thread(wa_id, thread_id):
+    with shelve.open("threads_db", writeback=True) as threads_shelf:
+        threads_shelf[wa_id] = thread_id
+
+
 def clear_threads_db():
     with shelve.open("threads_db", writeback=True) as threads_shelf:
         threads_shelf.clear()

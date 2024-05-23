@@ -18,6 +18,8 @@ OPENAI_ASSISTANT_ID = os.getenv("TWIGA_OPENAI_ASSISTANT_ID")
 OPENAI_ORG = os.getenv("OPENAI_ORG")
 client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 
+logger = logging.getLogger(__name__)
+
 
 def run_assistant(thread, name):
     # Retrieve the Assistant
@@ -36,10 +38,10 @@ def run_assistant(thread, name):
     while run.status != "completed":
         # Be nice to the API
         time.sleep(0.5)
-        logging.info(f"🏃‍♂️ Run status: {run.status}")
+        logger.info(f"🏃‍♂️ Run status: {run.status}")
         run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
     else:
-        logging.info(f"🏁 Run completed")
+        logger.info(f"🏁 Run completed")
         messages = client.beta.threads.messages.list(thread_id=thread.id)
         # Print the conversation
         print("MESSAGE HISTORY")
@@ -48,7 +50,7 @@ def run_assistant(thread, name):
         print("-----------------------------------------------------------")
         new_message = messages.data[0].content[0].text.value
 
-        logging.info(f"Generated message: {new_message}")
+        logger.info(f"Generated message: {new_message}")
 
         return new_message
 
@@ -56,16 +58,16 @@ def run_assistant(thread, name):
 def generate_response(message_body, wa_id, name):
     # Check if there is already a thread_id for the wa_id
     thread_id = check_if_thread_exists(wa_id)
-    # logging.info(f"This is the thread ID:{thread_id}")
+    # logger.info(f"This is the thread ID:{thread_id}")
 
     # If a thread doesn't exist, create one and store it
     if thread_id is None:
-        logging.info(f"Creating new thread for {name} with wa_id {wa_id}")
+        logger.info(f"Creating new thread for {name} with wa_id {wa_id}")
         thread = client.beta.threads.create()
         store_thread(wa_id, thread.id)
         thread_id = thread.id
     else:  # Otherwise, retrieve the existing thread
-        logging.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
+        logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
         thread = client.beta.threads.retrieve(thread_id)
 
     # Add message to thread

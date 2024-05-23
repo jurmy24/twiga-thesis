@@ -3,37 +3,18 @@ import os
 import shelve
 from typing import List, Tuple
 
-from dotenv import load_dotenv
+from app.utils.database_utils import get_user_state, update_user_state
 
-load_dotenv()
-SHELVE_FILENAME = os.getenv("SHELVE_FILENAME", "onboarding_db")
-
-
-def clear_onboarding_db():
-    with shelve.open(SHELVE_FILENAME, writeback=True) as db:
-        db.clear()
+# Initialize the logger for this module
+logger = logging.getLogger(__name__)
 
 
-def reset_conversation(wa_id):
-    with shelve.open(SHELVE_FILENAME) as db:
-        db[wa_id] = {"state": "start"}
+def handle_onboarding(wa_id: str, message_body: str) -> Tuple[str, List[str] | None]:
 
-
-def get_user_state(wa_id):
-    with shelve.open(SHELVE_FILENAME) as db:
-        return db.get(wa_id, {"state": "start"})
-
-
-def update_user_state(wa_id, state_update):
-    with shelve.open(SHELVE_FILENAME) as db:
-        db[wa_id] = state_update
-
-
-def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
     state = get_user_state(wa_id)
     user_state = state["state"]
 
-    logging.info(f"This is the user state: {user_state}")
+    logger.info(f"This is the user state: {user_state}")
 
     if user_state == "start":
         update_user_state(wa_id, {"state": "ask_teacher"})
@@ -49,9 +30,9 @@ def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
 
     elif user_state == "ask_subject":
         subjects = ["Math", "Physics", "Geography"]
-        logging.info(f"This is the message_body: {message_body}")
+        logger.info(f"This is the message_body: {message_body}")
         if message_body in subjects:
-            logging.info(f"This is the message_body: {message_body}")
+            logger.info(f"This is the message_body: {message_body}")
             update_user_state(wa_id, {"state": "ask_form", "subject": message_body})
             return "Which form do you teach?", ["Form 1", "Form 2", "Form 3"]
         else:
@@ -79,9 +60,3 @@ def handle_onboarding(wa_id, message_body) -> Tuple[str, List[str] | None]:
         "Yes",
         "No",
     ]
-
-
-if __name__ == "__main__":
-    # Clear the database
-    clear_onboarding_db()
-    print("Onboarding database cleared.")

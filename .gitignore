@@ -164,3 +164,6 @@ crap.py
 
 # Ignore human csv files
 evals/human/**/*.csv
+
+# Ignore database files
+*.db

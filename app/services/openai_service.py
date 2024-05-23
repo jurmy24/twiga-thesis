@@ -1,6 +1,5 @@
 import logging
 import os
-import shelve
 import time
 
 from dotenv import load_dotenv

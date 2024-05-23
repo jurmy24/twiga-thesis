@@ -1,7 +1,8 @@
-import sys
-import os
-from dotenv import load_dotenv
 import logging
+import os
+import sys
+
+from dotenv import load_dotenv
 
 
 def load_configurations(app):
@@ -20,5 +21,6 @@ def configure_logging():
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
         stream=sys.stdout,
     )

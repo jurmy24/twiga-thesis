@@ -85,7 +85,9 @@ def run_for_pipeline_5_7(
 
     dataset = Dataset.from_dict(data)
 
-    df_ragas = compute_ragas_results(dataset, get_context_relevance=False)
+    df_ragas = compute_ragas_results(
+        dataset, get_context_relevance=get_context_relevance
+    )
 
     data_reverse = {
         "question": [item.response.text for item in pipeline_data],

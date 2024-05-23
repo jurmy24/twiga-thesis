@@ -44,3 +44,13 @@ CONTROL-one-shot all-MiniLM-l6-v2 Cosine Similarity: 0.2734614029036394
 MAIN-one-shot all-MiniLM-l6-v2 Cosine Similarity: 0.5756420818552409
 CONTROL-one-shot K-F1++: 0.2307450186952547, Precision: 0.40762866390238817 Recall: 0.18284604216230355
 MAIN-one-shot K-F1++: 0.2532638809058312, Precision: 0.5004349402217616 Recall: 0.21045668107756266
+CONTROL-query-rewriter RAGAS Groundedness: 0.31666666666666665, Answer Relevancy: 0.4286652754806194, Context Relevancy: 0.011580459770114942, Reverse Context Relevancy: 0.0027872058104616245
+MAIN-query-rewriter RAGAS Groundedness: 0.8471666666666667, Answer Relevancy: 0.8728375054401637, Context Relevancy: 0.11329539735201212, Reverse Context Relevancy: 0.13241960811999495
+CONTROL-sparse-retriever RAGAS Groundedness: 0.3333333333333333, Answer Relevancy: 0.4235005477572738, Context Relevancy: 0.01229469398766386, Reverse Context Relevancy: 0.039640588833558706
+MAIN-sparse-retriever RAGAS Groundedness: 0.8188333333333333, Answer Relevancy: 0.873045599261869, Context Relevancy: 0.13572042250380087, Reverse Context Relevancy: 0.1173593364138298
+CONTROL-reranker RAGAS Groundedness: 0.3433333333333334, Answer Relevancy: 0.42166765267602135, Context Relevancy: 0.0024857201142390864, Reverse Context Relevancy: 0.009588466891928446
+MAIN-reranker RAGAS Groundedness: 0.8151666666666667, Answer Relevancy: 0.8692538426363156, Context Relevancy: 0.12252496979246147, Reverse Context Relevancy: 0.10191665272680049
+CONTROL-sample-questions RAGAS Groundedness: 0.25277777777777777, Answer Relevancy: 0.37556081222990495, Reverse Context Relevancy: 0.002874149659863946
+MAIN-sample-questions RAGAS Groundedness: 0.8242002442002443, Answer Relevancy: 0.8631171918196182, Reverse Context Relevancy: 0.12051018228845362
+CONTROL-one-shot RAGAS Groundedness: 0.6216666666666667, Answer Relevancy: 0.7315426290481462, Reverse Context Relevancy: 0.025067177294610242
+MAIN-one-shot RAGAS Groundedness: 0.8542142857142858, Answer Relevancy: 0.8608795502667829, Reverse Context Relevancy: 0.14084267141884743

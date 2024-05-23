@@ -8,6 +8,15 @@ def clear_db(db_name: str):
         db.clear()
 
 
+def inspect_db(db_name: str):
+    with shelve.open(db_name) as db:
+        if len(db) == 0:
+            print(f"The {db_name} database is empty.")
+        else:
+            for key in db:
+                print(f"Key: {key} -> Value: {db[key]}")
+
+
 """ Users Database Functions """
 
 
@@ -37,15 +46,6 @@ def check_if_thread_exists(wa_id: str, db_name: str = "threads"):
 def store_thread(wa_id: str, thread_id: str, db_name: str = "threads"):
     with shelve.open(db_name, writeback=True) as db:
         db[wa_id] = thread_id
-
-
-def inspect_db(db_name: str):
-    with shelve.open(db_name) as db:
-        if len(db) == 0:
-            print(f"The {db_name} database is empty.")
-        else:
-            for key in db:
-                print(f"Key: {key} -> Value: {db[key]}")
 
 
 if __name__ == "__main__":

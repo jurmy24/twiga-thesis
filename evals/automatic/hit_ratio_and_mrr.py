@@ -1,13 +1,14 @@
-from typing import List, Dict, Tuple
-from openai import OpenAI
 import os
+from typing import Dict, List, Tuple
+
 from dotenv import load_dotenv
+from openai import OpenAI
 from tqdm import tqdm
 
-from src.llms.openai_requests import instructor_openai_request
-from src.models import PipelineData
 from evals.automatic.models import HitResponse
 from evals.automatic.test_utils import append_to_file, save_tuples_to_csv
+from src.llms.openai_requests import instructor_openai_request
+from src.models import PipelineData
 
 load_dotenv
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -21,28 +22,37 @@ HR_SYSTEM_PROMPT = """
     Respond immediately with either a 1 or a 0. Don't explain why.
 """
 
-HR_USER_PROMPT = ("User Query: {query}\nRetrieved Document: {doc}")
+HR_USER_PROMPT = "User Query: {query}\nRetrieved Document: {doc}"
+
 
 # Function to calculate hit ratio for a list of PipelineData objects
-def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[List[Tuple], float, float]:
+def compute_hit_ratio_and_mrr(
+    pipeline_data_list: List[PipelineData],
+) -> Tuple[List[Tuple], float, float]:
     """
     This function computes the hit rate and mrr for a query against a set of retrieved documents. Twiga retrieves both sample exercises and informational content,
     but to remain consistent we will only compute the hit rate against the retrieved informational content, and not the exercises, as they are only meant to be used
-    as guidance on how questions within a specific topic might look like. 
+    as guidance on how questions within a specific topic might look like.
     """
-
-    first_results = [("Query", "First Retrieved Document", "GPT-4-1106-preview Score on Relevancy")]
+    print("gpt-4-1106-preview")
+    first_results = [
+        ("Query", "First Retrieved Document", "GPT-4-1106-preview Score on Relevancy")
+    ]
 
     hits = 0
     reciprocal_rank_sum = 0
     for data in tqdm(pipeline_data_list, desc="Going through pipeline data"):
         query = data.query.query
-        retrieved_docs = [doc.source.chunk for doc in data.retrieved_docs if doc.source.metadata.doc_type == "Content"] # Note: content only, not exercises
+        retrieved_docs = [
+            doc.source.chunk
+            for doc in data.retrieved_docs
+            if doc.source.metadata.doc_type == "Content"
+        ]  # Note: content only, not exercises
 
         hit = False
         reciprocal_rank = 0
         for i, doc in enumerate(retrieved_docs):
-            i += 1 # so that i starts at 1
+            i += 1  # so that i starts at 1
             prompt = HR_USER_PROMPT.format(query=query, doc=doc)
 
             score_data = instructor_openai_request(
@@ -50,20 +60,20 @@ def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[L
                 response_model=HitResponse,
                 messages=[
                     {"role": "system", "content": HR_SYSTEM_PROMPT},
-                    {"role": "user", "content": prompt}
-                ], 
+                    {"role": "user", "content": prompt},
+                ],
                 max_tokens=10,
-                temperature=0
+                temperature=0,
             )
 
             if i == 1:
                 first_results.append((query, doc, score_data.hit))
-            
+
             if score_data.hit != 0:
                 hit = True
-                reciprocal_rank = 1/i
-                break # break out of for-loop in order not to do unnecessary OpenAI calls
-        
+                reciprocal_rank = 1 / i
+                break  # break out of for-loop in order not to do unnecessary OpenAI calls
+
         reciprocal_rank_sum += reciprocal_rank
         if hit:
             hits += 1
@@ -73,6 +83,7 @@ def compute_hit_ratio_and_mrr(pipeline_data_list: List[PipelineData]) -> Tuple[L
     mean_reciprocal_rank = reciprocal_rank_sum / len_data
 
     return first_results, hit_rate, mean_reciprocal_rank
+
 
 # Example usage:
 if __name__ == "__main__":
@@ -84,7 +95,9 @@ if __name__ == "__main__":
 
     data_file = os.path.join(DATA_DIR, "complete_runs", "5-pipeline-gpt-3-5.json")
     results_file = os.path.join("evals", "results", "results.txt")
-    csv_file = os.path.join("evals", "results", "pipeline-5-7-hit-analysis-content-and-exercises.csv")
+    csv_file = os.path.join(
+        "evals", "results", "pipeline-5-7-hit-analysis-content-and-exercises.csv"
+    )
 
     pipeline_data = extract_eval_data(data_file)
 

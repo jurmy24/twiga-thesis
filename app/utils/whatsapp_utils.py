@@ -1,21 +1,20 @@
-import asyncio
 import json
 import logging
 import re
 
-import aiohttp
 import requests
 from flask import current_app, jsonify
 
 from app.services.onboarding_service import get_user_state, handle_onboarding
 from app.services.openai_service import generate_response
-from app.utils.openai_utils import check_if_thread_exists
+
+logger = logging.getLogger(__name__)
 
 
 def log_http_response(response):
-    logging.info(f"Status: {response.status_code}")
-    logging.info(f"Content-type: {response.headers.get('content-type')}")
-    logging.info(f"Body: {response.text}")
+    logger.info(f"Status: {response.status_code}")
+    logger.info(f"Content-type: {response.headers.get('content-type')}")
+    logger.info(f"Body: {response.text}")
 
 
 def get_text_message_input(recipient, text):
@@ -48,8 +47,66 @@ def get_interactive_message_input(recipient, text, options):
             "interactive": {
                 "type": "button",
                 "body": {"text": text},
-                "footer": {"text": "Twiga - your teaching assistant."},
+                "footer": {"text": "Twiga 🦒"},
                 "action": {"buttons": buttons},
+            },
+        }
+    )
+
+
+def get_interactive_list_message_input(recipient, text, options):
+
+    sections = [
+        {
+            "title": "IDK SOME STUFF HERE FOR NOW",
+            "rows": [
+                {"id": f"option-{i}", "title": opt, "description": "No description yet"}
+                for i, opt in enumerate(options)
+            ],
+        }
+    ]
+
+    # return json.dumps(
+    #     {
+    #         "messaging_product": "whatsapp",
+    #         "recipient_type": "individual",
+    #         "to": recipient,
+    #         "type": "interactive",
+    #         "interactive": {
+    #             "type": "list",
+    #             "header": {"type": "text", "text": "TEMPORARY HEADER"},
+    #             "body": {"text": text},
+    #             "footer": {"text": "Twiga 🦒"},
+    #             "action": {"sections": sections, "button": "Temporary button text"},
+    #         },
+    #     }
+    # )
+    return json.dumps(
+        {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": recipient,
+            "type": "interactive",
+            "interactive": {
+                "type": "list",
+                "header": {"type": "text", "text": "<MESSAGE_HEADER_TEXT"},
+                "body": {"text": "<MESSAGE_BODY_TEXT>"},
+                "footer": {"text": "<MESSAGE_FOOTER_TEXT>"},
+                "action": {
+                    "sections": [
+                        {
+                            "title": "<SECTION_TITLE_TEXT>",
+                            "rows": [
+                                {
+                                    "id": "<ROW_ID>",
+                                    "title": "<ROW_TITLE_TEXT>",
+                                    "description": "<ROW_DESCRIPTION_TEXT>",
+                                }
+                            ],
+                        }
+                    ],
+                    "button": "<BUTTON_TEXT>",
+                },
             },
         }
     )
@@ -69,12 +126,12 @@ def send_message(data):
         )  # 10 seconds timeout as an example
         response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
     except requests.Timeout:
-        logging.error("Timeout occurred while sending message")
+        logger.error("Timeout occurred while sending message")
         return jsonify({"status": "error", "message": "Request timed out"}), 408
     except (
         requests.RequestException
     ) as e:  # This will catch any general request exception
-        logging.error(f"Request failed due to: {e}")
+        logger.error(f"Request failed due to: {e}")
         return jsonify({"status": "error", "message": "Failed to send message"}), 500
     else:
         # Process the response as normal
@@ -115,7 +172,7 @@ def process_whatsapp_message(body):
     ):
         message_body = message["interactive"]["button_reply"]["title"]
     else:
-        logging.error(f"Unsupported message type: {message_type}")
+        logger.error(f"Unsupported message type: {message_type}")
         return
 
     # If the onboarding process is not completed, handle onboarding
@@ -124,9 +181,15 @@ def process_whatsapp_message(body):
         response, options = handle_onboarding(wa_id, message_body)
         response = process_text_for_whatsapp(response)
         if options:
-            data = get_interactive_message_input(
-                current_app.config["RECIPIENT_WAID"], response, options
-            )
+            logger.info(f"These are the options: {options}")
+            if len(options) <= 3:
+                data = get_interactive_message_input(
+                    current_app.config["RECIPIENT_WAID"], response, options
+                )
+            else:
+                data = get_interactive_list_message_input(
+                    current_app.config["RECIPIENT_WAID"], response, options
+                )
         else:
             data = get_text_message_input(
                 current_app.config["RECIPIENT_WAID"], response

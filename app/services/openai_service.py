@@ -5,11 +5,8 @@ import time
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from app.utils.openai_utils import (
-    check_if_thread_exists,
-    print_conversation,
-    store_thread,
-)
+from app.utils.database_utils import check_if_thread_exists, store_thread
+from app.utils.openai_utils import print_conversation
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")

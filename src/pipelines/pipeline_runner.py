@@ -176,7 +176,8 @@ def run_data_through_generator(
 ) -> List[PipelineData]:
     results: List[PipelineData] = []
     embedding_model: SentenceTransformer = SentenceTransformer("all-MiniLM-L6-v2")
-
+    
+    print(ablation_params)
     if ablation_params is not None:
         (
             no_rewriter,

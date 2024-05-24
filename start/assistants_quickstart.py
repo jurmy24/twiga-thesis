@@ -1,8 +1,9 @@
-from openai import OpenAI
-import shelve
-from dotenv import load_dotenv
 import os
+import shelve
 import time
+
+from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
@@ -24,17 +25,35 @@ file = upload_file("../data/airbnb-faq.pdf")
 # --------------------------------------------------------------
 # Create assistant
 # --------------------------------------------------------------
-def create_assistant(file):
+def create_assistant():
     """
     You currently cannot set the temperature for Assistant via the API.
     """
     assistant = client.beta.assistants.create(
-        name="WhatsApp AirBnb Assistant",
-        instructions="You're a helpful WhatsApp assistant that can assist guests that are staying in our Paris AirBnb. Use your knowledge base to best respond to customer queries. If you don't know the answer, say simply that you cannot help with question and advice to contact the host directly. Be friendly and funny.",
-        tools=[{"type": "retrieval"}],
-        model="gpt-4-1106-preview",
-        file_ids=[file.id],
+        name="Twiga Bot",
+        instructions="Your name is Twiga and you are a WhatsApp bot designed by the Tanzania AI Community for secondary school teachers in Tanzania. You only handle school-related issues and support the users to the best of your ability. You do not engage in small talk and you keep the conversation only to what is related to secondary school in Tanzania.",
+        model="gpt-4o",
+        tools=[
+            {
+                "type": "function",
+                "function": {
+                    "name": "generate_exercise",
+                    "description": "Generate an exercise or question for the students based on course literature",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "user_query": {
+                                "type": "string",
+                                "description": "A short message describing the desired question/exercise type and the topic it should be about",
+                            }
+                        },
+                        "required": ["user_query"],
+                    },
+                },
+            },
+        ],
     )
+
     return assistant
 
 

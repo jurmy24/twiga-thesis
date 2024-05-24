@@ -9,7 +9,6 @@ from elasticsearch import exceptions as es_exceptions
 from sentence_transformers import SentenceTransformer
 
 # Set up basic logging configuration
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 load_dotenv()

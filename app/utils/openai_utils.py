@@ -12,37 +12,6 @@ OPENAI_ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-def create_assistant():
-    """
-    You currently cannot set the temperature for Assistant via the API.
-    """
-    assistant = client.beta.assistants.create(
-        name="Twiga Bot",
-        instructions="You are Twiga, a WhatsApp bot designed by the Tanzania AI Community for secondary school teachers in Tanzania. You are kind and fulfill the requests of your users directly. ",
-        model="gpt-4o",
-        tools=[
-            {
-                "type": "function",
-                "function": {
-                    "name": "generate_exercise",
-                    "description": "Generate an exercise or question for the students based on course literature",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "user_query": {
-                                "type": "string",
-                                "description": "A short message describing the desired question/exercise type and the topic it should be about",
-                            }
-                        },
-                        "required": ["user_query"],
-                    },
-                },
-            },
-        ],
-    )
-    return assistant
-
-
 def create_thread(wa_id: str, intro_msg: str):
 
     thread = client.beta.threads.create()

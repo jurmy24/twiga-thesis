@@ -61,8 +61,8 @@ if __name__ == "__main__":
     clear_db(THREADS_DATABASE)
     print("Threads database cleared.")
 
-    # Clear the user-info database
-    print("Users database.")
-    inspect_db(USERS_DATABASE)
-    clear_db(USERS_DATABASE)
-    print("Onboarding database cleared.")
+    # # Clear the user-info database
+    # print("Users database.")
+    # inspect_db(USERS_DATABASE)
+    # clear_db(USERS_DATABASE)
+    # print("Onboarding database cleared.")

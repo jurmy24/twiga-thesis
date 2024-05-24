@@ -154,7 +154,7 @@ def elasticsearch_retriever(
 
 
 def rerank(
-    eval_query: EvalQuery,
+    eval_query: str,
     documents: List[RetrievedDocSchema],
     num_results: int,
     verbose: bool = False,
@@ -163,7 +163,7 @@ def rerank(
 
     # Extract text content from Document objects and convert to strings
     document_texts = [doc.source.chunk for doc in documents]
-    query_text = eval_query.query
+    query_text = eval_query
 
     # Create pairs as strings
     pairs = [[query_text, doc_text] for doc_text in document_texts]

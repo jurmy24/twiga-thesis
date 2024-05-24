@@ -4,6 +4,8 @@ from typing import List
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from app.utils.database_utils import store_thread
+
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID")
@@ -39,6 +41,20 @@ def create_assistant():
         ],
     )
     return assistant
+
+
+def create_thread(wa_id: str, intro_msg: str):
+
+    thread = client.beta.threads.create()
+    store_thread(wa_id, thread.id)
+
+    # Add message to thread
+    client.beta.threads.messages.create(
+        thread_id=thread.id,
+        role="assistant",
+        content=intro_msg,
+    )
+    return thread
 
 
 # Define the Message and ContentBlock classes as per your data structure

@@ -2,6 +2,7 @@ import logging
 from typing import List, Optional, Tuple
 
 from app.utils.database_utils import get_user_state, update_user_state
+from app.utils.openai_utils import create_thread
 
 # Initialize the logger for this module
 logger = logging.getLogger(__name__)
@@ -56,6 +57,7 @@ def handle_ask_form(
             "2. Provide general assistance with Geography. \n\n"
             "How can I assist you today?"
         )
+        create_thread(wa_id, welcome_message)
         return welcome_message, None
     else:
         return "Please select a valid form from the list.", forms

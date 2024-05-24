@@ -1,20 +1,17 @@
 import logging
 from typing import List, Literal
 
-import torch
-from dotenv import load_dotenv
 from openai.types.chat import ChatCompletion
 
 # for rerankers
 from sentence_transformers import CrossEncoder
-from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from src.DataSearch import DataSearch
-from src.llms.groq_requests import groq_request
-from src.llms.openai_requests import openai_request
-from src.models import EvalQuery, RetrievedDocSchema
-from src.prompt_templates import REWRITE_QUERY_PROMPT
-from src.utils import (
+from app.services.search_service import DataSearch
+from app.utils.groq_requests import groq_request
+from app.utils.models import EvalQuery, RetrievedDocSchema
+from app.utils.openai_requests import openai_request
+from app.utils.prompt_templates import REWRITE_QUERY_PROMPT
+from app.utils.twiga_utils import (
     load_json_to_retrieveddocschema,
     pretty_elasticsearch_response,
     pretty_elasticsearch_response_rrf,
@@ -24,11 +21,7 @@ from src.utils import (
 This is the modules file, which will contain the modular components that can be used by the RAG pipelines I build.
 """
 
-# Set up basic logging configuration
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-load_dotenv()
 
 
 # TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
@@ -71,31 +64,6 @@ def query_rewriter(
     except Exception as e:
         logger.error(f"An error occurred when rewriting the query: {e}")
         return query  # Return the original query in case of an error
-
-
-def local_query_rewriter(query: str) -> str:
-    assert torch.cuda.is_available()
-    torch.set_default_device("cuda")
-
-    # Retrieve the microsoft phi-1.5 model (1.5 billion parameters)
-    model = AutoModelForCausalLM.from_pretrained(
-        "microsoft/phi-1_5", torch_dtype="auto"
-    )
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-1_5")
-
-    inputs = tokenizer(
-        f"Write a passage that answers the given query: \nQuery: {query} \nAnswer: ",
-        return_tensors="pt",
-        return_attention_mask=False,
-    )
-    outputs = model.generate(**inputs, max_length=100)
-    text = tokenizer.batch_decode(outputs)[0]
-    text = text.replace(
-        "Write a passage that answers the given query: \nQuery: {query} \nAnswer: ", ""
-    )
-    return text.replace(
-        "\n", ""
-    )  # because this model has a tendency to add unnecessary stuff if it tries to write another paragraph
 
 
 def elasticsearch_retriever(

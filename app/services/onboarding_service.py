@@ -44,9 +44,17 @@ def handle_ask_form(
     if message_body in forms:
         subject = state.get("subject")
         form = message_body
+        # Temporary addition for the beta
+        form = "Form 2"
+
         update_user_state(wa_id, {"state": "completed", "form": form})
         welcome_message = (
-            f"Welcome! You teach {subject} to {form}. How can I assist you today?"
+            f"Welcome! You teach {subject} to {form}. \n\nYou might have noticed that Geography Form 2 was the only possible choice. "
+            "That's because I, Twiga 🦒, am currently being tested with a limited set of data. \n\n"
+            "Currently, I can help you with the following tasks: \n"
+            "1. Generate an exercise or question for your students based on the TIE Form 2 Geography book. \n"
+            "2. Provide general assistance with Geography. \n\n"
+            "How can I assist you today?"
         )
         return welcome_message, None
     else:

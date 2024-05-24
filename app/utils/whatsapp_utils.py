@@ -56,31 +56,8 @@ def get_interactive_message_input(recipient, text, options):
 
 def get_interactive_list_message_input(recipient, text, options):
 
-    sections = [
-        {
-            "title": "IDK SOME STUFF HERE FOR NOW",
-            "rows": [
-                {"id": f"option-{i}", "title": opt, "description": "No description yet"}
-                for i, opt in enumerate(options)
-            ],
-        }
-    ]
+    sections = [{"id": f"option-{i}", "title": opt} for i, opt in enumerate(options)]
 
-    # return json.dumps(
-    #     {
-    #         "messaging_product": "whatsapp",
-    #         "recipient_type": "individual",
-    #         "to": recipient,
-    #         "type": "interactive",
-    #         "interactive": {
-    #             "type": "list",
-    #             "header": {"type": "text", "text": "TEMPORARY HEADER"},
-    #             "body": {"text": text},
-    #             "footer": {"text": "Twiga 🦒"},
-    #             "action": {"sections": sections, "button": "Temporary button text"},
-    #         },
-    #     }
-    # )
     return json.dumps(
         {
             "messaging_product": "whatsapp",
@@ -89,23 +66,16 @@ def get_interactive_list_message_input(recipient, text, options):
             "type": "interactive",
             "interactive": {
                 "type": "list",
-                "header": {"type": "text", "text": "<MESSAGE_HEADER_TEXT"},
-                "body": {"text": "<MESSAGE_BODY_TEXT>"},
-                "footer": {"text": "<MESSAGE_FOOTER_TEXT>"},
+                "body": {"text": text},
+                "footer": {"text": "Twiga 🦒"},
                 "action": {
                     "sections": [
                         {
-                            "title": "<SECTION_TITLE_TEXT>",
-                            "rows": [
-                                {
-                                    "id": "<ROW_ID>",
-                                    "title": "<ROW_TITLE_TEXT>",
-                                    "description": "<ROW_DESCRIPTION_TEXT>",
-                                }
-                            ],
+                            "title": "Options",
+                            "rows": sections,
                         }
                     ],
-                    "button": "<BUTTON_TEXT>",
+                    "button": "Options",
                 },
             },
         }
@@ -171,9 +141,13 @@ def process_whatsapp_message(body):
         and message["interactive"]["type"] == "button_reply"
     ):
         message_body = message["interactive"]["button_reply"]["title"]
+    elif (
+        message_type == "interactive" and message["interactive"]["type"] == "list_reply"
+    ):
+        message_body = message["interactive"]["list_reply"]["title"]
     else:
         logger.error(f"Unsupported message type: {message_type}")
-        return
+        return  # TODO: maybe I should try to return a 200 status code here so that they can just try again or something? I.e. make it known that the message was processed at least
 
     # If the onboarding process is not completed, handle onboarding
     state = get_user_state(wa_id)

@@ -1,7 +1,6 @@
 import logging
 from typing import List, Literal
 
-from app.tools.search_service import DataSearch
 from app.tools.utils.groq_requests import groq_request
 from app.tools.utils.models import RetrievedDocSchema
 from app.tools.utils.openai_requests import openai_request
@@ -14,6 +13,7 @@ from app.tools.utils.question_generator_modules import (
     query_rewriter,
     rerank,
 )
+from app.tools.utils.search_service import DataSearch
 
 logger = logging.getLogger(__name__)
 

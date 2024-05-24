@@ -1,15 +1,15 @@
 import logging
 from typing import List, Literal
 
-from app.services.search_service import DataSearch
-from app.utils.exercise_generation_utils.groq_requests import groq_request
-from app.utils.exercise_generation_utils.models import RetrievedDocSchema
-from app.utils.exercise_generation_utils.openai_requests import openai_request
-from app.utils.exercise_generation_utils.prompt_templates import (
+from app.tools.search_service import DataSearch
+from app.tools.utils.groq_requests import groq_request
+from app.tools.utils.models import RetrievedDocSchema
+from app.tools.utils.openai_requests import openai_request
+from app.tools.utils.prompt_templates import (
     PIPELINE_QUESTION_GENERATOR_PROMPT,
     PIPELINE_QUESTION_GENERATOR_USER_PROMPT,
 )
-from app.utils.exercise_generation_utils.question_generator_modules import (
+from app.tools.utils.question_generator_modules import (
     elasticsearch_retriever,
     query_rewriter,
     rerank,

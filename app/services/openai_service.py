@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from openai.types.beta import Thread
 
-from app.services.twiga_exercise_service import process_query
+from app.tools.generate_exercise import process_query
 from app.utils.database_utils import check_if_thread_exists, store_thread
 from app.utils.openai_utils import print_conversation
 

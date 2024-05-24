@@ -4,6 +4,7 @@ import time
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from openai.types.beta import Thread
 
 from app.services.twiga_exercise_service import process_query
 from app.utils.database_utils import check_if_thread_exists, store_thread
@@ -18,7 +19,7 @@ client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 logger = logging.getLogger(__name__)
 
 
-def run_assistant(thread, name, message, verbose: bool = False):
+def run_assistant(thread: Thread, message: str, verbose: bool = False):
     # Retrieve the Assistant
     assistant = client.beta.assistants.retrieve(OPENAI_ASSISTANT_ID)
 
@@ -26,21 +27,17 @@ def run_assistant(thread, name, message, verbose: bool = False):
     run = client.beta.threads.runs.create(
         thread_id=thread.id,
         assistant_id=assistant.id,
-        instructions=f"You are having a conversation with {name}. The user is a Geography teacher.",
     )
 
     # Wait for completion
-    # https://platform.openai.com/docs/assistants/how-it-works/runs-and-run-steps#:~:text=under%20failed_at.-,Polling%20for%20updates,-In%20order%20to
     while run.status != "completed":
         time.sleep(0.5)  # Be nice to the API
         logger.info(f"🏃‍♂️ Run status: {run.status}")
         run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
 
-        if run.status == "failed":
-            # do stuff
-            break
+        if run.status == "requires_action":
+            logger.info("🔧 Action required")
 
-        elif run.status == "requires_action":
             # Define the list to store tool outputs
             tool_outputs = []
 
@@ -58,8 +55,9 @@ def run_assistant(thread, name, message, verbose: bool = False):
                     tool_outputs=tool_outputs,
                 )
 
-        elif run.status == "error":
-            break
+        # RUN STATUS: EXPIRED | FAILED | CANCELLED | INCOMPLETE
+        if run.status in ["expired", "failed", "cancelled", "incomplete"]:
+            return {"response": run.last_error, "status_code": 500}
 
     logger.info(f"🏁 Run completed")
     messages = client.beta.threads.messages.list(thread_id=thread.id)
@@ -71,7 +69,6 @@ def run_assistant(thread, name, message, verbose: bool = False):
         print("-----------------------------------------------------------")
         print_conversation(messages)
         print("-----------------------------------------------------------")
-        logger.info(f"Newly generated message: {new_message}")
 
     return new_message
 
@@ -83,6 +80,7 @@ def generate_response(message_body, wa_id, name):
     # If a thread doesn't exist, create one and store it
     if thread_id is None:
         logger.info(f"Creating new thread for {name} with wa_id {wa_id}")
+
         thread = client.beta.threads.create()
         store_thread(wa_id, thread.id)
         thread_id = thread.id
@@ -90,16 +88,14 @@ def generate_response(message_body, wa_id, name):
         logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
         thread = client.beta.threads.retrieve(thread_id)
 
-    # Add message to thread
-    message = client.beta.threads.messages.create(
+    # Add message to the relevant assistant thread
+    client.beta.threads.messages.create(
         thread_id=thread_id,
         role="user",
         content=message_body,
     )
 
-    message_body = message.content[0].text.value
-
     # Run the assistant and get the new message
-    new_message = run_assistant(thread, name, message_body)
+    new_message = run_assistant(thread, message_body, verbose=True)
 
     return new_message

@@ -79,8 +79,6 @@ def handle_onboarding(wa_id: str, message_body: str) -> Tuple[str, Optional[List
     state = get_user_state(wa_id)
     user_state = state["state"]
 
-    logger.info(f"This is the user state: {user_state}")
-
     if user_state == "start":
         return handle_start(wa_id)
     elif user_state == "ask_teacher":

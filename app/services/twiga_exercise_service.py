@@ -1,17 +1,15 @@
 import logging
 from typing import List, Literal
 
-from sentence_transformers import SentenceTransformer
-
 from app.services.search_service import DataSearch
-from app.utils.groq_requests import groq_request
-from app.utils.models import RetrievedDocSchema
-from app.utils.openai_requests import openai_request
-from app.utils.prompt_templates import (
+from app.utils.exercise_generation_utils.groq_requests import groq_request
+from app.utils.exercise_generation_utils.models import RetrievedDocSchema
+from app.utils.exercise_generation_utils.openai_requests import openai_request
+from app.utils.exercise_generation_utils.prompt_templates import (
     PIPELINE_QUESTION_GENERATOR_PROMPT,
     PIPELINE_QUESTION_GENERATOR_USER_PROMPT,
 )
-from app.utils.question_generator_modules import (
+from app.utils.exercise_generation_utils.question_generator_modules import (
     elasticsearch_retriever,
     query_rewriter,
     rerank,
@@ -19,8 +17,7 @@ from app.utils.question_generator_modules import (
 
 logger = logging.getLogger(__name__)
 
-model: SentenceTransformer = SentenceTransformer("all-MiniLM-L6-v2")
-model_class = DataSearch()
+search_model = DataSearch()
 
 
 def _generate(
@@ -36,10 +33,10 @@ def _generate(
         ]
 
         if verbose:
-            logger.info(f"--------------------------")
-            logger.info(f"System prompt: \n{prompt}")
-            logger.info(f"--------------------------")
-            logger.info(f"User prompt: \n{query}")
+            print(f"--------------------------")
+            print(f"System prompt: \n{prompt}")
+            print(f"--------------------------")
+            print(f"User prompt: \n{query}")
 
         if model == "llama3-70b-8192":
             res = groq_request(
@@ -118,7 +115,7 @@ def process_query(user_query: str):
 
     # Retrieve the relevant content and exercises
     retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(
-        model_class=model_class,
+        model_class=search_model,
         retrieval_msg=rewritten_query,
         size=10,
         doc_type="Content",
@@ -126,7 +123,7 @@ def process_query(user_query: str):
         retrieve_sparse=True,
     )
     retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(
-        model_class=model_class,
+        model_class=search_model,
         retrieval_msg=rewritten_query,
         size=5,
         doc_type="Exercise",
@@ -146,5 +143,5 @@ def process_query(user_query: str):
     )
 
     # Generate a question based on the context
-    res = _generate(system_prompt, user_prompt, model)
+    res = _generate(system_prompt, user_prompt, model="llama3-70b-8192")
     return res

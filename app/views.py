@@ -1,4 +1,5 @@
 import asyncio
+import datetime
 import json
 import logging
 from typing import Tuple
@@ -42,10 +43,19 @@ async def handle_message() -> Tuple[Response, int]:
     try:
         if is_valid_whatsapp_message(body):
             logger.info("Received a valid WhatsApp message.")
-            # This function is used to process and ultimately send a response message to the user
-            await process_whatsapp_message(body)
 
-            return jsonify({"status": "ok"}), 200
+            message = body["entry"][0]["changes"][0]["value"]["messages"][0]
+            message_timestamp = int(message.get("timestamp"))
+            current_timestamp = int(datetime.datetime.now().timestamp())
+
+            # Check if the message timestamp is within 10 seconds of the current time
+            if current_timestamp - message_timestamp <= 10:
+                # This function is used to process and ultimately send a response message to the user
+                await process_whatsapp_message(body)
+                return jsonify({"status": "ok"}), 200
+            else:
+                logger.warning("Received a message with an outdated timestamp.")
+                return jsonify({"status": "ok"}), 200
         else:
             # if the request is not a WhatsApp API event, return an error
             return (

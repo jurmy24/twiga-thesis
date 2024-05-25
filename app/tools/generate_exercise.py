@@ -108,7 +108,7 @@ def _format_context(
     return "\n".join(context_parts)
 
 
-def process_query(user_query: str):
+def exercise_generator(user_query: str):
     # Rewrite the user query
     original_query = user_query
     rewritten_query = query_rewriter(original_query, llm="llama3-8b-8192")

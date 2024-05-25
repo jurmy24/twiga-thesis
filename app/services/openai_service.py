@@ -2,12 +2,14 @@ import json
 import logging
 import os
 import time
+from typing import Any, Tuple
 
 from dotenv import load_dotenv
+from flask import current_app
 from openai import OpenAI
 from openai.types.beta import Thread
 
-from app.tools.generate_exercise import process_query
+from app.tools.generate_exercise import exercise_generator
 from app.utils.database_utils import check_if_thread_exists, store_thread
 from app.utils.openai_utils import print_conversation
 
@@ -20,7 +22,55 @@ client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 logger = logging.getLogger(__name__)
 
 
-def run_assistant(thread: Thread, message: str, verbose: bool = False) -> str:
+def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool = False):
+    # Arguments returned by llm
+    raw_arguments = tool.function.arguments
+
+    # response from function calling
+    response_message = ""
+    try:
+        # Parse the raw arguments
+        arguments = json.loads(raw_arguments)
+
+        # Ensure arguments are in dictionary format
+        if not isinstance(arguments, dict):
+            raise ValueError("Parsed arguments are not in dictionary format.")
+
+        # Call the function with the unpacked arguments
+        response_message = func(**arguments)
+    except json.JSONDecodeError as e:
+        response_message = "JSONDecodeError: " + str(e), 400
+    except KeyError as e:
+        response_message = "Missing required argument: {e}", 400
+    except Exception as e:
+        response_message = f"An unexpected error occurred: {str(e)}", 500
+    finally:
+        if verbose:
+            logger.info(
+                f"Tool call: {tool.function.name}({str(tool.function.arguments)})"
+            )
+            logger.info(f"Returned: {response_message}")
+
+        # Send the response back to the function calling tool
+        run = client.beta.threads.runs.submit_tool_outputs(
+            thread_id=run.thread_id,
+            run_id=run.id,
+            tool_outputs=[
+                {
+                    "tool_call_id": tool.id,
+                    "output": response_message,  # pass the response from your function to openai, so it knows if everything worked fine, or happens with me a lot, some arguments was invalid or filled with a placeholder.
+                }
+            ],
+        )
+
+
+def run_assistant(thread: Thread, verbose: bool = False) -> str:
+    from app.utils.whatsapp_utils import (
+        get_text_message_input,
+        process_text_for_whatsapp,
+        send_message,
+    )
+
     # Retrieve the Assistant
     assistant = client.beta.assistants.retrieve(OPENAI_ASSISTANT_ID)
 
@@ -39,22 +89,20 @@ def run_assistant(thread: Thread, message: str, verbose: bool = False) -> str:
         if run.status == "requires_action":
             logger.info("🔧 Action required")
 
-            # Define the list to store tool outputs
-            tool_outputs = []
-
             for tool in run.required_action.submit_tool_outputs.tool_calls:
-                if tool.function.name == "generate_exercise":
-                    tool_outputs.append(
-                        {"tool_call_id": tool.id, "output": process_query(message)}
-                    )
 
-            if tool_outputs:
-                # Send the response back to the function calling tool
-                run = client.beta.threads.runs.submit_tool_outputs_and_poll(
-                    thread_id=run.thread_id,
-                    run_id=run.id,
-                    tool_outputs=tool_outputs,
-                )
+                logger.info(f"🛠 Tool call: {tool.function.name}")
+
+                if tool.function.name == "generate_exercise":
+                    # Send a message to the user that we're generating an exercise
+                    response = process_text_for_whatsapp("🔄 Generating exercise...")
+                    data = get_text_message_input(
+                        current_app.config["RECIPIENT_WAID"], response
+                    )
+                    send_message(data)
+
+                    _handle_tool_call(tool, run, exercise_generator, verbose=verbose)
+                    # TODO: potentially send a message to the user here that it's generating a question and might take a little while
 
         # RUN STATUS: EXPIRED | FAILED | CANCELLED | INCOMPLETE
         if run.status in ["expired", "failed", "cancelled", "incomplete"]:
@@ -65,9 +113,8 @@ def run_assistant(thread: Thread, message: str, verbose: bool = False) -> str:
             )
 
     logger.info(f"🏁 Run completed")
-    messages = client.beta.threads.messages.list(thread_id=thread.id)
 
-    new_message = messages.data[0].content[0].text.value
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
 
     if verbose:
         print("MESSAGE HISTORY")
@@ -75,7 +122,9 @@ def run_assistant(thread: Thread, message: str, verbose: bool = False) -> str:
         print_conversation(messages)
         print("-----------------------------------------------------------")
 
-    return new_message
+    return (
+        messages.data[0].content[0].text.value
+    )  # Returns the most recent message generated by the assistant
 
 
 def generate_response(message_body: str, wa_id: str, name: str) -> str:
@@ -101,6 +150,6 @@ def generate_response(message_body: str, wa_id: str, name: str) -> str:
     )
 
     # Run the assistant and get the new message
-    new_message = run_assistant(thread, message_body, verbose=True)
+    new_message = run_assistant(thread, verbose=True)
 
     return new_message

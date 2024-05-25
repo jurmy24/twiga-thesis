@@ -60,7 +60,11 @@ def handle_ask_form(
             "2. Provide general assistance with Geography. \n\n"
             "How can I assist you today?"
         )
-        create_thread(wa_id, welcome_message)
+
+        thread = create_thread(wa_id, welcome_message)
+        logger.info(
+            f"Creating a new Twiga assistant thread for {wa_id} with the id: {thread.id}"
+        )
         return welcome_message, None
     else:
         return "Please select a valid form from the list.", forms

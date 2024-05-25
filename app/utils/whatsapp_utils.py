@@ -1,7 +1,7 @@
 import json
 import logging
 import re
-from typing import Any
+from typing import Any, Tuple
 
 import requests
 from flask import Response, current_app, jsonify
@@ -25,7 +25,10 @@ def get_text_message_input(recipient, text) -> str:
             "recipient_type": "individual",
             "to": recipient,
             "type": "text",
-            "text": {"preview_url": False, "body": text},
+            "text": {
+                "preview_url": False,
+                "body": text,
+            },
         }
     )
 
@@ -83,7 +86,7 @@ def get_interactive_list_message_input(recipient, text, options) -> str:
     )
 
 
-def send_message(data: str) -> Response:
+def send_message(data: str) -> Tuple[Response, int]:
     headers = {
         "Content-type": "application/json",
         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
@@ -107,7 +110,7 @@ def send_message(data: str) -> Response:
     else:
         # Process the response as normal
         log_http_response(response)
-        return response
+        return response, 200
 
 
 def process_text_for_whatsapp(text: str) -> str:
@@ -159,8 +162,8 @@ def process_whatsapp_message(body: Any):
     if state["state"] != "completed":
         response, options = handle_onboarding(wa_id, message_body)
         response = process_text_for_whatsapp(response)
+        # This section handles the type of message to send to the user depending on the number of options available to select from
         if options:
-            logger.info(f"These are the options: {options}")
             if len(options) <= 3:
                 data = get_interactive_message_input(
                     current_app.config["RECIPIENT_WAID"], response, options
@@ -175,7 +178,6 @@ def process_whatsapp_message(body: Any):
             )
     else:  # Twiga Integration
         response = generate_response(message_body, wa_id, name)
-
         response = process_text_for_whatsapp(response)
         data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 

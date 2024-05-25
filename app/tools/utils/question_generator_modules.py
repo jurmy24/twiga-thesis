@@ -6,11 +6,11 @@ from openai.types.chat import ChatCompletion
 # for rerankers
 from sentence_transformers import CrossEncoder
 
-from app.tools.search_service import DataSearch
 from app.tools.utils.groq_requests import groq_request
 from app.tools.utils.models import RetrievedDocSchema
 from app.tools.utils.openai_requests import openai_request
 from app.tools.utils.prompt_templates import REWRITE_QUERY_PROMPT
+from app.tools.utils.search_service import DataSearch
 from app.tools.utils.twiga_utils import (
     load_json_to_retrieveddocschema,
     pretty_elasticsearch_response,

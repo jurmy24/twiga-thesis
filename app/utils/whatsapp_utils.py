@@ -1,9 +1,10 @@
 import json
 import logging
 import re
+from typing import Any
 
 import requests
-from flask import current_app, jsonify
+from flask import Response, current_app, jsonify
 
 from app.services.onboarding_service import get_user_state, handle_onboarding
 from app.services.openai_service import generate_response
@@ -11,13 +12,13 @@ from app.services.openai_service import generate_response
 logger = logging.getLogger(__name__)
 
 
-def log_http_response(response):
+def log_http_response(response: Response) -> str:
     logger.info(f"Status: {response.status_code}")
     logger.info(f"Content-type: {response.headers.get('content-type')}")
     logger.info(f"Body: {response.text}")
 
 
-def get_text_message_input(recipient, text):
+def get_text_message_input(recipient, text) -> str:
     return json.dumps(
         {
             "messaging_product": "whatsapp",
@@ -29,7 +30,7 @@ def get_text_message_input(recipient, text):
     )
 
 
-def get_interactive_message_input(recipient, text, options):
+def get_interactive_message_input(recipient, text, options) -> str:
     buttons = [
         {
             "type": "reply",
@@ -54,7 +55,7 @@ def get_interactive_message_input(recipient, text, options):
     )
 
 
-def get_interactive_list_message_input(recipient, text, options):
+def get_interactive_list_message_input(recipient, text, options) -> str:
 
     sections = [{"id": f"option-{i}", "title": opt} for i, opt in enumerate(options)]
 
@@ -82,7 +83,7 @@ def get_interactive_list_message_input(recipient, text, options):
     )
 
 
-def send_message(data):
+def send_message(data: str) -> Response:
     headers = {
         "Content-type": "application/json",
         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
@@ -109,7 +110,7 @@ def send_message(data):
         return response
 
 
-def process_text_for_whatsapp(text):
+def process_text_for_whatsapp(text: str) -> str:
     # Remove brackets
     pattern = r"\【.*?\】"
     # Substitute the pattern with an empty string
@@ -127,7 +128,7 @@ def process_text_for_whatsapp(text):
     return whatsapp_style_text
 
 
-def process_whatsapp_message(body):
+def process_whatsapp_message(body: Any):
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
 
@@ -147,7 +148,7 @@ def process_whatsapp_message(body):
         message_body = message["interactive"]["list_reply"]["title"]
     else:
         logger.error(f"Unsupported message type: {message_type}")
-        return  # TODO: maybe I should try to return a 200 status code here so that they can just try again or something? I.e. make it known that the message was processed at least
+        raise Exception("Unsupported message type")
 
     # If the onboarding process is not completed, handle onboarding
     state = get_user_state(wa_id)
@@ -171,13 +172,14 @@ def process_whatsapp_message(body):
     # Twiga Integration
     else:
         response = generate_response(message_body, wa_id, name)
+
         response = process_text_for_whatsapp(response)
         data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 
     send_message(data)
 
 
-def is_valid_whatsapp_message(body):
+def is_valid_whatsapp_message(body: Any) -> bool:
     """
     Check if the incoming webhook event has a valid WhatsApp message structure.
     """

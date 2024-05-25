@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 import time
@@ -19,7 +20,7 @@ client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 logger = logging.getLogger(__name__)
 
 
-def run_assistant(thread: Thread, message: str, verbose: bool = False):
+def run_assistant(thread: Thread, message: str, verbose: bool = False) -> str:
     # Retrieve the Assistant
     assistant = client.beta.assistants.retrieve(OPENAI_ASSISTANT_ID)
 
@@ -57,7 +58,11 @@ def run_assistant(thread: Thread, message: str, verbose: bool = False):
 
         # RUN STATUS: EXPIRED | FAILED | CANCELLED | INCOMPLETE
         if run.status in ["expired", "failed", "cancelled", "incomplete"]:
-            return {"response": run.last_error, "status_code": 500}
+            return json.dumps(
+                {
+                    "error": f"OpenAI assistant ended the run {run.id} with the status {run.status}"
+                }
+            )
 
     logger.info(f"🏁 Run completed")
     messages = client.beta.threads.messages.list(thread_id=thread.id)
@@ -73,7 +78,7 @@ def run_assistant(thread: Thread, message: str, verbose: bool = False):
     return new_message
 
 
-def generate_response(message_body, wa_id, name):
+def generate_response(message_body: str, wa_id: str, name: str) -> str:
     # Check if there is already a thread_id for the wa_id
     thread_id = check_if_thread_exists(wa_id)
 

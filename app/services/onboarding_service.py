@@ -32,7 +32,7 @@ def handle_ask_teacher(
 
 
 def handle_ask_subject(wa_id: str, message_body: str) -> Tuple[str, List[str]]:
-    subjects = ["Math", "Physics", "Geography"]
+    subjects = ["Geography"]
     if message_body in subjects:
         update_user_state(wa_id, {"state": "ask_form", "subject": message_body})
         return "Which form do you teach?", ["Form 1", "Form 2", "Form 3", "Form 4"]
@@ -47,10 +47,11 @@ def handle_ask_form(
     if message_body in forms:
         subject = state.get("subject")
         form = message_body
-        # Temporary addition for the beta
-        form = "Form 2"
+        form = "Form 2"  # Temporary addition for the beta
 
-        update_user_state(wa_id, {"state": "completed", "form": form})
+        update_user_state(
+            wa_id, {"state": "completed", "subject": subject, "form": form}
+        )
         welcome_message = (
             f"Welcome! You teach {subject} to {form}. \n\nYou might have noticed that Geography Form 2 was the only possible choice. "
             "That's because I, Twiga 🦒, am currently being tested with a limited set of data. \n\n"
@@ -70,7 +71,8 @@ def handle_completed() -> Tuple[None, None]:
     return None, None
 
 
-def handle_default() -> Tuple[str, List[str]]:
+def handle_default(wa_id: str) -> Tuple[str, List[str]]:
+    update_user_state(wa_id, {"state": "ask_teacher"})
     return "I'm not sure how to proceed. Let's start over. Are you a teacher?", [
         "Yes",
         "No",
@@ -89,7 +91,7 @@ def handle_onboarding(wa_id: str, message_body: str) -> Tuple[str, Optional[List
         return handle_ask_subject(wa_id, message_body)
     elif user_state == "ask_form":
         return handle_ask_form(wa_id, message_body, state)
-    elif user_state == "completed":
+    elif user_state == "completed":  # We never end up here actually
         return handle_completed()
     else:
         return handle_default()

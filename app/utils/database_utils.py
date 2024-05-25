@@ -1,6 +1,6 @@
 import os
 import shelve
-from typing import Dict
+from typing import Dict, List
 
 
 def clear_db(db_name: str):
@@ -52,7 +52,18 @@ def check_if_thread_exists(wa_id: str, db_name: str = "threads"):
 
 def store_thread(wa_id: str, thread_id: str, db_name: str = "threads"):
     with shelve.open(db_name, writeback=True) as db:
-        db[wa_id] = thread_id
+        db[wa_id] = {"thread": thread_id, "run": ""}
+
+
+def new_run(wa_id: str, thread_id: str, run_id: str, db_name: str = "threads"):
+
+    # thread_data = check_if_thread_exists(wa_id, db_name)
+
+    # runs: List[str] = thread_data["runs"] if thread_data is not None else []
+    # runs.append(run_id)
+
+    with shelve.open(db_name, writeback=True) as db:
+        db[wa_id] = {"thread": thread_id, "run": run_id}
 
 
 if __name__ == "__main__":

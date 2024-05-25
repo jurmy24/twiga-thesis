@@ -2,15 +2,17 @@ import json
 import logging
 import os
 import time
+from collections import deque
 from typing import Any, Tuple
 
+import openai
 from dotenv import load_dotenv
 from flask import current_app
 from openai import AsyncOpenAI, OpenAI
 from openai.types.beta import Thread
 
 from app.tools.generate_exercise import exercise_generator
-from app.utils.database_utils import check_if_thread_exists, store_thread
+from app.utils.database_utils import check_if_thread_exists, new_run, store_thread
 from app.utils.openai_utils import print_conversation
 
 load_dotenv()
@@ -20,6 +22,8 @@ OPENAI_ORG = os.getenv("OPENAI_ORG")
 client = AsyncOpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 
 logger = logging.getLogger(__name__)
+
+message_queue = deque()
 
 
 async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool = False):
@@ -64,7 +68,7 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
         )
 
 
-async def run_assistant(thread: Thread, verbose: bool = False) -> str:
+async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> str:
     from app.utils.whatsapp_utils import (
         get_text_message_input,
         process_text_for_whatsapp,
@@ -79,6 +83,7 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
         thread_id=thread.id,
         assistant_id=assistant.id,
     )
+    new_run(wa_id, thread.id, run.id)
 
     # Wait for completion
     while run.status != "completed":
@@ -117,6 +122,7 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
             )
 
     logger.info(f"🏁 Run completed")
+    store_thread(wa_id, thread.id)  # this clears the run_id from the thread data
 
     messages = await client.beta.threads.messages.list(thread_id=thread.id)
 
@@ -133,7 +139,9 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
 
 async def generate_response(message_body: str, wa_id: str, name: str) -> str:
     # Check if there is already a thread_id for the wa_id
-    thread_id = check_if_thread_exists(wa_id)
+    thread_data = check_if_thread_exists(wa_id)
+    thread_id = str(thread_data["thread"]) if thread_data is not None else None
+    run_id = str(thread_data["run"]) if thread_data is not None else None
 
     # If a thread doesn't exist, create one and store it
     if thread_id is None:
@@ -145,15 +153,19 @@ async def generate_response(message_body: str, wa_id: str, name: str) -> str:
         logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
         thread = await client.beta.threads.retrieve(thread_id)
 
-    # Add message to the relevant assistant thread
-    await client.beta.threads.messages.create(
-        thread_id=thread_id,
-        role="user",
-        content=message_body,
-    )
-    client.beta.threads.runs.list(thread_id=thread)
+    try:
+        # Add message to the relevant assistant thread
+        await client.beta.threads.messages.create(
+            thread_id=thread.id,
+            role="user",
+            content=message_body,
+        )
 
-    # Run the assistant and get the new message
-    new_message = await run_assistant(thread, verbose=True)
+        # Run the assistant and get the new message
+        new_message = await run_assistant(wa_id, thread, verbose=True)
 
-    return new_message
+        return new_message
+
+    except openai.BadRequestError as e:
+        logger.error(f"Error sending message to OpenAI: {e}")
+        return None

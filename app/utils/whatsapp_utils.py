@@ -1,6 +1,7 @@
 import json
 import logging
 import re
+import time
 from typing import Any, Tuple
 
 import aiohttp
@@ -163,6 +164,7 @@ def process_text_for_whatsapp(text: str) -> str:
 
 
 async def process_whatsapp_message(body: Any):
+
     # A check has been made already that this is a valid WhatsApp message so no need to check again
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
@@ -209,6 +211,10 @@ async def process_whatsapp_message(body: Any):
             )
     else:  # Twiga Integration
         response = await generate_response(message_body, wa_id, name)
+        if (
+            response is None
+        ):  # Don't send anything back to the user if we decide to ghost them
+            return
         response = process_text_for_whatsapp(response)
         data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 

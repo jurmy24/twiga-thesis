@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 from typing import Tuple
@@ -12,7 +13,7 @@ webhook_blueprint = Blueprint("webhooks", __name__)
 logger = logging.getLogger(__name__)
 
 
-def handle_message() -> Tuple[Response, int]:
+async def handle_message() -> Tuple[Response, int]:
     """
     Handle incoming webhook events from the WhatsApp API.
 
@@ -42,7 +43,7 @@ def handle_message() -> Tuple[Response, int]:
         if is_valid_whatsapp_message(body):
             logger.info("Received a valid WhatsApp message.")
             # This function is used to process and ultimately send a response message to the user
-            process_whatsapp_message(body)
+            await process_whatsapp_message(body)
 
             return jsonify({"status": "ok"}), 200
         else:
@@ -87,4 +88,4 @@ def webhook_get():
 @webhook_blueprint.route("/webhooks", methods=["POST"])
 @signature_required
 def webhook_post():
-    return handle_message()
+    return asyncio.run(handle_message())

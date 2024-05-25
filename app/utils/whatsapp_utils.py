@@ -3,6 +3,7 @@ import logging
 import re
 from typing import Any, Tuple
 
+import aiohttp
 import requests
 from flask import Response, current_app, jsonify
 
@@ -13,9 +14,18 @@ logger = logging.getLogger(__name__)
 
 
 def log_http_response(response: Response) -> str:
+    logger.info("HTTP response")
     logger.info(f"Status: {response.status_code}")
     logger.info(f"Content-type: {response.headers.get('content-type')}")
     logger.info(f"Body: {response.text}")
+
+
+async def log_aiohttp_response(response: aiohttp.ClientResponse) -> str:
+    logger.info("AIOHTTP response")
+    logger.info(f"Status: {response.status}")
+    logger.info(f"Content-type: {response.headers.get('content-type')}")
+    text = await response.text()
+    logger.info(f"Body: {text}")
 
 
 def get_text_message_input(recipient, text) -> str:
@@ -86,7 +96,7 @@ def get_interactive_list_message_input(recipient, text, options) -> str:
     )
 
 
-def send_message(data: str) -> Tuple[Response, int]:
+async def send_message(data: str):
     headers = {
         "Content-type": "application/json",
         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
@@ -94,23 +104,44 @@ def send_message(data: str) -> Tuple[Response, int]:
 
     url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
 
-    try:
-        response = requests.post(
-            url, data=data, headers=headers, timeout=10
-        )  # 10 seconds timeout as an example
-        response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
-    except requests.Timeout:
-        logger.error("Timeout occurred while sending message")
-        return jsonify({"status": "error", "message": "Request timed out"}), 408
-    except (
-        requests.RequestException
-    ) as e:  # This will catch any general request exception
-        logger.error(f"Request failed due to: {e}")
-        return jsonify({"status": "error", "message": "Failed to send message"}), 500
-    else:
-        # Process the response as normal
-        log_http_response(response)
-        return response, 200
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.post(url, data=data, headers=headers) as response:
+                if response.status == 200:
+                    await log_aiohttp_response(response)
+                else:
+                    logger.info("Response status not OK")
+                    logger.info(response.status)
+                    logger.info(response)
+        except aiohttp.ClientConnectorError as e:
+            logger.error("Connection Error", str(e))
+
+
+# def send_message(data: str) -> Tuple[Response, int]:
+#     headers = {
+#         "Content-type": "application/json",
+#         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+#     }
+
+#     url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+
+#     try:
+#         response = requests.post(
+#             url, data=data, headers=headers, timeout=10
+#         )  # 10 seconds timeout as an example
+#         response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+#     except requests.Timeout:
+#         logger.error("Timeout occurred while sending message")
+#         return jsonify({"status": "error", "message": "Request timed out"}), 408
+#     except (
+#         requests.RequestException
+#     ) as e:  # This will catch any general request exception
+#         logger.error(f"Request failed due to: {e}")
+#         return jsonify({"status": "error", "message": "Failed to send message"}), 500
+#     else:
+#         # Process the response as normal
+#         log_http_response(response)
+#         return response, 200
 
 
 def process_text_for_whatsapp(text: str) -> str:
@@ -131,7 +162,7 @@ def process_text_for_whatsapp(text: str) -> str:
     return whatsapp_style_text
 
 
-def process_whatsapp_message(body: Any):
+async def process_whatsapp_message(body: Any):
     # A check has been made already that this is a valid WhatsApp message so no need to check again
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
@@ -177,11 +208,11 @@ def process_whatsapp_message(body: Any):
                 current_app.config["RECIPIENT_WAID"], response
             )
     else:  # Twiga Integration
-        response = generate_response(message_body, wa_id, name)
+        response = await generate_response(message_body, wa_id, name)
         response = process_text_for_whatsapp(response)
         data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 
-    send_message(data)
+    await send_message(data)  # this is non-blocking now that it's async
 
 
 def is_valid_whatsapp_message(body: Any) -> bool:

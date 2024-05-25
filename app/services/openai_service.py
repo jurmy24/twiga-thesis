@@ -6,7 +6,7 @@ from typing import Any, Tuple
 
 from dotenv import load_dotenv
 from flask import current_app
-from openai import OpenAI
+from openai import AsyncOpenAI, OpenAI
 from openai.types.beta import Thread
 
 from app.tools.generate_exercise import exercise_generator
@@ -17,7 +17,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_ASSISTANT_ID = os.getenv("TWIGA_OPENAI_ASSISTANT_ID")
 OPENAI_ORG = os.getenv("OPENAI_ORG")
-client = OpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
+client = AsyncOpenAI(api_key=OPENAI_API_KEY, organization=OPENAI_ORG)
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
             raise ValueError("Parsed arguments are not in dictionary format.")
 
         # Call the function with the unpacked arguments
-        response_message = func(**arguments)
+        response_message = await func(**arguments)
     except json.JSONDecodeError as e:
         response_message = "JSONDecodeError: " + str(e), 400
     except KeyError as e:
@@ -52,7 +52,7 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
             logger.info(f"Returned: {response_message}")
 
         # Send the response back to the function calling tool
-        run = client.beta.threads.runs.submit_tool_outputs(
+        run = await client.beta.threads.runs.submit_tool_outputs(
             thread_id=run.thread_id,
             run_id=run.id,
             tool_outputs=[
@@ -72,10 +72,10 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
     )
 
     # Retrieve the Assistant
-    assistant = client.beta.assistants.retrieve(OPENAI_ASSISTANT_ID)
+    assistant = await client.beta.assistants.retrieve(OPENAI_ASSISTANT_ID)
 
     # Run the assistant
-    run = client.beta.threads.runs.create(
+    run = await client.beta.threads.runs.create(
         thread_id=thread.id,
         assistant_id=assistant.id,
     )
@@ -84,7 +84,10 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
     while run.status != "completed":
         time.sleep(0.5)  # Be nice to the API
         logger.info(f"🏃‍♂️ Run status: {run.status}")
-        run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
+        # Retrieve the latest run status
+        run = await client.beta.threads.runs.retrieve(
+            thread_id=thread.id, run_id=run.id
+        )
 
         if run.status == "requires_action":
             logger.info("🔧 Action required")
@@ -115,7 +118,7 @@ async def run_assistant(thread: Thread, verbose: bool = False) -> str:
 
     logger.info(f"🏁 Run completed")
 
-    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    messages = await client.beta.threads.messages.list(thread_id=thread.id)
 
     if verbose:
         print("MESSAGE HISTORY")
@@ -136,15 +139,15 @@ async def generate_response(message_body: str, wa_id: str, name: str) -> str:
     if thread_id is None:
         logger.info(f"Creating new thread for {name} with wa_id {wa_id}")
 
-        thread = client.beta.threads.create()
+        thread = await client.beta.threads.create()
         store_thread(wa_id, thread.id)
         thread_id = thread.id
     else:  # Otherwise, retrieve the existing thread
         logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
-        thread = client.beta.threads.retrieve(thread_id)
+        thread = await client.beta.threads.retrieve(thread_id)
 
     # Add message to the relevant assistant thread
-    client.beta.threads.messages.create(
+    await client.beta.threads.messages.create(
         thread_id=thread_id,
         role="user",
         content=message_body,

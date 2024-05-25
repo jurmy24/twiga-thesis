@@ -108,10 +108,12 @@ def _format_context(
     return "\n".join(context_parts)
 
 
-def exercise_generator(user_query: str):
+async def exercise_generator(user_query: str):
     # Rewrite the user query
     original_query = user_query
     rewritten_query = query_rewriter(original_query, llm="llama3-8b-8192")
+
+    verbose = False
 
     # Retrieve the relevant content and exercises
     retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(
@@ -121,6 +123,7 @@ def exercise_generator(user_query: str):
         doc_type="Content",
         retrieve_dense=True,
         retrieve_sparse=True,
+        verbose=verbose,
     )
     retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(
         model_class=search_model,
@@ -129,6 +132,7 @@ def exercise_generator(user_query: str):
         doc_type="Exercise",
         retrieve_dense=True,
         retrieve_sparse=True,
+        verbose=verbose,
     )
 
     # Rerank the retrieved content and exercises

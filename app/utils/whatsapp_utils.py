@@ -129,29 +129,33 @@ def process_text_for_whatsapp(text: str) -> str:
 
 
 def process_whatsapp_message(body: Any):
+    # A check has been made already that this is a valid WhatsApp message so no need to check again
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
 
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
     message_type = message.get("type")
 
-    if message_type == "text":
+    # Extract the message body
+    if message_type == "text":  # If the message is a standard text message
         message_body = message["text"]["body"]
     elif (
         message_type == "interactive"
         and message["interactive"]["type"] == "button_reply"
-    ):
+    ):  # If the message is an interactive message with visible buttons
         message_body = message["interactive"]["button_reply"]["title"]
     elif (
         message_type == "interactive" and message["interactive"]["type"] == "list_reply"
-    ):
+    ):  # If the message is an interactive message with a list of options
         message_body = message["interactive"]["list_reply"]["title"]
     else:
         logger.error(f"Unsupported message type: {message_type}")
         raise Exception("Unsupported message type")
 
-    # If the onboarding process is not completed, handle onboarding
+    # Get the user's state from the users shelve database
     state = get_user_state(wa_id)
+
+    # If the onboarding process is not completed, handle onboarding
     if state["state"] != "completed":
         response, options = handle_onboarding(wa_id, message_body)
         response = process_text_for_whatsapp(response)
@@ -169,8 +173,7 @@ def process_whatsapp_message(body: Any):
             data = get_text_message_input(
                 current_app.config["RECIPIENT_WAID"], response
             )
-    # Twiga Integration
-    else:
+    else:  # Twiga Integration
         response = generate_response(message_body, wa_id, name)
 
         response = process_text_for_whatsapp(response)

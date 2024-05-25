@@ -32,7 +32,14 @@ def get_user_state(wa_id: str, db_name: str = "users"):
 
 def update_user_state(wa_id: str, state_update: Dict[str, str], db_name: str = "users"):
     with shelve.open(db_name) as db:
-        db[wa_id] = state_update
+        # Retrieve the existing state or create a new one if it doesn't exist
+        existing_state = dict(db.get(wa_id, {}))
+
+        # Update the existing state with the new state
+        existing_state.update(state_update)
+
+        # Save the updated state back to the database
+        db[wa_id] = existing_state
 
 
 """ Threads Database Functions """

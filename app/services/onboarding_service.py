@@ -23,8 +23,10 @@ def handle_ask_teacher(
         update_user_state(wa_id, {"state": "ask_subject"})
         return "What subject do you teach?", ["Geography"]
     elif message_body.lower() == "no":
-        update_user_state(wa_id, {"state": "not_teacher"})
-        return "This service is for teachers only.", None
+        return (
+            "This service is for teachers only. Please select yes if you would like further support. Are you a teacher?",
+            ["Yes", "No"],
+        )
     else:
         return "Please select *Yes* or *No*. Are you a teacher?", ["Yes", "No"]
 

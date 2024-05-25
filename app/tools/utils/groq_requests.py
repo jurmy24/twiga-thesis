@@ -8,7 +8,7 @@ import groq
 from dotenv import load_dotenv
 from groq import AsyncGroq, Groq
 
-from app.utils.exercise_generation_utils.twiga_utils import num_tokens_from_messages
+from app.tools.utils.twiga_utils import num_tokens_from_messages
 
 # Set up basic logging configuration
 logger = logging.getLogger(__name__)

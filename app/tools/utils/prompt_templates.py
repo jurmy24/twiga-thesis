@@ -1,4 +1,4 @@
-from app.utils.exercise_generation_utils.models import ChatMessage
+from app.tools.utils.models import ChatMessage
 
 """
 Directly from LlamaIndex (llama_index/llama-index-core/llama_index/core/prompts/chat_prompts.py)

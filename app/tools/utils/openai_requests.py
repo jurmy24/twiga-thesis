@@ -9,7 +9,7 @@ import openai
 from dotenv import load_dotenv
 from openai.types.chat import ChatCompletion
 
-from app.utils.exercise_generation_utils.twiga_utils import num_tokens_from_messages
+from app.tools.utils.twiga_utils import num_tokens_from_messages
 
 logger = logging.getLogger(__name__)
 

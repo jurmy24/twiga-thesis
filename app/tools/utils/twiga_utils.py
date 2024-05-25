@@ -4,11 +4,7 @@ from typing import List, Literal
 import tiktoken
 from pydantic import ValidationError
 
-from app.utils.exercise_generation_utils.models import (
-    ChunkSchema,
-    Metadata,
-    RetrievedDocSchema,
-)
+from app.tools.utils.models import ChunkSchema, Metadata, RetrievedDocSchema
 
 logger = logging.getLogger(__name__)
 

@@ -51,7 +51,7 @@ class DataSearch:
             logger.error(f"Error retrieving document: {e}")
             return None
 
-    def search(
+    async def search(
         self,
         size: int,
         knn_args: dict[str, Any] = None,

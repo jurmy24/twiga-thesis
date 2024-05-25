@@ -1,9 +1,9 @@
 import logging
 from typing import List, Literal
 
-from app.tools.utils.groq_requests import groq_request
+from app.tools.utils.groq_requests import async_groq_request, groq_request
 from app.tools.utils.models import RetrievedDocSchema
-from app.tools.utils.openai_requests import openai_request
+from app.tools.utils.openai_requests import async_openai_request, openai_request
 from app.tools.utils.prompt_templates import (
     PIPELINE_QUESTION_GENERATOR_PROMPT,
     PIPELINE_QUESTION_GENERATOR_USER_PROMPT,
@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 search_model = DataSearch()
 
 
-def _generate(
+async def _generate(
     prompt: str,
     query: str,
     model: Literal["gpt-3.5-turbo-0125", "gpt-4-turbo-2024-04-09", "llama3-70b-8192"],
@@ -39,14 +39,14 @@ def _generate(
             print(f"User prompt: \n{query}")
 
         if model == "llama3-70b-8192":
-            res = groq_request(
+            res = await async_groq_request(
                 llm=model,
                 verbose=False,
                 messages=messages,
                 max_tokens=100,
             )
         else:
-            res = openai_request(
+            res = await async_openai_request(
                 model=model,
                 verbose=False,
                 messages=messages,
@@ -111,12 +111,12 @@ def _format_context(
 async def exercise_generator(user_query: str):
     # Rewrite the user query
     original_query = user_query
-    rewritten_query = query_rewriter(original_query, llm="llama3-8b-8192")
+    rewritten_query = await query_rewriter(original_query, llm="llama3-8b-8192")
 
     verbose = False
 
     # Retrieve the relevant content and exercises
-    retrieved_content: List[RetrievedDocSchema] = elasticsearch_retriever(
+    retrieved_content: List[RetrievedDocSchema] = await elasticsearch_retriever(
         model_class=search_model,
         retrieval_msg=rewritten_query,
         size=10,
@@ -125,7 +125,7 @@ async def exercise_generator(user_query: str):
         retrieve_sparse=True,
         verbose=verbose,
     )
-    retrieved_exercises: List[RetrievedDocSchema] = elasticsearch_retriever(
+    retrieved_exercises: List[RetrievedDocSchema] = await elasticsearch_retriever(
         model_class=search_model,
         retrieval_msg=rewritten_query,
         size=5,
@@ -147,5 +147,5 @@ async def exercise_generator(user_query: str):
     )
 
     # Generate a question based on the context
-    res = _generate(system_prompt, user_prompt, model="llama3-70b-8192")
+    res = await _generate(system_prompt, user_prompt, model="llama3-70b-8192")
     return res

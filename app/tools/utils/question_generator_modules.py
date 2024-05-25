@@ -6,9 +6,9 @@ from openai.types.chat import ChatCompletion
 # for rerankers
 from sentence_transformers import CrossEncoder
 
-from app.tools.utils.groq_requests import groq_request
+from app.tools.utils.groq_requests import async_groq_request, groq_request
 from app.tools.utils.models import RetrievedDocSchema
-from app.tools.utils.openai_requests import openai_request
+from app.tools.utils.openai_requests import async_openai_request, openai_request
 from app.tools.utils.prompt_templates import REWRITE_QUERY_PROMPT
 from app.tools.utils.search_service import DataSearch
 from app.tools.utils.twiga_utils import (
@@ -24,8 +24,7 @@ This is the modules file, which will contain the modular components that can be 
 logger = logging.getLogger(__name__)
 
 
-# TODO: Make it possible for the query_rewriter to see the entire conversation history so that it can add meat to the bone's of a message like "Write a question about what I said in my last message."
-def query_rewriter(
+async def query_rewriter(
     query: str,
     llm: Literal["openai", "llama3-8b-8192", "mixtral-8x7b-32768", "gemma-7b-it"],
 ) -> str:
@@ -41,7 +40,7 @@ def query_rewriter(
 
         # Send the prompt to API using a suitable engine
         if llm == "openai":
-            res: ChatCompletion = openai_request(
+            res = await async_openai_request(
                 model="gpt-3.5-turbo-0125",
                 messages=messages,
                 max_tokens=80,  # Adjust based on the expected length of the enhanced query
@@ -49,7 +48,7 @@ def query_rewriter(
                 stop=None,  # Optional stopping character or sequence
             )
         else:
-            res = groq_request(
+            res = await async_groq_request(
                 llm=llm,
                 verbose=False,
                 messages=messages,
@@ -66,7 +65,7 @@ def query_rewriter(
         return query  # Return the original query in case of an error
 
 
-def elasticsearch_retriever(
+async def elasticsearch_retriever(
     model_class: DataSearch,
     retrieval_msg: str,
     size: int,
@@ -126,7 +125,7 @@ def elasticsearch_retriever(
 
     # Call DataSearch to search ElasticSearch
     try:
-        res = data_search.search(
+        res = await data_search.search(
             size=size, knn_args=knn_args, query_args=query_args, rank_args=rank_args
         )
     except Exception as e:

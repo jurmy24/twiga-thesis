@@ -141,7 +141,6 @@ async def generate_response(message_body: str, wa_id: str, name: str) -> str:
 
         thread = await client.beta.threads.create()
         store_thread(wa_id, thread.id)
-        thread_id = thread.id
     else:  # Otherwise, retrieve the existing thread
         logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
         thread = await client.beta.threads.retrieve(thread_id)
@@ -152,6 +151,7 @@ async def generate_response(message_body: str, wa_id: str, name: str) -> str:
         role="user",
         content=message_body,
     )
+    client.beta.threads.runs.list(thread_id=thread)
 
     # Run the assistant and get the new message
     new_message = await run_assistant(thread, verbose=True)

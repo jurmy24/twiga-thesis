@@ -71,7 +71,9 @@ async def async_groq_request(
                 f"Number of OpenAI-equivalent tokens in the payload:\n{num_tokens_from_messages(messages)}"
             )
 
-        completion = await async_client.chat.completions.create(model=llm**params)
+        full_params = {"model": llm, **params}
+
+        completion = await async_client.chat.completions.create(**full_params)
 
         return completion
     except groq.RateLimitError as e:

@@ -29,9 +29,9 @@ class DataSearch:
             self.es = Elasticsearch(
                 cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_SEARCH_API_KEY
             )
-            client_info = self.es.info()
+            # client_info = self.es.info()
             logger.info("Connected to Elasticsearch!")
-            pprint(client_info.body)
+            # pprint(client_info.body)
         except es_exceptions.AuthenticationException as e:
             logger.error(f"Authentication failed: check your cloud ID and API key: {e}")
         except Exception as e:

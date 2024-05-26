@@ -1,6 +1,7 @@
+import datetime
 import os
 import shelve
-from typing import Dict, List
+from typing import Dict, List, Literal, Tuple
 
 
 def clear_db(db_name: str):
@@ -52,18 +53,63 @@ def check_if_thread_exists(wa_id: str, db_name: str = "threads"):
 
 def store_thread(wa_id: str, thread_id: str, db_name: str = "threads"):
     with shelve.open(db_name, writeback=True) as db:
-        db[wa_id] = {"thread": thread_id, "run": ""}
+        db[wa_id] = {"thread": thread_id}
 
 
-def new_run(wa_id: str, thread_id: str, run_id: str, db_name: str = "threads"):
+""" Rate Limit Database Functions """
 
-    # thread_data = check_if_thread_exists(wa_id, db_name)
 
-    # runs: List[str] = thread_data["runs"] if thread_data is not None else []
-    # runs.append(run_id)
+def get_message_count(
+    wa_id: str, db_name: str = "message_counts"
+) -> Tuple[int, datetime.datetime]:
+    with shelve.open(db_name) as db:
+        if wa_id in db:
+            count, last_message_time = db[wa_id]
+            return count, last_message_time
+        return 0, datetime.datetime.min
 
+
+def increment_message_count(wa_id: str, db_name: str = "message_counts"):
     with shelve.open(db_name, writeback=True) as db:
-        db[wa_id] = {"thread": thread_id, "run": run_id}
+        count, last_message_time = get_message_count(wa_id)
+        now = datetime.datetime.now()
+
+        if now.date() > last_message_time.date():
+            count = 0
+
+        count += 1
+        db[wa_id] = (count, now)
+
+
+""" Message History Database Functions """
+
+
+def store_message(
+    wa_id: str,
+    message: str,
+    role: Literal["user", "twiga"],
+    db_name: str = "message_history",
+):
+    with shelve.open(db_name, writeback=True) as db:
+        if wa_id not in db:
+            db[wa_id] = []
+        db[wa_id].append(
+            {"timestamp": datetime.datetime.now(), "message": message, "role": role}
+        )
+
+
+def retrieve_messages(wa_id: str, db_name: str = "message_history"):
+    with shelve.open(db_name) as db:
+        return db.get(wa_id, [])
+
+
+def print_messages(wa_id: str, db_name: str = "message_history"):
+    messages = retrieve_messages(wa_id, db_name)
+    for message in messages:
+        timestamp = message["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
+        role = message["role"]
+        msg = message["message"]
+        print(f"[{timestamp}] ({role}): {msg}")
 
 
 if __name__ == "__main__":
@@ -73,14 +119,24 @@ if __name__ == "__main__":
     USERS_DATABASE = os.getenv("USERS_DATABASE", "users")
     THREADS_DATABASE = os.getenv("THREADS_DATABASE", "threads")
 
-    # Clear the threads database
-    print("Threads database.")
-    inspect_db(THREADS_DATABASE)
-    clear_db(THREADS_DATABASE)
-    print("Threads database cleared.")
+    # # Clear the threads database
+    # print("Threads database.")
+    # inspect_db(THREADS_DATABASE)
+    # clear_db(THREADS_DATABASE)
+    # print("Threads database cleared.")
 
-    # # Clear the user-info database
+    # # # Clear the user-info database
     # print("Users database.")
     # inspect_db(USERS_DATABASE)
     # clear_db(USERS_DATABASE)
     # print("Onboarding database cleared.")
+
+    print("\nmessage_counts database.")
+    inspect_db("message_counts")
+    # clear_db("message_counts")
+    # print("Message counts database cleared.")
+
+    print("\nMessage database.")
+    # inspect_db("message_history")
+    # clear_db("message_history")
+    print_messages("46702717600")

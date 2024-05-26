@@ -10,6 +10,7 @@ from flask import Response, current_app, jsonify
 
 from app.services.onboarding_service import get_user_state, handle_onboarding
 from app.services.openai_service import generate_response
+from app.utils.database_utils import store_message
 
 logger = logging.getLogger(__name__)
 
@@ -171,6 +172,7 @@ async def process_whatsapp_message(body: Any):
 
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
     message_type = message.get("type")
+    message_timestamp = message.get("timestamp")
 
     # Extract the message body
     if message_type == "text":  # If the message is a standard text message
@@ -188,13 +190,15 @@ async def process_whatsapp_message(body: Any):
         logger.error(f"Unsupported message type: {message_type}")
         raise Exception("Unsupported message type")
 
+    store_message(wa_id, message_body, role="user")
+
     # Get the user's state from the users shelve database
     state = get_user_state(wa_id)
 
     # If the onboarding process is not completed, handle onboarding
     if state["state"] != "completed":
-        response, options = handle_onboarding(wa_id, message_body)
-        response = process_text_for_whatsapp(response)
+        response_text, options = handle_onboarding(wa_id, message_body)
+        response = process_text_for_whatsapp(response_text)
         # This section handles the type of message to send to the user depending on the number of options available to select from
         if options:
             if len(options) <= 3:
@@ -210,14 +214,15 @@ async def process_whatsapp_message(body: Any):
                 current_app.config["RECIPIENT_WAID"], response
             )
     else:  # Twiga Integration
-        response = await generate_response(message_body, wa_id, name)
+        response_text = await generate_response(message_body, wa_id, name)
         if (
-            response is None
+            response_text is None
         ):  # Don't send anything back to the user if we decide to ghost them
             return
-        response = process_text_for_whatsapp(response)
+        response = process_text_for_whatsapp(response_text)
         data = get_text_message_input(current_app.config["RECIPIENT_WAID"], response)
 
+    store_message(wa_id, response_text, role="twiga")
     await send_message(data)  # this is non-blocking now that it's async
 
 

@@ -12,7 +12,7 @@ from openai import AsyncOpenAI, OpenAI
 from openai.types.beta import Thread
 
 from app.tools.generate_exercise import exercise_generator
-from app.utils.database_utils import check_if_thread_exists, new_run, store_thread
+from app.utils.database_utils import check_if_thread_exists, store_message, store_thread
 from app.utils.openai_utils import print_conversation
 
 load_dotenv()
@@ -83,7 +83,6 @@ async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> st
         thread_id=thread.id,
         assistant_id=assistant.id,
     )
-    new_run(wa_id, thread.id, run.id)
 
     # Wait for completion
     while run.status != "completed":
@@ -107,6 +106,7 @@ async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> st
                     data = get_text_message_input(
                         current_app.config["RECIPIENT_WAID"], response
                     )
+                    store_message(wa_id, "🔄 Generating exercise...", role="twiga")
                     await send_message(data)
 
                     await _handle_tool_call(
@@ -122,7 +122,6 @@ async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> st
             )
 
     logger.info(f"🏁 Run completed")
-    store_thread(wa_id, thread.id)  # this clears the run_id from the thread data
 
     messages = await client.beta.threads.messages.list(thread_id=thread.id)
 
@@ -139,19 +138,16 @@ async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> st
 
 async def generate_response(message_body: str, wa_id: str, name: str) -> str:
     # Check if there is already a thread_id for the wa_id
-    thread_data = check_if_thread_exists(wa_id)
-    thread_id = str(thread_data["thread"]) if thread_data is not None else None
-    run_id = str(thread_data["run"]) if thread_data is not None else None
+    thread_id = dict(check_if_thread_exists(wa_id)).get("thread", None)
 
     # If a thread doesn't exist, create one and store it
     if thread_id is None:
-        logger.info(f"Creating new thread for {name} with wa_id {wa_id}")
-
         thread = await client.beta.threads.create()
+        logger.info(f"Creating new thread for {name} with id {thread.id}")
         store_thread(wa_id, thread.id)
     else:  # Otherwise, retrieve the existing thread
         logger.info(f"Retrieving existing thread for {name} with wa_id {wa_id}")
-        thread = await client.beta.threads.retrieve(thread_id)
+        thread = await client.beta.threads.retrieve(str(thread_id))
 
     try:
         # Add message to the relevant assistant thread

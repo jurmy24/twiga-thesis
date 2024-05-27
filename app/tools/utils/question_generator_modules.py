@@ -6,8 +6,9 @@ from openai.types.chat import ChatCompletion
 # for rerankers
 from sentence_transformers import CrossEncoder
 
+from app.tools.utils.ChromaDBLoader import ChromaDBLoader
 from app.tools.utils.groq_requests import async_groq_request, groq_request
-from app.tools.utils.models import RetrievedDocSchema
+from app.tools.utils.models import Metadata, RetrievedDocSchema, ChunkSchema
 from app.tools.utils.openai_requests import async_openai_request, openai_request
 from app.tools.utils.prompt_templates import REWRITE_QUERY_PROMPT
 from app.tools.utils.search_service import DataSearch
@@ -22,7 +23,7 @@ This is the modules file, which will contain the modular components that can be 
 """
 
 logger = logging.getLogger(__name__)
-
+cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 async def query_rewriter(
     query: str,
@@ -150,6 +151,41 @@ async def elasticsearch_retriever(
 
     return docs
 
+async def chromadb_retriever(
+    model_class: ChromaDBLoader,
+    retrieval_msg: str,
+    size: int,
+    doc_type: Literal["Content", "Exercise"],
+    book_title: str = "Geography for Secondary Schools Student's Book Form Two",
+    verbose: bool = False,
+) -> List[RetrievedDocSchema]:
+    
+    # Search for documents
+    res = model_class.search(query=retrieval_msg, n_results=size, where={"doc_type": doc_type})
+
+    documents = res.get("documents")[0]
+    metadatas = res.get("metadatas")[0]
+    ids = res.get("ids")[0]
+
+    docs: List[RetrievedDocSchema] = []
+    for doc, metadata, id in zip(documents, metadatas, ids):
+        for key, value in metadata.items():
+            if value == '':
+                metadata[key] = None
+        md: Metadata = Metadata(**metadata)
+        chunk: ChunkSchema = ChunkSchema(chunk=doc, metadata=md)
+        retrieved_doc: RetrievedDocSchema = RetrievedDocSchema(retrieval_type="dense", id=id, source=chunk)
+        docs.append(retrieved_doc)
+
+    # This prints out the response in a pretty format if the caller desires
+    if verbose:
+        for i, document in enumerate(docs):
+            print(f"------Document {i}-----")
+            print(document.source.chunk)
+        
+
+    return docs
+
 
 def rerank(
     eval_query: str,
@@ -157,7 +193,7 @@ def rerank(
     num_results: int,
     verbose: bool = False,
 ) -> List[RetrievedDocSchema]:
-    cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+    
 
     # Extract text content from Document objects and convert to strings
     document_texts = [doc.source.chunk for doc in documents]

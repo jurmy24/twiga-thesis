@@ -90,20 +90,20 @@ class Metadata(BaseModel):
 class ChunkSchema(BaseModel):
     chunk: str
     metadata: Metadata
-    embedding: List[float]
+    embedding: Optional[List[float]] = None
 
     def to_dict(self):
         return {
             "chunk": self.chunk,
             "metadata": self.metadata.to_dict(),
-            "embedding": self.embedding,
+            "embedding": self.embedding if self.embedding is not None else None,
         }
 
 
 class RetrievedDocSchema(BaseModel):
     retrieval_type: str
-    score: Optional[float]
-    rank: Optional[int]
+    score: Optional[float] = None
+    rank: Optional[int] = None
     id: str
     source: ChunkSchema
 

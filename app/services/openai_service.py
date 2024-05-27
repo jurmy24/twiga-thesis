@@ -41,14 +41,14 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
             raise ValueError("Parsed arguments are not in dictionary format.")
 
         # Call the function with the unpacked arguments
-        # response_message = await func(**arguments)
-        response_message = "I am unable to perform that function right now."
+        response_message = await func(**arguments)
+        # response_message = "I am unable to perform that function right now."
     except json.JSONDecodeError as e:
-        response_message = "JSONDecodeError: " + str(e), 400
+        response_message = "JSONDecodeError: " + str(e)
     except KeyError as e:
-        response_message = "Missing required argument: {e}", 400
+        response_message = "Missing required argument: {e}"
     except Exception as e:
-        response_message = f"An unexpected error occurred: {str(e)}", 500
+        response_message = f"An unexpected error occurred: {str(e)}"
     finally:
         if verbose:
             logger.info(
@@ -163,5 +163,6 @@ async def generate_response(message_body: str, wa_id: str, name: str) -> str:
         return new_message
 
     except openai.BadRequestError as e:
+        # maybe create a new thread??
         logger.error(f"Error sending message to OpenAI: {e}")
         return None

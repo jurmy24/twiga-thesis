@@ -1,6 +1,7 @@
 import logging
 from typing import List, Literal
 
+from app.tools.utils.ChromaDBLoader import ChromaDBLoader
 from app.tools.utils.groq_requests import async_groq_request, groq_request
 from app.tools.utils.models import RetrievedDocSchema
 from app.tools.utils.openai_requests import async_openai_request, openai_request
@@ -9,15 +10,17 @@ from app.tools.utils.prompt_templates import (
     PIPELINE_QUESTION_GENERATOR_USER_PROMPT,
 )
 from app.tools.utils.question_generator_modules import (
+    chromadb_retriever,
     elasticsearch_retriever,
     query_rewriter,
     rerank,
 )
-from app.tools.utils.search_service import DataSearch
+# from app.tools.utils.search_service import DataSearch
 
 logger = logging.getLogger(__name__)
 
-search_model = DataSearch()
+# search_model = DataSearch()
+chromadb_search_model = ChromaDBLoader()
 
 
 async def _generate(
@@ -115,23 +118,39 @@ async def exercise_generator(user_query: str):
 
     verbose = False
 
+    # # Retrieve the relevant content and exercises
+    # retrieved_content: List[RetrievedDocSchema] = await elasticsearch_retriever(
+    #     model_class=search_model,
+    #     retrieval_msg=rewritten_query,
+    #     size=10,
+    #     doc_type="Content",
+    #     retrieve_dense=True,
+    #     retrieve_sparse=True,
+    #     verbose=verbose,
+    # )
+    # retrieved_exercises: List[RetrievedDocSchema] = await elasticsearch_retriever(
+    #     model_class=search_model,
+    #     retrieval_msg=rewritten_query,
+    #     size=5,
+    #     doc_type="Exercise",
+    #     retrieve_dense=True,
+    #     retrieve_sparse=True,
+    #     verbose=verbose,
+    # )
+
     # Retrieve the relevant content and exercises
-    retrieved_content: List[RetrievedDocSchema] = await elasticsearch_retriever(
-        model_class=search_model,
+    retrieved_content: List[RetrievedDocSchema] = await chromadb_retriever(
+        model_class=chromadb_search_model,
         retrieval_msg=rewritten_query,
         size=10,
         doc_type="Content",
-        retrieve_dense=True,
-        retrieve_sparse=True,
         verbose=verbose,
     )
-    retrieved_exercises: List[RetrievedDocSchema] = await elasticsearch_retriever(
-        model_class=search_model,
+    retrieved_exercises: List[RetrievedDocSchema] = await chromadb_retriever(
+        model_class=chromadb_search_model,
         retrieval_msg=rewritten_query,
         size=5,
         doc_type="Exercise",
-        retrieve_dense=True,
-        retrieve_sparse=True,
         verbose=verbose,
     )
 

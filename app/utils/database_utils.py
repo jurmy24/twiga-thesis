@@ -84,6 +84,10 @@ def increment_message_count(wa_id: str, db_name: str = "message_counts"):
         count += 1
         db[wa_id] = (count, now)
 
+def clear_message_count(wa_id: str, db_name: str = "message_counts"):
+    with shelve.open(db_name, writeback=True) as db:
+        db[wa_id] = (0, datetime.datetime.min)
+
 
 """ Message History Database Functions """
 
@@ -135,8 +139,8 @@ if __name__ == "__main__":
     # clear_db(USERS_DATABASE)
     # print("Onboarding database cleared.")
 
-    print("\nmessage_counts database.")
-    inspect_db("message_counts")
+    # print("\nmessage_counts database.")
+    # inspect_db("message_counts")
     # clear_db("message_counts")
     # print("Message counts database cleared.")
 
@@ -145,4 +149,6 @@ if __name__ == "__main__":
     # clear_db("message_history")
     # print_messages("46702717600")
 
-    # clear_thread("46702717600")
+    clear_message_count("46702717600")
+    reset_conversation("46702717600")
+    clear_thread("46702717600")

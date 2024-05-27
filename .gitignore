@@ -167,3 +167,6 @@ evals/human/**/*.csv
 
 # Ignore database files
 *.db
+*.bak
+*.dir
+*.dat

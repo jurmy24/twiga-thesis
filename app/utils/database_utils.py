@@ -55,6 +55,10 @@ def store_thread(wa_id: str, thread_id: str, db_name: str = "threads"):
     with shelve.open(db_name, writeback=True) as db:
         db[wa_id] = {"thread": thread_id}
 
+def clear_thread(wa_id: str, db_name: str = "threads"):
+    with shelve.open(db_name, writeback=True) as db:
+        db[wa_id] = {"thread": None}
+
 
 """ Rate Limit Database Functions """
 
@@ -119,7 +123,7 @@ if __name__ == "__main__":
     USERS_DATABASE = os.getenv("USERS_DATABASE", "users")
     THREADS_DATABASE = os.getenv("THREADS_DATABASE", "threads")
 
-    # # Clear the threads database
+    # Clear the threads database
     # print("Threads database.")
     # inspect_db(THREADS_DATABASE)
     # clear_db(THREADS_DATABASE)
@@ -136,7 +140,9 @@ if __name__ == "__main__":
     # clear_db("message_counts")
     # print("Message counts database cleared.")
 
-    print("\nMessage database.")
+    # print("\nMessage database.")
     # inspect_db("message_history")
     # clear_db("message_history")
-    print_messages("46702717600")
+    # print_messages("46702717600")
+
+    # clear_thread("46702717600")

@@ -41,7 +41,8 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
             raise ValueError("Parsed arguments are not in dictionary format.")
 
         # Call the function with the unpacked arguments
-        response_message = await func(**arguments)
+        # response_message = await func(**arguments)
+        response_message = "I am unable to perform that function right now."
     except json.JSONDecodeError as e:
         response_message = "JSONDecodeError: " + str(e), 400
     except KeyError as e:
@@ -55,7 +56,6 @@ async def _handle_tool_call(tool: Any, run: str, func: callable, verbose: bool =
             )
             logger.info(f"Returned: {response_message}")
 
-        # Send the response back to the function calling tool
         run = await client.beta.threads.runs.submit_tool_outputs(
             thread_id=run.thread_id,
             run_id=run.id,
@@ -104,7 +104,7 @@ async def run_assistant(wa_id: str, thread: Thread, verbose: bool = False) -> st
                     # Send a message to the user that we're generating an exercise
                     response = process_text_for_whatsapp("🔄 Generating exercise...")
                     data = get_text_message_input(
-                        current_app.config["RECIPIENT_WAID"], response
+                        wa_id, response
                     )
                     store_message(wa_id, "🔄 Generating exercise...", role="twiga")
                     await send_message(data)

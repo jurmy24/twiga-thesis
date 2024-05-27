@@ -102,7 +102,7 @@ async def handle_message() -> Tuple[Response, int]:
                     sleepy_text = "🚫 You have reached your daily messaging limit, so Twiga 🦒 is quite sleepy 🥱 from all of today's texting . Let's talk more tomorrow!"
                     sleepy_msg = process_text_for_whatsapp(sleepy_text)
                     data = get_text_message_input(
-                        current_app.config["RECIPIENT_WAID"],
+                        wa_id,
                         sleepy_msg,  # could also just use wa_id here instead of going to config
                     )
                     store_message(wa_id, message, role="user")
